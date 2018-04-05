@@ -1,25 +1,41 @@
 * {
 	font-family: 'Source Sans Pro', sans-serif;
 }
+html {
+	width: 100vw;
+}
+main {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	right: 0;
+}
 body {
 	background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Free_Green_Spring_Leaves_on_Blue_Creative_Commons_%285653974533%29.jpg');
+	background-repeat: no-repeat;
 	background-attachment: fixed;
-	margin-top: 80px;
+	width: 100%;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	margin: 60px 0 0 0;
+	padding:0;
+	left: 0;
+	right: 0;
+	position: absolute;
 }
 .card {
-	height: 40%;
-	width: 100%;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	height: 100%;
+	margin: 20px auto 20px auto;
+	width: 95%;
+	padding: 0 0 0 0;
 	background-color: white;
 	border-radius: 2px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	display: block;
 }
 .text {
-	display: block;
-	padding: 10px 30px 10px 30px;
+	width: 90%;
+	padding: 10px 5% 10px 5%;
 }
 header {
 	position: fixed;
@@ -29,24 +45,28 @@ header {
 	width: 100%;
 	margin: 0;
 	padding-bottom: 20px;
-	padding-left: 20px;
+	padding-left: 0px;
 	background-color: rgba(0, 0, 0, 0.8);
 	color: white;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	transition: top 0.1s ease-in-out;
+	overflow: hidden;
 }
 footer {
 	display: block;
 	left: 0;
 	height: 50px;
-	width: 110%;
+	width: 100%;
 	background-color: rgba(0, 0, 0, 0.2);
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	padding-left: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	padding-left: 0px;
 	color: white;
-	margin-left: -10px;
+	overflow: hidden;
+}
+.padtext {
+	padding-left: 20px;
 }
 .nav-up {
     top: -70px;
