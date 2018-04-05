@@ -1,0 +1,53 @@
+* {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+body {
+	background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Free_Green_Spring_Leaves_on_Blue_Creative_Commons_%285653974533%29.jpg');
+	background-attachment: fixed;
+	margin-top: 80px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.card {
+	height: 40%;
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: white;
+	border-radius: 2px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.text {
+	display: block;
+	padding: 10px 30px 10px 30px;
+}
+header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 50px;
+	width: 100%;
+	margin: 0;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	transition: top 0.1s ease-in-out;
+}
+footer {
+	display: block;
+	left: 0;
+	height: 50px;
+	width: 110%;
+	background-color: rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: white;
+	margin-left: -10px;
+}
+.nav-up {
+    top: -70px;
+}
