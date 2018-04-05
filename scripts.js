@@ -35,4 +35,16 @@ function hasScrolled() {
     }
     
     lastScrollTop = st;
-}
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+	document.getElementById("openbtn").addEventListener('click', function() {
+		document.getElementById("menu").style.width = "300px";
+		document.getElementById("close").style.width = "100%";
+	});
+	document.getElementById("close").addEventListener('click', function() {
+        	document.getElementById("menu").style.width = "0";
+        	document.getElementById("close").style.width = "0";
+    	});
+
+ });
