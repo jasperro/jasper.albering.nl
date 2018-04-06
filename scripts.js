@@ -46,5 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
         	document.getElementById("menu").style.width = "0";
         	document.getElementById("close").style.width = "0";
     	});
-
+	document.getElementById("closebutton").addEventListener('click', function() {
+        	document.getElementById("menu").style.width = "0";
+        	document.getElementById("close").style.width = "0";
+    	});
  });
