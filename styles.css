@@ -11,7 +11,7 @@ main {
 	right: 0;
 }
 body {
-	background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/09/Free_Green_Spring_Leaves_on_Blue_Creative_Commons_%285653974533%29.jpg');
+	background: linear-gradient(to bottom right,#29792D,#255255);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	width: 100%;
