@@ -29,7 +29,7 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100vh;
-	min-height: 100%;
+	min-height: calc(100% - 100px);
 	margin: 100px 0 0 0;
 }
 @media only screen and (max-width: 470px) {
@@ -182,8 +182,9 @@ footer {
 	color: white;
 	overflow: hidden;
 	padding-top: 25px;
-	position: bottom;
 	bottom: 0;
+	position: relative;
+	width: 100%;
 }
 header {
 	position: fixed;
@@ -206,3 +207,13 @@ header {
 	font-family: 'Lucida Console', monospace;
 	color: green;
 }
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -90px;
+}
+.push {
+	height: 90px;
+}
+
