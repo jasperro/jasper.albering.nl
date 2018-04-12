@@ -1,0 +1,19 @@
+<!--#include file="abovecontent.html" -->
+	<div class="card">
+		 <div class="text">
+		 <h1>Server information</h1>
+		 <h4>Uptime</h4>
+		 <p>Uptime: <span class="terminaloutput"><!--#include file="uptime.txt" --></span></p>
+		 <h4>Time</h4>
+		 <p>Local server time: &ensp; <span class="terminaloutput"><!--#echo var="DATE_LOCAL" --></span></p>
+		 <p>GMT server time: &ensp; <span class="terminaloutput"><!--#echo var="DATE_GMT" --></span></p>
+		 <h4>User Agent</h4>
+		 <p>User agent string: &ensp; <span class="terminaloutput"><!--#echo var="HTTP_USER_AGENT" --></span></p>
+		 <h4>Your IP address</h4>
+		 <p>Your public IP: &ensp; <span class="terminaloutput"><!--#echo var="REMOTE_ADDR" --></span></p>
+		 <h4>Fortune</h4>
+		 <p>Fortune:</p>
+		 <span class="terminaloutput"><!--#include file="fortune.txt" --></span>
+		</div>
+	</div>
+<!--#include file="belowcontent.html" -->
