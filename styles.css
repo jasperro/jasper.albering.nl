@@ -172,20 +172,6 @@ button::-moz-focus-inner {
 .clearfix {
 	clear: both;
 }
-footer {
-	height: 70px;
-	margin-top: 20px;
-	background-color: rgba(0, 0, 0, 0.2);
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-	-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-	color: white;
-	overflow: hidden;
-	padding-top: 25px;
-	bottom: 0;
-	position: relative;
-	width: 100%;
-}
 header {
 	position: fixed;
 	top: 0px;
@@ -206,14 +192,5 @@ header {
 	white-space: pre-wrap;
 	font-family: 'Lucida Console', monospace;
 	color: green;
-}
-.wrapper {
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	margin: 0 auto -90px;
-}
-.push {
-	height: 90px;
 }
 
