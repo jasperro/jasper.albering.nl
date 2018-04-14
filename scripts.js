@@ -37,6 +37,11 @@ function hasScrolled() {
     lastScrollTop = st;
 };
 
+function capitalizeFirstLetter(string) 
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById("openbtn").addEventListener('click', function() {
 		document.getElementById("menu").style.width = "300px";
@@ -50,4 +55,10 @@ document.addEventListener('DOMContentLoaded', function() {
         	document.getElementById("menu").style.width = "0";
         	document.getElementById("close").style.width = "0";
     	});
- });
+	if (location.pathname != "/index.html") {
+	document.title = "Jasper's Website - " + capitalizeFirstLetter(location.pathname
+		.replace(/\.(html|php)/, '')
+		.replace('/',''))
+	document.getElementById("title").innerHTML = document.title;
+	}
+	});

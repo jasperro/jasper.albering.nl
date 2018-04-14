@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="192"
+   height="192"
+   version="1.1"
+   id="svg3809"
+   sodipodi:docname="favicon.svg"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   inkscape:export-filename="/home/jasperro/Afbeeldingen/favicon16.png"
+   inkscape:export-xdpi="95.010307"
+   inkscape:export-ydpi="95.010307">
+  <metadata
+     id="metadata3813">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="748"
+     id="namedview3811"
+     showgrid="false"
+     inkscape:zoom="2.6875"
+     inkscape:cx="20.27907"
+     inkscape:cy="96"
+     inkscape:window-x="0"
+     inkscape:window-y="20"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g3807" />
+  <defs
+     id="defs3793">
+    <linearGradient
+       spreadMethod="pad"
+       y2="1"
+       x2="1"
+       y1="0"
+       x1="0"
+       id="svg_5">
+      <stop
+         offset="0"
+         stop-opacity="0.996094"
+         stop-color="#29792d"
+         id="stop3783" />
+      <stop
+         offset="1"
+         stop-opacity="0.996094"
+         stop-color="#255255"
+         id="stop3785" />
+    </linearGradient>
+    <linearGradient
+       y2="1"
+       x2="1"
+       y1="0"
+       x1="0"
+       id="svg_6">
+      <stop
+         offset="0"
+         stop-opacity="0.992188"
+         stop-color="#27929d"
+         id="stop3788" />
+      <stop
+         offset="1"
+         stop-opacity="0.996094"
+         stop-color="#255255"
+         id="stop3790" />
+    </linearGradient>
+  </defs>
+  <g
+     id="g3801">
+    <title
+       id="title3795">background</title>
+    <rect
+       fill="url(#svg_6)"
+       id="canvas_background"
+       height="194"
+       width="194"
+       y="-1"
+       x="-1" />
+    <g
+       display="none"
+       overflow="visible"
+       y="0"
+       x="0"
+       height="100%"
+       width="100%"
+       id="canvasGrid">
+      <rect
+         fill="url(#gridpattern)"
+         stroke-width="0"
+         y="0"
+         x="0"
+         height="100%"
+         width="100%"
+         id="rect3798" />
+    </g>
+  </g>
+  <g
+     id="g3807">
+    <title
+       id="title3803">outside circle</title>
+    <ellipse
+       stroke-dasharray="2,2"
+       ry="90"
+       rx="90"
+       id="svg_1"
+       cy="96"
+       cx="96"
+       stroke-width="3"
+       stroke="#ffffff"
+       fill="url(#svg_5)" />
+    <text
+       xml:space="preserve"
+       alignment-baseline="central"
+       font-size="100"
+       x="94.646095"
+       y="128.2"
+       id="svg_3"
+       style="font-size:100px;font-family:'Source Sans Pro', sans-serif;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">JA</text>
+  </g>
+</svg>
