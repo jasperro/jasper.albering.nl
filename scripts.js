@@ -55,10 +55,10 @@ document.addEventListener('DOMContentLoaded', function() {
         	document.getElementById("menu").style.width = "0";
         	document.getElementById("close").style.width = "0";
     	});
-	if (location.pathname != "/index.html") {
-	document.title = "Jasper's Website - " + capitalizeFirstLetter(location.pathname
+	if (((location.pathname !== "/") && (location.pathname !== "/index.html"))) {
+		document.title = "Jasper's Website - " + capitalizeFirstLetter(location.pathname
 		.replace(/\.(html|php)/, '')
 		.replace('/',''))
-	document.getElementById("title").innerHTML = document.title;
-	}
+		document.getElementById("title").innerHTML = document.title;
+	};
 	});

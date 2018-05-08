@@ -53,14 +53,14 @@ body {
 	 padding: 20px 2% 20px 2%;
 	 max-height:350px;
 	 max-width:622.5px;
-	 display: flex;
+	 object-fit: contain;
 	}
 	.leftimage {
 	 float:left;
 	 padding: 20px 2% 20px 2%;
 	 max-height:350px;
 	 max-width:622.5px;
-	 display: flex;
+	 object-fit: contain;
 	}
 }
 
@@ -172,6 +172,7 @@ button::-moz-focus-inner {
 .largelink {
 	display: inline-block;
 	vertical-align: text;
+	font-size: 18px;
 }
 .clearfix {
 	clear: both;
@@ -197,4 +198,7 @@ header {
 	white-space: pre-wrap;
 	font-family: 'Lucida Console', monospace;
 	color: green;
+}
+.hiddenheader {
+	display: none;
 }
