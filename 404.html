@@ -1,57 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="This is Jasper Albering's 404 page">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-    <title>etisbeW s'gnireblA repsaJ</title>
-  </head>
-  <body>
-    <header class="header">
-      <h2><a style="color:white !important;" href="index.html">etisbeW s'gnireblA repsaJ</a></h2>
-      <nav>
-        <ul class="clearfix">
-          <li>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="This is Jasper Albering's 404 page">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <script src="scripts.js"></script>
+  <title>etisbeW s'gnireblA repsaJ</title>
+</head>
+<body>
+  <header class="hoverheader">
+    <h2><a style="color:white !important;" href="index.html">etisbeW s'gnireblA repsaJ</a>
+    </h2>
+
+    <nav>
+      <ul class="clearfix">
+        <li>
+          <div>
+            <h3><a href="#">404 ▼</a>
+            </h3>
+          </div>
+
+          <ul>
             <div>
-              <h3><a href="#">404 &#x25bc;</a></h3>
+              <h3><a href="about.html">About Me</a>
+              </h3>
             </div>
-            <ul>
-              <div>
-                <h3><a href="about.html">About Me</a></h3>
-              </div>
-              <div>
-                <h3><a href="portfolio.html">Portfolio</a></h3>
-              </div>
-              <div>
-                <h3><a href="contact.html">Contact</a></h3>
-              </div>
-              <div>
-                <h3><a href="playground.html">Playground</a></h3>
-              </div>
-              <div>
-              	<h3><a href="index.html">Home</a></h3>
-              </div>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <div class="card">
-      <div class="text">
-        <h1>404</h1>
-        <h2>.404 .ereh gnihton si erehT .tenretni eht no erehwemos dednarts won era uoy ,olleH</h2>
-        <h3>.gnihtemos si ereht ebyam ,kO</h3>
-        <div style="height:100vh"></div>
-        <img src="images/bananaoftruth.jpg" style="width:100%;height:100%;">
-      </div>
+
+            <div>
+              <h3><a href="portfolio.html">Portfolio</a>
+              </h3>
+            </div>
+
+            <div>
+              <h3><a href="contact.html">Contact</a>
+              </h3>
+            </div>
+
+            <div>
+              <h3><a href="playground.html">Playground</a>
+              </h3>
+            </div>
+
+            <div>
+              <h3><a href="index.html">Home</a>
+              </h3>
+            </div>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="nightmodecontainer" class="hoverheader">
+    <input type="checkbox" id="nightcheckbox"> <label for="nightcheckbox" style="text-align: right;">Night Mode</label>
+  </div>
+
+  <div class="card">
+    <div>
+    <h1>404</h1>
+
+    <h2>.404 .ereh gnihton si erehT .tenretni eht no erehwemos dednarts won era uoy ,olleH</h2>
+
+    <h3>.gnihtemos si ereht ebyam ,kO</h3>
+
+    <div style="height:100vh">
     </div>
-    <div id="darken"></div>
-  <footer>
-	<h4>&#169; Copyright Jasper Albering 2018</h4>
-  </footer>
-  </body>
+    <img src="images/bananaoftruth.jpg" style="width:100%;height:100%;" alt="404 Banana">
+    </div>
+  </div>
+
+  <div id="darken">
+    <h4 class="copyright">© Copyright 2018 Jasper Albering</h4>
+  </div>
+</body>
 </html>
