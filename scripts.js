@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
           for (var i = 0, len = clss.length; i < len; i++) {
             clss[i].style.backgroundColor = '#000000';
             clss[i].style.color = '#ffffff';
-          };
+			 };
         } else {
           localStorage.removeItem("nightmode");
           console.log("Night mode off");

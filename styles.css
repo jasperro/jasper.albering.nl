@@ -1,6 +1,7 @@
 * {
    font-family: 'IBM Plex Sans', sans-serif;
    outline: none;
+	box-sizing: border-box;
 }
 a {
    text-decoration: none;
@@ -16,14 +17,14 @@ html {
    padding: 0;
 }
 body {
-   background: #222222;
-   background: -webkit-gradient(linear, left top, right bottom, from(#222222), to(#255255)) ;
-   background: -moz-linear-gradient(-45deg, #222222, 0%, #255255 100%) ;
-   background: -ms-linear-gradient(-45deg, #222222 0%, #255255 100%) ;
-   background: -o-linear-gradient(-45deg, #222222 0%, #255255 100%) ;
-   background: -webkit-linear-gradient(-45deg, #222222 0%, #255255 100%) ;
-   background: linear-gradient(to bottom right, #222222, #255255) ;
-   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#255255',GradientType=1 );
+   background: #3fb592;
+   background: -webkit-gradient(linear, left top, right bottom, from(#3fb592), to(#255255)) ;
+   background: -moz-linear-gradient(-45deg, #3fb592, 0%, #255255 100%) ;
+   background: -ms-linear-gradient(-45deg, #3fb592 0%, #255255 100%) ;
+   background: -o-linear-gradient(-45deg, #3fb592 0%, #255255 100%) ;
+   background: -webkit-linear-gradient(-45deg, #3fb592 0%, #255255 100%) ;
+   background: linear-gradient(to bottom right, #3fb592, #255255) ;
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3fb592', endColorstr='#255255',GradientType=1 );
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-size: 100% 100%;
@@ -188,4 +189,16 @@ nav li ul li {
    position: absolute;
    text-align: right;
    z-index: 90;
+}
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
 }
