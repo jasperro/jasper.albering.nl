@@ -1,60 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="About Jasper Albering">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-    <title>About Jasper Albering</title>
-  </head>
-  <body>
-    <header class="header">
-      <h2><a style="color:white !important;" href="index.html">Jasper Albering's Website</a></h2>
-      <nav>
-        <ul class="clearfix">
-          <li>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="About Jasper Albering">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+  <script src="scripts.js"></script>
+  <title>About Jasper Albering</title>
+</head>
+<body>
+  <header class="hoverheader">
+    <h2><a style="color:white !important;" href="index.html">Jasper Albering's Website</a>
+    </h2>
+
+    <nav>
+      <ul class="clearfix">
+        <li>
+          <div>
+            <h3><a href="#">About Me ▼</a>
+            </h3>
+          </div>
+
+          <ul>
             <div>
-              <h3><a href="#">About Me &#x25bc;</a></h3>
+              <h3><a href="portfolio.html">Portfolio</a>
+              </h3>
             </div>
-            <ul>
-              <div>
-                <h3><a href="portfolio.html">Portfolio</a></h3>
-              </div>
-              <div>
-                <h3><a href="contact.html">Contact</a></h3>
-              </div>
-              <div>
-                <h3><a href="playground.html">Playground</a></h3>
-              </div>
-              <div>
-              	<h3><a href="index.html">Home</a></h3>
-              </div>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <div class="card">
-        <h2>General</h2>
-        <p>Bla bla bla general information</p>
-        <h4>Some link</h4>
-        <a href="https://www.youtube.com/">
-          <h5><i class="material-icons smalllink">&#xE157;</i> Something</h5>
-        </a>
-        <p>Other text</p>
-    </div>
-    <div class="card">
-      <div align="right">
-        <h2>Something</h2>
-        <p>Blabla.</p>
-      </div>
-    </div>
-    <div id="darken"></div>
-  <footer>
-	<h4>&#169; Copyright Jasper Albering 2018</h4>
-  </footer>
+
+            <div>
+              <h3><a href="contact.html">Contact</a>
+              </h3>
+            </div>
+
+            <div>
+              <h3><a href="playground.html">Playground</a>
+              </h3>
+            </div>
+
+            <div>
+              <h3><a href="index.html">Home</a>
+              </h3>
+            </div>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="nightmodecontainer" class="hoverheader">
+    <input type="checkbox" id="nightcheckbox"> <label for="nightcheckbox" style="text-align: right;">Dark Cards</label>
+  </div>
+
+  <div class="card">
+    <h2>General</h2>
+
+    <h4>Who I Am</h4>
+
+    <p>I am Jasper Albering. I am a student in middle school. I live in the Netherlands. I can speak fluent English, Dutch and some broken Polish. I like to program as my hobby. I am a beginner in C++, PHP, Go and like to write apps and games.</p>
+  </div>
+
+  <div id="darken">
+    <h4 class="copyright">© Copyright 2018 Jasper Albering</h4>
+  </div>
 </body>
 </html>

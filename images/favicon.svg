@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -7,134 +9,98 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="192"
-   height="192"
+   width="128"
+   height="128"
+   viewBox="0 0 33.866667 33.866667"
    version="1.1"
-   id="svg3809"
-   sodipodi:docname="favicon.svg"
+   id="svg8"
    inkscape:version="0.92.2 2405546, 2018-03-11"
-   inkscape:export-filename="/home/jasperro/Afbeeldingen/favicon16.png"
-   inkscape:export-xdpi="95.010307"
-   inkscape:export-ydpi="95.010307">
+   sodipodi:docname="favicon.svg"
+   inkscape:export-filename="/home/jasperro/Programmeren/webtech/jasperro.gitlab.io/images/favicon.png"
+   inkscape:export-xdpi="24.000002"
+   inkscape:export-ydpi="24.000002">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.90991983"
+     inkscape:cx="4.2144991"
+     inkscape:cy="-133.78994"
+     inkscape:document-units="px"
+     inkscape:current-layer="g837"
+     showgrid="false"
+     units="px"
+     width="128px"
+     inkscape:window-width="1366"
+     inkscape:window-height="742"
+     inkscape:window-x="0"
+     inkscape:window-y="26"
+     inkscape:window-maximized="0"
+     showguides="false" />
   <metadata
-     id="metadata3813">
+     id="metadata5">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1366"
-     inkscape:window-height="748"
-     id="namedview3811"
-     showgrid="false"
-     inkscape:zoom="2.6875"
-     inkscape:cx="20.27907"
-     inkscape:cy="96"
-     inkscape:window-x="0"
-     inkscape:window-y="20"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="g3807" />
-  <defs
-     id="defs3793">
-    <linearGradient
-       spreadMethod="pad"
-       y2="1"
-       x2="1"
-       y1="0"
-       x1="0"
-       id="svg_5">
-      <stop
-         offset="0"
-         stop-opacity="0.996094"
-         stop-color="#29792d"
-         id="stop3783" />
-      <stop
-         offset="1"
-         stop-opacity="0.996094"
-         stop-color="#255255"
-         id="stop3785" />
-    </linearGradient>
-    <linearGradient
-       y2="1"
-       x2="1"
-       y1="0"
-       x1="0"
-       id="svg_6">
-      <stop
-         offset="0"
-         stop-opacity="0.992188"
-         stop-color="#27929d"
-         id="stop3788" />
-      <stop
-         offset="1"
-         stop-opacity="0.996094"
-         stop-color="#255255"
-         id="stop3790" />
-    </linearGradient>
-  </defs>
   <g
-     id="g3801">
-    <title
-       id="title3795">background</title>
-    <rect
-       fill="url(#svg_6)"
-       id="canvas_background"
-       height="194"
-       width="194"
-       y="-1"
-       x="-1" />
+     inkscape:label="Laag 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-263.13333)">
     <g
-       display="none"
-       overflow="visible"
-       y="0"
-       x="0"
-       height="100%"
-       width="100%"
-       id="canvasGrid">
-      <rect
-         fill="url(#gridpattern)"
-         stroke-width="0"
-         y="0"
-         x="0"
-         height="100%"
-         width="100%"
-         id="rect3798" />
+       id="g4527"
+       transform="translate(-0.48447806,0.02837252)">
+      <g
+         id="g831"
+         transform="translate(-0.3048048)">
+        <g
+           id="g837"
+           transform="translate(0.04594757)">
+          <rect
+             y="263.10495"
+             x="0.74333531"
+             height="33.866669"
+             width="16.933334"
+             id="rect815"
+             style="fill:#3fb592;fill-opacity:1;stroke:none;stroke-width:0.64473629;stroke-opacity:1" />
+          <text
+             id="text4522"
+             y="289.25983"
+             x="1.5538907"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:34.65745163px;line-height:1.25;font-family:'IBM Plex Serif';-inkscape-font-specification:'IBM Plex Serif Semi-Bold';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3.24913621"
+             xml:space="preserve"
+             transform="scale(0.98784077,1.0123089)"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:36.81214142px;line-height:0;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans Medium';fill:#ffffff;fill-opacity:1;stroke-width:3.24913621"
+               y="289.25983"
+               x="1.5538907"
+               sodipodi:role="line"
+               id="tspan824">J</tspan></text>
+          <text
+             id="text4522-3"
+             y="273.49078"
+             x="13.297865"
+             style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:33.28062057px;line-height:1.25;font-family:'IBM Plex Serif';-inkscape-font-specification:'IBM Plex Serif Semi-Bold';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:3.12005877"
+             xml:space="preserve"
+             transform="scale(0.93256441,1.072312)"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:35.34971237px;line-height:0;font-family:'IBM Plex Sans';-inkscape-font-specification:'IBM Plex Sans Medium';fill:#3fb592;fill-opacity:1;stroke-width:3.12005877"
+               y="273.49078"
+               x="13.297865"
+               sodipodi:role="line"
+               id="tspan824-7">A</tspan></text>
+        </g>
+      </g>
     </g>
-  </g>
-  <g
-     id="g3807">
-    <title
-       id="title3803">outside circle</title>
-    <ellipse
-       stroke-dasharray="2,2"
-       ry="90"
-       rx="90"
-       id="svg_1"
-       cy="96"
-       cx="96"
-       stroke-width="3"
-       stroke="#ffffff"
-       fill="url(#svg_5)" />
-    <text
-       xml:space="preserve"
-       alignment-baseline="central"
-       font-size="100"
-       x="94.646095"
-       y="128.2"
-       id="svg_3"
-       style="font-size:100px;font-family:'Source Sans Pro', sans-serif;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">JA</text>
   </g>
 </svg>

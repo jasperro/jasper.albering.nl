@@ -1,97 +1,111 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="This is Jasper Albering's website. Find cool projects and more.">
-    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-    <title>Jasper Albering's Website</title>
-  </head>
-    <header>
-      <h2><a style="color:white !important;" href="index.html">Jasper Albering's Website</a></h2>
-      <nav>
-        <ul class="clearfix">
-          <li>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="This is Jasper Albering's website. Find cool projects and more.">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+  <script src="scripts.js"></script>
+  <title>Jasper Albering's Website</title>
+</head>
+<body>
+  <header class="hoverheader">
+    <h2><a style="color:white !important;" href="index.html">Jasper Albering's Website</a>
+    </h2>
+
+    <nav>
+      <ul class="clearfix">
+        <li>
+          <div>
+            <h3><a href="#">Home ▼</a>
+            </h3>
+          </div>
+
+          <ul>
             <div>
-              <h3><a href="#">Home &#x25bc;</a></h3>
+              <h3><a href="about.html">About Me</a>
+              </h3>
             </div>
-            <ul>
-              <div>
-                <h3><a href="about.html">About Me</a></h3>
-              </div>
-              <div>
-                <h3><a href="portfolio.html">Portfolio</a></h3>
-              </div>
-              <div>
-                <h3><a href="contact.html">Contact</a></h3>
-              </div>
-              <div>
-                <h3><a href="playground.html">Playground</a></h3>
-              </div>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  <body>
-    <div class="card">
-      <img src=images/gitlab.png style="height:100px;width:100px;" class="rightimage">
-      <h2>Jasper Albering's Website</h2>
-      <p>Hosted on GitLab</p>
+
+            <div>
+              <h3><a href="portfolio.html">Portfolio</a>
+              </h3>
+            </div>
+
+            <div>
+              <h3><a href="contact.html">Contact</a>
+              </h3>
+            </div>
+
+            <div>
+              <h3><a href="playground.html">Playground</a>
+              </h3>
+            </div>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="nightmodecontainer" class="hoverheader">
+    <input type="checkbox" id="nightcheckbox"> <label for="nightcheckbox" style="text-align: right;">Dark Cards</label>
+  </div>
+
+  <div class="card">
+    <img alt="Gitlab Logo" src="images/jasperalberinglogo.png" style="height:100px;width:100px;" class="rightimage">
+    <h2>Jasper Albering's Website</h2>
+
+    <p>This is my personal website on which you can find out things about me, my projects, portfolio and some small little tidbits I'm working on.</p>
+  </div>
+
+  <div class="card">
+
+			 <!--a href="about.html"><img alt="Old phone" src="images/contact.jpg" style="display:inline; height: available;"></a> <a href="about.html"></a>
+    <div style="text-align:right;">
+      <h2><i class="material-icons largelink"></i> About Me</h2-->
+
+      <p>Find out who I am and what I do</p>
     </div>
-    <div class="card">
-      <a href="portfolio.html#rntlr"><img src=images/rntlr.png style="height:42.5%;width:42.5%;max-height:310px;max-width:576px;" class="leftimage"></a>
-      <div align="right">
-        <a href="portfolio.html#rntlr">
-          <h2><i class="material-icons largelink">&#xE157;</i> Ronan and the lost Ruby</h2>
-        </a>
-        <h4>2.5/3D Edition (Main development)</h4>
-        <a href="https://github.com/jasperro/rntlr-2.5d">
-          <h5><i class="material-icons smalllink">&#xE157;</i> Source</h5>
-        </a>
-        <a href="https://jasperro.github.io/rntlr-html5-bin">
-          <h5><i class="material-icons smalllink">&#xE157;</i> Web Version</h5>
-        </a>
-        <h4>2D Edition (LEGACY)</h4>
-        <a href="https://github.com/jasperro/rntlr-2d">
-          <h5><i class="material-icons smalllink">&#xE157;</i> Source</h5>
-        </a>
-        <a href="https://rntlr.000webhostapp.com">
-          <h5><i class="material-icons smalllink">&#xE157;</i> Web Version</h5>
-        </a>
-      </div>
+  </div>
+
+  <div class="card">
+    <a href="portfolio.html#rntlr"><img alt="Ronan and the lost Ruby" src="images/rntlr.png" style="height:42.5%;width:42.5%;max-height:310px;max-width:576px;" class="rightimage"></a>
+    <div>
+      <a href="portfolio.html#rntlr">
+      <h2><i class="material-icons largelink"></i> Ronan and the lost Ruby</h2></a>
+      <h4>2.5/3D Edition (Main development)</h4>
+      <a href="https://gitlab.com/jasperro/rntlr-2.5d">
+      <h5><i class="material-icons smalllink"></i> Source</h5></a> <a href="https://jasperro.gitlab.io/rntlr-html5-bin">
+      <h5><i class="material-icons smalllink"></i> Web Version</h5></a>
+      <h4>2D Edition (LEGACY)</h4>
+      <a href="https://gitlab.com/jasperro/rntlr-2d">
+      <h5><i class="material-icons smalllink"></i> Source</h5></a> <a href="https://rntlr.000webhostapp.com">
+      <h5><i class="material-icons smalllink"></i> Web Version</h5></a>
     </div>
-    <div class="card">
-      <a href="portfolio.html#materialhub"><img src=images/materialhub.png style="height:42.5%;width:42.5%;max-height:310px;max-width:576px;" class="rightimage"></a>
+  </div>
+
+  <div class="card">
+    <a href="portfolio.html#materialhub"><img alt="materialhub" src="images/materialhub.png" style="height:42.5%;width:42.5%;max-height:310px;max-width:576px;" class="leftimage"></a>
+    <div style="text-align:right;">
       <a href="portfolio.html#materialhub">
-        <h2><i class="material-icons largelink">&#xE157;</i> MaterialHub</h2>
-      </a>
-      <h4>
-      MaterialHub reborn
-      <h4>
-      <a href="https://github.com/jasperro/materialhub-reborn">
-        <h5><i class="material-icons smalllink">&#xE157;</i> Source</h5>
-      </a>
-      <a href="https://jasperro.github.io/materialhub-reborn">
-        <h5><i class="material-icons smalllink">&#xE157;</i> Website</h5>
-      </a>
-      <a href="https://addons.mozilla.org/nl/firefox/addon/materialhub-reborn">
-        <h5><i class="material-icons smalllink">&#xE157;</i> Firefox addon</h5>
-      </a>
+      <h2><i class="material-icons largelink"></i> MaterialHub</h2></a>
+      <h4>MaterialHub reborn</h4>
+      <a href="https://gitlab.com/jasperro/materialhub-reborn">
+      <h5><i class="material-icons smalllink"></i> Source</h5></a> <a href="https://jasperro.gitlab.io/materialhub-reborn">
+      <h5><i class="material-icons smalllink"></i> Website</h5></a> <a href="https://addons.mozilla.org/nl/firefox/addon/materialhub-reborn">
+      <h5><i class="material-icons smalllink"></i> Firefox addon</h5></a>
       <h4>Materialhub (LEGACY)</h4>
-      <a href="https://github.com/materialhub/materialhub.github.io">
-        <h5><i class="material-icons smalllink">&#xE157;</i> Source</h5>
-      </a>
-      <a href="https://materialhub.github.io">
-        <h5><i class="material-icons smalllink">&#xE157;</i> Website</h5>
-      </a>
+      <a href="https://gitlab.com/materialhub/materialhub.gitlab.io">
+      <h5><i class="material-icons smalllink"></i> Source</h5></a> <a href="https://materialhub.gitlab.io">
+      <h5><i class="material-icons smalllink"></i> Website</h5></a>
     </div>
-    <div id="darken"></div>
-  <footer>
-	<h4>&#169; Copyright Jasper Albering 2018</h4>
-  </footer>
+  </div>
+
+  <div id="darken">
+    <h4 class="copyright">© Copyright 2018 Jasper Albering</h4>
+  </div>
 </body>
 </html>
