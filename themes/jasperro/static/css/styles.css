@@ -40,11 +40,10 @@ body {
    border-radius: 2px;
    -webkit-border-radius: 2px;
    -moz-border-radius: 2px;
-   display: block;
+   display: grid;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-   box-sizing: border-box;
 }
 header {
    position: sticky;

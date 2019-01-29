@@ -1,0 +1,36 @@
+baseurl = "https://jasper.albering.nl"
+languageCode = "en-us"
+DefaultContentLanguage = "en-us" # change to your language
+title = "Jasper Albering's Website"
+theme = "jasperro"
+
+canonifyurls = true
+paginate = 3 # default number of pages per page in pagination
+
+[params]
+    description = "Jasper Albering's personal website"
+    keywords = "programming"
+	 backgroundcolor1 = "#ffffff"
+	 backgroundcolor2 = '#291934'
+
+[author]
+    name = "Jasper Albering"
+
+[permalinks]
+    blog = "/blog/:slug/"
+
+#[[menu.main]]
+#    name = "Blog"
+#    url = "/blog/"
+#    weight = 2
+#[[menu.main]]
+#    name = "Portfolio"
+#    url = "/portfolio/"
+#    weight = 3
+
+[[params.footer]]
+    name = "Jasper Albering"
+    url = false
+[[params.footer]]
+    name = "Mail"
+    url = "mailto:jasper@albering.nl"

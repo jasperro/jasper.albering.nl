@@ -1,12 +1,18 @@
+image: dettmering/hugo-build
+
 pages:
-  stage: deploy
   script:
-  - mkdir .public
-  - cp -r * .public
-  - cp -r .well-known .public
-  - mv .public public
+  - hugo
+  - cp -r .well-known public
   artifacts:
     paths:
     - public
   only:
+  - master
+  
+test:
+  script:
+  - hugo
+  - cp -r .well-known public
+  except:
   - master

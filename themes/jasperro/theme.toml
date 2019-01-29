@@ -1,0 +1,12 @@
+name = "Jasperro"
+license = "Unknown"
+licenselink = "https://github.com/jasperro/jasperro-hugo-theme/blob/master/LICENSE"
+description = "Jasperro's theme, minimal javascript"
+homepage = "https://github.com/jasperro/jasperro-hugo-theme"
+tags = ["personal", "portfolio"]
+features = ["none"]
+min_version = "0.24"
+
+[author]
+  name = "Jasper Albering"
+  homepage = "https://jasper.albering.nl"

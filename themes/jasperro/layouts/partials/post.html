@@ -1,0 +1,30 @@
+<div class="container">
+    <article class="post post--{{ .Params.class }}">
+		  <div class="card">
+        <h1 class="post__title">{{ .Title }}</h1>
+        <section class="post__content">
+            {{ .Content }}
+        </section>
+        <footer class="post__meta">
+            <span class="post__meta-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006. 1. 2" }}</time></span>
+            {{ partial "taxonomies" . }}
+        </footer>
+    </article>
+    <nav class="p-pagination">
+        <div class="p-pagination__newer">
+            {{ if .PrevInSection }}
+            <p class="p-pagenation__label">Prev</p>
+            <a href="{{ .PrevInSection.Permalink }}">{{ .PrevInSection.Title }}</a>
+            {{ else }}
+            {{ end }}
+        </div>
+        <div class="p-pagination__older">
+            {{ if .NextInSection }}
+            <p class="p-pagenation__label">Next</p>
+            <a href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }}</a>
+            {{ else }}
+            {{ end }}
+        </div>
+		  </div>
+    </nav>
+</div>
