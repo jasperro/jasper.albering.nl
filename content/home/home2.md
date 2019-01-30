@@ -1,6 +1,7 @@
 ---
 title: "Ronan and the Lost Ruby"
 date: 2019-01-29T11:33:28+01:00
+coverimage: "img/rntlr.png"
 weight: 2
 draft: false
 ---

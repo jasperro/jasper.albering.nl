@@ -1,6 +1,7 @@
 ---
 title: "MaterialHub"
 date: 2019-01-29T11:33:28+01:00
+coverimage: "img/materialhub.png"
 weight: 3
 draft: false
 ---

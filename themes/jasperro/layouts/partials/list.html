@@ -1,14 +1,16 @@
 <div class="container">
-    <h1 class="title">{{ .Title }}</h1>
-    <ul>
+    <h1 class="title white">{{ .Title }}</h1>
         {{ range .Paginator.Pages }}
-		  <div class="card">
-        <li>
-            <span>{{ .Date.Format "2006. 1. 2" }}</span>
-            <a href="{{ .URL }}">{{ .Title }}</a>
-        </li>
-		  </div>
+		  <article class="card">
+		      <div class="card-content">
+		      <h2><a href="{{ .URL }}">{{ .Title }}</a></h2>
+            <div class="post__summary">
+                {{ .Summary }}
+            </div>
+				<span style="/*text-align: right;*/">{{ if isset .Params "date" }}{{ .Date.Format "2006. 1. 2" }}{{ end }}</span>
+				</div>
+				{{ if isset .Params "coverimage" }}<img class="card-image" src="{{ .Param "coverimage" }}">{{ end }}
+		  </article>
         {{ end }}
-    </ul>
     {{ partial "pagination.html" . }}
 </div>

@@ -1,12 +1,12 @@
 <div class="container">
-    <div class="card">
-    <article class="page page--{{ .Params.class }}">
+    <article class="card page page--{{ .Params.class }}">
+		  <div class="card-content">
         <h1 class="page__title">
             {{ .Title }}
 		  </h1>
-        <section class="page__content">
+        <div class="page__content">
             {{ .Content }}
-        </section>
+        </div>
+		  </div>
     </article>
-	 </div>
 </div>

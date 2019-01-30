@@ -1,10 +1,13 @@
 <div class="container">
  {{ range where .Data.Pages "Section" "home" }}
         <div class="card post post--{{ .Params.class }}">
+		      <div class="card-content">
             <h2 class="post__title">{{ .Title }}</h2>
-            <section class="post__content">
+            <div class="post__content">
                 {{ .Content }}
-            </section>
+            </div>
+				</div>
+				{{ if isset .Params "coverimage" }}<img class="card-image" src="{{ .Param "coverimage" }}">{{ end }}
         </div>
     {{ end }}
 </div>
