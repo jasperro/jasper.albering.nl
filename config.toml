@@ -1,5 +1,6 @@
-baseurl = "https://jasper.albering.nl"
+baseurl = "jasper.albering.nl/"
 languageCode = "en-us"
+relativeURLS=true
 DefaultContentLanguage = "en-us" # change to your language
 title = "Jasper Albering's Website"
 theme = "jasperro"
@@ -10,14 +11,17 @@ paginate = 6 # default number of pages per page in pagination
 [params]
     description = "Jasper Albering's personal website"
     keywords = "programming"
-	 backgroundcolor1 = "#ffffff"
-	 backgroundcolor2 = '#291934'
+    customcss = ["/font/InterUI/inter-ui.css"]
 
 [author]
     name = "Jasper Albering"
 
 [permalinks]
     blog = "/blog/:slug/"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
 
 #[[menu.main]]
 #    name = "Blog"
@@ -27,10 +31,3 @@ paginate = 6 # default number of pages per page in pagination
 #    name = "Portfolio"
 #    url = "/portfolio/"
 #    weight = 3
-
-[[params.footer]]
-    name = "Jasper Albering"
-    url = false
-[[params.footer]]
-    name = "Mail"
-    url = "mailto:jasper@albering.nl"

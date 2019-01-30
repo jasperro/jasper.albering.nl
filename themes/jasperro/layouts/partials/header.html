@@ -1,32 +1,24 @@
-<header class="hoverheader">
-   <h2><a style="color:white !important;" href="index.html">{{ .Site.Title }}</a>
-   </h2>
+<header class="hoverheader" id="navbar">
+    <h2><a href="/">{{ .Site.Title }}</a></h2>
     <nav>
-     <ul class="clearfix">
-       <li>
-         <div>
-		     <h3><a href="#">{{.LinkTitle}} ▼</a>
-           </h3>
-         </div>
-          <ul>
-        {{ $currentPage := . }}
-        {{ range .Site.Menus.main }}
-		  {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
-		  {{ else }}
-					 <div>
-                    <a href="{{ .URL }}">
-                        {{ .Pre }}
-                        <span>{{ .Name }}</span>
-                    </a>
-					 </div>
-		  {{ end }}
-		  {{ end }}
-         </ul>
-       </li>
-     </ul>
-  </nav>
-</header>
+        <ul style="cursor: pointer;" onclick="" aria-haspopup="true" class="clearfix">
+            <li>
+                <div>
+                    <h3><a>{{.LinkTitle}} ▼</a>
+                    </h3>
+                </div>
+                <ul>
+                    {{ $currentPage := . }} {{ range .Site.Menus.main }} {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} {{ else }}
 
-<div id="nightmodecontainer" class="hoverheader">
-   <input type="checkbox" id="nightcheckbox"> <label for="nightcheckbox" style="text-align: right;">Dark Cards</label>
-</div>
+                    <a href="{{ .URL }}">
+                        <div class="navlist">
+                            {{ .Pre }}
+                            <span>{{ .Name }}</span>
+                        </div>
+                    </a>
+                    {{ end }} {{ end }}
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
