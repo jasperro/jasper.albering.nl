@@ -14,5 +14,8 @@ test:
   script:
   - hugo
   - cp -r .well-known public
+  artifacts:
+    paths:
+    - public
   except:
   - master
