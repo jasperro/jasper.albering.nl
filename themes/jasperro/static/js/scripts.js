@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
           console.log("Night mode on");
           clss = document.getElementsByClassName('card');
           for (var i = 0, len = clss.length; i < len; i++) {
-            clss[i].style.backgroundColor = '#000000';
+            clss[i].style.backgroundColor = '#070707';
             clss[i].style.color = '#ffffff';
 			 };
         } else {
@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
           console.log("Night mode off");
           clss = document.getElementsByClassName('card');
           for (var i = 0, len = clss.length; i < len; i++) {
-            clss[i].style.backgroundColor = '#ffffff';
-            clss[i].style.color = '#000000';
+            clss[i].style.backgroundColor = '#fbf7f5';
+            clss[i].style.color = '#101010';
           };
         }
       });
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('nightcheckbox').checked = true;
     clss = document.getElementsByClassName('card');
     for (var i = 0, len = clss.length; i < len; i++) {
-      clss[i].style.backgroundColor = '#000000';
+      clss[i].style.backgroundColor = '#070707';
       clss[i].style.color = '#ffffff';
     };
   };

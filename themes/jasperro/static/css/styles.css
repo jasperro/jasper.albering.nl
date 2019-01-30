@@ -1,7 +1,6 @@
 * {
    font-family: 'IBM Plex Sans', sans-serif;
    outline: none;
-	box-sizing: border-box;
 }
 a {
    text-decoration: none;
@@ -17,40 +16,31 @@ html {
    padding: 0;
 }
 body {
-   background: #3fb592;
-   background: -webkit-gradient(linear, left top, right bottom, from(#3fb592), to(#255255)) ;
-   background: -moz-linear-gradient(-45deg, #3fb592, 0%, #255255 100%) ;
-   background: -ms-linear-gradient(-45deg, #3fb592 0%, #255255 100%) ;
-   background: -o-linear-gradient(-45deg, #3fb592 0%, #255255 100%) ;
-   background: -webkit-linear-gradient(-45deg, #3fb592 0%, #255255 100%) ;
-   background: linear-gradient(to bottom right, #3fb592, #255255) ;
-   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3fb592', endColorstr='#255255',GradientType=1 );
+   background: #247ba0;
+   background: -webkit-gradient(linear, left top, right bottom, from(#247ba0), to(#2d95b5)) ;
+   background: -moz-linear-gradient(-45deg, #247ba0, 0%, #2d95b5 100%) ;
+   background: -ms-linear-gradient(-45deg, #247ba0 0%, #2d95b5 100%) ;
+   background: -o-linear-gradient(-45deg, #247ba0 0%, #2d95b5 100%) ;
+   background: -webkit-linear-gradient(-45deg, #247ba0 0%, #2d95b5 100%) ;
+   background: linear-gradient(to bottom right, #247ba0, #2d95b5) ;
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#247ba0', endColorstr='#2d95b5',GradientType=1 );
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-size: 100% 100%;
    margin: 0;
    box-sizing: border-box;
 }
-.card {
-   color: black;
+.container {
    margin: 20px 3% 20px 3%;
-   width: auto;
-   padding: 15px;
-   background-color: white;
-   border-radius: 2px;
-   -webkit-border-radius: 2px;
-   -moz-border-radius: 2px;
-   display: block;
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-   -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-   box-sizing: border-box;
+}
+.white {
+   color: #ffffff;
 }
 header {
    position: sticky;
-   width: 100%;
+   width: 99%;
    padding: 25px;
-   background-color: rgba(0, 0, 0, 0.4);
+   background-color: rgba(0, 0, 0, 0.9);
    color: white;
    top: 0;
    z-index: 80;
@@ -58,6 +48,13 @@ header {
    -webkit-box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.4);
    -moz-box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.4);
    box-sizing: border-box;
+   -webkit-border-bottom-right-radius: 10px;
+   -webkit-border-bottom-left-radius: 10px;
+   -moz-border-radius-bottomright: 10px;
+   -moz-border-radius-bottomleft: 10px;
+   border-bottom-right-radius: 10px;
+   border-bottom-left-radius: 10px;
+	margin: 0 0.5%;
 }
 nav ul {
    list-style: none;
@@ -106,9 +103,9 @@ nav li:hover div {
    padding: 5px;
 }
 nav li div {
-   border-radius: 2px;
-   -webkit-border-radius: 2px;
-   -moz-border-radius: 2px;
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
 }
 nav li ul li {
    float: none;
@@ -136,7 +133,7 @@ nav li ul li {
    font-size: 18px;
 }
 #darken{
-        visibility: hidden;
+   visibility: hidden;
 }
 .hoverheader:hover ~ #darken{
    position: fixed;
@@ -152,19 +149,11 @@ nav li ul li {
    transition: all .2s linear;
 }
 @media only screen and (max-width: 470px) {
-   .rightimage {
+   .card-image {
     display: none;
    }
-   .leftimage {
+   .card-image {
     display: none;
-   }
-}
-@media only screen and (min-width: 470px) {
-   .leftimage {
-   float: left;
-   }
-   .rightimage {
-   float: right;
    }
 }
 .copyright {
@@ -181,14 +170,14 @@ nav li ul li {
    float: right;
 }
 #nightmodecontainer {
-   float: right;
-   color: white;
-   right: 50px;
-   display: none;
-   top: 50px;
-   position: absolute;
-   text-align: right;
-   z-index: 90;
+    float: right;
+    color: white;
+    right: 50px;
+    display: none;
+    top: 50px;
+    position: fixed;
+    text-align: right;
+    z-index: 90;
 }
 .column {
     float: left;
@@ -201,4 +190,61 @@ nav li ul li {
     content: "";
     clear: both;
     display: table;
+}
+
+.card {
+    margin: 20px 0 20px 0;
+    background-color: #fbf7f5;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius:8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    transition:all .2s ease
+    color: black;
+    overflow: hidden;
+    padding: 5px;
+    min-height: 100px;
+    background-size: cover;
+    -ms-flex: 1 1 50%;
+    flex: 1 1 50%;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    display: -ms-flexbox;
+    display: flex
+}
+.card:hover {
+    box-shadow:0 0 1px rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.2);
+    transition:all .2s ease;
+    transform:translate3D(0,-2px,0)
+}
+
+.flexlist { /* post-feed */
+    position: relative;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+    padding: 40px 0 0
+}
+
+.card-image {
+    width: auto;
+    height: 200px;
+    align-self: flex-start;
+    background: #c5d2d9 no-repeat 50%;
+    background-size: cover;
+	 margin: 10px;
+}
+
+.card-content {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: justify;
+    justify-content: flex-start;
+	 padding: 0 15px;
 }
