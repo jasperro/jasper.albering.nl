@@ -11,7 +11,7 @@ paginate = 6 # default number of pages per page in pagination
 [params]
     description = "Jasper Albering's personal website"
     keywords = "programming"
-    customcss = ["/font/InterUI/inter-ui.css"]
+    customcss = ["/font/Roboto/stylesheet.css"]
 
 [author]
     name = "Jasper Albering"
