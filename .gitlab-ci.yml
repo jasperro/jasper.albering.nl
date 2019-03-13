@@ -1,5 +1,9 @@
 image: dettmering/hugo-build
 
+variables:
+ GIT_SUBMODULE_STRATEGY:
+    recursive
+
 pages:
   script:
   - hugo

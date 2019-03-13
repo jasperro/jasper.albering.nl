@@ -1,0 +1,3 @@
+[submodule "themes/jasperro"]
+	path = themes/jasperro
+	url = https://gitlab.com/jasperro/hugo-theme-jasperro
