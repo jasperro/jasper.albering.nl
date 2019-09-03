@@ -1,0 +1,75 @@
+$bg: 'bg';
+$inversebg: 'inversebg';
+$card__bg: 'card__bg';
+$shadow: 'shadow';
+$text: 'text';
+$inversetext: 'inversetext';
+$text_disabled: 'text_disabled';
+$logo: 'logo';
+$primary: 'primary';
+$shadow: 'shadow';
+$link: 'link';
+$accent: 'accent';
+
+$themes: (
+    default: (logo: url("/img/favicondark.svg"),
+        bg: $bg_lightmode,
+        inversebg: $bg_darkmode,
+        card__bg: $card__bg_lightmode,
+        shadow: $shadow_lightmode,
+        text: $text_lightmode,
+        inversetext: $text_darkmode,
+        text_disabled: $text_disabled_lightmode,
+        link: $primary_lightmode,
+        primary: $primary_lightmode,
+        accent: $accent_lightmode),
+    dark: (logo: url("/img/favicon.svg"),
+        bg: $bg_darkmode,
+        inversebg: $bg_lightmode,
+        card__bg: $card__bg_darkmode,
+        shadow: $shadow_darkmode,
+        text: $text_darkmode,
+        inversetext: $text_lightmode,
+        text_disabled: $text_disabled_darkmode,
+        link: $primary_darkmode,
+        primary: $primary_darkmode,
+        accent: $accent_darkmode,
+        ),
+    terminal: (logo: url("/img/favicon.svg"),
+        bg: black,
+        inversebg: white,
+        card__bg: black,
+        shadow: black,
+        text: lime,
+        inversetext: lime,
+        text_disabled: green,
+        link: red,
+        primary: black,
+        accent: black,
+        ),
+);
+
+@mixin themed() {
+
+    @each $theme,
+    $map in $themes {
+        .theme_#{$theme} & {
+            $theme-map: () !global;
+
+            @each $key,
+            $submap in $map {
+                $value: map-get(map-get($themes,
+                        $theme),
+                    '#{$key}');
+                $theme-map: map-merge($theme-map, ($key: $value)) !global;
+            }
+
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+
+@function t($key) {
+    @return map-get($theme-map, $key);
+}
