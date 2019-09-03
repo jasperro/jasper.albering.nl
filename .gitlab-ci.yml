@@ -1,8 +1,12 @@
 image: registry.gitlab.com/jasperro/jasperrowebsite-dockercontainer:latest
 
 pages:
+  stage: deploy
   script:
     - make
+    - mkdir .public
+    - mv * .public
+    - mv .public public
   artifacts:
     paths:
       - public

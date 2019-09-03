@@ -1,10 +1,10 @@
-CSS_C=/usr/bin/sassc
+CSS_C=sassc
 
 build:
-	$(CSS_C) css/scss/main.scss css/main.css -t compressed
+	$(CSS_C) scss/main.scss css/main.css -t compressed
 
 watch:
-		  while inotifywait -r -e close_write css/scss ; do \
+		  while inotifywait -r -e close_write scss ; do \
 					 make build ; \
 		  done
 
