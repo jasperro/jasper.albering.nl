@@ -1,0 +1,28 @@
+.card {
+    @include themed() {
+        background-color: t($card__bg);
+        @include BoxShadow(2);
+    }
+
+    border-radius: 3px;
+    margin: 0.75rem 0.5rem;
+    padding: 1rem;
+    flex-basis: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__below {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__content {
+        margin: 0.5rem;
+    }
+}

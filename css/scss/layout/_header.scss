@@ -1,0 +1,40 @@
+.header {
+    &__navigation {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0.5rem;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+
+        &__icon {
+            padding: 0 0.5rem;
+        }
+
+        & div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        & div a {
+            display: flex;
+        }
+    }
+}
+
+.theme__checkbox {
+    visibility: hidden;
+
+    &+.theme__label:before {
+        content: "brightness_2";
+    }
+
+    &:checked+.theme__label:before {
+        content: "brightness_high";
+    }
+}
+
+.theme__label {
+    cursor: pointer;
+}

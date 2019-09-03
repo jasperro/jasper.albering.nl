@@ -1,0 +1,14 @@
+$primary_lightmode: #2683DE;
+$primary_darkmode: lighten($primary_lightmode, 10%);
+$bg_lightmode: lighten($primary_lightmode, 40%);
+$bg_darkmode: darken($primary_lightmode, 40%);
+$card__bg_lightmode: darken($bg_lightmode, 1%);
+$card__bg_darkmode: lighten($bg_darkmode, 5%);
+$text_lightmode: darken($primary_darkmode, 50%);
+$text_darkmode: lighten($primary_lightmode, 45%);
+$text_disabled_lightmode: saturate($text_lightmode, 20%);
+$text_disabled_darkmode: desaturate($text_darkmode, 20%);
+$shadow_lightmode: transparentize($text_lightmode, 0.3);
+$shadow_darkmode: transparentize($text_darkmode, 0.6);
+$accent_lightmode: #26DEDD;
+$accent_darkmode: lighten($accent_lightmode, 10%);

@@ -1,0 +1,74 @@
+$text__fontstack: Lato;
+
+#page {
+
+    @include themed() {
+        color: t($text);
+    }
+
+    font: normal 125% / 1.4 $text__fontstack;
+}
+
+h1 {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 5.3125rem;
+    line-height: 7.8125rem;
+    letter-spacing: -1.5px;
+    margin: 0.3rem 0;
+}
+
+h2 {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 3.75rem;
+    line-height: 4.875rem;
+    letter-spacing: -0.5px;
+    margin: 0.2rem 0;
+}
+
+h3 {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 3rem;
+    line-height: 3.875rem;
+    margin: 0.2rem 0;
+}
+
+h4 {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2.125rem;
+    line-height: 2.75rem;
+    letter-spacing: 0.25px;
+    margin: 0;
+}
+
+h5 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 1.9375rem;
+    margin: 0;
+}
+
+h6 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    letter-spacing: 0.15px;
+    margin: 0;
+}
+
+p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.25px;
+}
+
+picture {
+    line-height: 0;
+}

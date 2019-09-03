@@ -1,0 +1,27 @@
+.home {
+    &__header {
+        @include themed() {
+            background: linear-gradient(180deg, transparentize(t($bg), 0.55) 0%, transparentize(t($bg), 0.35) 100%), url('../img/home__header__bg.svg') center/cover;
+            padding: 4vw 2vw 10rem 2vw;
+            @include BoxShadow(1);
+            z-index: -1;
+            position: relative;
+        }
+
+        &__buttons {
+            margin-top: 2rem;
+            overflow: visible;
+        }
+    }
+
+    &__content {
+        margin-top: -6rem;
+        padding-left: 4vw;
+        padding-right: 4vw;
+        z-index: 1;
+    }
+
+    &__subheading {
+        margin: 0.75rem 0.75rem 0.5rem;
+    }
+}

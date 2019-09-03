@@ -1,21 +1,16 @@
-image: dettmering/hugo-build
-
-variables:
- GIT_SUBMODULE_STRATEGY:
-    recursive
+image: registry.gitlab.com/jasperro/jasperrowebsite-dockercontainer:latest
 
 pages:
   script:
-  - hugo
-  - cp -r .well-known public
+    - make
   artifacts:
     paths:
-    - public
+      - public
   only:
-  - master
-  
+    - master
+
 test:
   script:
-  - hugo
+    - make
   except:
-  - master
+    - master

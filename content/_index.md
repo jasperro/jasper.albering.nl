@@ -1,3 +1,0 @@
----
-linktitle: "Home"
----

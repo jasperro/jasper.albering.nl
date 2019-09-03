@@ -1,0 +1,47 @@
+.button {
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    margin: 0.25rem;
+    border-radius: 3px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+
+
+    &__filled {
+        @include BoxShadow(4);
+        &__primary {
+            @extend .button__filled;
+            @include themed() {
+                color: t($text);
+                background-color: t($primary)
+            }
+        }
+
+        &__accent {
+            @extend .button__filled;
+            @include themed() {
+                color: t($text);
+                background-color: t($accent)
+            }
+        }
+    }
+
+    &__transparent {
+        &__primary {
+            @include themed() {
+                color: t($primary);
+            }
+        }
+
+        &__accent {
+            @include themed() {
+                color: t($accent);
+            }
+        }
+    }
+}
