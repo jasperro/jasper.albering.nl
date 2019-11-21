@@ -48,3 +48,11 @@
         @error "Invalid argument for $dp: {"+$dp+"}, look at the method definition for possible values";
     }
 }
+
+$media__screen_small: 850px;
+
+@mixin media_small {
+    @media (max-width: #{$media__screen_small}) {
+        @content;
+    }
+ }

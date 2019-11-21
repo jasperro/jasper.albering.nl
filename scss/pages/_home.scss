@@ -1,8 +1,8 @@
 .home {
     &__header {
         @include themed() {
-            background: linear-gradient(180deg, transparentize(t($bg), 0.55) 0%, transparentize(t($bg), 0.35) 100%), url('../img/home__header__bg.svg') center/cover;
-            padding: 4vw 2vw 10rem 2vw;
+            background: t($headerbg) center/cover; 
+            padding: 3rem 3vw 10rem;
             @include BoxShadow(1);
             z-index: -1;
             position: relative;
@@ -23,5 +23,12 @@
 
     &__subheading {
         margin: 0.75rem 0.75rem 0.5rem;
+    }
+
+    &__portfolio__container {
+        flex-wrap: wrap;
+        & .card {
+            flex: 1 1 20%;
+        }
     }
 }

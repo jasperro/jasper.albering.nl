@@ -1,21 +1,29 @@
-$text__fontstack: Lato;
+$text__fontstack: Source Sans Pro;
 
 #page {
 
     @include themed() {
         color: t($text);
     }
+}
 
+html {
     font: normal 125% / 1.4 $text__fontstack;
+    @include media_small {
+        font: normal 100% / 1.4 $text__fontstack;
+    }
 }
 
 h1 {
     font-style: normal;
     font-weight: 300;
     font-size: 5.3125rem;
-    line-height: 7.8125rem;
+    line-height: 7rem;
     letter-spacing: -1.5px;
     margin: 0.3rem 0;
+    @include media_small {
+        line-height: 5rem;
+    }
 }
 
 h2 {
@@ -67,6 +75,10 @@ p {
     font-size: 0.875rem;
     line-height: 1.25rem;
     letter-spacing: 0.25px;
+    @include media_small{
+        font-size: 1rem;
+    }
+    margin: 0.5rem 0.15rem;
 }
 
 picture {

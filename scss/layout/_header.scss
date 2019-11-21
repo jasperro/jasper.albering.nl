@@ -9,6 +9,10 @@
 
         &__icon {
             padding: 0 0.5rem;
+            &_logo {
+                max-width: 2rem;
+                max-height: 2rem;
+            }
         }
 
         & div {
@@ -27,7 +31,7 @@
     visibility: hidden;
 
     &+.theme__label:before {
-        content: "brightness_2";
+        content: "nights_stay";
     }
 
     &:checked+.theme__label:before {

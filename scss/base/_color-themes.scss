@@ -1,4 +1,5 @@
 $bg: 'bg';
+$headerbg: 'headerbg';
 $inversebg: 'inversebg';
 $card__bg: 'card__bg';
 $shadow: 'shadow';
@@ -14,6 +15,7 @@ $accent: 'accent';
 $themes: (
     default: (logo: url("/img/favicondark.svg"),
         bg: $bg_lightmode,
+        headerbg: $headerbg_lightmode,
         inversebg: $bg_darkmode,
         card__bg: $card__bg_lightmode,
         shadow: $shadow_lightmode,
@@ -25,6 +27,7 @@ $themes: (
         accent: $accent_lightmode),
     dark: (logo: url("/img/favicon.svg"),
         bg: $bg_darkmode,
+        headerbg: $headerbg_darkmode,
         inversebg: $bg_lightmode,
         card__bg: $card__bg_darkmode,
         shadow: $shadow_darkmode,
@@ -37,6 +40,7 @@ $themes: (
         ),
     terminal: (logo: url("/img/favicon.svg"),
         bg: black,
+        headerbg: black,
         inversebg: white,
         card__bg: black,
         shadow: black,
