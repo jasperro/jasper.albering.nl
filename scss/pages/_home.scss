@@ -1,7 +1,7 @@
 .home {
     &__header {
         @include themed() {
-            background: t($headerbg) center/cover; 
+            background: url(../img/fullposter.svg) right/contain no-repeat, t($headerbg) center/cover; 
             padding: 3rem 3vw 10rem;
             @include BoxShadow(1);
             z-index: -1;
