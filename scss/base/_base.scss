@@ -35,18 +35,14 @@ button {
 }
 
 a {
-    @include themed() {
-        color: t($link);
-    }
+        color: var(--color-link);
 
     //text-decoration: none;
 }
 
 #page {
 
-    @include themed() {
-        background-color: t($bg);
-    }
+    background-color: var(--color-bg);
 
     min-height: 100vh;
     max-width: 100vw;

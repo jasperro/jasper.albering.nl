@@ -14,34 +14,27 @@
 
     &__filled {
         @include BoxShadow(4);
+
         &__primary {
             @extend .button__filled;
-            @include themed() {
-                color: t($text);
-                background-color: t($primary)
-            }
+            color: var(--color-text);
+            background-color: var(--color-primary)
         }
 
         &__accent {
             @extend .button__filled;
-            @include themed() {
-                color: t($text);
-                background-color: t($accent)
-            }
+            color: var(--color-text);
+            background-color: var(--color-accent)
         }
     }
 
     &__transparent {
         &__primary {
-            @include themed() {
-                color: t($primary);
-            }
+            color: var(--color-primary);
         }
 
         &__accent {
-            @include themed() {
-                color: t($accent);
-            }
+            color: var(--color-accent);
         }
     }
 }

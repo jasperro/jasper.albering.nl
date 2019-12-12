@@ -4,7 +4,7 @@ $primary_darkmode: lighten($primary_lightmode, 10%);
 $bg_lightmode: lighten($primary_lightmode, 90%);
 $bg_darkmode: darken($primary_lightmode, 40%);
 $headerbg_lightmode: linear-gradient(300deg, #DFF1FB, #B2DAF0);
-$headerbg_darkmode: linear-gradient(300deg, darken(#DFF1FB, 50), darken(#B2DAF0, 50));
+$headerbg_darkmode: linear-gradient(300deg, darken(#DFF1FB, 40), darken(#B2DAF0, 30));
 $card__bg_lightmode: darken($bg_lightmode, 1%);
 $card__bg_darkmode: lighten($bg_darkmode, 3%);
 $text_lightmode: darken($primary_darkmode, 57%);

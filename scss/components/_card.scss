@@ -1,8 +1,6 @@
 .card {
-    @include themed() {
-        background-color: t($card__bg);
-        @include BoxShadow(2);
-    }
+    background-color: var(--color-card__bg);
+    @include BoxShadow(2);
 
     border-radius: 10px;
     margin: 0.75rem 0.5rem;

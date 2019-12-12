@@ -12,7 +12,38 @@ $shadow: 'shadow';
 $link: 'link';
 $accent: 'accent';
 
-$themes: (
+
+:root {
+  --color-bg: #{$bg_lightmode};
+  --color-headerbg: #{$headerbg_lightmode};
+  --color-inversebg: #{$bg_darkmode};
+  --color-card__bg: #{$card__bg_lightmode};
+  --color-shadow: #{$shadow_lightmode};
+  --color-text: #{$text_lightmode};
+  --color-inversetext: #{$text_darkmode};
+  --color-text_disabled: #{$text_disabled_lightmode};
+  --color-link: #{$primary_lightmode};
+  --color-primary: #{$primary_lightmode};
+  --color-accent: #{$accent_lightmode};
+  --bg-header: url(../img/fullposter.svg) right/contain no-repeat, var(--color-headerbg) center/cover;
+}
+
+[data-theme="dark"] {
+  --color-bg: #{$bg_darkmode};
+  --color-headerbg: #{$headerbg_darkmode};
+  --color-inversebg: #{$bg_darkmode};
+  --color-card__bg: #{$card__bg_darkmode};
+  --color-shadow: #{$shadow_darkmode};
+  --color-text: #{$text_darkmode};
+  --color-inversetext: #{$text_darkmode};
+  --color-text_disabled: #{$text_disabled_darkmode};
+  --color-link: #{$primary_darkmode};
+  --color-primary: #{$primary_darkmode};
+  --color-accent: #{$accent_darkmode};
+  --bg-header: var(--color-headerbg) center/cover;
+}
+
+/*$themes: (
     default: (logo: url("/img/favicondark.svg"),
         bg: $bg_lightmode,
         headerbg: $headerbg_lightmode,
@@ -37,19 +68,6 @@ $themes: (
         link: $primary_darkmode,
         primary: $primary_darkmode,
         accent: $accent_darkmode,
-        ),
-    terminal: (logo: url("/img/favicon.svg"),
-        bg: black,
-        headerbg: black,
-        inversebg: white,
-        card__bg: black,
-        shadow: black,
-        text: lime,
-        inversetext: lime,
-        text_disabled: green,
-        link: red,
-        primary: black,
-        accent: black,
         ),
 );
 
@@ -77,3 +95,4 @@ $themes: (
 @function t($key) {
     @return map-get($theme-map, $key);
 }
+*/

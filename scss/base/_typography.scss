@@ -2,9 +2,7 @@ $text__fontstack: Source Sans Pro;
 
 #page {
 
-    @include themed() {
-        color: t($text);
-    }
+        color: var(--color-text);
 }
 
 html {
@@ -54,7 +52,7 @@ h4 {
 
 h5 {
     font-style: normal;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 1.5rem;
     line-height: 1.9375rem;
     margin: 0;

@@ -14,28 +14,24 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 
-<body class="theme_default">
+<body>
     <script>
-        function ApplyTheme(add, del) {
-            var e = document.getElementsByTagName("BODY")[0];
-            e.classList.add(add);
-            e.classList.remove(del);
-        }
+
         document.addEventListener('DOMContentLoaded', function () {
             document.getElementById("themeCheckbox")
                 .addEventListener('change', function () {
                     if (this.checked) {
                         localStorage.dt = 1;
-                        ApplyTheme("theme_dark", "theme_default")
+                        document.body.setAttribute('data-theme', 'dark');
 
                     } else {
                         localStorage.removeItem("dt");
-                        ApplyTheme("theme_default", "theme_dark")
+                        document.body.removeAttribute('data-theme');
                     };
                 });
             if (localStorage.dt == 1) {
                 document.getElementById('themeCheckbox').checked = true;
-                ApplyTheme("theme_dark", "theme_default")
+                document.body.setAttribute('data-theme', 'dark');
             };
         });
 
@@ -56,28 +52,31 @@
             </div>
         </div>
         <main class="home__content flex__column">
-		  <div class="flex__row">
-            <div class="card home__card">
-                <div class="card__content">
-                    <h5 class="card__title">Hello.</h5>
-                    <p><strong>Hi.</strong> My name is <strong>Jasper.</strong> I'm a developer.</p>
-                    <p>I am mainly a <strong>front-end</strong> developer, but I also do back-end, make <strong>games</strong> and contribute to <strong>open
-                            source</strong> projects on the side.</p>
-                    <p>I enjoy working <strong>together</strong> with other people to achieve an end goal.</p>
-                </div>
-                <div class="card__below">
-                    <div class="card__buttons">
-                        <a href="#" class="button button__transparent__primary">CV</a>
+            <div class="flex__row">
+                <div class="card home__card">
+                    <div class="card__content">
+                        <h5 class="card__title">Hello.</h5>
+                        <p><strong>Hi.</strong> My name is <strong>Jasper.</strong> I'm a 16-year old developer and I
+                            live in the Netherlands.</p>
+                        <p>I am mainly a <strong>front-end</strong> developer, but I also do back-end, make
+                            <strong>games</strong> and contribute to <strong>open
+                                source</strong> projects on the side.</p>
+                        <p>I enjoy working <strong>together</strong> with other people to achieve an end goal.</p>
+                    </div>
+                    <div class="card__below">
+                        <div class="card__buttons">
+                            <a href="#" class="button button__transparent__primary">CV</a>
+                        </div>
                     </div>
                 </div>
             </div>
-		  </div>
             <h4 class="home__subheading">What do I do?</h4>
             <div class="flex__row flex__grow">
                 <div class="flex__col card home__card">
                     <div class="card__content">
                         <h5 class="card__title">Development</h5>
-                        <p>I like to develop things, ranging from front-end work to the full back-end. I can build custom software for every need.</p>
+                        <p>I like to develop things, ranging from front-end work to the full back-end. I can build
+                            custom software for every need.</p>
                     </div>
                     <div class="card__below">
                         <div class="card__buttons">
