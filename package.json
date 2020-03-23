@@ -1,0 +1,11 @@
+{
+"devDependencies": {
+  "gulp": "latest",
+  "gulp-sass": "latest",
+  "gulp-postcss": "latest",
+  "cssnano": "latest",
+  "autoprefixer": "latest",
+  "gulp-sourcemaps": "latest",
+  "browser-sync": "latest"
+  }
+}
