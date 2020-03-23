@@ -2,7 +2,7 @@
     text-decoration: none;
     padding: 0.5rem 0.75rem;
     margin: 0.25rem;
-    border-radius: 24px;
+    border-radius: 5px;
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;
@@ -10,20 +10,21 @@
     text-align: center;
     letter-spacing: 0.75px;
     text-transform: uppercase;
-
+    transition: color,background-color 0.2s ease-in;
 
     &__filled {
         @include BoxShadow(4);
+        color: $text_light;
 
         &__primary {
             @extend .button__filled;
-            color: var(--color-text);
+            //color: var(--color-text);
             background-color: var(--color-primary)
         }
 
         &__accent {
             @extend .button__filled;
-            color: var(--color-text);
+            //color: var(--color-text);
             background-color: var(--color-accent)
         }
     }

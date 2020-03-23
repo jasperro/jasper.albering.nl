@@ -2,13 +2,14 @@
     background-color: var(--color-card__bg);
     @include BoxShadow(2);
 
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 0.75rem 0.5rem;
     padding: 1rem;
     flex-basis: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: color,background-color 0.2s ease-in;
 
     &__below {
         display: flex;

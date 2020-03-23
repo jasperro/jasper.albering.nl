@@ -2,42 +2,56 @@
     &__header {
         background:
             var(--bg-header);
-        padding: 3rem 3vw 10rem;
+        padding: 3rem 3vw 4rem;
+        display: flex;
         @include BoxShadow(1);
         z-index: -1;
         position: relative;
-        text-align: center;
+        justify-content: space-between;
 
         &__buttons {
             margin-top: 2rem;
             overflow: visible;
         }
+
+        &__left {
+            color: $text_light;
+        }
+
+        &__right {
+            display: flex;
+            align-items: center;
+            & .card {
+                height: min-content;
+            }
+        }
+
     }
 
     &__content {
-        margin-top: -6rem;
+        //margin-top: -6rem;
+        margin-top: 1rem;
         padding-left: 4vw;
         padding-right: 4vw;
         z-index: 1;
     }
 
-    &__content .flex__row:nth-child(1) .card {
+    /*&__content .flex__row:nth-child(1) .card {
         @include BoxShadow(4);
-        border-radius: 16px;
         display: flex;
         flex-grow: 0;
         flex-shrink: 0;
-        flex-basis: 70%;
+        flex-basis: 80%;
     }
 
     &__content .flex__row:nth-child(1) {
-        justify-content: center;
+        justify-content: flex-end;
         display: flex;
-    }
+    }*/
 
     &__subheading {
         margin: 1.5rem 0.75rem 1rem;
-        text-align: center;
+        text-align: left;
     }
 
     &__portfolio__container {

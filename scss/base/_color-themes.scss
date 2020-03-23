@@ -12,62 +12,63 @@ $shadow: 'shadow';
 $link: 'link';
 $accent: 'accent';
 
-
 :root {
-  --color-bg: #{$bg_lightmode};
-  --color-headerbg: #{$headerbg_lightmode};
-  --color-inversebg: #{$bg_darkmode};
-  --color-card__bg: #{$card__bg_lightmode};
-  --color-shadow: #{$shadow_lightmode};
-  --color-text: #{$text_lightmode};
-  --color-inversetext: #{$text_darkmode};
-  --color-text_disabled: #{$text_disabled_lightmode};
-  --color-link: #{$primary_lightmode};
-  --color-primary: #{$primary_lightmode};
-  --color-accent: #{$accent_lightmode};
-  --bg-header: url(../img/fullposter.svg) right/contain no-repeat, var(--color-headerbg) center/cover;
+  --color-bg: #{$bg_light};
+  --color-headerbg: #{$headerbg_light};
+  --color-inversebg: #{$bg_dark};
+  --color-card__bg: #{$card__bg_light};
+  --color-shadow: #{$shadow_dark};
+  --color-text: #{$text_dark};
+  --color-inversetext: #{$text_light};
+  --color-text_disabled: #{$text_disabled_dark};
+  --color-link: #{$primary_normal};
+  --color-primary: #{$primary_normal};
+  --color-accent: #{$accent_normal};
+  --bg-header: linear-gradient(180deg, rgba(200, 200, 200, 0.25) 0%, rgba(200, 200, 200, 0.25) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('/img/icecold_5120x2880.png') center/cover no-repeat;
+  --bg-blog-header: #{$blogheaderbg_light} center/cover;
 }
 
 [data-theme="dark"] {
-  --color-bg: #{$bg_darkmode};
-  --color-headerbg: #{$headerbg_darkmode};
-  --color-inversebg: #{$bg_darkmode};
-  --color-card__bg: #{$card__bg_darkmode};
-  --color-shadow: #{$shadow_darkmode};
-  --color-text: #{$text_darkmode};
-  --color-inversetext: #{$text_darkmode};
-  --color-text_disabled: #{$text_disabled_darkmode};
-  --color-link: #{$primary_darkmode};
-  --color-primary: #{$primary_darkmode};
-  --color-accent: #{$accent_darkmode};
-  --bg-header: var(--color-headerbg) center/cover;
+  --color-bg: #{$bg_dark};
+  --color-headerbg: #{$headerbg_dark};
+  --color-inversebg: #{$bg_dark};
+  --color-card__bg: #{$card__bg_dark};
+  --color-shadow: #{$shadow_light};
+  --color-text: #{$text_light};
+  --color-inversetext: #{$text_light};
+  --color-text_disabled: #{$text_disabled_light};
+  --color-link: #{$primary_desaturated};
+  --color-primary: #{$primary_desaturated};
+  --color-accent: #{$accent_desaturated};
+  --bg-header: linear-gradient(180deg, rgba(50, 50, 50, 0.25) 0%, rgba(50, 50, 50, 0.25) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('/img/icecold_5120x2880.png') center/cover no-repeat;
+  --bg-blog-header: #{$blogheaderbg_dark} center/cover;
 }
 
 /*$themes: (
     default: (logo: url("/img/favicondark.svg"),
-        bg: $bg_lightmode,
-        headerbg: $headerbg_lightmode,
-        inversebg: $bg_darkmode,
-        card__bg: $card__bg_lightmode,
-        shadow: $shadow_lightmode,
-        text: $text_lightmode,
-        inversetext: $text_darkmode,
-        text_disabled: $text_disabled_lightmode,
-        link: $primary_lightmode,
-        primary: $primary_lightmode,
-        accent: $accent_lightmode),
+        bg: $bg_light,
+        headerbg: $headerbg_light,
+        inversebg: $bg_dark,
+        card__bg: $card__bg_light,
+        shadow: $shadow_dark,
+        text: $text_dark,
+        inversetext: $text_light,
+        text_disabled: $text_disabled_dark,
+        link: $primary_normal,
+        primary: $primary_normal,
+        accent: $accent_normal),
     dark: (logo: url("/img/favicon.svg"),
-        bg: $bg_darkmode,
-        headerbg: $headerbg_darkmode,
-        inversebg: $bg_lightmode,
-        card__bg: $card__bg_darkmode,
-        shadow: $shadow_darkmode,
-        text: $text_darkmode,
-        inversetext: $text_lightmode,
-        text_disabled: $text_disabled_darkmode,
-        link: $primary_darkmode,
-        primary: $primary_darkmode,
-        accent: $accent_darkmode,
+        bg: $bg_dark,
+        headerbg: $headerbg_dark,
+        inversebg: $bg_light,
+        card__bg: $card__bg_dark,
+        shadow: $shadow_light,
+        text: $text_light,
+        inversetext: $text_dark,
+        text_disabled: $text_disabled_light,
+        link: $primary_desaturated,
+        primary: $primary_desaturated,
+        accent: $accent_desaturated,
         ),
 );
 
