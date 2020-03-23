@@ -1,6 +1,8 @@
 $primary_normal: #2683DE;
 $accent_normal: #26DEDD;
 $primary_desaturated: lighten($primary_normal, 10%);
+$accent_desaturated: lighten($accent_normal, 10%);
+
 $bg_light: lighten($primary_normal, 45%);
 $bg_dark: darken($primary_normal, 40%);
 $headerbg_light: linear-gradient(300deg, lighten($primary_normal, 40), lighten($accent_normal, 40));
@@ -9,10 +11,11 @@ $blogheaderbg_light: linear-gradient(300deg, lighten($primary_normal, 40), light
 $blogheaderbg_dark: linear-gradient(300deg, darken($primary_normal, 10), darken($accent_normal, 10));
 $card__bg_light: lighten($bg_light, 3%);
 $card__bg_dark: lighten($bg_dark, 3%);
+
 $text_dark: darken($primary_desaturated, 57%);
 $text_light: lighten($primary_normal, 55%);
 $text_disabled_dark: saturate($text_dark, 20%);
 $text_disabled_light: desaturate($text_light, 20%);
+
 $shadow_dark: transparentize($text_dark, 0.3);
 $shadow_light: transparentize($text_light, 0.6);
-$accent_desaturated: lighten($accent_normal, 10%);

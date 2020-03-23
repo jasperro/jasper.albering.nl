@@ -1,20 +1,19 @@
-image: registry.gitlab.com/jasperro/jasperrowebsite-dockercontainer:latest
+image: node:latest
 
-pages:
-  stage: deploy
-  script:
-    - make
-    - mkdir .public
-    - mv * .public
-    - mv .public public
-  artifacts:
-    paths:
-      - public
+cache:
+  paths:
+   - node_modules/
+   - .yarn
+
+before_script:
+  - yarn install
+
+stages:
+  - build_deploy
+
+build_&_deploy_app:
+  stage: build_deploy
   only:
-    - master
-
-test:
+   - master
   script:
-    - make
-  except:
-    - master
+   - gulp build
