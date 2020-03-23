@@ -16,4 +16,4 @@ build_&_deploy_app:
   only:
    - master
   script:
-   - gulp build
+   - node_modules/gulp-cli/bin/gulp.js build
