@@ -10,7 +10,7 @@ browserSync = require("browser-sync").create();
 var paths = {
     styles: {
         src: "src/scss/**/*.scss",
-        dest: "css/"
+        dest: "public/css/"
     },
 }
 
@@ -27,11 +27,13 @@ function style() {
             // Now add/write the sourcemaps
             .pipe(sourcemaps.write())
             .pipe(gulp.dest(paths.styles.dest))
+            .pipe(browserSync.stream())
     );
 }
 
-function reload() {
+function reload(done) {
     browserSync.reload();
+    done();
 }
 
 
@@ -42,7 +44,7 @@ function watch() {
         }
     });
 
-    gulp.watch(paths.styles.src, gulp.series(style, reload));
+    gulp.watch(paths.styles.src, gulp.series(style));
     gulp.watch("**/*.html", reload);
 
 }

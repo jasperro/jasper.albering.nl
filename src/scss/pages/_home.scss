@@ -9,6 +9,11 @@
         position: relative;
         justify-content: space-between;
 
+        @include media_small {
+            flex-direction: column;
+            padding: 3rem 3vw 2rem;
+        }
+
         &__buttons {
             margin-top: 2rem;
             overflow: visible;
@@ -16,11 +21,15 @@
 
         &__left {
             color: $text_light;
+            @include media_small {
+                padding-bottom: 2rem;
+            }
         }
 
         &__right {
             display: flex;
             align-items: center;
+
             & .card {
                 height: min-content;
             }
