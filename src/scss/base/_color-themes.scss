@@ -2,7 +2,7 @@
   --color-bg: #{$bg_light};
   --color-headerbg: #{$headerbg_light};
   --color-inversebg: #{$bg_dark};
-  --color-card__bg: #{$card__bg_light};
+  --color-card__bg: #{hexToRGBString($card__bg_light)};
   --color-shadow: #{$shadow_dark};
   --color-text: #{$text_dark};
   --color-inversetext: #{$text_light};
@@ -18,7 +18,7 @@
   --color-bg: #{$bg_dark};
   --color-headerbg: #{$headerbg_dark};
   --color-inversebg: #{$bg_dark};
-  --color-card__bg: #{$card__bg_dark};
+  --color-card__bg: #{hexToRGBString($card__bg_dark)};
   --color-shadow: #{$shadow_light};
   --color-text: #{$text_light};
   --color-inversetext: #{$text_light};

@@ -1,5 +1,5 @@
 .card {
-    background-color: var(--color-card__bg);
+    background-color: RGB(var(--color-card__bg));
     @include BoxShadow(2);
 
     border-radius: 5px;

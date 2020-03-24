@@ -56,3 +56,7 @@ $media__screen_small: 850px;
         @content;
     }
  }
+
+@function hexToRGBString($hexColor) {
+  @return "#{red($hexColor)},#{green($hexColor)},#{blue($hexColor)}";
+}
