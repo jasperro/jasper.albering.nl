@@ -15,6 +15,9 @@
         z-index: 1;
         display: flex;
         flex-direction: column;
+        & a {
+            text-decoration: none;
+        }
     }
 
     &__content .flex__row:nth-child(1) {

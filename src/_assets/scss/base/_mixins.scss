@@ -49,7 +49,14 @@
     }
 }
 
-$media__screen_small: 850px;
+$media__screen_medium: 850px;
+$media__screen_small: 730px;
+
+@mixin media_medium {
+    @media (max-width: #{$media__screen_medium}) {
+        @content;
+    }
+ }
 
 @mixin media_small {
     @media (max-width: #{$media__screen_small}) {

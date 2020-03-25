@@ -11,6 +11,7 @@
     letter-spacing: 0.75px;
     text-transform: uppercase;
     transition: color,background-color 0.2s ease-in;
+    display: inline-block;
 
     &__filled {
         @include BoxShadow(4);

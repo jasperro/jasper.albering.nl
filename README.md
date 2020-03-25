@@ -1,2 +1,3 @@
 # Jasper Albering's Website
-Uses sass, no build system implemented yet
+
+Personal website based on gulp, eleventy and sass.

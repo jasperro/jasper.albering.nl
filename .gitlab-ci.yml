@@ -8,12 +8,11 @@ cache:
 before_script:
   - yarn install
 
-stages:
-  - build_deploy
-
-build_&_deploy_app:
-  stage: build_deploy
+pages:
   only:
    - master
   script:
    - node_modules/gulp-cli/bin/gulp.js build
+  artifacts:
+    paths:
+    - public

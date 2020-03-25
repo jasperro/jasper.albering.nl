@@ -9,7 +9,7 @@
         position: relative;
         justify-content: space-between;
 
-        @include media_small {
+        @include media_medium {
             flex-direction: column;
             padding: 3rem 3vw 2rem;
         }
@@ -21,7 +21,8 @@
 
         &__left {
             color: $text_light;
-            @include media_small {
+
+            @include media_medium {
                 padding-bottom: 2rem;
             }
         }
@@ -32,11 +33,33 @@
 
             & .card {
                 height: min-content;
-                background-color: RGBA(var(--color-card__bg),0.5);
+                background-color: RGBA(var(--color-card__bg), 0.5);
                 backdrop-filter: blur(5px);
             }
         }
 
+    }
+
+    &__cards_overflow {
+        overflow-y: hidden;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+
+        @include media_small {
+
+            margin-right: -4vw;
+            >div {
+                flex: 0 0 auto;
+                width: 60%;
+                min-width: 20rem;
+            }
+
+            &::after {
+                content: ' ';
+                min-width: 4vw;
+            }
+        }
     }
 
     &__content {

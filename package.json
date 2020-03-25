@@ -1,11 +1,29 @@
 {
+"name": "jasper.albering.nl",
+"version": "1.0.0",
+"description": "Jasper Albering Website",
+"main": "index.js",
+"scripts": {
+  "dev": "gulp build & gulp watch",
+  "build": "gulp build"
+},
+"author": "Jasper Albering",
+"license": "ISC",
 "devDependencies": {
   "gulp": "latest",
   "gulp-sass": "latest",
   "gulp-postcss": "latest",
+  "gulp-responsive": "latest",
+  "gulp-shell": "latest",
+  "gulp-clean": "latest",
   "cssnano": "latest",
   "autoprefixer": "latest",
   "gulp-sourcemaps": "latest",
-  "browser-sync": "latest"
+  "browser-sync": "latest",
+  "@11ty/eleventy": "latest",
+  "@11ty/eleventy-plugin-rss": "latest",
+  "markdown-it": "latest",
+  "@gerhobbelt/markdown-it-responsive": "latest",
+  "luxon": "latest"
   }
 }

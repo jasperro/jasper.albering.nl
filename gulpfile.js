@@ -5,16 +5,12 @@ var gulp = require("gulp"),
     cssnano = require("cssnano"),
     sourcemaps = require("gulp-sourcemaps");
 browserSync = require("browser-sync").create();
+responsive = require("gulp-responsive");
+shell = require("gulp-shell");
+clean = require("gulp-clean");
+paths = require("./paths")
 
-
-var paths = {
-    styles: {
-        src: "src/scss/**/*.scss",
-        dest: "public/css/"
-    },
-}
-
-function style() {
+gulp.task('style', function () {
     return (
         gulp
             .src(paths.styles.src)
@@ -29,25 +25,76 @@ function style() {
             .pipe(gulp.dest(paths.styles.dest))
             .pipe(browserSync.stream())
     );
-}
+});
 
-function reload(done) {
+gulp.task('reload', function (done) {
     browserSync.reload();
     done();
-}
+});
 
+// Create smaller images for thumbnails etc.
+gulp.task('images', function () {
+    return gulp.src(paths.images.src)
+        .pipe(responsive({
+            '**/*': [{
+                width: 320,
+                rename: { suffix: '-small' },
+            }, {
+                width: 640,
+                rename: { suffix: '-medium' },
+            }, {
+            }],
+        }, {
+            quality: 80,
+            progressive: true,
+            withMetadata: false,
+            withoutEnlargement: true,
+            errorOnUnusedImage: false,
+            errorOnEnlargement: false
+        }))
+        .pipe(gulp.dest(paths.images.dest));
+});
 
-function watch() {
+// Copy svg files to destination
+gulp.task('svg', function () {
+    return gulp.src(paths.svg.src)
+        .pipe(gulp.dest(paths.svg.dest));
+})
+
+gulp.task('watch', function () {
     browserSync.init({
         server: {
-            baseDir: "./public"
+            baseDir: paths.outdir
         }
     });
 
-    gulp.watch(paths.styles.src, gulp.series(style));
-    gulp.watch("**/*.html", reload);
+    gulp.watch(paths.styles.src, gulp.series('style'));
+    gulp.watch(paths.images.src, gulp.series('images'));
+    gulp.watch(paths.svg.src, gulp.series('svg'));
+    gulp.watch(`${paths.srcdir}/_site`, gulp.series('eleventy'));
+});
 
-}
+// Make sure outdir exists
+gulp.task('setup', function () {
+    return gulp.src('*.*', { read: false })
+        .pipe(gulp.dest(paths.outdir));
+})
 
-exports.build = style;
-exports.watch = watch;
+// Remove outdir
+gulp.task('clean', function () {
+    return gulp.src(paths.outdir, { read: false })
+        .pipe(clean());
+});
+
+gulp.task('eleventy', shell.task('eleventy'));
+
+gulp.task('build', gulp.series(
+    'setup',
+    'clean',
+    'eleventy',
+    gulp.parallel(
+        'svg',
+        'images',
+        'style',
+    )
+));

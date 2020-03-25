@@ -7,7 +7,7 @@ $text__fontstack: Source Sans Pro;
 
 html {
     font: normal 125% / 1.4 $text__fontstack;
-    @include media_small {
+    @include media_medium {
         font: normal 100% / 1.4 $text__fontstack;
     }
 }
@@ -19,7 +19,7 @@ h1 {
     line-height: 7rem;
     letter-spacing: -1.5px;
     margin: 0.3rem 0;
-    @include media_small {
+    @include media_medium {
         line-height: 5rem;
     }
 }
@@ -73,7 +73,7 @@ p {
     font-size: 0.875rem;
     line-height: 1.25rem;
     letter-spacing: 0.25px;
-    @include media_small{
+    @include media_medium{
         font-size: 1rem;
     }
     margin: 0.5rem 0.15rem;

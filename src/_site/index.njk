@@ -1,48 +1,9 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-<head>
-    <title>Jasper Albering&#39;s Website</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="author" content="Jasper Albering">
-    <meta name="description" content="Jasper Albering&#39;s personal website">
-    <meta name="keywords" content="programming">
-    <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" type="image/png" href="img/favicon.png">
-</head>
+---
+layout: layouts/base.njk
+eleventyExcludeFromCollections: true
+---
 
 <body>
-    <script>
-
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById("themeCheckbox")
-                .addEventListener('change', function () {
-                    if (this.checked) {
-                        localStorage.dt = 1;
-                        document.body.setAttribute('data-theme', 'dark');
-
-                    } else {
-                        localStorage.removeItem("dt");
-                        document.body.removeAttribute('data-theme');
-                    };
-                });
-            if (localStorage.dt == 1) {
-                document.getElementById('themeCheckbox').checked = true;
-                document.body.setAttribute('data-theme', 'dark');
-            };
-        });
-
-    </script>
-    <div id="page">
-        <div class="header__navigation">
-            <div><a class="header__navigation__icon" href="#page"><img class="header__navigation__icon_logo"
-                        src="img/favicon.svg"></a></div>
-            <input type="checkbox" class="theme__checkbox header__navigation__icon" id="themeCheckbox"></input>
-            <label for="themeCheckbox" class="theme__label material-icons"></label>
-        </div>
         <div class="home__header">
             <div class="home__header__container home__header__left">
                 <h1>Hi. I'm Jasper</h1>
@@ -57,7 +18,8 @@
                 <div class="card home__card">
                     <div class="card__content">
                         <h5 class="card__title">Hello.</h5>
-                        <p><strong>Nice to meet you.</strong> My name is Jasper. I really like to learn new things.</p>
+                        <p>
+                            <strong>Nice to meet you.</strong> My name is Jasper. I really like to learn new things.</p>
                         <p>I love everything to do with computers, be it building websites, hacking on random devices,
                             or whatever else.</p>
                     </div>
@@ -66,7 +28,7 @@
         </div>
         <main class="home__content flex__column">
             <h4 class="home__subheading">What am I currently doing?</h4>
-            <div class="flex__row flex__grow">
+            <div class="flex__row flex__grow home__cards_overflow">
                 <div class="flex__col card home__card">
                     <div class="card__content">
                         <h5 class="card__title">Studying</h5>
@@ -120,11 +82,9 @@
                     </div>
                 </div>
             </div>
-    </div>
-    <p class="copyright">© 2016-2019 Jasper Albering</p>
+        </div>
+        <p class="copyright">© 2016-2019 Jasper Albering</p>
     </main>
-    </div>
-    <div>
-</body>
+<div></body>
 
 </html>
