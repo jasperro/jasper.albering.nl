@@ -45,12 +45,12 @@ a {
     background-color: var(--color-bg);
 
     min-height: 100vh;
-	 width: 100%;
+    width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
     position: absolute;
 
     z-index: 0;
 
-    transition: color,background-color 0.2s ease-in;
+    transition: color, background-color 0.2s ease-in;
 }

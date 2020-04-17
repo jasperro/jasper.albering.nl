@@ -3,26 +3,26 @@ layout: layouts/base.njk
 ---
 
 <div class="post">
-<header role="post__banner" class="">
-  <h1 itemprop="name">{{ title }}</h1>
-  <date>{{ date | readableDate }}</date>
-</header>
+  <header role="post__banner" class="">
+    <h1 itemprop="name">{{ title }}</h1>
+    <date>{{ date | readableDate }}</date>
+  </header>
 
-{% if postimage %}
-<img
+  {% if postimage %}
+    <img
   srcset="{{ postimage | imgSuffix('small') }} 320w, {{ postimage | imgSuffix('medium') }} 640w"
   src="{{ postimage }}"
   class="post__image"
   alt="{{ postimagealt }}"
   title="{{ postimagealt }}"
 >
-{% endif %}
+  {% endif %}
 
-<div class="post__content">
+  <div class="post__content">
 
-  {{ layoutContent | safe }}
+    {{ layoutContent | safe }}
 
-</div>
+  </div>
 </div>
 
 <a href="/blog" class="button button__filled__accent">Back</a>

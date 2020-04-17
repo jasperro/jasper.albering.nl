@@ -10,7 +10,10 @@
   --color-link: #{$primary_normal};
   --color-primary: #{$primary_normal};
   --color-accent: #{$accent_normal};
-  --bg-header: linear-gradient(180deg, rgba(200, 200, 200, 0.25) 0%, rgba(200, 200, 200, 0.25) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('/img/triangles-banner.svg') center/cover no-repeat;
+  --bg-header: linear-gradient(180deg, rgba(200, 200, 200, 0.25) 0%,
+      rgba(200, 200, 200, 0.25) 100%), linear-gradient(180deg,
+      rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%),
+    url('/img/triangles-banner.svg') center/cover no-repeat;
   --bg-blog-header: #{$blogheaderbg_light} center/cover;
 }
 
@@ -26,6 +29,9 @@
   --color-link: #{$primary_desaturated};
   --color-primary: #{$primary_desaturated};
   --color-accent: #{$accent_desaturated};
-  --bg-header: linear-gradient(180deg, rgba(50, 50, 50, 0.25) 0%, rgba(50, 50, 50, 0.25) 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('/img/triangles-banner.svg') center/cover no-repeat;
+  --bg-header: linear-gradient(180deg, rgba(50, 50, 50, 0.25) 0%,
+      rgba(50, 50, 50, 0.25) 100%), linear-gradient(180deg,
+      rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%),
+    url('/img/triangles-banner.svg') center/cover no-repeat;
   --bg-blog-header: #{$blogheaderbg_dark} center/cover;
 }

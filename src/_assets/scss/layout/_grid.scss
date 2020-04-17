@@ -2,18 +2,22 @@
     display: flex;
     flex-direction: column;
 }
+
 .flex__row {
     display: flex;
     flex-direction: row;
 }
+
 .flex__col-reverse {
     display: flex;
     flex-direction: column-reverse;
 }
+
 .flex__row-reverse {
     display: flex;
     flex-direction: row-reverse;
 }
+
 .flex__grow {
     flex: 1 1 0;
 }

@@ -3,12 +3,12 @@ var gulp = require("gulp"),
     postcss = require("gulp-postcss"),
     autoprefixer = require("autoprefixer"),
     cssnano = require("cssnano"),
-    sourcemaps = require("gulp-sourcemaps");
-browserSync = require("browser-sync").create();
-responsive = require("gulp-responsive");
-shell = require("gulp-shell");
-clean = require("gulp-clean");
-paths = require("./paths")
+    sourcemaps = require("gulp-sourcemaps"),
+    browserSync = require("browser-sync").create(),
+    responsive = require("gulp-responsive"),
+    shell = require("gulp-shell"),
+    clean = require("gulp-clean"),
+    paths = require("./paths");
 
 gulp.task('style', function () {
     return (

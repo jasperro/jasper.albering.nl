@@ -56,14 +56,19 @@ $media__screen_small: 730px;
     @media (max-width: #{$media__screen_medium}) {
         @content;
     }
- }
+}
 
 @mixin media_small {
     @media (max-width: #{$media__screen_small}) {
         @content;
     }
- }
+}
+
+@mixin neumorphicshadow($color) {
+    box-shadow: 41px 41px 76px darken($color, 15%),
+        -41px -41px 76px lighten($color, 15%);
+}
 
 @function hexToRGBString($hexColor) {
-  @return "#{red($hexColor)},#{green($hexColor)},#{blue($hexColor)}";
+    @return "#{red($hexColor)},#{green($hexColor)},#{blue($hexColor)}";
 }

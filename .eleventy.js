@@ -13,14 +13,14 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('dd-LL-yyyy');
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('dd-LL-yyyy');
   });
 
-  eleventyConfig.addFilter("dateComparison", (dateObj, compareWith)=> {
+  eleventyConfig.addFilter("dateComparison", (dateObj, compareWith) => {
     return DateTime.fromJSDate(dateObj) < DateTime.fromISO(compareWith)
   })
 
-  eleventyConfig.addFilter("imgSuffix", (imgStr, suffix)=> {
+  eleventyConfig.addFilter("imgSuffix", (imgStr, suffix) => {
     const i = imgStr.lastIndexOf('.');
     const imgPath = imgStr.substring(0, i);
     const ext = imgStr.substring(i + 1);
@@ -42,7 +42,7 @@ module.exports = function (eleventyConfig) {
   const mirOptions = {
     responsive: {
       'srcset': {
-        '*': [ {
+        '*': [{
           width: 320,
           rename: {
             suffix: '-small'
@@ -52,7 +52,7 @@ module.exports = function (eleventyConfig) {
           rename: {
             suffix: '-medium'
           }
-        } ]
+        }]
       },
       'sizes': {
         '*': '(min-width: 36em) 33.3vw, 100vw'
