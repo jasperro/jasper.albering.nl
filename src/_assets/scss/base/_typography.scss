@@ -1,4 +1,6 @@
-$text__fontstack: Source Sans Pro;
+.banner {
+  @include sticky-position;
+}
 
 #page {
 
@@ -6,10 +8,11 @@ $text__fontstack: Source Sans Pro;
 }
 
 html {
-    font: normal 125% / 1.4 $text__fontstack;
+    font: normal 125% / 1.4;
+    @include fontstack;
 
     @include media_medium {
-        font: normal 100% / 1.4 $text__fontstack;
+        font: normal 100% / 1.4;
     }
 }
 
