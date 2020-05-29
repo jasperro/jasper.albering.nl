@@ -41,10 +41,15 @@
     }
 
     &__cards_overflow {
-        overflow-y: hidden;
+        overflow-y: visible;
         overflow-x: auto;
         flex-wrap: nowrap;
         scrollbar-width: none;
+		  &::-webkit-scrollbar {
+            height: 50px;
+	     }
+        padding: 100px;
+        margin: -100px;
 
         @include media_small {
 

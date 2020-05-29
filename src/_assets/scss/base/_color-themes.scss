@@ -4,6 +4,7 @@
   --color-inversebg: #{$bg_dark};
   --color-card__bg: #{hexToRGBString($card__bg_light)};
   --color-shadow: #{$shadow_dark};
+  --shadow-neu: #{neumorphicshadow($bg_light)};
   --color-text: #{$text_dark};
   --color-inversetext: #{$text_light};
   --color-text_disabled: #{$text_disabled_dark};
@@ -23,6 +24,7 @@
   --color-inversebg: #{$bg_dark};
   --color-card__bg: #{hexToRGBString($card__bg_dark)};
   --color-shadow: #{$shadow_light};
+  --shadow-neu: #{neumorphicshadow($card__bg_dark)};
   --color-text: #{$text_light};
   --color-inversetext: #{$text_light};
   --color-text_disabled: #{$text_disabled_light};

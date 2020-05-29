@@ -10,21 +10,21 @@
   "author": "Jasper Albering",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "latest",
+    "@11ty/eleventy": "0.11.0",
     "@11ty/eleventy-plugin-rss": "latest",
     "@gerhobbelt/markdown-it-responsive": "latest",
-    "autoprefixer": "latest",
+    "autoprefixer": "9.8.0",
     "browser-sync": "latest",
     "cssnano": "latest",
     "gulp": "latest",
     "gulp-clean": "latest",
     "gulp-postcss": "latest",
     "gulp-responsive": "latest",
-    "gulp-sass": "latest",
+    "gulp-sass": "4.1.0",
     "gulp-shell": "latest",
     "gulp-sourcemaps": "latest",
-    "luxon": "latest",
-    "markdown-it": "latest"
+    "luxon": "1.24.1",
+    "markdown-it": "11.0.0"
   },
   "dependencies": {}
 }

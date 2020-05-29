@@ -64,9 +64,9 @@ $media__screen_small: 730px;
     }
 }
 
-@mixin neumorphicshadow($color) {
-    box-shadow: 41px 41px 76px darken($color, 15%),
-        -41px -41px 76px lighten($color, 15%);
+@function neumorphicshadow($color) {
+    @return 20px 20px 60px darken($color, 5%),
+    -20px -20px 60px lighten($color, 5%);
 }
 
 @function hexToRGBString($hexColor) {
