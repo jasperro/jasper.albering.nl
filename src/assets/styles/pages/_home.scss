@@ -1,0 +1,47 @@
+.home {
+    padding: 0 1.5rem;
+
+    &__card {
+        &_info {
+            background-color: var(--color-bg_element);
+
+            border-radius: 7px;
+            max-width: 60%;
+            padding: 1rem;
+
+            @include mq-max(md) {
+                max-width: 100%;
+            }
+        }
+
+        &_project {
+            border-radius: 7px;
+        }
+    }
+
+    &__hero {
+        padding: 2rem 0;
+
+        &__title {
+            @include css-lock(5, 8, 70, 100);
+        }
+
+        &__subtitle {
+            @include css-lock(4, 7, 60, 90);
+            color: var(--color-primary)
+        }
+    }
+
+    &__title {
+        &_subsection {
+            font-size: 1.75rem;
+            margin-top: 0.8rem;
+            margin-bottom: 0.6rem;
+            margin-left: 0.4rem;
+        }
+
+    }
+
+    &__projects {}
+
+}

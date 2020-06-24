@@ -1,0 +1,9 @@
+.footer {
+    font-size: 0.875rem;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

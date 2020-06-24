@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="24.000002"
+   inkscape:export-xdpi="24.000002"
+   inkscape:export-filename="/home/jasperro/Programmeren/webtech/jasperro.gitlab.io/images/favicon.png"
+   sodipodi:docname="newiconstd.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 33.866667 33.866667"
+   height="128"
+   width="128">
+  <defs
+     id="defs2">
+    <linearGradient
+       y2="12"
+       x2="23.602558"
+       y1="12"
+       x1="0.39744294"
+       id="jasperro"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-1.65,-1.65)">
+      <stop
+         id="light"
+         style="stop-color:#0080ff;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="dark"
+         style="stop-color:#0066ff;stop-opacity:1"
+         offset="100.000%" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#jasperro"
+       id="linearGradient2149"
+       x1="0.74331754"
+       y1="322.58771"
+       x2="511.31732"
+       y2="322.58771"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     inkscape:pagecheckerboard="false"
+     showguides="false"
+     inkscape:window-maximized="1"
+     inkscape:window-y="0"
+     inkscape:window-x="0"
+     inkscape:window-height="1022"
+     inkscape:window-width="1900"
+     width="128px"
+     units="px"
+     showgrid="false"
+     inkscape:current-layer="g837"
+     inkscape:document-units="px"
+     inkscape:cy="77.031645"
+     inkscape:cx="-53.845142"
+     inkscape:zoom="2.425118"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-263.13333)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Laag 1">
+    <g
+       transform="translate(-0.48447806,0.02837252)"
+       id="g4527">
+      <g
+         transform="translate(-0.3048048)"
+         id="g831">
+        <g
+           transform="translate(0.04594757)"
+           id="g837">
+          <rect
+             y="263.10495"
+             x="0.74333531"
+             height="33.866669"
+             width="33.866669"
+             id="rect1440"
+             style="fill:#ffffff;fill-opacity:1;stroke-width:0.551465" />
+          <rect
+             style="opacity:1;vector-effect:none;fill:url(#linearGradient2149);fill-opacity:1.0;stroke:none;stroke-width:0.255577;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+             id="rect815"
+             width="13.546041"
+             height="33.866669"
+             x="0.74333531"
+             y="263.10495" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:38.8056px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+             x="-1.4"
+             y="291.25"
+             id="text901"><tspan
+               sodipodi:role="line"
+               id="tspan899"
+               x="-1.4"
+               y="291.25"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.8056px;font-family:'Inter UI';-inkscape-font-specification:'Inter UI Bold';fill:#ffffff;stroke-width:0.264583">J</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:40.1881px;line-height:1.25;font-family:sans-serif;fill:url(#linearGradient2149);fill-opacity:1;stroke:none;stroke-width:0.274008"
+             x="9.55"
+             y="296.999"
+             id="text909"><tspan
+               sodipodi:role="line"
+               id="tspan907"
+               x="9.55"
+               y="296.999"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40.1881px;font-family:'Inter UI';-inkscape-font-specification:'Inter UI Bold';fill:url(#linearGradient2149);fill-opacity:1;stroke-width:0.274008">A</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+$primary: #0066FF;
+$primary_light: #0088FF;
+
+$accent: #26DEDD;
+$accent_dark: #26B0DD;
+
+$bg_light: #EDF5FC;
+$bg_dark: #162D50;
+
+$bg_element_light: #FAFCFE;
+$bg_element_dark: #1B3864;
+
+// text_dark is dark-colored text for light mode.
+$text_dark: #030A12;
+$text_light: #fffffff0;
+
+$text_disabled_dark: saturate($text_dark, 20%);
+$text_disabled_light: desaturate($text_light, 20%);
+
+$shadow_dark: transparentize($text_dark, 0.3);
+$shadow_light: transparentize($text_light, 0.6);

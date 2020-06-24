@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1920"
+   height="448"
+   viewBox="0 0 508 118.53333"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="banner.svg"
+   inkscape:export-filename="/home/jasperro/Programmeren/webtech/jasperro.gitlab.io/images/favicon.png"
+   inkscape:export-xdpi="24.000002"
+   inkscape:export-ydpi="24.000002">
+  <defs
+     id="defs2">
+    <linearGradient
+       gradientTransform="translate(-1.65,-1.65)"
+       gradientUnits="userSpaceOnUse"
+       id="jasperro"
+       x1="0.39744294"
+       y1="12"
+       x2="23.602558"
+       y2="12">
+      <stop
+         offset="0"
+         style="stop-color:#0080ff;stop-opacity:1"
+         id="light" />
+      <stop
+         offset="100.000%"
+         style="stop-color:#0066ff;stop-opacity:1"
+         id="dark" />
+    </linearGradient>
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="322.58771"
+       x2="511.31732"
+       y1="322.58771"
+       x1="0.74331754"
+       id="linearGradient2149"
+       xlink:href="#jasperro"
+       inkscape:collect="always" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.52640847"
+     inkscape:cx="909.44389"
+     inkscape:cy="306.24764"
+     inkscape:document-units="px"
+     inkscape:current-layer="g837"
+     showgrid="false"
+     units="px"
+     width="128px"
+     inkscape:window-width="1900"
+     inkscape:window-height="1022"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="false"
+     inkscape:pagecheckerboard="true"
+     inkscape:document-rotation="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Laag 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-263.13333)">
+    <g
+       id="g4527"
+       transform="translate(-0.48447806,0.02837252)">
+      <g
+         id="g831"
+         transform="translate(-0.3048048)">
+        <g
+           id="g837"
+           transform="translate(0.04594757)">
+          <rect
+             y="263.10507"
+             x="0.74331754"
+             height="118.96528"
+             width="510.57401"
+             id="rect815"
+             style="opacity:1;vector-effect:none;fill:url(#linearGradient2149);fill-opacity:1.0;stroke:none;stroke-width:2.94083;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:'IBM Plex Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;-inkscape-font-specification:'IBM Plex Sans';font-stretch:normal;font-variant:normal;"
+             x="40.468288"
+             y="316.8692"
+             id="text31"><tspan
+               sodipodi:role="line"
+               id="tspan29"
+               x="40.468288"
+               y="316.8692"
+               style="stroke-width:0.264583;-inkscape-font-specification:'IBM Plex Sans';font-family:'IBM Plex Sans';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;" /></text>
+          <text
+             id="text35-3"
+             y="361.91766"
+             x="144.72606"
+             style="font-style:normal;font-weight:normal;font-size:95.0316px;line-height:1.25;font-family:sans-serif;letter-spacing:-4.3925px;word-spacing:0px;fill:#162d50;fill-opacity:1;stroke:none;stroke-width:2.37581"
+             xml:space="preserve"><tspan
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Inter UI';-inkscape-font-specification:'Inter UI Bold';fill:#162d50;stroke-width:2.37581"
+               y="361.91766"
+               x="147.999"
+               id="tspan33-6"
+               sodipodi:role="line">Albering</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:107.688px;line-height:1.25;font-family:sans-serif;letter-spacing:-4.97751px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.69222"
+             x="-0.99503702"
+             y="340.29526"
+             id="text35"><tspan
+               sodipodi:role="line"
+               id="tspan33"
+               x="-0.99503702"
+               y="341.5"
+               style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Inter UI';-inkscape-font-specification:'Inter UI Bold';fill:#ffffff;stroke-width:2.69222">Jasper</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
