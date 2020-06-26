@@ -11,6 +11,9 @@
 <meta property="og:url" content="{{ absolutePageUrl }}">
 <meta property="og:locale" content="{{ meta.locale }}">
 <meta name="twitter:card" content="{% if image -%}summary_large_image{% else %}summary{% endif %}">
+<meta name="application-name" content="Jasper Albering">
+<meta name="apple-mobile-web-app-title" content="Jasper Albering">
+<meta name="theme-color" content="#0060ff">
 {%- if image -%}
     <meta property="og:image" content="{{ image | url | absoluteUrl(meta.url) }}">
 {%- endif -%}
@@ -20,8 +23,8 @@
 <link rel="icon" type="image/png" href="{{ '/assets/images/favicon/favicon-32x32.png' | url }}" sizes="32x32">
 <link rel="icon" type="image/png" href="{{ '/assets/images/favicon/favicon-16x16.png' | url }}" sizes="16x16">
 <link rel="shortcut icon" href="{{ '/assets/images/favicon/favicon.ico' | url }}">
+<link rel="mask-icon" href="{{ '/assets/images/favicon/safari-pinned-tab.svg' | url }}" color="#5bbad5">
 <link rel="manifest" href="{{ '/site.webmanifest' | url }}">
-<meta name="theme-color" content="#1a1a1a">
 
 {# RSS Feed #}
 <link type="application/atom+xml" rel="alternate" href="{{ meta.url }}/feed.xml" title="{{ meta.title }}">
