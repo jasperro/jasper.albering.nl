@@ -6,6 +6,7 @@ const filters = require("./utils/filters.js");
 const transforms = require("./utils/transforms.js");
 const shortcodes = require("./utils/shortcodes.js");
 const iconsprite = require("./utils/iconsprite.js");
+const moment = require("moment");
 
 module.exports = function (config) {
     // Plugins
@@ -33,6 +34,9 @@ module.exports = function (config) {
     config.addCollection("posts_nl", function (collection) {
         return collection.getFilteredByGlob("./src/posts/nl/*.md");
     });
+    config.addCollection("posts", function (collection) {
+        return collection.getFilteredByGlob("./src/posts/*/*.md");
+    });
     config.addCollection("pages_en", function (collection) {
         return collection.getFilteredByGlob("./src/pages/en/*");
     });
@@ -42,6 +46,12 @@ module.exports = function (config) {
 
     // Icon Sprite
     config.addNunjucksAsyncShortcode("iconsprite", iconsprite);
+
+    config.addNunjucksFilter("date", function (date, format, locale) {
+        locale = locale ? locale : "en";
+        moment.locale(locale);
+        return moment(date).format(format);
+    });
 
     // Asset Watch Targets
     config.addWatchTarget("./src/assets");

@@ -5,3 +5,7 @@ layout: base
     <h1>{{ title }}</h1>
     {{ content | safe }}
 </article>
+
+<p>
+    <time datetime="{{ post.date | date('YYYY-MM-DD') }}">{{ post.item|date("DD MMMM YYYY", locale) }}</time>
+</p>

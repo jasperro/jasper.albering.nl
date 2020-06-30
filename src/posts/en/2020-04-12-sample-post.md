@@ -1,5 +1,6 @@
 ---
 title: An example post.
+date: 2020-06-06
 ---
 
 Lorem Ipsum Dolor.
