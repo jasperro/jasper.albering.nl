@@ -17,7 +17,8 @@
 
     {# Nav Links  #}
     <ul class="nav__menu js-nav-menu" id="nav-menu">
-        {%- for item in collections.all | eleventyNavigation -%}
+        {%- set items = collections["pages_" + locale] -%}
+        {%- for item in items | eleventyNavigation -%}
             {%- set isCurrent = (item.url == page.url) -%}
             {%- set isParent = item.url != '/' and item.url in page.url -%}
             <li class="nav__item{% if isCurrent or isParent %} nav__item--active{% endif %}">

@@ -27,6 +27,19 @@ module.exports = function (config) {
         config.addShortcode(shortcodeName, shortcodes[shortcodeName]);
     });
 
+    config.addCollection("posts_en", function (collection) {
+        return collection.getFilteredByGlob("./src/posts/en/*.md");
+    });
+    config.addCollection("posts_nl", function (collection) {
+        return collection.getFilteredByGlob("./src/posts/nl/*.md");
+    });
+    config.addCollection("pages_en", function (collection) {
+        return collection.getFilteredByGlob("./src/pages/en/*");
+    });
+    config.addCollection("pages_nl", function (collection) {
+        return collection.getFilteredByGlob("./src/pages/nl/*");
+    });
+
     // Icon Sprite
     config.addNunjucksAsyncShortcode("iconsprite", iconsprite);
 
@@ -62,9 +75,9 @@ module.exports = function (config) {
         dir: {
             input: "src",
             output: "dist",
-            includes: "includes",
-            layouts: "layouts",
-            data: "data",
+            includes: "_includes",
+            layouts: "_layouts",
+            data: "_data",
         },
         templateFormats: ["njk", "md", "11ty.js"],
         htmlTemplateEngine: "njk",
