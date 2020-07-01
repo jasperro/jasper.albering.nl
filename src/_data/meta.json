@@ -2,6 +2,5 @@
     "title": "Jasper Albering",
     "description": "Jasper Albering's Website",
     "url": "https://jasper.albering.nl",
-    "lang": "en",
-    "locale": "en_us"
+    "locales": { "en": "English", "nl": "Nederlands" }
 }

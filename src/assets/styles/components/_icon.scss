@@ -8,14 +8,10 @@
     pointer-events: none;
 }
 
-// ==========================
-// Animated Pure CSS Menu Burger Icon
-// ==========================
-
 .menuicon {
     display: block;
-    width: 18px;
-    height: 16px;
+    width: 1.8rem;
+    height: 1.3rem;
     position: relative;
     transform: rotate(0deg);
     cursor: pointer;
@@ -26,7 +22,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        height: 2px;
+        height: 0.18rem;
         width: 100%;
         background-color: currentColor;
         transform: rotate(0deg);
@@ -43,30 +39,6 @@
 
         &:nth-child(4) {
             top: 100%;
-        }
-    }
-
-    // Active State: Transform to "X"
-    .is-open & {
-        top: 2px;
-        transform: rotate(-180deg);
-
-        .menuicon__bar {
-
-            &:nth-child(1),
-            &:nth-child(4) {
-                width: 0;
-                top: 50%;
-                left: 50%;
-            }
-
-            &:nth-child(2) {
-                transform: rotate(45deg);
-            }
-
-            &:nth-child(3) {
-                transform: rotate(-45deg);
-            }
         }
     }
 }

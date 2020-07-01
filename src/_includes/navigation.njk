@@ -1,11 +1,6 @@
-<nav class="nav js-nav" role="navigation" tabindex="-1">
+<nav class="nav" role="navigation" tabindex="-1">
 
-    {# Menu Toggle Button #}
-    <button
-        class="nav__toggle js-nav-toggle"
-        aria-expanded="false"
-        aria-controls="nav-menu"
-    >
+    <label for="nav-toggle">
         <span class="sr-only">toggle menu</span>
         <span class="menuicon">
             <span class="menuicon__bar"></span>
@@ -13,24 +8,41 @@
             <span class="menuicon__bar"></span>
             <span class="menuicon__bar"></span>
         </span>
-    </button>
+    </label>
+    <input type="checkbox" id="nav-toggle" aria-controls="nav__container">
 
-    {# Nav Links  #}
-    <ul class="nav__menu js-nav-menu" id="nav-menu">
-        {%- set items = collections["pages_" + locale] -%}
-        {%- for item in items | eleventyNavigation -%}
-            {%- set isCurrent = (item.url == page.url) -%}
-            {%- set isParent = item.url != '/' and item.url in page.url -%}
-            <li class="nav__item{% if isCurrent or isParent %} nav__item--active{% endif %}">
-                <a
+    <nav class="nav__container">
+        <ul class="nav__menu">
+            {%- set items = collections["pages_" + locale] -%}
+            {%- for item in items | eleventyNavigation -%}
+                {%- set isCurrent = (item.url == page.url) -%}
+                {%- set isParent = item.url != '/' and item.url in page.url -%}
+                <li class="nav__item{% if isCurrent or isParent %} nav__item--active{% endif %}">
+                    <a
                 class="nav__link"
                 href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"
                 {% if isCurrent %}aria-current="page"{% endif %}
             >
-                    {{ item.title }}
-                </a>
-            </li>
-        {%- endfor -%}
-    </ul>
+                        {{ item.title }}
+                    </a>
+                </li>
+            {%- endfor -%}
+        </ul>
+        {# Language selector #}
+        <ul class="nav__menu">
+            {%- for name, value in meta.locales -%}
+                {% if name != locale %}
 
+                    {% for item in collections.all %}
+
+                        {% if item.data.translationKey == translationKey and item.data.locale == name %}
+                            <a href="{{ item.url }}">{{ value }}</a>
+                        {% endif %}
+
+                    {% endfor %}
+
+                {% endif %}
+            {%- endfor -%}
+        </ul>
+    </nav>
 </nav>

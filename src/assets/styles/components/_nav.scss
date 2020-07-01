@@ -1,36 +1,67 @@
 .nav {
-    &__menu {
+    #nav-toggle {
         display: none;
+    }
+
+    &__container {
         position: absolute;
         left: 0;
         right: 0;
-        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
     }
 
     &__link {
         display: block;
-        padding: 0.5em 1em;
-    }
+        padding: 0.5rem 0.5rem;
+        text-decoration: none;
+        color: var(--color-accent-dark);
 
-    &__toggle {
-        @include button-reset;
-    }
-
-    @include mq-max(lg) {
-        &.is-open &__menu {
-            display: block;
+        &[aria-current=page] {
+            color: var(--color-text);
+            background-color: var(--color-accent-dark)
         }
     }
 
-    @include mq(lg) {
-        &__toggle {
-            display: none;
+    &__menu {
+        display: flex;
+        position: static;
+        background-color: transparent;
+        flex: 1;
+
+        &:nth-child(2) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    label[for="nav-toggle"] {
+        display: none;
+        margin: 0.5rem;
+    }
+
+    // Mobile layout with checkbox nav menu
+    @include mq-max(lg) {
+        label[for=nav-toggle] {
+            display: block;
         }
 
         &__menu {
-            display: flex;
-            position: static;
-            background-color: transparent;
+            flex-direction: column;
+        }
+
+        &__container {
+            display: none;
+            padding-top: 1rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-bottom: 1rem;
+            margin-top: 0.5rem;
+            justify-content: space-between;
+            background-color: var(--color-bg_element)
+        }
+
+        #nav-toggle:checked~&__container {
+            display: block;
         }
     }
 }

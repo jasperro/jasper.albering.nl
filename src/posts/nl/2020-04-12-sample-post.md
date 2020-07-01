@@ -1,17 +1,18 @@
 ---
-title: An example post.
+title: Een voorbeeldpaal.
 date: 2020-06-06
+translationKey: "sample-post"
 ---
 
 Lorem Ipsum Dolor.
 
-"Hello", Testing testing,<>
+"Goedemorgen", Testen testen,<>
 
-& is escaped, \&amp; works too with an escape \
+& is spaghetti, \&amp; werkt ook met een escape \
 
-# Title, is it too big?
+# Titel, is dit te groot?
 
-## Subtitle
+## Ondertitel
 
 ### H3
 
@@ -19,6 +20,6 @@ Lorem Ipsum Dolor.
 
 ##### H5
 
-<pre>pizza coding time</pre>
+<pre>pizza coding tijd</pre>
 
 доброе утро, testing unicode.

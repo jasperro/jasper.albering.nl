@@ -1,5 +1,4 @@
 module.exports = {
-    buildTime: new Date(),
     nl: {
         homeTitle: "Hoi, mijn naam is Jasper.",
         homeDescription: "Ik ben een echte <strong>techneut</strong>",
