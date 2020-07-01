@@ -1,14 +1,15 @@
 .nav {
+    display: flex;
+    flex: 1;
+
     #nav-toggle {
         display: none;
     }
 
     &__container {
-        position: absolute;
-        left: 0;
-        right: 0;
         display: flex;
         justify-content: space-between;
+        flex: 1;
     }
 
     &__link {
@@ -24,15 +25,8 @@
         }
     }
 
-    &__icon {
-        width: 2.3rem;
-        height: 2.3rem;
-        margin: 0.2rem 0.6rem 0.2rem 0.2rem;
-    }
-
     &__menu {
         display: flex;
-        position: static;
         background-color: transparent;
         flex: 1;
 
@@ -58,17 +52,25 @@
 
         &__container {
             display: none;
-            padding-top: 1rem;
+            padding-top: 5rem;
             padding-left: 2rem;
             padding-right: 2rem;
             padding-bottom: 1rem;
-            margin-top: 0.5rem;
             justify-content: space-between;
-            background-color: var(--color-bg_element)
+            background-color: var(--color-bg_element);
+            flex-basis: 100%;
         }
 
         #nav-toggle:checked~&__container {
             display: block;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            width: 100%
         }
+
+        justify-content: end;
+        flex-wrap: wrap;
     }
 }

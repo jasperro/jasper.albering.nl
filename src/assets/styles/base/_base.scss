@@ -1,9 +1,5 @@
 // Main Site Layout
 
-body {
-    overflow-x: hidden;
-}
-
 .layout {
     display: flex;
     flex-direction: column;
@@ -20,6 +16,9 @@ body {
         display: flex;
         flex-direction: column;
         flex: 1 0 auto;
+        margin-top: 4rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
 
         &::after {
             content: '';
@@ -30,14 +29,9 @@ body {
     }
 }
 
-.container {}
-
 body {
     background-color: var(--color-bg);
-
     overflow-x: hidden;
-
     z-index: 0;
-
     transition: color, background-color 0.2s ease-in;
 }
