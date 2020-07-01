@@ -3,6 +3,7 @@
 {# General #}
 <meta name="description" content="{{ description or meta.description }}">
 <link rel="canonical" href="{{ absolutePageUrl }}">
+<meta name="google-site-verification" content="{{ meta.googleverify }}"/>
 
 {# Open Graph #}
 <meta property="og:site_name" content="{{ meta.title }}">
@@ -28,3 +29,7 @@
 
 {# RSS Feed #}
 <link type="application/atom+xml" rel="alternate" href="{{ meta.url }}/feed.xml" title="{{ meta.title }}">
+
+{%- for lang, value in meta.locales -%}
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ meta.url | url | absoluteUrl + lang }}"/>
+{%- endfor -%}
