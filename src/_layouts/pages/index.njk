@@ -4,16 +4,17 @@ eleventyNavigation:
   order: -999
 ---
 <div class="home">
-  <div class="home__hero">
-    <div class="home__hero__title">{{ site[locale].homeTitle | safe }}</div>
-    <div class="home__hero__subtitle">{{ site[locale].homeDescription | safe }}
+    <div class="home__hero">
+        <div class="home__hero__title">{{ site[locale].homeTitle | safe }}</div>
+        <div class="home__hero__subtitle">{{ site[locale].homeDescription | safe }}
+        </div>
     </div>
-  </div>
 
-  <div class="home__card_info">
-    {{ site[locale].homeInfo | safe }}
-  </div>
-  <div class="home__title_subsection">{{ site[locale].projects }}</div>
+    <div class="home__card_info">
+        {{ site[locale].homeInfo | safe }}
+    </div>
+    <div class="home__title_subsection">{{ site[locale].projects }}</div>
 
-  <div class="home__projects"></div>
+    <div class="home__projects"></div>
+    <img src="/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg"/>
 </div>

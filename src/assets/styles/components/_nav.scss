@@ -13,7 +13,8 @@
 
     &__link {
         display: block;
-        padding: 0.5rem 0.5rem;
+        padding: 0.4rem 0.5rem;
+        margin: 0.4rem 0.2rem;
         text-decoration: none;
         color: var(--color-accent-dark);
 
@@ -21,6 +22,12 @@
             color: var(--color-text);
             background-color: var(--color-accent-dark)
         }
+    }
+
+    &__icon {
+        width: 2.3rem;
+        height: 2.3rem;
+        margin: 0.2rem 0.6rem 0.2rem 0.2rem;
     }
 
     &__menu {

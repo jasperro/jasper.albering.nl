@@ -1,63 +1,64 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
+const pluginLocalRespimg = require("eleventy-plugin-local-respimg");
 const markdownIt = require("markdown-it");
+const moment = require("moment");
 
 const filters = require("./utils/filters.js");
 const transforms = require("./utils/transforms.js");
 const shortcodes = require("./utils/shortcodes.js");
 const iconsprite = require("./utils/iconsprite.js");
-const moment = require("moment");
 
-module.exports = function (config) {
+module.exports = function (eleventyConfig) {
     // Plugins
-    config.addPlugin(pluginRss);
-    config.addPlugin(pluginNavigation);
+    eleventyConfig.addPlugin(pluginRss);
+    eleventyConfig.addPlugin(pluginNavigation);
 
     // Filters
     Object.keys(filters).forEach((filterName) => {
-        config.addFilter(filterName, filters[filterName]);
+        eleventyConfig.addFilter(filterName, filters[filterName]);
     });
 
     // Transforms
     Object.keys(transforms).forEach((transformName) => {
-        config.addTransform(transformName, transforms[transformName]);
+        eleventyConfig.addTransform(transformName, transforms[transformName]);
     });
 
     // Shortcodes
     Object.keys(shortcodes).forEach((shortcodeName) => {
-        config.addShortcode(shortcodeName, shortcodes[shortcodeName]);
+        eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName]);
     });
 
-    config.addCollection("posts_en", function (collection) {
+    eleventyConfig.addCollection("posts_en", function (collection) {
         return collection.getFilteredByGlob("./src/posts/en/*.md");
     });
-    config.addCollection("posts_nl", function (collection) {
+    eleventyConfig.addCollection("posts_nl", function (collection) {
         return collection.getFilteredByGlob("./src/posts/nl/*.md");
     });
-    config.addCollection("posts", function (collection) {
+    eleventyConfig.addCollection("posts", function (collection) {
         return collection.getFilteredByGlob("./src/posts/*/*.md");
     });
-    config.addCollection("pages_en", function (collection) {
+    eleventyConfig.addCollection("pages_en", function (collection) {
         return collection.getFilteredByGlob("./src/pages/en/*");
     });
-    config.addCollection("pages_nl", function (collection) {
+    eleventyConfig.addCollection("pages_nl", function (collection) {
         return collection.getFilteredByGlob("./src/pages/nl/*");
     });
 
     // Icon Sprite
-    config.addNunjucksAsyncShortcode("iconsprite", iconsprite);
+    eleventyConfig.addNunjucksAsyncShortcode("iconsprite", iconsprite);
 
-    config.addNunjucksFilter("date", function (date, format, locale) {
+    eleventyConfig.addNunjucksFilter("date", function (date, format, locale) {
         locale = locale ? locale : "en";
         moment.locale(locale);
         return moment(date).format(format);
     });
 
     // Asset Watch Targets
-    config.addWatchTarget("./src/assets");
+    eleventyConfig.addWatchTarget("./src/assets");
 
     // Markdown
-    config.setLibrary(
+    eleventyConfig.setLibrary(
         "md",
         markdownIt({
             html: true,
@@ -68,19 +69,39 @@ module.exports = function (config) {
     );
 
     // Layouts
-    config.addLayoutAlias("base", "base.njk");
-    config.addLayoutAlias("post", "post.njk");
+    eleventyConfig.addLayoutAlias("base", "base.njk");
+    eleventyConfig.addLayoutAlias("post", "post.njk");
 
     // Pass-through files
-    config.addPassthroughCopy("src/robots.txt");
-    config.addPassthroughCopy("src/site.webmanifest");
-    config.addPassthroughCopy("src/assets/images");
-    config.addPassthroughCopy("src/assets/fonts");
+    eleventyConfig.addPassthroughCopy("src/robots.txt");
+    eleventyConfig.addPassthroughCopy("src/site.webmanifest");
+    eleventyConfig.addPassthroughCopy("src/assets/images");
+    eleventyConfig.addPassthroughCopy("src/assets/fonts");
 
     // Deep-Merge
-    config.setDataDeepMerge(true);
+    eleventyConfig.setDataDeepMerge(true);
 
-    // Base Config
+    // Image configuration
+    eleventyConfig.addPlugin(pluginLocalRespimg, {
+        folders: {
+            source: "src", // Folder images are stored in
+            output: "dist", // Folder images should be output to
+        },
+        images: {
+            resize: {
+                min: 250, // Minimum width to resize an image to
+                max: 1500, // Maximum width to resize an image to
+                step: 150, // Width difference between each resized image
+            },
+            gifToVideo: false, // Convert GIFs to MP4 videos
+            sizes: "100vw", // Default image `sizes` attribute
+            lazy: true, // Include `loading="lazy"` attribute for images
+            watch: {
+                src: "assets/images/**/*", // Glob of images that Eleventy should watch for changes to
+            },
+        },
+    });
+    // Base config
     return {
         dir: {
             input: "src",

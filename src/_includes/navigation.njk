@@ -13,6 +13,11 @@
 
     <nav class="nav__container">
         <ul class="nav__menu">
+            <li>
+                <svg class="nav__icon icon icon--icondark-fontless" role="img" aria-hidden="true">
+                    <use href="#icon-icondark-fontless"></use>
+                </svg>
+            </li>
             {%- set items = collections["pages_" + locale] -%}
             {%- for item in items | eleventyNavigation -%}
                 {%- set isCurrent = (item.url == page.url) -%}

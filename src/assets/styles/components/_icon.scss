@@ -1,8 +1,16 @@
 .icon {
     display: inline-block;
-    font-size: 1.5em;
-    height: 1em;
-    width: 1em;
+
+    &_medium {
+        height: 2.4rem;
+        width: 2.4rem;
+    }
+
+    &_small {
+        height: 1.6rem;
+        width: 1.6rem;
+    }
+
     vertical-align: middle;
     fill: currentColor;
     pointer-events: none;
