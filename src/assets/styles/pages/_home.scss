@@ -1,19 +1,40 @@
 .home {
     &__card {
         &_info {
-            background-color: var(--color-bg_element);
-
-            border-radius: 7px;
+            @extend .card;
             max-width: 60%;
-            padding: 1rem;
 
             @include mq-max(md) {
                 max-width: 100%;
             }
+
+            & .icon {
+                margin: 0 0.2rem
+            }
         }
 
         &_project {
-            border-radius: 7px;
+            @extend .card;
+            padding: 0;
+            width: 20rem;
+            min-width: 12rem;
+            display: flex;
+            flex-direction: column;
+            margin-right: 0.8rem;
+
+            &_description {
+                margin: 0.7rem;
+                padding: 0 .5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            & img {
+                width: 100%;
+                height: 100%;
+                border-radius: 0.7rem 0.7rem 0 0;
+            }
         }
     }
 
@@ -40,6 +61,28 @@
 
     }
 
-    &__projects {}
+    &__projects {
+        display: flex;
+        overflow-y: visible;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            height: 50px;
+        }
+
+        &::after {
+            content: ' ';
+            min-width: 3.2rem;
+        }
+
+        margin-left: -2rem;
+        margin-right: -4rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+
+    }
 
 }
