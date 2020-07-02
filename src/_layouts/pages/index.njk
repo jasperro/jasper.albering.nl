@@ -5,13 +5,13 @@ eleventyNavigation:
 ---
 <div class="home">
     <div class="home__hero">
-        <div class="home__hero__title">{{ site[locale].homeTitle | safe }}</div>
-        <div class="home__hero__subtitle">{{ site[locale].homeDescription | safe }}
+        <div class="home__hero__title">{{ home[locale].title | safe }}</div>
+        <div class="home__hero__subtitle">{{ home[locale].description | safe }}
         </div>
     </div>
 
     <div class="home__card_info">
-        {{ site[locale].homeInfo | safe }}
+        {{ home[locale].info | safe }}
         {% icon 'github' %}
         {% icon 'react' %}
         {% icon 'linux' %}
@@ -27,7 +27,7 @@ eleventyNavigation:
         {% icon 'console' %}
         {% icon 'open-source-initiative' %}
     </div>
-    <div class="home__title_subsection">{{ site[locale].projects }}</div>
+    <div class="home__title_subsection">{{ home[locale].projects }}</div>
 
     <div class="home__projects">
         <div class="home__card_project">
@@ -45,4 +45,23 @@ eleventyNavigation:
             </div>
         </div>
     </div>
+
+    <form name="contact" class="home__contact_form" method="POST" data-netlify="true">
+        <h5>{{ home[locale].contactHeader }}</h5>
+        <p>
+            <label>{{ home[locale].contactName }}<input type="text" name="name"/></label>
+        </p>
+        <p>
+            <label>{{ home[locale].contactMail }}<input type="email" name="email"/></label>
+        </p>
+        <p>
+            <label>{{ home[locale].contactMessage }}
+                <textarea name="message"></textarea>
+            </label>
+        </p>
+        <p>
+            <button type="submit">{{ home[locale].submit }}</button>
+        </p>
+    </form>
+
 </div>
