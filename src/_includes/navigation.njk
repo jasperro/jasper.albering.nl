@@ -35,7 +35,7 @@
                     {% for item in collections.all %}
 
                         {% if item.data.translationKey == translationKey and item.data.locale == name %}
-                            <a href="{{ item.url }}">{{ value }}</a>
+                            <a href="{{ item.url }}" onclick="setUserLanguage('{{ name }}')">{{ value }}</a>
                         {% endif %}
 
                     {% endfor %}

@@ -7,6 +7,11 @@
 
         <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}">
         {% include "meta.njk" %}
+        <script>
+            function setUserLanguage(language = "en") {
+                document.cookie = `nf_lang=${language}; secure; path=/`;
+            };
+        </script>
     </head>
     <body data-theme="light">
         <div hidden>{% iconsprite %}</div>

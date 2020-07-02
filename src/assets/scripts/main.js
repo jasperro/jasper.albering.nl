@@ -2,4 +2,3 @@
 import "focus-visible";
 
 // Internal Modules
-import "./modules/themetoggle";
