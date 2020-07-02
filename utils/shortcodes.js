@@ -1,9 +1,9 @@
 module.exports = {
-    icon: function (name, size = "medium") {
-        let px = 24;
+    icon: function (name, size = "small") {
+        let px = 16;
         switch (size) {
-            case "small":
-                px = 16;
+            case "medium":
+                px = 24;
                 break;
         }
         if (size === "auto") {
