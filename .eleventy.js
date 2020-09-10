@@ -4,10 +4,10 @@ const pluginLocalRespimg = require("eleventy-plugin-local-respimg");
 const markdownIt = require("markdown-it");
 const moment = require("moment");
 
-const filters = require("./utils/filters.js");
-const transforms = require("./utils/transforms.js");
-const shortcodes = require("./utils/shortcodes.js");
-const iconsprite = require("./utils/iconsprite.js");
+const filters = require("./src/utils/filters.js");
+const transforms = require("./src/utils/transforms.js");
+const shortcodes = require("./src/utils/shortcodes.js");
+const iconsprite = require("./src/utils/iconsprite.js");
 
 module.exports = function (eleventyConfig) {
     // Plugins
@@ -54,7 +54,7 @@ module.exports = function (eleventyConfig) {
         return moment(date).format(format);
     });
 
-    // Asset Watch Targets
+    // Asset and utils watch Targets
     eleventyConfig.addWatchTarget("./src/assets");
 
     // Markdown
