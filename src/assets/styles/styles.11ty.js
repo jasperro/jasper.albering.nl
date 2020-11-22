@@ -1,13 +1,16 @@
 const fs = require("fs");
 const path = require("path");
-const sass = require("node-sass");
-const CleanCSS = require("clean-css");
 const cssesc = require("cssesc");
+const postcss = require("postcss");
+const postcssimport = require("postcss-import");
+const tailwindcss = require("tailwindcss");
+const postcssclean = require("postcss-clean");
+const autoprefixer = require("autoprefixer");
 
 const isProd = process.env.ELEVENTY_ENV === "production";
 
 // main entry point name
-const ENTRY_FILE_NAME = "main.scss";
+const ENTRY_FILE_NAME = "main.css";
 
 module.exports = class {
     async data() {
@@ -19,36 +22,15 @@ module.exports = class {
         };
     }
 
-    // Compile Sass to CSS,
-    // Embed Source Map in Development
-    async compile(config) {
-        return new Promise((resolve, reject) => {
-            if (!isProd) {
-                config.sourceMap = true;
-                config.sourceMapEmbed = true;
-                config.outputStyle = "expanded";
-            }
-            return sass.render(config, (err, result) => {
-                if (err) {
-                    return reject(err);
-                }
-                resolve(result.css.toString());
-            });
-        });
-    }
-
-    // Minify & Optimize with CleanCSS in Production
-    async minify(css) {
-        return new Promise((resolve, reject) => {
-            if (!isProd) {
-                resolve(css);
-            }
-            const minified = new CleanCSS().minify(css);
-            if (!minified.styles) {
-                return reject(minified.error);
-            }
-            resolve(minified.styles);
-        });
+    async compile(entryPath) {
+        const css = await fs.promises.readFile(entryPath);
+        const processed = await postcss([
+            postcssimport,
+            tailwindcss,
+            autoprefixer,
+            postcssclean,
+        ]).process(css, { from: entryPath });
+        return processed.css;
     }
 
     // display an error overlay when CSS build fails.
@@ -99,9 +81,8 @@ module.exports = class {
     // render the CSS file
     async render({ entryPath }) {
         try {
-            const css = await this.compile({ file: entryPath });
-            const result = await this.minify(css);
-            return result;
+            const css = await this.compile(entryPath);
+            return css;
         } catch (err) {
             // if things go wrong
             if (isProd) {

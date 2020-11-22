@@ -1,0 +1,35 @@
+/*@import 'base/colors.css';
+@import 'base/color-themes.css';
+@import 'base/fonts.css';
+@import 'base/normalize.css';
+@import 'base/typography.css';
+@import 'base/reboot.css';
+@import 'base/base.css';
+@import 'base/focus.css';
+@import 'base/utilities.css';
+@import 'base/screenreader.css';
+@import 'base/animation.css';
+
+//--------------------
+// COMPONENTS
+// partials with local scope to a component
+//--------------------*/
+
+/*@import 'components/header.css';
+@import 'components/nav.css';
+@import 'components/footer.css';
+@import 'components/icon.css';
+@import 'components/button.css';
+@import 'components/card.css';*/
+
+/*--------------------
+// PAGES
+// partials with local scope to a page
+//--------------------*/
+
+/*@import 'pages/home.css';
+@import 'pages/blog.css';*/
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
