@@ -2,10 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const cssesc = require("cssesc");
 const postcss = require("postcss");
-const postcssimport = require("postcss-import");
-const tailwindcss = require("tailwindcss");
-const postcssclean = require("postcss-clean");
-const autoprefixer = require("autoprefixer");
+const postcssrc = require("postcss-load-config");
 
 const isProd = process.env.ELEVENTY_ENV === "production";
 
@@ -24,12 +21,12 @@ module.exports = class {
 
     async compile(entryPath) {
         const css = await fs.promises.readFile(entryPath);
-        const processed = await postcss([
-            postcssimport,
-            tailwindcss,
-            autoprefixer,
-            postcssclean,
-        ]).process(css, { from: entryPath });
+        const ctx = {};
+        const { plugins, options } = await postcssrc(ctx);
+        const processed = await postcss(plugins).process(css, {
+            from: entryPath,
+            ...options,
+        });
         return processed.css;
     }
 

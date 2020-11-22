@@ -1,5 +1,5 @@
 .nav {
-    display: flex;
+    /*display: flex;
     flex: 1;
 
     #nav-toggle {
@@ -40,8 +40,7 @@
         margin: 0.5rem;
     }
 
-    // Mobile layout with checkbox nav menu
-    @include mq-max(lg) {
+    @screen sm {
         label[for=nav-toggle] {
             display: block;
         }
@@ -72,5 +71,5 @@
 
         justify-content: end;
         flex-wrap: wrap;
-    }
+    }*/
 }

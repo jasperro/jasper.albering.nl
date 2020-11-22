@@ -2,7 +2,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginLocalRespimg = require("eleventy-plugin-local-respimg");
 const markdownIt = require("markdown-it");
-const moment = require("moment");
+const dayjs = require("dayjs");
 
 const filters = require("./src/utils/filters.js");
 const transforms = require("./src/utils/transforms.js");
@@ -50,8 +50,8 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addNunjucksFilter("date", function (date, format, locale) {
         locale = locale ? locale : "en";
-        moment.locale(locale);
-        return moment(date).format(format);
+        dayjs.locale(locale);
+        return dayjs(date).format(format);
     });
 
     // Asset and utils watch Targets

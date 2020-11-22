@@ -1,0 +1,13 @@
+a:focus,
+button:focus,
+input:focus {
+    outline: 5px solid var(--color-primary);
+}
+
+[tabindex='-1']:focus {
+    outline: none !important;
+}
+
+a:focus:hover {
+    outline: none;
+}

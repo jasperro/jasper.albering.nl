@@ -1,52 +1,48 @@
 {
-  "name": "eleventastic",
-  "version": "1.0.0",
-  "description": "A boilerplate for eleventy websites",
-  "scripts": {
-    "start": "yarn run dev",
-    "dev": "run-s clean eleventy:dev --print-label",
-    "build": "run-s clean eleventy:prod --print-label",
-    "eleventy:dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
-    "eleventy:prod": "cross-env ELEVENTY_ENV=production eleventy",
-    "clean": "del-cli dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/maxboeck/eleventastic"
-  },
-  "author": "Max Böck",
-  "license": "MIT",
-  "devDependencies": {
-    "@11ty/eleventy": "^0.11.0",
-    "@11ty/eleventy-navigation": "^0.1.6",
-    "@11ty/eleventy-plugin-rss": "^1.0.9",
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "babel-loader": "^8.1.0",
-    "clean-css": "^4.2.3",
-    "critical": "^2.0.4",
-    "cross-env": "^7.0.2",
-    "cssesc": "^3.0.0",
-    "del-cli": "^3.0.0",
-    "eleventy-plugin-local-respimg": "^0.3.1",
-    "focus-trap": "^6.0.1",
-    "focus-visible": "^5.1.0",
-    "html-minifier": "^4.0.0",
-    "luxon": "^1.25.0",
-    "markdown-it": "^11.0.0",
-    "memfs": "^3.1.2",
-    "moment": "^2.27.0",
-    "node-sass": "^4.13.1",
-    "npm-run-all": "^4.1.5",
-    "svg-sprite": "^1.5.0",
-    "webpack": "^4.44.1"
-  },
-  "dependencies": {
-    "autoprefixer": "^10.0.2",
-    "postcss": "^8.1.9",
-    "postcss-clean": "^1.1.0",
-    "postcss-import": "^13.0.0",
-    "tailwindcss": "^2.0.1"
-  }
+    "name": "jasperro-website",
+    "version": "1.0.0",
+    "description": "Jasper Albering's personal website, built with eleventy",
+    "scripts": {
+        "start": "yarn run dev",
+        "dev": "run-s clean eleventy:dev --print-label",
+        "build": "run-s clean eleventy:prod --print-label",
+        "eleventy:dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
+        "eleventy:prod": "cross-env ELEVENTY_ENV=production eleventy",
+        "clean": "del-cli dist"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/jasperro/jasperro-website"
+    },
+    "author": "Jasper Albering",
+    "license": "MIT",
+    "devDependencies": {
+        "@11ty/eleventy": "^0.11.1",
+        "@11ty/eleventy-navigation": "^0.1.6",
+        "@11ty/eleventy-plugin-rss": "^1.0.9",
+        "@babel/core": "^7.12.7",
+        "@babel/preset-env": "^7.12.7",
+        "@tailwindcss/typography": "^0.3.1",
+        "autoprefixer": "^10.0.2",
+        "babel-loader": "^8.2.1",
+        "clean-css": "^4.2.3",
+        "cross-env": "^7.0.2",
+        "cssesc": "^3.0.0",
+        "dayjs": "^1.9.6",
+        "del-cli": "^3.0.1",
+        "eleventy-plugin-local-respimg": "^0.4.0",
+        "focus-trap": "^6.2.0",
+        "focus-visible": "^5.2.0",
+        "html-minifier": "^4.0.0",
+        "markdown-it": "^12.0.2",
+        "memfs": "^3.1.2",
+        "npm-run-all": "^4.1.5",
+        "postcss": "^8.1.9",
+        "postcss-clean": "^1.1.0",
+        "postcss-import": "^13.0.0",
+        "postcss-load-config": "^3.0.0",
+        "postcss-preset-env": "^6.7.0",
+        "svg-sprite": "^1.5.0",
+        "tailwindcss": "^2.0.1"
+    }
 }

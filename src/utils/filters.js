@@ -1,17 +1,12 @@
-const { DateTime } = require("luxon");
+const dayjs = require("dayjs");
 
 module.exports = {
     dateToFormat: function (date, format) {
-        return DateTime.fromJSDate(date, { zone: "utc" }).toFormat(
-            String(format)
-        );
+        return dayjs(date).format(String(format));
     },
 
     dateToISO: function (date) {
-        return DateTime.fromJSDate(date, { zone: "utc" }).toISO({
-            includeOffset: false,
-            suppressMilliseconds: true,
-        });
+        return dayjs(date).toISOString();
     },
 
     obfuscate: function (str) {

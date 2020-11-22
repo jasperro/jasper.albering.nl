@@ -1,20 +1,5 @@
 .button {
-    text-decoration: none;
-    padding: 0.5rem 0.75rem;
-    margin: 0.25rem;
-    border-radius: 5px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1rem;
-    text-align: center;
-    letter-spacing: 0.75px;
-    text-transform: uppercase;
-    transition: color, background-color 0.2s ease-in;
-    display: inline-block;
-
     &__filled {
-        @include BoxShadow(4);
         color: $text_light;
 
         &__primary {
