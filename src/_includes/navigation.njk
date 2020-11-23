@@ -1,6 +1,6 @@
 <nav class="nav" role="navigation" tabindex="-1">
 
-    <label for="nav-toggle">
+    <label class="visible sm:invisible" for="nav-toggle">
         <span class="sr-only">toggle menu</span>
         <span class="menuicon">
             <span class="menuicon__bar"></span>
@@ -9,7 +9,7 @@
             <span class="menuicon__bar"></span>
         </span>
     </label>
-    <input type="checkbox" id="nav-toggle" aria-controls="nav__container">
+    <input type="checkbox" id="nav-toggle" class="hidden" aria-controls="nav__container">
     <nav class="nav__container">
         <ul class="nav__menu">
             {%- set items = collections["pages_" + locale] -%}

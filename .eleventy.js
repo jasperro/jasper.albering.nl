@@ -7,7 +7,6 @@ const dayjs = require("dayjs");
 const filters = require("./src/utils/filters.js");
 const transforms = require("./src/utils/transforms.js");
 const shortcodes = require("./src/utils/shortcodes.js");
-const iconsprite = require("./src/utils/iconsprite.js");
 
 module.exports = function (eleventyConfig) {
     // Plugins
@@ -44,9 +43,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection("pages_nl", function (collection) {
         return collection.getFilteredByGlob("./src/pages/nl/*");
     });
-
-    // Icon Sprite
-    eleventyConfig.addNunjucksAsyncShortcode("iconsprite", iconsprite);
 
     eleventyConfig.addNunjucksFilter("date", function (date, format, locale) {
         locale = locale ? locale : "en";

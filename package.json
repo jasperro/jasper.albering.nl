@@ -4,8 +4,8 @@
     "description": "Jasper Albering's personal website, built with eleventy",
     "scripts": {
         "start": "yarn run dev",
-        "dev": "run-s clean eleventy:dev --print-label",
-        "build": "run-s clean eleventy:prod --print-label",
+        "dev": "gulp build & gulp watch & yarn run clean & yarn run eleventy:dev",
+        "build": "yarn run clean & gulp build & yarn run eleventy:prod",
         "eleventy:dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
         "eleventy:prod": "cross-env ELEVENTY_ENV=production eleventy",
         "clean": "del-cli dist"
@@ -22,6 +22,7 @@
         "@11ty/eleventy-plugin-rss": "^1.0.9",
         "@babel/core": "^7.12.7",
         "@babel/preset-env": "^7.12.7",
+        "@tailwindcss/forms": "^0.2.1",
         "@tailwindcss/typography": "^0.3.1",
         "autoprefixer": "^10.0.2",
         "babel-loader": "^8.2.1",
@@ -33,6 +34,9 @@
         "eleventy-plugin-local-respimg": "^0.4.0",
         "focus-trap": "^6.2.0",
         "focus-visible": "^5.2.0",
+        "gulp": "^4.0.2",
+        "gulp-postcss": "^9.0.0",
+        "gulp-svg-sprite": "^1.5.0",
         "html-minifier": "^4.0.0",
         "markdown-it": "^12.0.2",
         "memfs": "^3.1.2",
@@ -41,8 +45,8 @@
         "postcss-clean": "^1.1.0",
         "postcss-import": "^13.0.0",
         "postcss-load-config": "^3.0.0",
+        "postcss-nested": "^5.0.1",
         "postcss-preset-env": "^6.7.0",
-        "svg-sprite": "^1.5.0",
         "tailwindcss": "^2.0.1"
     }
 }

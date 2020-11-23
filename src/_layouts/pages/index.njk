@@ -4,13 +4,12 @@ eleventyNavigation:
   order: -999
 ---
 <div class="home">
-    <div class="home__hero">
-        <div class="home__hero__title">{{ home[locale].title | safe }}</div>
-        <div class="home__hero__subtitle">{{ home[locale].description | safe }}
-        </div>
+    <div class="flex flex-col">
+        <div class="text-9xl">{{ home[locale].title | safe }}</div>
+        <div class="text-8xl">{{ home[locale].description | safe }}</div>
     </div>
 
-    <div class="home__card_info bg-green-500">
+    <div class="bg-primary-light text-white rounded-xl shadow-md mx-4 my-4 px-4 py-4 max-w-7xl">
         {{ home[locale].info | safe }}
         {% icon 'github' %}
         {% icon 'react' %}
@@ -27,41 +26,40 @@ eleventyNavigation:
         {% icon 'console' %}
         {% icon 'open-source-initiative' %}
     </div>
-    <div class="home__title_subsection">{{ home[locale].projects }}</div>
+    <div class="text-3xl">{{ home[locale].projects }}</div>
 
-    <div class="home__projects">
-        <div class="home__card_project">
-            <img src="/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg"/>
-            <div class="home__card_project_description">
+    <div class="flex">
+        <div class="rounded-xl shadow-sm hover:shadow-xl bg-bgel p-5 m-4">
+            <img class="w-64" src="/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg"/>
+				<div>
         Wordpress thingy 
         {% icon 'wordpress' %}
             </div>
         </div>
-        <div class="home__card_project">
-            <img src="/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg"/>
-            <div class="home__card_project_description">
+        <div class="rounded-xl shadow-sm hover:shadow-xl bg-bgel p-5 m-4">
+            <img class="w-64" src="/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg"/>
+            <div>
         Egg Simulator 
         {% icon 'godot' %}
             </div>
         </div>
     </div>
 
-    <form name="contact" class="home__contact_form" method="POST" data-netlify="true">
-        <h5>{{ home[locale].contactHeader }}</h5>
+    <form name="contact" method="POST" data-netlify="true">
+        <h5 class="text-xl mb-2">{{ home[locale].contactHeader }}</h5>
         <p>
-            <label>{{ home[locale].contactName }}<input type="text" name="name"/></label>
+            <label>{{ home[locale].contactName }}<input class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mt-1 block w-10/12" type="text" name="name"/></label>
         </p>
         <p>
-            <label>{{ home[locale].contactMail }}<input type="email" name="email"/></label>
+            <label>{{ home[locale].contactMail }}<input class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mt-1 block w-10/12" type="email" name="email"/></label>
         </p>
         <p>
             <label>{{ home[locale].contactMessage }}
-                <textarea name="message"></textarea>
+                <textarea name="message" class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mt-1 block w-10/12"></textarea>
             </label>
         </p>
         <p>
-            <button type="submit">{{ home[locale].submit }}</button>
+            <button type="submit" class="my-4 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">{{ home[locale].submit }}</button>
         </p>
     </form>
-
 </div>
