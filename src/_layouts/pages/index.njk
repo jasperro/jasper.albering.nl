@@ -29,20 +29,9 @@ eleventyNavigation:
     <div class="text-3xl">{{ home[locale].projects }}</div>
 
     <div class="flex">
-        <div class="rounded-xl shadow-sm hover:shadow-xl bg-bgel p-5 m-4">
-            <img class="w-64" src="/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg"/>
-				<div>
-        Wordpress thingy 
-        {% icon 'wordpress' %}
-            </div>
-        </div>
-        <div class="rounded-xl shadow-sm hover:shadow-xl bg-bgel p-5 m-4">
-            <img class="w-64" src="/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg"/>
-            <div>
-        Egg Simulator 
-        {% icon 'godot' %}
-            </div>
-        </div>
+		  {% Card 'Pizza', 'Pizza', '/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg', ["godot", "github"] %}
+		  {% Card 'Wordpress Thing', 'Description', '/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg', ["wordpress"] %}
+		  {% Card 'Egg Simulator', 'Oui oui', '/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg', ["godot", "github"] %}
     </div>
 
     <form name="contact" method="POST" data-netlify="true">

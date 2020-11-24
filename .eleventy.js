@@ -8,6 +8,8 @@ const filters = require("./src/utils/filters.js");
 const transforms = require("./src/utils/transforms.js");
 const shortcodes = require("./src/utils/shortcodes.js");
 
+const componentsDir = "./src/_includes/components";
+
 module.exports = function (eleventyConfig) {
     // Plugins
     eleventyConfig.addPlugin(pluginRss);
@@ -27,6 +29,8 @@ module.exports = function (eleventyConfig) {
     Object.keys(shortcodes).forEach((shortcodeName) => {
         eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName]);
     });
+
+    eleventyConfig.addShortcode("Card", require(`./${componentsDir}/Card.js`));
 
     eleventyConfig.addCollection("posts_en", function (collection) {
         return collection.getFilteredByGlob("./src/posts/en/*.md");
@@ -52,6 +56,7 @@ module.exports = function (eleventyConfig) {
 
     // Asset and utils watch Targets
     eleventyConfig.addWatchTarget("./src/assets");
+    eleventyConfig.addWatchTarget("**/*.js");
 
     // Markdown
     eleventyConfig.setLibrary(
@@ -76,6 +81,8 @@ module.exports = function (eleventyConfig) {
 
     // Deep-Merge
     eleventyConfig.setDataDeepMerge(true);
+
+    eleventyConfig.setWatchJavaScriptDependencies(true);
 
     // Image configuration
     eleventyConfig.addPlugin(pluginLocalRespimg, {

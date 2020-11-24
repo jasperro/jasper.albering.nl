@@ -4,10 +4,8 @@
     "description": "Jasper Albering's personal website, built with eleventy",
     "scripts": {
         "start": "yarn run dev",
-        "dev": "gulp build & gulp watch & yarn run clean & yarn run eleventy:dev",
-        "build": "yarn run clean & gulp build & yarn run eleventy:prod",
-        "eleventy:dev": "cross-env ELEVENTY_ENV=development eleventy --serve",
-        "eleventy:prod": "cross-env ELEVENTY_ENV=production eleventy",
+        "dev": "cross-env ELEVENTY_ENV=development yarn run clean & gulp dev",
+        "build": "yarn run clean & gulp build & cross-env ELEVENTY_ENV=production eleventy",
         "clean": "del-cli dist"
     },
     "repository": {

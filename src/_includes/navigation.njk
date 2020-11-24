@@ -1,4 +1,4 @@
-<nav class="nav" role="navigation" tabindex="-1">
+<nav class="nav w-full" role="navigation" tabindex="-1">
 
     <label class="visible sm:invisible" for="nav-toggle">
         <span class="sr-only">toggle menu</span>
@@ -10,13 +10,14 @@
         </span>
     </label>
     <input type="checkbox" id="nav-toggle" class="hidden" aria-controls="nav__container">
-    <nav class="nav__container">
-        <ul class="nav__menu">
+    <nav class="flex flex-row justify-between">
+        <ul class="flex flex-row">
+		      <li> {% icon 'icon-fontless', undefined, 'aria-hidden="true"' %} </li>
             {%- set items = collections["pages_" + locale] -%}
             {%- for item in items | eleventyNavigation -%}
                 {%- set isCurrent = (item.url == page.url) -%}
                 {%- set isParent = item.url != '/' and item.url in page.url -%}
-                <li class="nav__item{% if isCurrent or isParent %} nav__item--active{% endif %}">
+					 <li class="flex w-max p-2{% if isCurrent %} bg-accent text-black{% else %} text-accent{% endif %}">
                     <a
                 class="nav__link"
                 href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"

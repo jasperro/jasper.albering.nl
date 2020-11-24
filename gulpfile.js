@@ -2,31 +2,48 @@ const cssesc = require("cssesc");
 const postcss = require("gulp-postcss");
 const svgSprite = require("gulp-svg-sprite");
 const gulp = require("gulp");
+const spawn = require("child_process").spawn;
+const https = require("https");
+let server;
 
 const isProd = process.env.ELEVENTY_ENV === "production";
 
-gulp.task("css", function () {
+gulp.task("css", async function () {
     return gulp
         .src("./src/assets/styles/main.css")
         .pipe(postcss())
         .pipe(gulp.dest("./dist/assets/styles/"));
 });
 
-gulp.task("icons", function () {
+gulp.task("icons", async function () {
     return gulp
         .src("./src/assets/icons/*.svg")
         .pipe(svgSprite(svgSpriteConfig))
         .pipe(gulp.dest("./dist/assets/"));
 });
 
-/*
-  Watch folders for changess
-*/
-gulp.task("watch", function () {
-    gulp.watch("./src/assets/styles/**/*.css", gulp.parallel("build"));
+gulp.task("build", gulp.parallel("icons", "css"));
+
+gulp.task("reload", async function () {
+    return browserSync.reload();
 });
 
-gulp.task("build", gulp.parallel("icons", "css"));
+gulp.task("eleventy:serve", async function () {
+    if (server) server.kill();
+    server = spawn("eleventy", ["--serve"]);
+    server.stdout.on("data", function (data) {
+        process.stdout.write(data);
+    });
+    return;
+});
+
+gulp.task("watch", async function () {
+    gulp.watch("./src/**/*.js", gulp.parallel("eleventy:serve"));
+    gulp.watch("./src/assets/styles/**/*.css", gulp.parallel("css"));
+    gulp.watch("./src/assets/icons/**/*", gulp.parallel("icons"));
+});
+
+gulp.task("dev", gulp.parallel("build", "eleventy:serve", "watch"));
 
 const svgSpriteConfig = {
     mode: {
