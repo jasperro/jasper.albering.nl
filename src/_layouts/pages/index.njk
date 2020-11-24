@@ -3,13 +3,14 @@ layout: base
 eleventyNavigation:
   order: -999
 ---
+{% iconsprites %}
 <div class="home">
     <div class="flex flex-col">
-        <div class="text-9xl">{{ home[locale].title | safe }}</div>
-        <div class="text-8xl">{{ home[locale].description | safe }}</div>
+        <div class="lg:text-9xl md:text-8xl text-6xl">{{ home[locale].title | safe }}</div>
+        <div class="lg:text-8xl md:text-7xl text-5xl text-primary">{{ home[locale].description | safe }}</div>
     </div>
 
-    <div class="bg-primary-light text-white rounded-xl shadow-md mx-4 my-4 px-4 py-4 max-w-7xl">
+    <div class="bg-primary-light text-white text-sm md:text-base rounded-xl shadow-md mx-1 sm:mx-4 my-4 px-4 py-4 max-w-7xl">
         {{ home[locale].info | safe }}
         {% icon 'github' %}
         {% icon 'react' %}
@@ -28,7 +29,7 @@ eleventyNavigation:
     </div>
     <div class="text-3xl">{{ home[locale].projects }}</div>
 
-    <div class="flex">
+    <div class="scrollingcards">
 		  {% Card 'Pizza', 'Pizza', '/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg', ["godot", "github"] %}
 		  {% Card 'Wordpress Thing', 'Description', '/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg', ["wordpress"] %}
 		  {% Card 'Egg Simulator', 'Oui oui', '/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg', ["godot", "github"] %}
@@ -50,5 +51,5 @@ eleventyNavigation:
         <p>
             <button type="submit" class="my-4 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">{{ home[locale].submit }}</button>
         </p>
-    </form>
+	 </form>
 </div>

@@ -1,6 +1,5 @@
 <nav class="nav w-full" role="navigation" tabindex="-1">
-
-    <label class="visible sm:invisible" for="nav-toggle">
+    <label class="sm:hidden" for="nav-toggle">
         <span class="sr-only">toggle menu</span>
         <span class="menuicon">
             <span class="menuicon__bar"></span>
@@ -10,14 +9,14 @@
         </span>
     </label>
     <input type="checkbox" id="nav-toggle" class="hidden" aria-controls="nav__container">
-    <nav class="flex flex-row justify-between">
-        <ul class="flex flex-row">
-		      <li> {% icon 'icon-fontless', undefined, 'aria-hidden="true"' %} </li>
+    <nav class="sm:flex flex-col hidden sm:flex-row justify-between p-2">
+        <ul class="flex flex-col sm:flex-row">
+		      <li class="sm:flex self-center mr-2 hidden"> {% icon 'iconlight-fontless', 'medium', 'aria-hidden="true"' %} </li>
             {%- set items = collections["pages_" + locale] -%}
             {%- for item in items | eleventyNavigation -%}
                 {%- set isCurrent = (item.url == page.url) -%}
                 {%- set isParent = item.url != '/' and item.url in page.url -%}
-					 <li class="flex w-max p-2{% if isCurrent %} bg-accent text-black{% else %} text-accent{% endif %}">
+					 <li class="flex p-2 sm:w-max w-full{% if isCurrent %} bg-primary text-white{% else %} text-primary{% endif %}">
                     <a
                 class="nav__link"
                 href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"
@@ -29,14 +28,16 @@
             {%- endfor -%}
         </ul>
         {# Language selector #}
-        <ul class="nav__menu">
+        <ul class="flex flex-row">
             {%- for name, value in meta.locales -%}
                 {% if name != locale %}
 
                     {% for item in collections.all %}
 
                         {% if item.data.translationKey == translationKey and item.data.locale == name %}
+								<li class="flex p-2 w-max text-primary">
                             <a href="{{ item.url }}" onclick="setUserLanguage('{{ name }}')">{{ value }}</a>
+								</li>
                         {% endif %}
 
                     {% endfor %}

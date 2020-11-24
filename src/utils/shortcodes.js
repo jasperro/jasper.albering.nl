@@ -1,8 +1,10 @@
+const fs = require("fs");
+
 module.exports = {
-    icon: function (name, size = "small", rest) {
+    icon: function (name, size = "small", rest, inline = true) {
         const iconsprites = "/assets/icons/icons.sprite.svg";
         const iconid = `#icon-${name}`;
-        const href = `${iconsprites}${iconid}`;
+        const href = inline ? iconid : `${iconsprites}${iconid}`;
         let px = 16;
         switch (size) {
             case "medium":
@@ -20,5 +22,16 @@ module.exports = {
                     <use xlink:href="${href}"></use>
                 </svg>`;
         }
+    },
+    iconsprites: function () {
+        const iconsprites = `${__dirname}/../../dist/assets/icons/icons.sprite.svg`;
+        const data = fs.readFileSync(iconsprites, (err, data) => {
+            if (err) {
+                throw new Error(err);
+            }
+        });
+        return `
+<div hidden>${data}</div>
+`;
     },
 };

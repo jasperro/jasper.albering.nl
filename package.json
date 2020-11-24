@@ -5,8 +5,8 @@
     "scripts": {
         "start": "yarn run dev",
         "dev": "cross-env ELEVENTY_ENV=development yarn run clean & gulp dev",
-        "build": "yarn run clean & gulp build & cross-env ELEVENTY_ENV=production eleventy",
-        "clean": "del-cli dist"
+        "build": "yarn run clean & gulp build && cross-env ELEVENTY_ENV=production eleventy",
+        "clean": "del-cli dist/**"
     },
     "repository": {
         "type": "git",

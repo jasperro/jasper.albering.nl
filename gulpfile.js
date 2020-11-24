@@ -15,7 +15,28 @@ gulp.task("css", async function () {
         .pipe(gulp.dest("./dist/assets/styles/"));
 });
 
-gulp.task("icons", async function () {
+const svgSpriteConfig = {
+    mode: {
+        inline: true,
+        symbol: {
+            dest: "icons",
+            sprite: "icons.sprite.svg",
+            example: false,
+        },
+    },
+    shape: {
+        transform: ["svgo"],
+        id: {
+            generator: "icon-%s",
+        },
+    },
+    svg: {
+        xmlDeclaration: false,
+        doctypeDeclaration: false,
+    },
+};
+
+gulp.task("icons", function () {
     return gulp
         .src("./src/assets/icons/*.svg")
         .pipe(svgSprite(svgSpriteConfig))
@@ -43,28 +64,10 @@ gulp.task("watch", async function () {
     gulp.watch("./src/assets/icons/**/*", gulp.parallel("icons"));
 });
 
-gulp.task("dev", gulp.parallel("build", "eleventy:serve", "watch"));
-
-const svgSpriteConfig = {
-    mode: {
-        inline: true,
-        symbol: {
-            dest: "icons",
-            sprite: "icons.sprite.svg",
-            example: false,
-        },
-    },
-    shape: {
-        transform: ["svgo"],
-        id: {
-            generator: "icon-%s",
-        },
-    },
-    svg: {
-        xmlDeclaration: false,
-        doctypeDeclaration: false,
-    },
-};
+gulp.task(
+    "dev",
+    gulp.parallel("css", gulp.series("icons", "eleventy:serve"), "watch")
+);
 
 function renderError(error) {
     return `

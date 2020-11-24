@@ -16,13 +16,13 @@
 }
 
 .menuicon {
+	 @apply ml-2 mt-2;
     display: block;
     width: 1.8rem;
     height: 1.3rem;
     position: relative;
     transform: rotate(0deg);
     cursor: pointer;
-    margin: 0 auto;
 
     &__bar {
         display: block;
