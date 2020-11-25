@@ -22,9 +22,9 @@ const nl = {
     title: "Hoi, mijn naam is Jasper.",
     description: "Ik ben een echte <strong>techneut</strong>",
     info: `
-    <p>Ik ben 17 jaar oud en altijd wel een fan geweest van computers. Er is altijd wel iets interessants geweest aan een mysterieus apparaat dat van alles kan. Deze interesse is met mij gebleven, en nu wil ik er iets mee doen. Het is altijd leuk om iets te bekijken op het eerste gezicht, en dan te kijken wat daar nou achter zit, wat laat het draaien?</p>
-    <p>Open source, React, Vue.js, Linux en Home Automation zijn waar ik mij in specialiseer, maar alles in de technologie heeft mijn interesse.</p>
+    <p>Ik ben 17 jaar oud en ik ben altijd al een grote techneut geweest. Toen ik zes jaar oud was had ik al een website, waar tekeningen, foto's en spelletjes op stonden. Een techneut ben ik nu nog zeker. Ik blijf mijn grenzen steeds verleggen door elke keer wat nieuws te leren. Dingen zoals React Native, Typescript, interface design en home automation met Home Assistant ben ik momenteel mee bezig. Programmeren vind ik leuk omdat het nooit stil staat, er zijn altijd nieuwe en creatieve manieren om je vaardigheden te verbeteren.</p>
         `,
+    workedwith: "Ik heb ervaring met:",
     projects: "Projecten",
     contactHeader:
         "Ik zou het leuk vinden om te chatten, stuur mij een bericht",
@@ -54,9 +54,9 @@ const en = {
     title: "Hi, my name is Jasper.",
     description: "I am a real <strong>techie</strong>",
     info: `
-    <p> I am 17 years old and have always loved computers. There has always been something interesting about a mysterious device that can do anything. This interest has remained with me, and now I want to do something with it. It's always nice to see something at first glance, and then see what's behind it, what makes it work? </p>
-    <p> Open source, React, Vue.js, Linux and Home Automation are what I specialize in, but everything in technology has my interest. </p>
+    <p> I am 17 years old and I have always been a great techie. When I was six years old I already had a website with drawings, photos and games. I'm still definitely a techie. I keep pushing my boundaries by learning something new every time. I am currently working on things like React Native, Typescript, interface design and home automation with Home Assistant. I like programming because it never gets stale, there are always new and more creative ways to improve your skills. </p>
         `,
+    workedwith: "I have experience with:",
     projects: "Projects",
     contactHeader: "I'd love to chat, send me a message",
     contactName: "Your name:",

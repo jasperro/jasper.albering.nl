@@ -6,26 +6,32 @@ eleventyNavigation:
 {#% iconsprites %#}
 <div class="home">
     <div class="flex flex-col">
-        <div class="lg:text-9xl md:text-8xl text-6xl">{{ home[locale].title | safe }}</div>
-        <div class="lg:text-8xl md:text-7xl text-5xl text-primary">{{ home[locale].description | safe }}</div>
+        <div class="lg:text-9xl md:text-8xl text-6xl font-black">{{ home[locale].title | safe }}</div>
+        <div class="lg:text-8xl md:text-7xl text-5xl text-primary font-bold">{{ home[locale].description | safe }}</div>
     </div>
 
-    <div class="bg-primary-light text-white text-sm md:text-base rounded-xl shadow-md mx-1 sm:mx-4 my-4 px-4 py-4 max-w-7xl">
+    <div class="bg-primary text-white text-sm font-medium md:text-base rounded-xl shadow-md mx-1 sm:mx-4 my-4 px-4 py-4 max-w-3xl">
         {{ home[locale].info | safe }}
-        {% icon 'github' %}
+		  <div class="mt-6">
+		  <h1 class="text-xs font-bold text-gray-300">{{ home[locale].workedwith | safe }}<h1>
+		  {% icon 'github' %}
         {% icon 'react' %}
         {% icon 'linux' %}
+		  {% icon 'language-python' %}
         {% icon 'language-html5' %}
         {% icon 'language-javascript' %}
+        {% icon 'language-typescript' %}
         {% icon 'language-css3' %}
         {% icon 'sass' %}
-        {% icon 'gatsby' %}
+        {% icon 'eleventy' %}
+        {% icon 'hugo' %}
         {% icon 'graphql' %}
         {% icon 'raspberry-pi' %}
         {% icon 'home-assistant' %}
         {% icon 'godot' %}
         {% icon 'console' %}
-        {% icon 'open-source-initiative' %}
+		  {% icon 'open-source-initiative' %}
+		  </div>
     </div>
     <div class="text-3xl">{{ home[locale].projects }}</div>
 
@@ -36,7 +42,7 @@ eleventyNavigation:
     </div>
 
     <form name="contact" method="POST" data-netlify="true">
-        <h5 class="text-xl mb-2">{{ home[locale].contactHeader }}</h5>
+        <h1 class="text-xl mb-2">{{ home[locale].contactHeader }}</h1>
         <p>
             <label>{{ home[locale].contactName }}<input class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mt-1 block w-10/12" type="text" name="name"/></label>
         </p>

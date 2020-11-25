@@ -16,7 +16,7 @@
             {%- for item in items | eleventyNavigation -%}
                 {%- set isCurrent = (item.url == page.url) -%}
                 {%- set isParent = item.url != '/' and item.url in page.url -%}
-					 <li class="flex p-2 sm:w-max w-full{% if isCurrent %} bg-primary text-white{% else %} text-primary{% endif %}">
+					 <li class="flex p-2 sm:w-max w-full{% if isCurrent %} font-black bg-primary bg-opacity-40 text-white{% else %} font-medium text-primary{% endif %}">
                     <a
                 class="nav__link"
                 href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"
