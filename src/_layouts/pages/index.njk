@@ -3,7 +3,7 @@ layout: base
 eleventyNavigation:
   order: -999
 ---
-{% iconsprites %}
+{#% iconsprites %#}
 <div class="home">
     <div class="flex flex-col">
         <div class="lg:text-9xl md:text-8xl text-6xl">{{ home[locale].title | safe }}</div>
@@ -30,9 +30,9 @@ eleventyNavigation:
     <div class="text-3xl">{{ home[locale].projects }}</div>
 
     <div class="scrollingcards">
-		  {% Card 'Pizza', 'Pizza', '/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg', ["godot", "github"] %}
-		  {% Card 'Wordpress Thing', 'Description', '/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg', ["wordpress"] %}
-		  {% Card 'Egg Simulator', 'Oui oui', '/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg', ["godot", "github"] %}
+   {% for key, project in home[locale].projectlist %}
+		  {% Card project.title, project.description, project.imageurl, project.icons %}
+   {% endfor %}
     </div>
 
     <form name="contact" method="POST" data-netlify="true">

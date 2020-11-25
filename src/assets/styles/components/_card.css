@@ -5,7 +5,15 @@ overflow-x: auto;
 flex-wrap: nowrap;
 scrollbar-width: none;
 margin-left: -2rem;
-margin-right: -4rem;
+margin-right: -2rem;
 padding-left: 2rem;
-padding-right: 2rem;
+
+        &::-webkit-scrollbar {
+            height: 50px;
+        }
+
+        &::after {
+            content: ' ';
+            min-width: 2rem;
+        }
 }

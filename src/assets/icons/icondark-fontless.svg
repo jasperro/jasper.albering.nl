@@ -30,33 +30,6 @@
          style="stop-color:#0066ff;stop-opacity:1"
          offset="100.000%" />
     </linearGradient>
-    <linearGradient
-       xlink:href="#jasperro"
-       id="linearGradient2149"
-       x1="0.74331754"
-       y1="322.58771"
-       x2="511.31732"
-       y2="322.58771"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(15.11812,0,0,15.11812,-248.16617,-3953.2624)" />
-    <linearGradient
-       xlink:href="#jasperro"
-       id="linearGradient903"
-       gradientUnits="userSpaceOnUse"
-       x1="0.74331754"
-       y1="322.58771"
-       x2="511.31732"
-       y2="322.58771"
-       gradientTransform="matrix(15.11812,0,0,15.11812,-247.26272,-3953.2624)" />
-    <linearGradient
-       xlink:href="#jasperro"
-       id="linearGradient925"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(15.11812,0,0,15.11812,-248.16617,-3953.2624)"
-       x1="0.74331754"
-       y1="322.58771"
-       x2="511.31732"
-       y2="322.58771" />
   </defs>
   <metadata
      id="metadata5">
@@ -91,17 +64,17 @@
                style="opacity:1;fill:#162d50;fill-opacity:1;stroke-width:6.43373"
                id="rect850" />
             <g
-               style="font-style:normal;font-weight:normal;font-size:607.567px;line-height:1.25;font-family:sans-serif;fill:url(#linearGradient2149);fill-opacity:1;stroke:none;stroke-width:4.14249"
+               style="font-style:normal;font-weight:normal;font-size:607.567px;line-height:1.25;font-family:sans-serif;fill:url(#jasperro);fill-opacity:1;stroke:none;stroke-width:4.14249"
                id="text909"
                aria-label="A">
               <path
                  id="path24"
-                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:607.567px;font-family:'Inter UI';-inkscape-font-specification:'Inter UI Bold';fill:url(#linearGradient2149);fill-opacity:1;stroke-width:4.14249"
+                 style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:607.567px;font-family:'Inter UI';-inkscape-font-specification:'Inter UI Bold';fill:url(#jasperro);fill-opacity:1;stroke-width:4.14249"
                  d="M 10.777973,536.80408 H -89.332502 L 63.206519,94.937156 H 183.59799 L 335.92126,536.80408 H 235.81078 L 203.01597,436.04634 H 43.572783 Z M 67.30587,363.12103 H 179.49864 L 125.1283,195.91065 h -3.45209 z" />
             </g>
             <path
                d="M -236.92834,24.389854 H -32.13768 V 536.39022 h -204.79066 z"
-               style="opacity:1;vector-effect:none;fill:url(#linearGradient925);fill-opacity:1;stroke:none;stroke-width:3.86384;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+               style="opacity:1;vector-effect:none;fill:url(#jasperro);fill-opacity:1;stroke:none;stroke-width:3.86384;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
                id="rect815" />
             <g
                style="font-style:normal;font-weight:normal;font-size:586.668px;line-height:1.25;font-family:sans-serif;fill:#162d50;fill-opacity:1;stroke:none;stroke-width:4;stroke-opacity:1"

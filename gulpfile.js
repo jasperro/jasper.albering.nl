@@ -60,7 +60,10 @@ gulp.task("eleventy:serve", async function () {
 });
 
 gulp.task("watch", async function () {
-    gulp.watch("./src/assets/styles/**/*.css", gulp.parallel("css"));
+    gulp.watch(
+        ["./src/assets/styles/**/*.css", "./tailwind.config"],
+        gulp.parallel("css")
+    );
     gulp.watch("./src/assets/icons/**/*", gulp.parallel("icons"));
     gulp.watch("./src/**/*.js", async () => {
         return fs.writeFileSync(

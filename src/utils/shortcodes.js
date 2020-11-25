@@ -14,12 +14,12 @@ module.exports = {
         if (size === "auto") {
             return `<svg class="icon icon--${name}" role="img" ${rest}>
                     <title>${name}</title>
-                    <use xlink:href="${href}"></use>
+                    <use href="${href}"></use>
                 </svg>`;
         } else {
             return `<svg class="icon icon--${name} icon_${size}" role="img" width="${px}" height="${px}" ${rest}>
                     <title>${name}</title>
-                    <use xlink:href="${href}"></use>
+                    <use href="${href}"></use>
                 </svg>`;
         }
     },

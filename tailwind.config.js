@@ -1,7 +1,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-    purge: [],
+    purge: ["./src/**/*.html", "./src/**/*.njk", "./src/**/*.js"],
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
@@ -27,7 +27,7 @@ module.exports = {
                 sans: ["Inter var", ...defaultTheme.fontFamily.sans],
             },
             minWidth: {
-                48: "12rem",
+                72: "18rem",
             },
         },
     },
