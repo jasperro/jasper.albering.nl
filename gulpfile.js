@@ -4,6 +4,7 @@ const svgSprite = require("gulp-svg-sprite");
 const gulp = require("gulp");
 const spawn = require("child_process").spawn;
 const https = require("https");
+const fs = require("fs");
 let server;
 
 const isProd = process.env.ELEVENTY_ENV === "production";
@@ -59,9 +60,15 @@ gulp.task("eleventy:serve", async function () {
 });
 
 gulp.task("watch", async function () {
-    gulp.watch("./src/**/*.js", gulp.parallel("eleventy:serve"));
     gulp.watch("./src/assets/styles/**/*.css", gulp.parallel("css"));
     gulp.watch("./src/assets/icons/**/*", gulp.parallel("icons"));
+    gulp.watch("./src/**/*.js", async () => {
+        return fs.writeFileSync(
+            "./.eleventy.js",
+            fs.readFileSync("./.eleventy.js"),
+            () => {}
+        );
+    });
 });
 
 gulp.task(
