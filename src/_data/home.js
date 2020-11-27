@@ -26,8 +26,7 @@ const nl = {
         `,
     workedwith: "Ik heb ervaring met:",
     projects: "Projecten",
-    contactHeader:
-        "Ik zou het leuk vinden om te chatten, stuur mij een bericht",
+    contactHeader: "Ik zou het leuk vinden om te praten, stuur mij een bericht",
     contactName: "Jouw naam:",
     contactMail: "Jouw e-mailadres:",
     contactMessage: "Jouw bericht:",

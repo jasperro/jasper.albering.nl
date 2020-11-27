@@ -61,7 +61,7 @@ gulp.task("eleventy:serve", async function () {
 
 gulp.task("watch", async function () {
     gulp.watch(
-        ["./src/assets/styles/**/*.css", "./tailwind.config"],
+        ["./src/assets/styles/**/*.css", "./tailwind.config.js"],
         gulp.parallel("css")
     );
     gulp.watch("./src/assets/icons/**/*", gulp.parallel("icons"));

@@ -1,5 +1,13 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
+function varopacity(opacityVariable, opacityValue, variableName) {
+    return opacityVariable
+        ? `rgba(var(--${variableName}), var(${opacityVariable}, 1))`
+        : opacityValue
+        ? `rgba(var(--${variableName}), ${opacityValue})`
+        : `rgb(var(--${variableName}))`;
+}
+
 module.exports = {
     purge: ["./src/**/*.html", "./src/**/*.njk", "./src/**/*.js"],
     darkMode: false, // or 'media' or 'class'
@@ -7,20 +15,56 @@ module.exports = {
         extend: {
             colors: {
                 primary: {
-                    light: "var(--color-primary-light)",
-                    DEFAULT: "var(--color-primary)",
+                    light: ({ opacityVariable, opacityValue }) =>
+                        varopacity(
+                            opacityVariable,
+                            opacityValue,
+                            "color-primary-light"
+                        ),
+                    DEFAULT: ({ opacityVariable, opacityValue }) =>
+                        varopacity(
+                            opacityVariable,
+                            opacityValue,
+                            "color-primary"
+                        ),
                 },
                 accent: {
-                    light: "var(--color-accent-light)",
-                    DEFAULT: "var(--color-accent)",
+                    light: ({ opacityVariable, opacityValue }) =>
+                        varopacity(
+                            opacityVariable,
+                            opacityValue,
+                            "color-accent-light"
+                        ),
+                    DEFAULT: ({ opacityVariable, opacityValue }) =>
+                        varopacity(
+                            opacityVariable,
+                            opacityValue,
+                            "color-accent"
+                        ),
                 },
                 bg: {
-                    dark: "var(--color-bg-dark)",
-                    DEFAULT: "var(--color-bg)",
+                    dark: ({ opacityVariable, opacityValue }) =>
+                        varopacity(
+                            opacityVariable,
+                            opacityValue,
+                            "color-bg-dark"
+                        ),
+                    DEFAULT: ({ opacityVariable, opacityValue }) =>
+                        varopacity(opacityVariable, opacityValue, "color-bg"),
                 },
                 bgel: {
-                    dark: "var(--color-bg-element-dark)",
-                    DEFAULT: "var(--color-bg-element)",
+                    dark: ({ opacityVariable, opacityValue }) =>
+                        varopacity(
+                            opacityVariable,
+                            opacityValue,
+                            "color-bg-element-dark"
+                        ),
+                    DEFAULT: ({ opacityVariable, opacityValue }) =>
+                        varopacity(
+                            opacityVariable,
+                            opacityValue,
+                            "color-bg-element"
+                        ),
                 },
             },
             fontFamily: {

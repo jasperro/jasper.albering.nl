@@ -17,7 +17,7 @@
         margin-bottom: 4rem;
 
         &::after {
-            content: '';
+            content: "";
             display: block;
             height: 0px;
             visibility: hidden;
@@ -26,7 +26,7 @@
 }
 
 body {
-    background-color: var(--color-bg);
+    background-color: rgb(var(--color-bg));
     overflow-x: hidden;
     z-index: 0;
     transition: color, background-color 0.2s ease-in;

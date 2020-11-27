@@ -11,12 +11,14 @@
     <input type="checkbox" id="nav-toggle" class="hidden" aria-controls="nav__container">
     <nav class="sm:flex flex-col hidden sm:flex-row justify-between p-2">
         <ul class="flex flex-col sm:flex-row">
-		      <li class="sm:flex self-center mr-2 hidden"> {% icon 'iconlight-fontless', 'medium', 'aria-hidden="true"' %} </li>
+            <li class="sm:flex self-center mr-2 hidden">
+                {% icon 'iconlight-fontless', 'medium', 'aria-hidden="true"' %}
+            </li>
             {%- set items = collections["pages_" + locale] -%}
             {%- for item in items | eleventyNavigation -%}
                 {%- set isCurrent = (item.url == page.url) -%}
                 {%- set isParent = item.url != '/' and item.url in page.url -%}
-					 <li class="flex p-2 sm:w-max w-full{% if isCurrent %} font-black bg-primary bg-opacity-40 text-white{% else %} font-medium text-primary{% endif %}">
+                <li class="flex p-2 sm:w-max w-full{% if isCurrent %} font-black bg-primary bg-opacity-80 text-white{% else %} font-medium text-primary{% endif %}">
                     <a
                 class="nav__link"
                 href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"
@@ -35,9 +37,9 @@
                     {% for item in collections.all %}
 
                         {% if item.data.translationKey == translationKey and item.data.locale == name %}
-								<li class="flex p-2 w-max text-primary">
-                            <a href="{{ item.url }}" onclick="setUserLanguage('{{ name }}')">{{ value }}</a>
-								</li>
+                            <li class="flex p-2 w-max text-primary">
+                                <a href="{{ item.url }}" onclick="setUserLanguage('{{ name }}')">{{ value }}</a>
+                            </li>
                         {% endif %}
 
                     {% endfor %}
