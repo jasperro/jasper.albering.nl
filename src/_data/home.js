@@ -27,9 +27,9 @@ const nl = {
     workedwith: "Ik heb ervaring met:",
     projects: "Projecten",
     contactHeader: "Ik zou het leuk vinden om te praten, stuur mij een bericht",
-    contactName: "Jouw naam:",
-    contactMail: "Jouw e-mailadres:",
-    contactMessage: "Jouw bericht:",
+    contactName: "Jouw naam",
+    contactMail: "Jouw e-mailadres",
+    contactMessage: "Jouw bericht",
     submit: "Verstuur",
     projectlist: {
         wereldwinkel: {
@@ -58,9 +58,9 @@ const en = {
     workedwith: "I have experience with:",
     projects: "Projects",
     contactHeader: "I'd love to chat, send me a message",
-    contactName: "Your name:",
-    contactMail: "Your e-mail address:",
-    contactMessage: "Your message:",
+    contactName: "Your name",
+    contactMail: "Your e-mail address",
+    contactMessage: "Your message",
     submit: "Submit",
     projectlist: {
         wereldwinkel: {

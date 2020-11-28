@@ -1,33 +1,14 @@
 /* Main Site Layout */
 
 .layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    min-height: 100vh;
-    position: relative;
+    @apply w-full h-full relative;
+}
 
-    .main {
-        display: flex;
-        flex-direction: column;
-        flex: 1 0 auto;
-        margin-top: 4rem;
-        margin-left: 2rem;
-        margin-right: 2rem;
-        margin-bottom: 4rem;
-
-        &::after {
-            content: "";
-            display: block;
-            height: 0px;
-            visibility: hidden;
-        }
-    }
+.main {
+    @apply flex flex-col m-8;
 }
 
 body {
-    background-color: rgb(var(--color-bg));
-    overflow-x: hidden;
-    z-index: 0;
+    @apply bg-bg overflow-x-hidden;
     transition: color, background-color 0.2s ease-in;
 }
