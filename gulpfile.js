@@ -1,5 +1,6 @@
 const cssesc = require("cssesc");
 const postcss = require("gulp-postcss");
+const concat = require("gulp-concat");
 const svgSprite = require("gulp-svg-sprite");
 const gulp = require("gulp");
 const spawn = require("child_process").spawn;
@@ -11,8 +12,9 @@ const isProd = process.env.ELEVENTY_ENV === "production";
 
 gulp.task("css", async function () {
     return gulp
-        .src("./src/assets/styles/main.css")
+        .src("./src/assets/styles/main.pcss")
         .pipe(postcss())
+        .pipe(concat("main.css"))
         .pipe(gulp.dest("./dist/assets/styles/"));
 });
 

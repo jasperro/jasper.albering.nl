@@ -3,7 +3,7 @@ const _ = require("lodash");
 const defaults = {
     projectlist: {
         wereldwinkel: {
-            imageurl: "/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg",
+            imageurl: "/assets/images/nieuwwwnijkerk.jpg",
             icons: ["wordpress"],
         },
         eggsimulator: {
