@@ -9,7 +9,9 @@ function varopacity(opacityVariable, opacityValue, variableName) {
 }
 
 module.exports = {
-    purge: ["./src/**/*.html", "./src/**/*.njk", "./src/**/*.js"],
+    purge: {
+        content: ["./src/**/*.{html,njk,js}"],
+    },
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
