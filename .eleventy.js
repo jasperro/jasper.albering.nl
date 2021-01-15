@@ -2,12 +2,13 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginLocalRespimg = require("eleventy-plugin-local-respimg");
 const markdownIt = require("markdown-it");
-const moment = require("moment");
+const dayjs = require("dayjs");
 
 const filters = require("./src/utils/filters.js");
 const transforms = require("./src/utils/transforms.js");
 const shortcodes = require("./src/utils/shortcodes.js");
-const iconsprite = require("./src/utils/iconsprite.js");
+
+const componentsDir = "./src/_includes/components";
 
 module.exports = function (eleventyConfig) {
     // Plugins
@@ -29,6 +30,8 @@ module.exports = function (eleventyConfig) {
         eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName]);
     });
 
+    eleventyConfig.addShortcode("Card", require(`./${componentsDir}/Card.js`));
+
     eleventyConfig.addCollection("posts_en", function (collection) {
         return collection.getFilteredByGlob("./src/posts/en/*.md");
     });
@@ -45,17 +48,15 @@ module.exports = function (eleventyConfig) {
         return collection.getFilteredByGlob("./src/pages/nl/*");
     });
 
-    // Icon Sprite
-    eleventyConfig.addNunjucksAsyncShortcode("iconsprite", iconsprite);
-
     eleventyConfig.addNunjucksFilter("date", function (date, format, locale) {
         locale = locale ? locale : "en";
-        moment.locale(locale);
-        return moment(date).format(format);
+        dayjs.locale(locale);
+        return dayjs(date).format(format);
     });
 
     // Asset and utils watch Targets
     eleventyConfig.addWatchTarget("./src/assets");
+    eleventyConfig.addWatchTarget("**/*.js");
 
     // Markdown
     eleventyConfig.setLibrary(
@@ -80,6 +81,8 @@ module.exports = function (eleventyConfig) {
 
     // Deep-Merge
     eleventyConfig.setDataDeepMerge(true);
+
+    eleventyConfig.setWatchJavaScriptDependencies(true);
 
     // Image configuration
     eleventyConfig.addPlugin(pluginLocalRespimg, {

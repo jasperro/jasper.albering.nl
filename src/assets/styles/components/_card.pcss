@@ -1,0 +1,13 @@
+.scrollingcards {
+    @apply flex overflow-x-auto flex-nowrap space-x-4 -mx-8 px-8;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        height: 0px;
+    }
+
+    &::after {
+        content: " ";
+        @apply min-w-8;
+    }
+}

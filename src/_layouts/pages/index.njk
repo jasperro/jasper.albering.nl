@@ -3,65 +3,63 @@ layout: base
 eleventyNavigation:
   order: -999
 ---
+{#% iconsprites %#}
 <div class="home">
-    <div class="home__hero">
-        <div class="home__hero__title">{{ home[locale].title | safe }}</div>
-        <div class="home__hero__subtitle">{{ home[locale].description | safe }}
-        </div>
+    <div class="flex flex-col">
+        <h1 class="lg:text-9xl md:text-8xl text-6xl font-black">{{ home[locale].title | safe }}</h1>
+        <h2 class="lg:text-8xl md:text-7xl text-5xl text-primary font-bold">{{ home[locale].description | safe }}</h2>
     </div>
 
-    <div class="home__card_info">
+    <div class="bg-primary text-white text-sm font-medium md:text-base rounded-xl shadow-md my-4 px-4 py-4 max-w-3xl">
         {{ home[locale].info | safe }}
-        {% icon 'github' %}
-        {% icon 'react' %}
-        {% icon 'linux' %}
-        {% icon 'language-html5' %}
-        {% icon 'language-javascript' %}
-        {% icon 'language-css3' %}
-        {% icon 'sass' %}
-        {% icon 'gatsby' %}
-        {% icon 'graphql' %}
-        {% icon 'raspberry-pi' %}
-        {% icon 'home-assistant' %}
-        {% icon 'godot' %}
-        {% icon 'console' %}
-        {% icon 'open-source-initiative' %}
-    </div>
-    <div class="home__title_subsection">{{ home[locale].projects }}</div>
-
-    <div class="home__projects">
-        <div class="home__card_project">
-            <img src="/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg"/>
-            <div class="home__card_project_description">
-        Wordpress thingy 
-        {% icon 'wordpress' %}
+        <div class="mt-6">
+            <h1 class="text-xs font-bold text-gray-300">{{ home[locale].workedwith | safe }}
+                <h1>
+                    {% icon 'github' %}
+                    {% icon 'react' %}
+                    {% icon 'linux' %}
+                    {% icon 'language-python' %}
+                    {% icon 'language-html5' %}
+                    {% icon 'language-javascript' %}
+                    {% icon 'language-typescript' %}
+                    {% icon 'language-css3' %}
+                    {% icon 'sass' %}
+                    {% icon 'eleventy' %}
+                    {% icon 'hugo' %}
+                    {% icon 'graphql' %}
+                    {% icon 'raspberry-pi' %}
+                    {% icon 'home-assistant' %}
+                    {% icon 'godot' %}
+                    {% icon 'console' %}
+                    {% icon 'open-source-initiative' %}
+                </div>
             </div>
-        </div>
-        <div class="home__card_project">
-            <img src="/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg"/>
-            <div class="home__card_project_description">
-        Egg Simulator 
-        {% icon 'godot' %}
+            <h1 class="text-3xl my-2">{{ home[locale].projects }}</h1>
+
+            <div class="scrollingcards">
+                {% for key, project in home[locale].projectlist %}
+                    {% Card project.title,
+                    project.description,
+                    project.imageurl,
+                    project.icons %}
+                {% endfor %}
             </div>
+
+            <form name="contact" class="px-2 my-4" method="POST" data-netlify="true">
+                <h1 class="text-xl mb-2">{{ home[locale].contactHeader }}</h1>
+                <p>
+                    <label class="font-light">{{ home[locale].contactName }}<input class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mb-1 block w-10/12" type="text" name="name"/></label>
+                </p>
+                <p>
+                    <label class="font-light">{{ home[locale].contactMail }}<input class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mb-1 block w-10/12" type="email" name="email"/></label>
+                </p>
+                <p>
+                    <label class="font-light">{{ home[locale].contactMessage }}
+                        <textarea name="message" class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mb-1 block w-10/12"></textarea>
+                    </label>
+                </p>
+                <p>
+                    <button type="submit" class="my-4 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">{{ home[locale].submit }}</button>
+                </p>
+            </form>
         </div>
-    </div>
-
-    <form name="contact" class="home__contact_form" method="POST" data-netlify="true">
-        <h5>{{ home[locale].contactHeader }}</h5>
-        <p>
-            <label>{{ home[locale].contactName }}<input type="text" name="name"/></label>
-        </p>
-        <p>
-            <label>{{ home[locale].contactMail }}<input type="email" name="email"/></label>
-        </p>
-        <p>
-            <label>{{ home[locale].contactMessage }}
-                <textarea name="message"></textarea>
-            </label>
-        </p>
-        <p>
-            <button type="submit">{{ home[locale].submit }}</button>
-        </p>
-    </form>
-
-</div>

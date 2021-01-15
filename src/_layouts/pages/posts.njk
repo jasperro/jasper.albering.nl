@@ -1,0 +1,25 @@
+---
+layout: base
+---
+
+<div class="prose prose-xl">
+<h1>{{posts[locale].title}}</h1>
+</div>
+
+<ul class="mt-5 grid lg:grid-cols-3 lg:gap-6 md:grid-cols-2 md:gap-4 grid-cols-1 gap-3">
+  {% for post in collections["posts_" + locale] | reverse %}
+			 <li class="rounded-xl shadow-sm hover:shadow-xl bg-bgel">
+        {% if post.data.canonical %}
+          <a href="{{ post.data.canonical }}" target="_blank" rel="noopener">
+          {% else %}
+            <a href="{{ post.url }}">
+            {% endif %}
+      <div class="p-6">
+            <p class="text-2xl font-medium">{{ post.data.title }}</p>
+            <p class="text-base font-normal">{{ post.data.summary }}</p>
+            <date>{{ post.data.date }}</date>
+		</div>
+          </a>
+      </li>
+    {% endfor %}
+  </ul>
