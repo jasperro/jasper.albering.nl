@@ -55,19 +55,25 @@ module.exports = function (eleventyConfig) {
     });
 
     // Asset and utils watch Targets
-    eleventyConfig.addWatchTarget("./src/assets");
+    //eleventyConfig.addWatchTarget("./src/assets/**/*.pcss");
     eleventyConfig.addWatchTarget("**/*.js");
 
+    const markdown = new markdownIt({
+        html: true,
+        breaks: true,
+        linkify: true,
+        typographer: true,
+    });
+    eleventyConfig.setBrowserSyncConfig({
+        files: ["dist/assets/main.css"],
+    });
+
     // Markdown
-    eleventyConfig.setLibrary(
-        "md",
-        markdownIt({
-            html: true,
-            breaks: true,
-            linkify: true,
-            typographer: true,
-        })
-    );
+    eleventyConfig.setLibrary("md", markdown);
+
+    eleventyConfig.addPairedShortcode("markdown", (content) => {
+        return markdown.render(content);
+    });
 
     // Layouts
     eleventyConfig.addLayoutAlias("base", "base.njk");
