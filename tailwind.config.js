@@ -74,7 +74,11 @@ module.exports = {
             },
             minWidth: {
                 8: "2rem",
-                72: "18rem",
+                80: "20rem",
+            },
+
+            gridTemplateColumns: {
+                "fit-80": "repeat(auto-fit, 20rem)",
             },
         },
     },
