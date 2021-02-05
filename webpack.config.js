@@ -1,6 +1,5 @@
 const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
 
@@ -29,7 +28,7 @@ module.exports = {
     optimization: {
         removeEmptyChunks: true,
         ...(!isDev && {
-            minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
+            minimizer: [new TerserPlugin()],
         }),
     },
     module: {
