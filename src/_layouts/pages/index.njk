@@ -62,5 +62,6 @@ eleventyNavigation:
                 <p>
                     <button type="submit" class="my-4 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">{{ home[locale].submit }}</button>
                 </p>
+                <p class="text-sm text-gray-600">{{ home[locale].formComment | safe }}</p>
             </form>
         </div>

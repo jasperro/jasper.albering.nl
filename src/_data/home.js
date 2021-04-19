@@ -33,6 +33,8 @@ const nl = {
     contactMail: "Jouw e-mailadres",
     contactMessage: "Jouw bericht",
     submit: "Verstuur",
+    formComment:
+        '// Formulier wordt verzonden met <a class="underline text-gray-900" href="https://www.netlify.com/">netlify</a>.',
     projectlist: {
         wereldwinkel: {
             title: "Wereldwinkel Nijkerk",
@@ -79,6 +81,8 @@ const en = {
     contactMail: "Your e-mail address",
     contactMessage: "Your message",
     submit: "Submit",
+    formComment:
+        '// Form data is sent with <a class="underline text-gray-900" href="https://www.netlify.com/">netlify</a>.',
     projectlist: {
         wereldwinkel: {
             title: "World Shop Nijkerk",
