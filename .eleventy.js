@@ -3,6 +3,7 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginLocalRespimg = require("eleventy-plugin-local-respimg");
 const markdownIt = require("markdown-it");
 const dayjs = require("dayjs");
+require("dayjs/locale/nl");
 
 const filters = require("./src/utils/filters.js");
 const transforms = require("./src/utils/transforms.js");
@@ -46,12 +47,6 @@ module.exports = function (eleventyConfig) {
     });
     eleventyConfig.addCollection("pages_nl", function (collection) {
         return collection.getFilteredByGlob("./src/pages/nl/*");
-    });
-
-    eleventyConfig.addNunjucksFilter("date", function (date, format, locale) {
-        locale = locale ? locale : "en";
-        dayjs.locale(locale);
-        return dayjs(date).format(format);
     });
 
     // Asset and utils watch Targets

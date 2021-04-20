@@ -6,6 +6,9 @@ translationKey: "aboutPage"
 ---
 
 <div class="container prose dark:prose-light prose-xl">
+<h1>Over mij</h1>
+{{ home[locale].info | safe }}
+<br>
 {% markdown %}
   # Over deze website
   Deze site is gemaakt met eleventy.

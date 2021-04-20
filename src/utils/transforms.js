@@ -1,5 +1,4 @@
 const htmlmin = require("html-minifier");
-const buildDir = "dist";
 
 const shouldTransformHTML = (outputPath) =>
     outputPath &&
