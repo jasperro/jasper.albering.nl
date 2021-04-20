@@ -1,6 +1,6 @@
 # Jasperro's website
 
-This is my personal website made with eleventy and tailwind. The icon generation and development server are handled by gulp and the css generation by webpack.
+This is my personal website made with eleventy and tailwind. The icon generation and development server are handled by gulp and the css generation by postcss.
 
 ```
 yarn install

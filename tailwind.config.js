@@ -14,10 +14,8 @@ const round = (num) => num.toFixed(7).replace(/[.0]+$/, "");
 const em = (px, base) => `${round(px / base)}em`;
 
 module.exports = {
-    //mode: "jit",
-    purge: {
-        content: ["./src/**/*.{html,njk,js}"],
-    },
+    mode: "jit",
+    purge: ["./dist/**/*.html", "./src/**/*.{html,njk,js}"],
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
