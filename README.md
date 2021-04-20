@@ -1,16 +1,16 @@
 # Jasperro's website
 
-This is my personal website made with eleventy. I used tailwindcss for the styling, with a custom gulp configuration for that. 
+This is my personal website made with eleventy and tailwind. The icon generation and development server are handled by gulp and the css generation by webpack.
 
 ```
 yarn install
-````
+```
 
-__Commands__
+**Commands**
 
-* Run `yarn start` for a development server and live reloading
-* Run `yarn run build` to generate a production build
+-   Run `yarn start` for a development server and live reloading
+-   Run `yarn run build` to generate a production build
 
 ## Credits
 
-Thanks to Max Böck for his amazing eleventy site base template eleventastic, which offered a great base which this site could build on.
+Thanks to Max Böck for his amazing eleventy site template eleventastic, which the svg sprite code and netlify config was based on.
