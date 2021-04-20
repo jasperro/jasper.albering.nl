@@ -2,13 +2,13 @@
 layout: base
 ---
 
-<div class="prose prose-xl">
+<div class="prose dark:prose-light prose-xl">
   <h1>{{posts[locale].title}}</h1>
 </div>
 
 <ul class="mt-5 grid lg:grid-cols-3 lg:gap-6 md:grid-cols-2 md:gap-4 grid-cols-1 gap-3">
   {% for post in collections["posts_" + locale] | reverse %}
-  <li class="rounded-xl shadow-sm hover:shadow-xl bg-bgel">
+  <li class="rounded-xl shadow-sm hover:shadow-xl bg-bgel dark:bg-bgel-dark">
     {% if post.data.canonical %}
     <a href="{{ post.data.canonical }}" target="_blank" rel="noopener">
       {% else %}

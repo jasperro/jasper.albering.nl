@@ -50,18 +50,18 @@ order: -999
         <h1 class="text-xl mb-2">{{ home[locale].contactHeader }}</h1>
         <p>
             <label class="font-light">{{ home[locale].contactName }}<input
-                    class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mb-1 block w-10/12"
+                    class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mb-1 block w-10/12 dark:bg-bgel-dark dark:border-none"
                     type="text" name="name" /></label>
         </p>
         <p>
             <label class="font-light">{{ home[locale].contactMail }}<input
-                    class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mb-1 block w-10/12"
+                    class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mb-1 block w-10/12 dark:bg-bgel-dark dark:border-none"
                     type="email" name="email" /></label>
         </p>
         <p>
             <label class="font-light">{{ home[locale].contactMessage }}
                 <textarea name="message"
-                    class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mb-1 block w-10/12"></textarea>
+                    class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mb-1 block w-10/12 dark:bg-bgel-dark dark:border-none"></textarea>
             </label>
         </p>
         <p>
@@ -69,6 +69,6 @@ order: -999
                 class="my-4 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">{{
                 home[locale].submit }}</button>
         </p>
-        <p class="text-sm text-gray-600">{{ home[locale].formComment | safe }}</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">{{ home[locale].formComment | safe }}</p>
     </form>
 </div>
