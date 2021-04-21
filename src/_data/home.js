@@ -4,18 +4,18 @@ const Button = require("../_includes/components/Button");
 
 const defaults = {
     projectlist: {
+        lifier: {
+            imageurl: "/assets/images/lifier.png",
+            icons: ["react"],
+            title: "Lifier",
+        },
         wereldwinkel: {
             imageurl: "/assets/images/nieuwwwnijkerk.jpg",
             icons: ["wordpress"],
         },
         eggsimulator: {
-            imageurl: "/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg",
+            imageurl: "/assets/images/eggsimulator.png",
             icons: ["godot"],
-        },
-        lifier: {
-            imageurl: "/assets/images/nate-grant-QQ9LainS6tI-unsplash.jpg",
-            icons: ["react"],
-            title: "Lifier",
         },
     },
 };
@@ -41,7 +41,7 @@ const nl = {
             description:
                 "Ik heb een nieuwe website gemaakt voor Wereldwinkel Nijkerk met een zelfgemaakt wordpress-thema die de laatste Facebook-posts laadt.",
             actionhtml: Button(
-                "Bekijk op github",
+                "Bekijk op GitHub",
                 "github",
                 "https://github.com/jasperro/wereldwinkelnijkerk"
             ),
@@ -51,7 +51,7 @@ const nl = {
             description:
                 "Een spel gemaakt in Godot waar je een moeilijk bestuurbaar ei door verschillende parcours moet leiden",
             actionhtml: Button(
-                "Bekijk op github",
+                "Bekijk op GitHub",
                 "github",
                 "https://github.com/jasperro/egg-simulator"
             ),
@@ -60,7 +60,7 @@ const nl = {
             description:
                 "Maak je leven een spel door XP te behalen door het halen van doelen. Op het web, android en iOS met React Native.",
             actionhtml: Button(
-                "Bekijk op github",
+                "Bekijk op GitHub",
                 "github",
                 "https://github.com/jasperro/Lifier"
             ),
@@ -89,7 +89,7 @@ const en = {
             description:
                 "I made a new website for the World Shop Nijkerk with a custom wordpress theme that loads the latest Facebook posts.",
             actionhtml: Button(
-                "View on github",
+                "View on GitHub",
                 "github",
                 "https://github.com/jasperro/wereldwinkelnijkerk"
             ),
@@ -99,7 +99,7 @@ const en = {
             description:
                 "A game made in Godot where you try to control a rolling egg in different parkour maps.",
             actionhtml: Button(
-                "View on github",
+                "View on GitHub",
                 "github",
                 "https://github.com/jasperro/egg-simulator"
             ),
@@ -108,7 +108,7 @@ const en = {
             description:
                 "Make your life a game by earning XP through different skills and goals. On web, android and iOS with React Native.",
             actionhtml: Button(
-                "View on github",
+                "View on GitHub",
                 "github",
                 "https://github.com/jasperro/Lifier"
             ),

@@ -5,7 +5,7 @@ module.exports = (title, description, imgUrl, icons, actionhtml = "") => `
         <div>
             ${
                 imgUrl
-                    ? `<img class="w-full" alt="${title}" src="${imgUrl}"/>`
+                    ? `<img class="w-full object-cover h-48" alt="${title}" src="${imgUrl}"/>`
                     : ""
             }
 
