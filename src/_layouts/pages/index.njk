@@ -3,14 +3,13 @@ layout: base
 eleventyNavigation:
 order: -999
 ---
-{#% iconsprites %#}
 <div class="home">
     <div class="flex flex-col">
         <h1 class="lg:text-9xl md:text-8xl text-6xl font-black">{{ home[locale].title | safe }}</h1>
         <h2 class="lg:text-8xl md:text-7xl text-5xl text-primary font-bold">{{ home[locale].description | safe }}</h2>
     </div>
 
-    <div class="bg-primary text-white text-sm font-medium md:text-base rounded-xl shadow-md my-4 px-4 py-4 max-w-3xl">
+    <div class="bg-primary text-white text-sm font-medium md:text-base rounded-xl shadow-md my-4 px-4 py-4 max-w-3xl mt-6">
         {{ home[locale].info | safe }}
         <p class="text-xs font-bold text-gray-300 mt-4">{{ home[locale].workedwith | safe }}
         <p>
@@ -34,7 +33,7 @@ order: -999
             {% icon 'open-source-initiative' %}
         </p>
     </div>
-    <h1 class="text-3xl my-2">{{ home[locale].projects }}</h1>
+    <h1 class="text-3xl my-2 mt-8">{{ home[locale].projects }}</h1>
 
     <div class="scrollingcards">
         {% for key, project in home[locale].projectlist %}

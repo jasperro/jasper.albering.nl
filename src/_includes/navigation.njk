@@ -1,15 +1,18 @@
 <nav class="nav w-full" role="navigation" tabindex="-1">
-    <label class="sm:hidden" for="nav-toggle">
-        <span class="sr-only">toggle menu</span>
-        <span class="menuicon">
-            <span class="menuicon__bar"></span>
-            <span class="menuicon__bar"></span>
-            <span class="menuicon__bar"></span>
-            <span class="menuicon__bar"></span>
-        </span>
-    </label>
+    <div class="flex m-4 sm:hidden">
+        <label class="sm:hidden" for="nav-toggle">
+            <span class="sr-only">toggle menu</span>
+            <span class="flex menuicon">
+                <span class="menuicon__bar"></span>
+                <span class="menuicon__bar"></span>
+                <span class="menuicon__bar"></span>
+            </span>
+        </label>
+
+        <span class="flex ml-4">{% icon 'iconlight-fontless', 'medium', 'aria-hidden="true"' %}</span>
+    </div>
     <input type="checkbox" id="nav-toggle" class="hidden" aria-controls="nav__container">
-    <nav class="sm:flex flex-col hidden sm:flex-row justify-between p-2">
+    <nav class="sm:flex flex-col hidden sm:flex-row justify-between p-4">
         <ul class="flex flex-col sm:flex-row">
             <li class="sm:flex self-center mr-2 hidden">
                 {% icon 'iconlight-fontless', 'medium', 'aria-hidden="true"' %}

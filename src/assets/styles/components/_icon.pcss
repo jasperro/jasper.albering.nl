@@ -16,35 +16,36 @@
 }
 
 .menuicon {
-	 @apply ml-2 mt-2;
-    display: block;
-    width: 1.8rem;
-    height: 1.3rem;
+    margin-top: 0.2rem;
+    display: flex;
+    align-items: center;
+    width: 2.4rem;
+    height: 1.8rem;
     position: relative;
     transform: rotate(0deg);
     cursor: pointer;
 
     &__bar {
-        display: block;
+        display: flex;
         position: absolute;
         left: 0;
         right: 0;
-        height: 0.18rem;
+        height: 0.25rem;
         width: 100%;
         background-color: currentColor;
         transform: rotate(0deg);
         transition: transform 0.25s ease-in-out;
+        @apply rounded-full;
 
         &:nth-child(1) {
-            top: 0px;
+            top: 0;
         }
 
-        &:nth-child(2),
-        &:nth-child(3) {
+        &:nth-child(2) {
             top: 50%;
         }
 
-        &:nth-child(4) {
+        &:nth-child(3) {
             top: 100%;
         }
     }
