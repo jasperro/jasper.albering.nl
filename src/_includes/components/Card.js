@@ -11,7 +11,7 @@ module.exports = (title, description, imgUrl, icons, actionhtml = "") => `
 
                  </div>
 
-                 <h3 class="font-semibold text-xl pt-2">${title}</h3>
+                 <p class="font-semibold text-xl pt-2">${title}</p>
                  <p class="pt-1">${description}</p>
                  <div class="flex justify-between">
                  <div class="mt-2">${icons

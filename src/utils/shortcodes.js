@@ -31,7 +31,7 @@ module.exports = {
             }
         });
         return `
-<div hidden>${data}</div>
-`;
+            ${data}
+        `;
     },
 };

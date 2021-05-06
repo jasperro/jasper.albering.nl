@@ -30,7 +30,7 @@ gulp.task("icons", function () {
     return gulp
         .src("./src/assets/icons/*.svg")
         .pipe(svgSprite(svgSpriteConfig))
-        .pipe(gulp.dest("./dist/assets/"));
+        .pipe(gulp.dest("./dist/assets/", { overwrite: true }));
 });
 
 gulp.task("build", gulp.parallel("icons"));
@@ -49,7 +49,7 @@ gulp.task("eleventy:serve", async function () {
 
 gulp.task("watch", async function () {
     gulp.watch("./src/assets/icons/**/*", gulp.parallel("icons"));
-    gulp.watch("./src/**/*.js", async () => {
+    gulp.watch("./src/**/(*.js|*.svg)", async () => {
         return fs.writeFileSync(
             "./.eleventy.js",
             fs.readFileSync("./.eleventy.js"),

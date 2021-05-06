@@ -52,6 +52,7 @@ module.exports = function (eleventyConfig) {
     // Asset and utils watch Targets
     //eleventyConfig.addWatchTarget("./src/assets/**/*.pcss");
     eleventyConfig.addWatchTarget("**/*.js");
+    eleventyConfig.addWatchTarget("**/*.svg");
 
     const markdown = new markdownIt({
         html: true,
