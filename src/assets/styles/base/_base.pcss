@@ -12,3 +12,9 @@ body {
     @apply dark:bg-bg-dark bg-bg overflow-x-hidden dark:text-white;
     transition: color, background-color 0.2s ease-in;
 }
+
+/* To fix svg symbols not rendering in chrome. It doesn't work with display: none; */
+.nodispsvg svg {
+    max-height: 0;
+    max-width: 0;
+}

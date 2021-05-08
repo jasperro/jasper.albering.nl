@@ -31,7 +31,9 @@ module.exports = {
             }
         });
         return `
+        <div class="nodispsvg">
             ${data}
+        </div>
         `;
     },
 };
