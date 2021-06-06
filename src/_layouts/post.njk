@@ -5,7 +5,6 @@ layout: base
     <h1>{{ title }}</h1>
     {{ content | safe }}
 </article>
-
-<p>
-    <time datetime="{{ post.date | date('YYYY-MM-DD') }}">{{ post.item | date("DD MMMM YYYY", locale) }}</time>
-</p>
+<span class="my-5">
+    <time datetime="{{ date | date('YYYY-MM-DD') }}">{{ date | date("DD MMMM YYYY", locale) }}</time>
+</span>
