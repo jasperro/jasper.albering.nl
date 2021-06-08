@@ -1,5 +1,8 @@
+[build.environment]
+    NPM_FLAGS = "--prefix=/dev/null"
+
 [build]
-    command = "yarn run build"
+    command = "npx pnpm add -g pnpm && npx pnpm run build"
     publish = "dist"
 
 [context.production.environment]

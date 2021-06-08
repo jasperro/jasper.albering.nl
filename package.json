@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "description": "Jasper Albering's personal website, built with eleventy",
     "scripts": {
-        "start": "yarn run dev",
-        "dev": "yarn run clean & cross-env NODE_ENV=development run-p gulp:dev postcss:dev",
-        "build": "yarn run clean & cross-env NODE_ENV=production run-s gulp:build eleventy:build postcss:build",
+        "start": "pnpm run dev",
+        "dev": "pnpm run clean & cross-env NODE_ENV=development run-p gulp:dev postcss:dev",
+        "build": "pnpm run clean & cross-env NODE_ENV=production run-s gulp:build eleventy:build postcss:build",
         "gulp:dev": "gulp dev",
         "gulp:build": "gulp build",
         "postcss:dev": "NODE_ENV=development postcss ./src/assets/styles/main.pcss -o ./dist/assets/main.css -w",

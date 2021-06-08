@@ -2,14 +2,17 @@
 
 This is my personal website made with eleventy and tailwind. The icon generation and development server are handled by gulp and the css generation by postcss.
 
+**Installation**
+
 ```
-yarn install
+npx pnpm add -g pnpm
+pnpm install
 ```
 
 **Commands**
 
--   Run `yarn start` for a development server and live reloading
--   Run `yarn run build` to generate a production build
+-   Run `pnpm start` for a development server and live reloading
+-   Run `pnpm run build` to generate a production build
 
 ## Credits
 
