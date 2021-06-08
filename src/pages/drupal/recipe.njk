@@ -1,0 +1,12 @@
+---
+pagination:
+    data: recipes
+    size: 1
+    alias: recipe
+permalink: "drupal/recipes/{{ recipe.title | slug }}/"
+layout: post
+---
+
+<h1>{{ recipe.title }}</h1>
+{{ recipe.content | safe }}
+De temperatuur voor het bakken is: {{ recipe.temperature }} ˚C

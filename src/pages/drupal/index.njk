@@ -1,0 +1,38 @@
+---
+pagination:
+  data: recipes
+  size: 12
+layout: base
+permalink: drupal{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber + 1}}{% endif %}/index.html
+---
+
+<h1>{{ recipes.data.attributes.title }}</h1>
+<p>tasty? {{ recipes.data.attributes.field_tasty }}</p>
+<p>temperature {{ recipes.data.attributes.field_temperature }}</p>
+
+{% block content %}
+  <h1>Blogposts</h1>
+
+  {# loop through paginated item #}
+  {% for item in pagination.items %}
+    {% if loop.first %}<ul>{% endif %}
+      <a href="/drupal/recipes/{{ item.title | slug }}"><li>
+      {{ item.title }}
+      {{ item.temperature }}
+      </li></a>
+    {% if loop.last %}</ul>{% endif %}
+  {% endfor %}
+
+  {# pagination #}
+  {% if pagination.hrefs | length > 0 %}
+  <ul>
+    {% if pagination.previousPageHref %}
+      <li><a href="{{ pagination.previousPageHref }}">Previous page</a></li>
+    {% endif %}
+    {% if pagination.nextPageHref %}
+      <li><a href="{{ pagination.nextPageHref }}">Next page</a></li>
+    {% endif %}
+  </ul>
+  {% endif %}
+
+{% endblock %}
