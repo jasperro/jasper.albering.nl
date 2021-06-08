@@ -28,10 +28,34 @@ module.exports = function (eleventyConfig) {
 
     // Shortcodes
     Object.keys(shortcodes).forEach((shortcodeName) => {
-        eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName]);
+        if (
+            Object.getPrototypeOf(shortcodes[shortcodeName]).constructor
+                .name === "AsyncFunction"
+        ) {
+            eleventyConfig.addNunjucksAsyncShortcode(
+                shortcodeName,
+                shortcodes[shortcodeName]
+            );
+            eleventyConfig.addLiquidShortcode(
+                shortcodeName,
+                shortcodes[shortcodeName]
+            );
+            eleventyConfig.addJavaScriptFunction(
+                shortcodeName,
+                shortcodes[shortcodeName]
+            );
+        } else {
+            eleventyConfig.addShortcode(
+                shortcodeName,
+                shortcodes[shortcodeName]
+            );
+        }
     });
 
-    eleventyConfig.addShortcode("Card", require(`./${componentsDir}/Card.js`));
+    eleventyConfig.addNunjucksAsyncShortcode(
+        "Card",
+        require(`./${componentsDir}/Card.js`)
+    );
 
     eleventyConfig.addCollection("posts_en", function (collection) {
         return collection.getFilteredByGlob("./src/posts/en/*.md");
@@ -86,26 +110,6 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.setWatchJavaScriptDependencies(true);
 
-    // Image configuration
-    eleventyConfig.addPlugin(pluginLocalRespimg, {
-        folders: {
-            source: "src", // Folder images are stored in
-            output: "dist", // Folder images should be output to
-        },
-        images: {
-            resize: {
-                min: 250, // Minimum width to resize an image to
-                max: 1500, // Maximum width to resize an image to
-                step: 150, // Width difference between each resized image
-            },
-            gifToVideo: false, // Convert GIFs to MP4 videos
-            sizes: "100vw", // Default image `sizes` attribute
-            lazy: true, // Include `loading="lazy"` attribute for images
-            watch: {
-                src: "assets/images/**/*", // Glob of images that Eleventy should watch for changes to
-            },
-        },
-    });
     // Base config
     return {
         dir: {
