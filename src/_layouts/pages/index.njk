@@ -12,62 +12,62 @@ order: -999
     <div class="bg-primary text-white text-sm font-medium md:text-base rounded-xl shadow-md my-4 px-4 py-4 max-w-3xl mt-6">
         {{ home[locale].info | safe }}
         <p class="text-xs font-bold mt-4">{{ home[locale].workedwith | safe }}
-        <p>
-        <p class="mt-1">
-            {% icon 'github' %}
-            {% icon 'react' %}
-            {% icon 'linux' %}
-            {% icon 'language-python' %}
-            {% icon 'language-html5' %}
-            {% icon 'language-javascript' %}
-            {% icon 'language-typescript' %}
-            {% icon 'language-css3' %}
-            {% icon 'sass' %}
-            {% icon 'eleventy' %}
-            {% icon 'hugo' %}
-            {% icon 'graphql' %}
-            {% icon 'raspberry-pi' %}
-            {% icon 'home-assistant' %}
-            {% icon 'godot' %}
-            {% icon 'console' %}
-            {% icon 'open-source-initiative' %}
-        </p>
-    </div>
-    <h1 class="text-3xl my-2 mt-8">{{ home[locale].projects }}</h1>
+            <p>
+                <p class="mt-1">
+                    {% icon 'github' %}
+                    {% icon 'react' %}
+                    {% icon 'linux' %}
+                    {% icon 'language-python' %}
+                    {% icon 'language-html5' %}
+                    {% icon 'language-javascript' %}
+                    {% icon 'language-typescript' %}
+                    {% icon 'language-css3' %}
+                    {% icon 'sass' %}
+                    {% icon 'eleventy' %}
+                    {% icon 'hugo' %}
+                    {% icon 'graphql' %}
+                    {% icon 'raspberry-pi' %}
+                    {% icon 'home-assistant' %}
+                    {% icon 'godot' %}
+                    {% icon 'console' %}
+                    {% icon 'open-source-initiative' %}
+                </p>
+            </div>
+            <h1 class="text-3xl my-2 mt-8">{{ home[locale].projects }}</h1>
 
-    <div class="scrollingcards">
-        {% for key, project in home[locale].projectlist %}
-        {% Card project.title,
-        project.description,
-        project.imageurl,
-        project.icons,
-        project.actionhtml %}
-        {% endfor %}
-    </div>
+            <div class="scrollingcards">
+                {% for key, project in home[locale].projectlist %}
+                    {% Card project.title,
+                    project.description,
+                    project.imageurl,
+                    project.icons,
+                    project.actionhtml %}
+                {% endfor %}
+            </div>
 
-    <form name="contact" class="px-2 my-4" method="POST" data-netlify="true">
-        <h1 class="text-xl mb-2">{{ home[locale].contactHeader }}</h1>
-        <p>
-            <label class="font-light">{{ home[locale].contactName }}<input
+            <form name="contact" class="px-2 my-4" method="POST" data-netlify="true">
+                <h1 class="text-xl mb-2">{{ home[locale].contactHeader }}</h1>
+                <p>
+                    <label class="font-light">{{ home[locale].contactName }}<input
                     class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mb-1 block w-10/12 dark:bg-bgel-dark dark:border-none"
-                    type="text" name="name" /></label>
-        </p>
-        <p>
-            <label class="font-light">{{ home[locale].contactMail }}<input
+                    type="text" name="name"/></label>
+                </p>
+                <p>
+                    <label class="font-light">{{ home[locale].contactMail }}<input
                     class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mb-1 block w-10/12 dark:bg-bgel-dark dark:border-none"
-                    type="email" name="email" /></label>
-        </p>
-        <p>
-            <label class="font-light">{{ home[locale].contactMessage }}
-                <textarea name="message"
+                    type="email" name="email"/></label>
+                </p>
+                <p>
+                    <label class="font-light">{{ home[locale].contactMessage }}
+                        <textarea name="message"
                     class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mb-1 block w-10/12 dark:bg-bgel-dark dark:border-none"></textarea>
-            </label>
-        </p>
-        <p>
-            <button type="submit"
+                    </label>
+                </p>
+                <p>
+                    <button type="submit"
                 class="my-4 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">{{
                 home[locale].submit }}</button>
-        </p>
-        <p class="text-sm text-gray-600 dark:text-gray-300">{{ home[locale].formComment | safe }}</p>
-    </form>
-</div>
+                </p>
+                <p class="text-sm text-gray-600 dark:text-gray-300">{{ home[locale].formComment | safe }}</p>
+            </form>
+        </div>
