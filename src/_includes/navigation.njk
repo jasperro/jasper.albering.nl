@@ -1,7 +1,8 @@
-<nav class="nav w-full" role="navigation" tabindex="-1">
-    <div class="flex m-4 sm:hidden justify-between">
+<nav class="nav w-full p-4 flex flex-col justify-between" role="navigation" tabindex="-1">
+    {# Logo and hamburger menu on mobile #}
+    <div class="flex w-min sm:hidden">
         <div class="flex">
-            <label class="sm:hidden" for="nav-toggle">
+            <label for="nav-toggle">
                 <span class="sr-only">toggle menu</span>
                 <span class="flex menuicon">
                     <span class="menuicon__bar"></span>
@@ -12,23 +13,11 @@
 
             <span class="flex ml-4">{% icon 'logo', 'medium', 'aria-hidden="true"' %}</span>
         </div>
-        {# Language selector #}
-        <span class="flex flex-row">
-            {%- for name, value in meta.locales -%}
-                {% if name != locale %}
-                    {% for item in collections.all %}
-                        {% if item.data.translationKey == translationKey and item.data.locale == name %}
-                            <li class="flex p-2 w-max text-primary">
-                                <a href="{{ item.url }}" onclick="setUserLanguage('{{ name }}')">{{ value }}</a>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
-            {%- endfor -%}
-        </span>
     </div>
     <input type="checkbox" id="nav-toggle" class="hidden" aria-controls="nav__container">
-    <nav class="sm:flex flex-col hidden sm:flex-row justify-between p-4">
+
+    {# Navigation items #}
+    <nav class="sm:flex flex-col hidden sm:flex-row justify-between sm:mt-0 mt-4">
         <ul class="flex flex-col sm:flex-row">
             <li class="sm:flex self-center mr-2 hidden">
                 {% icon 'logo', 'medium', 'aria-hidden="true"' %}
@@ -38,7 +27,7 @@
                 {%- set isCurrent = (item.url == page.url) -%}
                 {%- set isParent = item.url != '/' and item.url in page.url -%}
                 <li
-                class="flex p-2 sm:w-max w-full{% if isCurrent %} font-black bg-primary bg-opacity-80 text-white{% else %} font-medium text-primary{% endif %}">
+                class="flex p-2 mr-1 sm:w-max w-full{% if isCurrent %} font-black bg-primary bg-opacity-80 text-white{% else %} font-medium text-primary{% endif %}">
                     <a class="nav__link" href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}" {% if
                     isCurrent %} aria-current="page" {% endif %}>
                         {{ item.title }}
@@ -48,3 +37,18 @@
         </ul>
     </nav>
 </nav>
+
+{# Language selector #}
+<div class="absolute top-4 right-2">
+    {%- for name, value in meta.locales -%}
+        {% if name != locale %}
+            {% for item in collections.all %}
+                {% if item.data.translationKey == translationKey and item.data.locale == name %}
+                    <li class="flex p-2 w-max text-primary">
+                        <a href="{{ item.url }}" onclick="setUserLanguage('{{ name }}')">{{ value }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {%- endfor -%}
+</div>
