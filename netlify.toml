@@ -26,6 +26,13 @@
 
 [[redirects]]
    from = "/"
+   to = "/nl"
+   status = 301
+   force = true
+   conditions = {Country = ["NL"]}
+
+[[redirects]]
+   from = "/"
    to = "/en"
    force = true
    status = 301
