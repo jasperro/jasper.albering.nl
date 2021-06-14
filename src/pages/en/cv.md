@@ -8,6 +8,7 @@ eleventyNavigation:
 ---
 
 [jasperro @ GitHub](github.com/jasperro)
+Contact me by e-mail at jasper.albering@gmail.com
 
 ## Holiday work
 
