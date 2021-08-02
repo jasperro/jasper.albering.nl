@@ -102,7 +102,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/robots.txt");
     eleventyConfig.addPassthroughCopy("src/site.webmanifest");
     eleventyConfig.addPassthroughCopy("src/assets/images");
-    eleventyConfig.addPassthroughCopy("src/assets/fonts");
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/inter-ui/Inter (web)": "assets/Inter (web)",
+    });
 
     // Deep-Merge
     eleventyConfig.setDataDeepMerge(true);

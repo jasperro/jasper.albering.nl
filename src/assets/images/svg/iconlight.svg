@@ -1,155 +1,31 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="512"
-   height="512"
-   viewBox="0 0 512 512"
-   version="1.1"
-   id="svg8"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   sodipodi:docname="newiconstd.svg"
-   inkscape:export-filename="/home/jasperro/Programmeren/webtech/jasperro.gitlab.io/images/favicon.png"
-   inkscape:export-xdpi="24.000002"
-   inkscape:export-ydpi="24.000002">
-  <defs
-     id="defs2">
-    <linearGradient
-       gradientTransform="translate(-1.65,-1.65)"
-       gradientUnits="userSpaceOnUse"
-       id="jasperro"
-       x1="0.39744294"
-       y1="12"
-       x2="23.602558"
-       y2="12">
-      <stop
-         offset="0"
-         style="stop-color:#0080ff;stop-opacity:1"
-         id="light" />
-      <stop
-         offset="100.000%"
-         style="stop-color:#0066ff;stop-opacity:1"
-         id="dark" />
-    </linearGradient>
-    <linearGradient
-       gradientUnits="userSpaceOnUse"
-       y2="322.58771"
-       x2="511.31732"
-       y1="322.58771"
-       x1="0.74331754"
-       id="linearGradient2149"
-       xlink:href="#jasperro"
-       inkscape:collect="always" />
-    <linearGradient
-       y2="322.58771"
-       x2="511.31732"
-       y1="322.58771"
-       x1="0.74331754"
-       gradientUnits="userSpaceOnUse"
-       id="linearGradient3861"
-       xlink:href="#jasperro"
-       inkscape:collect="always" />
-  </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.67355351"
-     inkscape:cx="98.666421"
-     inkscape:cy="347.63533"
-     inkscape:document-units="px"
-     inkscape:current-layer="g837"
-     showgrid="false"
-     units="px"
-     width="128px"
-     inkscape:window-width="1900"
-     inkscape:window-height="1021"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     showguides="false"
-     inkscape:pagecheckerboard="false"
-     inkscape:document-rotation="0" />
-  <metadata
-     id="metadata5">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Laag 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(0,-263.13333)">
-    <g
-       id="g4527"
-       transform="translate(-0.48447806,0.02837252)">
-      <g
-         id="g831"
-         transform="translate(-0.3048048)">
-        <g
-           id="g837"
-           transform="translate(0.04594757)">
-          <g
-             transform="matrix(15.11809,0,0,15.118138,-10.494995,-3714.1758)"
-             id="g3859">
-            <g
-               id="g3252">
-              <rect
-                 style="fill:#ffffff;fill-opacity:1;stroke-width:0.551465"
-                 id="rect1440"
-                 width="33.866669"
-                 height="33.866669"
-                 x="0.74333531"
-                 y="263.10495" />
-              <rect
-                 y="263.10495"
-                 x="0.74333531"
-                 height="33.866669"
-                 width="13.546041"
-                 id="rect815"
-                 style="opacity:1;vector-effect:none;fill:url(#linearGradient3861);fill-opacity:1;stroke:none;stroke-width:0.255577;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-              <text
-                 id="text901"
-                 y="291.25"
-                 x="-1.4"
-                 style="font-style:normal;font-weight:normal;font-size:38.8056px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-                 xml:space="preserve"><tspan
-                   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.8056px;font-family:'Inter UI';-inkscape-font-specification:'Inter UI Bold';fill:#ffffff;stroke-width:0.264583"
-                   y="291.25"
-                   x="-1.4"
-                   id="tspan899"
-                   sodipodi:role="line">J</tspan></text>
-              <text
-                 id="text909"
-                 y="296.99899"
-                 x="9.5500002"
-                 style="font-style:normal;font-weight:normal;font-size:40.1881px;line-height:1.25;font-family:sans-serif;fill:url(#linearGradient2149);fill-opacity:1;stroke:none;stroke-width:0.274008"
-                 xml:space="preserve"><tspan
-                   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40.1881px;font-family:'Inter UI';-inkscape-font-specification:'Inter UI Bold';fill:url(#linearGradient2149);fill-opacity:1;stroke-width:0.274008"
-                   y="296.99899"
-                   x="9.5500002"
-                   id="tspan907"
-                   sodipodi:role="line">A</tspan></text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <defs>
+      <linearGradient id="a">
+         <stop stop-color="rgb(0,164,171)" />
+      </linearGradient>
+      <linearGradient id="b">
+         <stop stop-color="rgb(249,253,253)" />
+      </linearGradient>
+   </defs>
+   <g transform="translate(0 -263.13)">
+      <g transform="translate(-.48448 .028373)">
+         <g transform="translate(-.3048)">
+            <g transform="translate(.045948)">
+               <g transform="matrix(15.118 0 0 15.118 -10.495 -3714.2)">
+                  <g>
+                     <path d="m0.74334 263.1h33.867v33.867h-33.867z" fill="url(#b)" stroke-width=".55146" />
+                     <path d="m0.74334 263.08h13.546v33.892h-13.546z" fill="url(#a)" />
+                     <g fill="url(#b)" aria-label="J">
+                        <path d="m12.353 282.71v-19.678h5.898v19.678q-0.01378 2.7423-1.2265 4.7405-1.2127 1.9982-3.39 3.1006-2.1635 1.0886-5.0161 1.0886-2.5632 0-4.6302-0.90951-2.0671-0.9095-3.2797-2.7423-1.2127-1.8466-1.1989-4.6716h5.9394q0.027561 1.6812 0.96463 2.6183 0.95085 0.92328 2.508 0.92328 3.4038 0 3.4313-4.1479z" fill="url(#b)" stroke-width=".26458" />
+                     </g>
+                     <g fill="url(#a)" aria-label="A">
+                        <path d="m17.128 297h-6.6219l10.09-29.228h7.9634l10.076 29.228h-6.6219l-2.1692-6.6647h-10.547zm3.7391-11.488h7.4211l-3.5964-11.06h-0.22834z" fill="rgb(var(--color-primary)" stroke-width=".27401" />
+                     </g>
+                  </g>
+               </g>
             </g>
-          </g>
-        </g>
+         </g>
       </g>
-    </g>
-  </g>
+   </g>
 </svg>

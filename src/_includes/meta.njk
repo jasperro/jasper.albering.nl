@@ -14,17 +14,20 @@
 <meta name="twitter:card" content="{% if image -%}summary_large_image{% else %}summary{% endif %}">
 <meta name="application-name" content="Jasper Albering">
 <meta name="apple-mobile-web-app-title" content="Jasper Albering">
-<meta name="theme-color" content="#0060ff">
+<meta name="theme-color" content="#008594">
+<meta name="msapplication-TileColor" content="#008594">
+<meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
 {%- if image -%}
     <meta property="og:image" content="{{ image | url | absoluteUrl(meta.url) }}">
 {%- endif -%}
 
 {# Favicon #}
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/favicon/apple-touch-icon.png' | url }}">
+<link rel="icon" type="image/svg+xml" href="{{ '/assets/images/svg/favicon.svg' | url }}">
 <link rel="icon" type="image/png" href="{{ '/assets/images/favicon/favicon-32x32.png' | url }}" sizes="32x32">
 <link rel="icon" type="image/png" href="{{ '/assets/images/favicon/favicon-16x16.png' | url }}" sizes="16x16">
 <link rel="shortcut icon" href="{{ '/assets/images/favicon/favicon.ico' | url }}">
-<link rel="mask-icon" href="{{ '/assets/images/favicon/safari-pinned-tab.svg' | url }}" color="#5bbad5">
+<link rel="mask-icon" href="{{ '/assets/images/favicon/safari-pinned-tab.svg' | url }}" color="#008594">
 <link rel="manifest" href="{{ '/site.webmanifest' | url }}">
 
 {# RSS Feed #}

@@ -15,7 +15,7 @@ const em = (px, base) => `${round(px / base)}em`;
 
 module.exports = {
     mode: "jit",
-    purge: ["./dist/**/*.html", "./src/**/*.{html,njk,js}"],
+    purge: ["./src/**/*.{html,njk,js}"],
     darkMode: "media",
     theme: {
         extend: {

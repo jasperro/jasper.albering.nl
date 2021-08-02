@@ -10,9 +10,9 @@ eleventyNavigation:
 [jasperro @ GitHub](github.com/jasperro)
 Contact me by e-mail at jasper.albering@gmail.com
 
-## Holiday work
+## About me
 
-I am available for holiday work between 14 June and 30 July 2021
+I am currently studying Computer Science at the University of Utrecht.
 
 I am especially interested in api-first web development, where backend, frontend and content come together into one whole.
 
@@ -32,10 +32,10 @@ I am especially interested in api-first web development, where backend, frontend
 
 ## Projects
 
--   Lifier (React Native / Expo)
--   Worldshop Nijkerk (PHP / Wordpress)
--   Egg Simulator (Godot 3D Game)
--   Home Automation with Home Assistant (Python / Embedded / Soldering)
+-   {% icon 'react' %} (React Native) &#8594; <a href="https://github.com/jasperro/lifier">Lifier</a>
+-   {% icon 'wordpress' %} (Wordpress) &#8594; <a href="https://drivetheplanet.com">DriveThePlanet</a>, <a href="https://vakantiehuis-in-drenthe.com">Vakantiehuis Tofino</a>
+-   {% icon 'godot' %} (Godot 3D Game) &#8594; <a href="https://github.com/jasperro/egg-simulator">Egg Simulator</a>
+-   {% icon 'language-python' %} (Python / Embedded) &#8594; Home Automation with Home Assistant
 
 ## Characteristic for me
 
@@ -46,5 +46,4 @@ I am especially interested in api-first web development, where backend, frontend
 
 ## Now working on
 
--   Decoupled Drupal
--   Preparing for university
+-   {% icon 'graphql' %} GraphQL with <a href="https://formidable.com/open-source/urql/">urql</a>

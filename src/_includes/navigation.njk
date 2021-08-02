@@ -40,15 +40,17 @@
 
 {# Language selector #}
 <div class="absolute top-4 right-2">
-    {%- for name, value in meta.locales -%}
-        {% if name != locale %}
-            {% for item in collections.all %}
-                {% if item.data.translationKey == translationKey and item.data.locale == name %}
-                    <li class="flex p-2 w-max text-primary">
-                        <a href="{{ item.url }}" onclick="setUserLanguage('{{ name }}')">{{ value }}</a>
-                    </li>
-                {% endif %}
-            {% endfor %}
-        {% endif %}
-    {%- endfor -%}
+    <ul>
+        {%- for name, value in meta.locales -%}
+            {% if name != locale %}
+                {% for item in collections.all %}
+                    {% if item.data.translationKey == translationKey and item.data.locale == name %}
+                        <li class="flex p-2 w-max text-primary">
+                            <a href="{{ item.url }}" onclick="setUserLanguage('{{ name }}')">{{ value }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {%- endfor -%}
+    </ul>
 </div>

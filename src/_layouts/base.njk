@@ -15,10 +15,10 @@
         </script>
     </head>
 
-    <body data-theme="light">
+    <body>
         <div class="layout" role="document">
             {% include "header.njk" %}
-            <main id="main" class="main" tabindex="-1">
+            <main id="main" class="flex flex-col {% if _no_margin %}{% else %}lg:p-16 md:p-8 p-4{% endif %} overflow-hidden" tabindex="-1">
                 {{ content | safe }}
             </main>
             {% include "footer.njk" %}

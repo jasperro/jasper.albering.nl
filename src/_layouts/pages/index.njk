@@ -1,19 +1,18 @@
 ---
 layout: base
+_no_margin: true
 eleventyNavigation:
 order: -999
 ---
-<div class="home">
-    <div class="flex flex-col">
-        <h1 class="lg:text-9xl md:text-8xl text-6xl font-black">{{ home[locale].title | safe }}</h1>
-        <h2 class="lg:text-8xl md:text-7xl text-5xl text-primary font-bold">{{ home[locale].description | safe }}</h2>
-    </div>
-
-    <div class="bg-primary text-white text-sm font-medium md:text-base rounded-xl shadow-md my-4 px-4 py-4 max-w-3xl mt-6">
-        {{ home[locale].info | safe }}
-        <p class="text-xs font-bold mt-4">{{ home[locale].workedwith | safe }}
-            <p>
-                <p class="mt-1">
+<div>
+    <div class="bg-bgel dark:bg-bgel-dark rounded-xl my-6 lg:p-16 md:p-8 p-4 py-8">
+        <h1 class="lg:text-9xl md:text-8xl text-6xl font-semibold tracking-tighter">{{ home[locale].title | safe }}</h1>
+        <h2 class="lg:text-7xl md:text-6xl text-4xl font-medium tracking-tight text-primary">{{ home[locale].description | safe }}</h2>
+        <div class="max-w-3xl">
+            <p class="mt-6 border-2 rounded-md border-primary p-3">{{ home[locale].info | safe }}</p>
+            <span class="text-xs font-bold mt-6">
+                <p class="mt-12">{{ home[locale].workedwith | safe }}</p>
+                <p class="mt-2 space-x-2">
                     {% icon 'github' %}
                     {% icon 'react' %}
                     {% icon 'linux' %}
@@ -32,42 +31,46 @@ order: -999
                     {% icon 'console' %}
                     {% icon 'open-source-initiative' %}
                 </p>
-            </div>
-            <h1 class="text-3xl my-2 mt-8">{{ home[locale].projects }}</h1>
-
-            <div class="scrollingcards">
-                {% for key, project in home[locale].projectlist %}
-                    {% Card project.title,
-                    project.description,
-                    project.imageurl,
-                    project.icons,
-                    project.actionhtml %}
-                {% endfor %}
-            </div>
-
-            <form name="contact" class="px-2 my-4" method="POST" data-netlify="true">
-                <h1 class="text-xl mb-2">{{ home[locale].contactHeader }}</h1>
-                <p>
-                    <label class="font-light">{{ home[locale].contactName }}<input
-                    class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mb-1 block w-10/12 dark:bg-bgel-dark dark:border-none"
-                    type="text" name="name"/></label>
-                </p>
-                <p>
-                    <label class="font-light">{{ home[locale].contactMail }}<input
-                    class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mb-1 block w-10/12 dark:bg-bgel-dark dark:border-none"
-                    type="email" name="email"/></label>
-                </p>
-                <p>
-                    <label class="font-light">{{ home[locale].contactMessage }}
-                        <textarea name="message"
-                    class="border-gray-300 focus:ring-accent focus:border-accent rounded-md mb-1 block w-10/12 dark:bg-bgel-dark dark:border-none"></textarea>
-                    </label>
-                </p>
-                <p>
-                    <button type="submit"
-                class="my-4 py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">{{
-                home[locale].submit }}</button>
-                </p>
-                <p class="text-sm text-gray-600 dark:text-gray-300">{{ home[locale].formComment | safe }}</p>
-            </form>
+            </span>
         </div>
+    </div>
+    <div class="mx-16">
+        <h1 class="text-3xl mt-8 mb-6">{{ home[locale].projects }}</h1>
+
+        <div class="scrollingcards">
+            {% for key, project in home[locale].projectlist %}
+                {% Card project.title,
+                project.description,
+                project.imageurl,
+                project.icons,
+                project.actionhtml %}
+            {% endfor %}
+        </div>
+
+        <form name="contact" class="px-2 my-4" method="POST" data-netlify="true">
+            <h1 class="text-xl mb-2">{{ home[locale].contactHeader }}</h1>
+            <p>
+                <label class="font-light">{{ home[locale].contactName }}<input
+                    class="border-gray-300 focus:ring-2 focus:ring-accent rounded-md mb-1 block w-10/12 dark:bg-bgel-dark dark:border-none"
+                    type="text" name="name"/></label>
+            </p>
+            <p>
+                <label class="font-light">{{ home[locale].contactMail }}<input
+                    class="border-gray-300 focus:ring-2 focus:ring-accent rounded-md mb-1 block w-10/12 dark:bg-bgel-dark dark:border-none"
+                    type="email" name="email"/></label>
+            </p>
+            <p>
+                <label class="font-light">{{ home[locale].contactMessage }}
+                    <textarea name="message"
+                    class="border-gray-300 focus:ring-2 focus:ring-accent rounded-md mb-1 block w-10/12 dark:bg-bgel-dark dark:border-none"></textarea>
+                </label>
+            </p>
+            <p>
+                <button type="submit"
+                class="my-4 py-2 px-4 shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-accent">{{
+                home[locale].submit }}</button>
+            </p>
+            <p class="text-sm text-gray-600 dark:text-gray-300">{{ home[locale].formComment | safe }}</p>
+        </form>
+    </div>
+</div>

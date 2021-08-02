@@ -7,12 +7,13 @@ translationKey: "aboutPage"
 ---
 
 <div class="container prose dark:prose-light prose-xl">
-  <h1>Over mij</h1>
-  {{ home[locale].info | safe }}
-  <br>
   {% markdown %}
+  # Over mij
+  <p>{{ home[locale].info | safe }}</p>
+
   # Over deze website
-  Deze site is gemaakt met eleventy.
+  <p>Deze site is gemaakt met <a href="https://11ty.dev/">{% icon 'eleventy' %} (eleventy)</a>.
+  </p>
   
   ## Source code
   https://github.com/jasperro/jasperro-website
