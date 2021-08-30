@@ -4,13 +4,13 @@
     "description": "Jasper Albering's personal website, built with eleventy",
     "scripts": {
         "start": "pnpm run dev",
-        "dev": "pnpm run clean & cross-env NODE_ENV=development run-p gulp:dev postcss:dev",
-        "build": "pnpm run clean & cross-env NODE_ENV=production run-s gulp:build eleventy:build postcss:build",
+        "dev": "pnpm run clean & NODE_ENV=development run-p gulp:dev postcss:dev",
+        "build": "pnpm run clean & NODE_ENV=production run-s gulp:build eleventy:build postcss:build",
         "gulp:dev": "gulp dev",
         "gulp:build": "gulp build",
         "postcss:dev": "NODE_ENV=development TAILWIND_MODE=watch postcss ./src/assets/styles/main.pcss -o ./dist/assets/main.css -w",
         "postcss:build": "NODE_ENV=production postcss ./src/assets/styles/main.pcss -o ./dist/assets/main.css",
-        "eleventy:build": "cross-env ELEVENTY_ENV=production eleventy",
+        "eleventy:build": "ELEVENTY_ENV=production eleventy",
         "clean": "del-cli dist/**"
     },
     "repository": {
@@ -27,7 +27,6 @@
         "@tailwindcss/forms": "^0.3.3",
         "@tailwindcss/typography": "^0.4.1",
         "autoprefixer": "^10.3.3",
-        "cross-env": "^7.0.3",
         "cssnano": "^5.0.8",
         "cssnano-preset-advanced": "^5.1.4",
         "dayjs": "^1.10.6",
@@ -45,9 +44,7 @@
         "postcss-import": "^14.0.2",
         "postcss-nested": "^5.0.6",
         "postcss-preset-env": "^6.7.0",
-        "tailwindcss": "^2.2.9"
-    },
-    "dependencies": {
+        "tailwindcss": "^2.2.9",
         "inter-ui": "^3.19.3"
     }
 }

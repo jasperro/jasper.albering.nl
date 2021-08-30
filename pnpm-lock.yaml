@@ -8,7 +8,6 @@ specifiers:
   '@tailwindcss/forms': ^0.3.3
   '@tailwindcss/typography': ^0.4.1
   autoprefixer: ^10.3.3
-  cross-env: ^7.0.3
   cssnano: ^5.0.8
   cssnano-preset-advanced: ^5.1.4
   dayjs: ^1.10.6
@@ -29,9 +28,6 @@ specifiers:
   postcss-preset-env: ^6.7.0
   tailwindcss: ^2.2.9
 
-dependencies:
-  inter-ui: 3.19.3
-
 devDependencies:
   '@11ty/eleventy': 0.12.1
   '@11ty/eleventy-img': 0.10.0
@@ -40,7 +36,6 @@ devDependencies:
   '@tailwindcss/forms': 0.3.3_tailwindcss@2.2.9
   '@tailwindcss/typography': 0.4.1_tailwindcss@2.2.9
   autoprefixer: 10.3.3_postcss@8.3.6
-  cross-env: 7.0.3
   cssnano: 5.0.8_postcss@8.3.6
   cssnano-preset-advanced: 5.1.4_postcss@8.3.6
   dayjs: 1.10.6
@@ -48,6 +43,7 @@ devDependencies:
   gulp: 4.0.2
   gulp-svg-sprite: 1.5.0
   html-minifier: 4.0.0
+  inter-ui: 3.19.3
   lodash: 4.17.21
   markdown-it: 12.2.0
   mini-css-extract-plugin: 2.2.0
@@ -1386,14 +1382,6 @@ packages:
       yaml: 1.10.2
     dev: true
 
-  /cross-env/7.0.3:
-    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
-    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
-    hasBin: true
-    dependencies:
-      cross-spawn: 7.0.3
-    dev: true
-
   /cross-spawn/6.0.5:
     resolution: {integrity: sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==}
     engines: {node: '>=4.8'}
@@ -1403,15 +1391,6 @@ packages:
       semver: 5.7.1
       shebang-command: 1.2.0
       which: 1.3.1
-    dev: true
-
-  /cross-spawn/7.0.3:
-    resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
-    engines: {node: '>= 8'}
-    dependencies:
-      path-key: 3.1.1
-      shebang-command: 2.0.0
-      which: 2.0.2
     dev: true
 
   /css-blank-pseudo/0.1.4:
@@ -3108,7 +3087,7 @@ packages:
 
   /inter-ui/3.19.3:
     resolution: {integrity: sha512-5FG9fjuYOXocIfjzcCBhICL5cpvwEetseL3FU6tP3d6Bn7g8wODhB+I9RNGRTizCT7CUG4GOK54OPxqq3msQgg==}
-    dev: false
+    dev: true
 
   /internal-slot/1.0.3:
     resolution: {integrity: sha512-O0DB1JC/sPyZl7cIo78n5dR7eUSwwpYPiXRhTzNxZVAMUuB8vlnRFyLxdrVToks6XPLVnFfbzaVd5WLjhgg+vA==}
@@ -4632,11 +4611,6 @@ packages:
   /path-key/2.0.1:
     resolution: {integrity: sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=}
     engines: {node: '>=4'}
-    dev: true
-
-  /path-key/3.1.1:
-    resolution: {integrity: sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==}
-    engines: {node: '>=8'}
     dev: true
 
   /path-parse/1.0.7:
@@ -6257,21 +6231,9 @@ packages:
       shebang-regex: 1.0.0
     dev: true
 
-  /shebang-command/2.0.0:
-    resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
-    engines: {node: '>=8'}
-    dependencies:
-      shebang-regex: 3.0.0
-    dev: true
-
   /shebang-regex/1.0.0:
     resolution: {integrity: sha1-2kL0l0DAtC2yypcoVxyxkMmO/qM=}
     engines: {node: '>=0.10.0'}
-    dev: true
-
-  /shebang-regex/3.0.0:
-    resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
-    engines: {node: '>=8'}
     dev: true
 
   /shell-quote/1.7.2:
@@ -7248,14 +7210,6 @@ packages:
 
   /which/1.3.1:
     resolution: {integrity: sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==}
-    hasBin: true
-    dependencies:
-      isexe: 2.0.0
-    dev: true
-
-  /which/2.0.2:
-    resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
-    engines: {node: '>= 8'}
     hasBin: true
     dependencies:
       isexe: 2.0.0
