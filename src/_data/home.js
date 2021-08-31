@@ -9,10 +9,10 @@ const defaults = {
             icons: ["react"],
             title: "Lifier",
         },
-        wereldwinkel: {
+        /*wereldwinkel: {
             imageurl: "/assets/images/nieuwwwnijkerk.jpg",
             icons: ["wordpress"],
-        },
+        },*/
         eggsimulator: {
             imageurl: "/assets/images/eggsimulator.png",
             icons: ["godot"],
@@ -36,7 +36,7 @@ const nl = {
     formComment:
         '// Formulier wordt verzonden met <a class="underline dark:text-gray-500 text-gray-900" href="https://www.netlify.com/">netlify</a>.',
     projectlist: {
-        wereldwinkel: {
+        /*wereldwinkel: {
             title: "Wereldwinkel Nijkerk",
             description:
                 "Ik heb een nieuwe website gemaakt voor Wereldwinkel Nijkerk met een zelfgemaakt wordpress-thema die de laatste Facebook-posts laadt.",
@@ -45,7 +45,7 @@ const nl = {
                 "github",
                 "https://github.com/jasperro/wereldwinkelnijkerk"
             ),
-        },
+        },*/
         eggsimulator: {
             title: "Eisimulator",
             description:
@@ -84,7 +84,7 @@ const en = {
     formComment:
         '// Form data is sent with <a class="underline dark:text-gray-500 text-gray-900" href="https://www.netlify.com/">netlify</a>.',
     projectlist: {
-        wereldwinkel: {
+        /*wereldwinkel: {
             title: "World Shop Nijkerk",
             description:
                 "I made a new website for the World Shop Nijkerk with a custom wordpress theme that loads the latest Facebook posts.",
@@ -93,7 +93,7 @@ const en = {
                 "github",
                 "https://github.com/jasperro/wereldwinkelnijkerk"
             ),
-        },
+        },*/
         eggsimulator: {
             title: "Egg simulator",
             description:

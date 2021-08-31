@@ -12,7 +12,7 @@ order: -999
             <p class="mt-6 border-2 rounded-md border-primary p-3">{{ home[locale].info | safe }}</p>
             <span class="text-xs font-bold mt-6">
                 <p class="mt-12">{{ home[locale].workedwith | safe }}</p>
-                <p class="mt-2 space-x-2">
+                <p class="mt-2 icons_experience">
                     {% icon 'github' %}
                     {% icon 'react' %}
                     {% icon 'linux' %}
@@ -34,10 +34,10 @@ order: -999
             </span>
         </div>
     </div>
-    <div class="mx-16">
+    <div class="lg:mx-16 md:mx-8 mx-4">
         <h1 class="text-3xl mt-8 mb-6">{{ home[locale].projects }}</h1>
 
-        <div class="scrollingcards">
+        <div class="projectlist">
             {% for key, project in home[locale].projectlist %}
                 {% Card project.title,
                 project.description,
