@@ -32,7 +32,7 @@
         </ul>
         {# Language selector #}
         <ul class="flex flex-row">
-            {%- for name, value in meta.locales -%}
+            {%- for name, value in locales -%}
             {% if name != locale %}
             {% for item in collections.all %}
             {% if item.data.translationKey == translationKey and item.data.locale == name %}

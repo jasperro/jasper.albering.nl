@@ -30,6 +30,6 @@
 {# RSS Feed #}
 <link type="application/atom+xml" rel="alternate" href="{{ meta.url }}/feed.xml" title="{{ meta.title }}">
 
-{%- for lang, value in meta.locales -%}
+{%- for lang, value in locales -%}
 <link rel="alternate" hreflang="{{ lang }}" href="{{ meta.url | url | absoluteUrl + lang }}" />
 {%- endfor -%}

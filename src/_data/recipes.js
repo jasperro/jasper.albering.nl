@@ -36,6 +36,7 @@ async function getAllRecipes() {
             id: item.id,
             title: item.attributes.title,
             temperature: item.attributes.field_temperature,
+            tasty: item.attributes.field_tasty,
             content: item.attributes.body.processed,
         };
     });
