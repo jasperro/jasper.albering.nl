@@ -5,7 +5,14 @@ eleventyNavigation:
 order: -999
 ---
 <div>
-    <div class="bg-bgel dark:bg-bgel-dark rounded-xl my-6 lg:p-16 md:p-8 p-4 py-8">
+    <div style="
+	background-color: rgb(var(--color-bg));
+	margin-top: var(--size-6);
+	margin-bottom: var(--size-6);
+	border-radius: var(--size-5);
+	padding: var(--size-4);
+	color: var(--color-teal-100);
+    ">
         <h1 class="lg:text-9xl md:text-8xl text-6xl font-semibold tracking-tighter">{{ home[locale].title | safe }}</h1>
         <h2 class="lg:text-7xl md:text-6xl text-4xl font-medium tracking-tight text-primary">{{ home[locale].description | safe }}</h2>
         <div class="max-w-3xl">
