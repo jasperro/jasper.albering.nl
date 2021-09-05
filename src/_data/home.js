@@ -53,7 +53,8 @@ const nl = {
             actionhtml: Button(
                 "Bekijk op GitHub",
                 "github",
-                "https://github.com/jasperro/egg-simulator"
+                "https://github.com/jasperro/egg-simulator",
+                (variant = "github")
             ),
         },
         lifier: {
@@ -62,7 +63,8 @@ const nl = {
             actionhtml: Button(
                 "Bekijk op GitHub",
                 "github",
-                "https://github.com/jasperro/Lifier"
+                "https://github.com/jasperro/Lifier",
+                (variant = "github")
             ),
         },
     },
@@ -101,7 +103,8 @@ const en = {
             actionhtml: Button(
                 "View on GitHub",
                 "github",
-                "https://github.com/jasperro/egg-simulator"
+                "https://github.com/jasperro/egg-simulator",
+                (variant = "github")
             ),
         },
         lifier: {
@@ -110,7 +113,8 @@ const en = {
             actionhtml: Button(
                 "View on GitHub",
                 "github",
-                "https://github.com/jasperro/Lifier"
+                "https://github.com/jasperro/Lifier",
+                (variant = "github")
             ),
         },
     },
