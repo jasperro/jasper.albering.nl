@@ -1,29 +1,3 @@
-{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(meta.url) }}{%- endset -%}
-
-{# General #}
-<meta name="description" content="{{ description or meta.description }}">
-<link rel="canonical" href="{{ absolutePageUrl }}">
-<meta name="google-site-verification" content="{{ meta.googleverify }}"/>
-
-{# Open Graph #}
-<meta property="og:site_name" content="{{ meta.title }}">
-<meta property="og:title" content="{{ title or meta.title }}">
-<meta property="og:description" content="{{ description  or meta.description }}">
-<meta property="og:url" content="{{ absolutePageUrl }}">
-<meta property="og:locale" content="{{ locale }}">
-<meta name="twitter:card" content="{% if image -%}summary_large_image{% else %}summary{% endif %}">
-<meta name="application-name" content="Jasper Albering">
-<meta name="apple-mobile-web-app-title" content="Jasper Albering">
-<meta name="theme-color" content="#008594">
-<meta name="msapplication-TileColor" content="#008594">
-<meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
-{%- if image -%}
-    <meta property="og:image" content="{{ image | url | absoluteUrl(meta.url) }}">
-{%- endif -%}
-
-{# Favicon #}
-<link rel="icon" type="image/svg+xml" href="/assets/images/svg/favicon.svg">
-
 <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
@@ -51,10 +25,3 @@
 <meta name="msapplication-TileImage" content="/assets/images/favicon/mstile-144x144.png">
 <meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
 <link rel="yandex-tableau-widget" href="/assets/images/favicon/yandex-browser-manifest.json">
-
-{# RSS Feed #}
-<link type="application/atom+xml" rel="alternate" href="{{ meta.url }}/feed.xml" title="{{ meta.title }}">
-
-{%- for lang, value in meta.locales -%}
-    <link rel="alternate" hreflang="{{ lang }}" href="{{ meta.url | url | absoluteUrl + lang }}"/>
-{%- endfor -%}

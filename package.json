@@ -32,8 +32,10 @@
         "dayjs": "^1.10.6",
         "del-cli": "^4.0.1",
         "gulp": "^4.0.2",
+        "gulp-favicons": "^3.0.0",
         "gulp-svg-sprite": "^1.5.0",
         "html-minifier": "^4.0.0",
+        "inter-ui": "^3.19.3",
         "lodash": "^4.17.21",
         "markdown-it": "^12.2.0",
         "mini-css-extract-plugin": "^2.2.0",
@@ -44,7 +46,6 @@
         "postcss-import": "^14.0.2",
         "postcss-nested": "^5.0.6",
         "postcss-preset-env": "^6.7.0",
-        "tailwindcss": "^2.2.9",
-        "inter-ui": "^3.19.3"
+        "tailwindcss": "^2.2.9"
     }
 }
