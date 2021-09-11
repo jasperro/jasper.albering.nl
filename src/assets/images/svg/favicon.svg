@@ -2,38 +2,22 @@
 <svg width="512" height="512" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <style>
     .color-background {
-      fill: rgb(249,253,253);
+      fill: rgb(249, 253, 253);
     }
     .color-primary {
-        fill: rgb(0,164,171);
+        fill: rgb(0, 139, 139);
     }
     @media (prefers-color-scheme: dark) {
       .color-background {
-        fill: rgb(12,65,69);
+        fill: rgb(12, 65, 69);
       }
       .color-primary {
-          fill: rgb(0,164,171);
+          fill: rgb(78, 205, 196);
       }
     }
   </style>
-    <g transform="translate(0 -263.13)">
-        <g transform="translate(-.48448 .028373)">
-            <g transform="translate(-.3048)">
-                <g transform="translate(.045948)">
-                    <g transform="matrix(15.118 0 0 15.118 -10.495 -3714.2)">
-                        <g>
-                            <path d="m0.74334 263.1h33.867v33.867h-33.867z" class="color-background" stroke-width=".55146" />
-                            <path d="m0.74334 263.08h13.546v33.892h-13.546z" class="color-primary" />
-                            <g class="color-background" aria-label="J">
-                                <path d="m12.353 282.71v-19.678h5.898v19.678q-0.01378 2.7423-1.2265 4.7405-1.2127 1.9982-3.39 3.1006-2.1635 1.0886-5.0161 1.0886-2.5632 0-4.6302-0.90951-2.0671-0.9095-3.2797-2.7423-1.2127-1.8466-1.1989-4.6716h5.9394q0.027561 1.6812 0.96463 2.6183 0.95085 0.92328 2.508 0.92328 3.4038 0 3.4313-4.1479z" class="color-background" stroke-width=".26458" />
-                            </g>
-                            <g class="color-primary" aria-label="A">
-                                <path d="m17.128 297h-6.6219l10.09-29.228h7.9634l10.076 29.228h-6.6219l-2.1692-6.6647h-10.547zm3.7391-11.488h7.4211l-3.5964-11.06h-0.22834z" fill="rgb(var(--color-primary)" stroke-width=".27401" />
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+    <rect id="bgright" x="0" y="0" width="512" height="512" class="color-background" />
+    <rect id="bgleft" x="0" y="0" width="220" height="512" class="color-primary" />
+    <path id="J" d="m175.52 296.71v-297.49h89.166v297.49q-0.20833 41.458-18.542 71.667-18.334 30.209-51.25 46.875-32.708 16.457-75.833 16.457-38.75 0-69.999-13.75-31.25-13.75-49.583-41.458-18.334-27.917-18.125-70.625h89.792q0.41667 25.416 14.583 39.583 14.375 13.958 37.916 13.958 51.459 0 51.874-62.708z" class="color-background" stroke-width="4" />
+    <path id="A" d="m247.71 512.75h-100.11l152.54-441.87h120.39l152.33 441.87h-100.11l-32.794-100.76h-159.45zm56.528-173.68h112.19l-54.37-167.21h-3.452z" class="color-primary" stroke-width="4.1425" />
 </svg>

@@ -21,6 +21,12 @@ module.exports = {
         extend: {
             colors: {
                 primary: {
+                    dark: ({ opacityVariable, opacityValue }) =>
+                        varopacity(
+                            opacityVariable,
+                            opacityValue,
+                            "color-primary-dark"
+                        ),
                     light: ({ opacityVariable, opacityValue }) =>
                         varopacity(
                             opacityVariable,
@@ -35,12 +41,6 @@ module.exports = {
                         ),
                 },
                 accent: {
-                    light: ({ opacityVariable, opacityValue }) =>
-                        varopacity(
-                            opacityVariable,
-                            opacityValue,
-                            "color-accent-light"
-                        ),
                     DEFAULT: ({ opacityVariable, opacityValue }) =>
                         varopacity(
                             opacityVariable,

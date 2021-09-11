@@ -27,7 +27,7 @@
                 {%- set isCurrent = (item.url == page.url) -%}
                 {%- set isParent = item.url != '/' and item.url in page.url -%}
                 <li
-                class="flex p-2 mr-1 sm:w-max w-full{% if isCurrent %} font-black bg-primary bg-opacity-80 text-white{% else %} font-medium text-primary{% endif %}">
+                class="flex p-2 mr-1 sm:w-max w-full font-medium{% if isCurrent %} rounded-md bg-primary text-white dark:text-black{% else %} text-primary{% endif %}">
                     <a class="nav__link" href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}" {% if
                     isCurrent %} aria-current="page" {% endif %}>
                         {{ item.title }}

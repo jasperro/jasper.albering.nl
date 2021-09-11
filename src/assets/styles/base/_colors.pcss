@@ -1,8 +1,10 @@
 :root {
-    --color-primary: 0, 133, 148;
-    --color-accent: 255, 0, 102;
-    --color-primary-light: 0, 164, 171;
-    --color-accent-light: 255, 0, 136;
+    --color-primary-light: 78, 205, 196;
+    --color-primary-dark: 0, 139, 139;
+
+    --color-primary: var(--color-primary-dark);
+
+    --color-accent: var(--color-primary);
 
     --color-bg-light: 234, 247, 247;
     --color-bg-dark: 10, 52, 56;
@@ -20,5 +22,6 @@
     :root {
         --color-bg: var(--color-bg-dark);
         --color-bg-element: var(--color-bg-element-dark);
+        --color-primary: var(--color-primary-light);
     }
 }

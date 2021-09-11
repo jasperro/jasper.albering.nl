@@ -34,7 +34,7 @@ const nl = {
     contactMessage: "Jouw bericht",
     submit: "Verstuur",
     formComment:
-        '// Formulier wordt verzonden met <a class="underline dark:text-gray-500 text-gray-900" href="https://www.netlify.com/">netlify</a>.',
+        '// Formulier wordt verzonden met <a class="underline text-primary" href="https://www.netlify.com/">netlify</a>.',
     projectlist: {
         /*wereldwinkel: {
             title: "Wereldwinkel Nijkerk",
@@ -84,7 +84,7 @@ const en = {
     contactMessage: "Your message",
     submit: "Submit",
     formComment:
-        '// Form data is sent with <a class="underline dark:text-gray-500 text-gray-900" href="https://www.netlify.com/">netlify</a>.',
+        '// Form data is sent with <a class="underline text-primary" href="https://www.netlify.com/">netlify</a>.',
     projectlist: {
         /*wereldwinkel: {
             title: "World Shop Nijkerk",

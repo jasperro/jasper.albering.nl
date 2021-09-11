@@ -32,7 +32,7 @@ module.exports = {
             }
         });
         return `
-        <div class="nodispsvg">
+        <div class="nodispsvg" aria-hidden="true">
             ${data}
         </div>
         `;
