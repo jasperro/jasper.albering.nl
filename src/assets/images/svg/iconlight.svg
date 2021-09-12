@@ -5,7 +5,7 @@
       fill: rgb(249, 253, 253);
     }
     .color-primary {
-        fill: rgb(0, 139, 139);
+        fill: rgb(0, 122, 122);
     }
   </style>
     <rect id="bgright" x="0" y="0" width="512" height="512" class="color-background" />

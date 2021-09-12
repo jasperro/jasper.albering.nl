@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="512" height="512" version="1.1" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <style>
+  <style>
     .color-background {
       fill: rgb(249, 253, 253);
     }
     .color-primary {
-        fill: rgb(0, 139, 139);
+        fill: rgb(0, 122, 122);
     }
     @media (prefers-color-scheme: dark) {
       .color-background {
@@ -16,8 +16,8 @@
       }
     }
   </style>
-    <rect id="bgright" x="0" y="0" width="512" height="512" class="color-background" />
-    <rect id="bgleft" x="0" y="0" width="220" height="512" class="color-primary" />
-    <path id="J" d="m175.52 296.71v-297.49h89.166v297.49q-0.20833 41.458-18.542 71.667-18.334 30.209-51.25 46.875-32.708 16.457-75.833 16.457-38.75 0-69.999-13.75-31.25-13.75-49.583-41.458-18.334-27.917-18.125-70.625h89.792q0.41667 25.416 14.583 39.583 14.375 13.958 37.916 13.958 51.459 0 51.874-62.708z" class="color-background" stroke-width="4" />
-    <path id="A" d="m247.71 512.75h-100.11l152.54-441.87h120.39l152.33 441.87h-100.11l-32.794-100.76h-159.45zm56.528-173.68h112.19l-54.37-167.21h-3.452z" class="color-primary" stroke-width="4.1425" />
+  <rect id="bgright" x="0" y="0" width="512" height="512" class="color-background" />
+  <rect id="bgleft" x="0" y="0" width="220" height="512" class="color-primary" />
+  <path id="J" d="m175.52 296.71v-297.49h89.166v297.49q-0.20833 41.458-18.542 71.667-18.334 30.209-51.25 46.875-32.708 16.457-75.833 16.457-38.75 0-69.999-13.75-31.25-13.75-49.583-41.458-18.334-27.917-18.125-70.625h89.792q0.41667 25.416 14.583 39.583 14.375 13.958 37.916 13.958 51.459 0 51.874-62.708z" class="color-background" stroke-width="4" />
+  <path id="A" d="m247.71 512.75h-100.11l152.54-441.87h120.39l152.33 441.87h-100.11l-32.794-100.76h-159.45zm56.528-173.68h112.19l-54.37-167.21h-3.452z" class="color-primary" stroke-width="4.1425" />
 </svg>
