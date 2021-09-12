@@ -37,7 +37,7 @@ module.exports = {
     image: async function (cls, src, alt, sizes = [300, 600]) {
         let metadata = await Image(`src/${src}`, {
             widths: [300, 600],
-            formats: ["jpeg"],
+            formats: ["avif", "webp", "jpeg"],
             outputDir: "dist/assets/images/",
             urlPath: "/assets/images",
         });
