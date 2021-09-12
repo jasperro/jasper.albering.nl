@@ -3,7 +3,7 @@ const imageShortcode = require("../../utils/shortcodes").image;
 
 module.exports = async (title, description, imgUrl, icons, actionhtml = "") =>
     `
-        <div class="rounded-xl shadow-sm hover:shadow-xl bg-bgel dark:bg-bgel-dark p-5 flex justify-between flex-col">
+        <div class="transition-shadow rounded-xl shadow-sm hover:shadow-xl bg-bgel dark:bg-bgel-dark p-5 flex justify-between flex-col">
         <div>
             ${
                 imgUrl
