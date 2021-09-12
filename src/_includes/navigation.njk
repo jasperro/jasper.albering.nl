@@ -42,7 +42,7 @@
 
 {# Language selector #}
 <div class="absolute top-4 right-2">
-    <ul class="flex-col sm:flex-row flex items-end sm:items-center">
+    <div class="flex-col sm:flex-row flex items-end sm:items-center">
         {# if translation key of page doesn't contain page of different language #}
         {% for item in collections.all %}
             {% if item.data.translationKey == translationKey and item.data.locale != locale %}
@@ -63,17 +63,19 @@
         <input type="checkbox" class="hidden" id="lang-toggle" aria-controls="langitems">
 
         <nav class="flex-col sm:flex hidden justify-between sm:mt-0 mt-2 sm:bg-transparent bg-bgel rounded-md sm:border-none border-2 border-primary" id="langitems">
-            {%- for name, value in meta.locales -%}
-                {% if name != locale %}
-                    {% for item in collections.all %}
-                        {% if item.data.translationKey == translationKey and item.data.locale == name %}
-                            <li class="flex p-2 w-max text-primary">
-                                <a href="{{ item.url }}" onclick="setUserLanguage('{{ name }}')">{{ value }}</a>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
-            {%- endfor -%}
+            <ul>
+                {%- for name, value in meta.locales -%}
+                    {% if name != locale %}
+                        {% for item in collections.all %}
+                            {% if item.data.translationKey == translationKey and item.data.locale == name %}
+                                <li class="flex p-2 w-max text-primary">
+                                    <a href="{{ item.url }}" onclick="setUserLanguage('{{ name }}')">{{ value }}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {%- endfor -%}
+            </ul>
         </nav>
-    </ul>
+    </div>
 </div>
