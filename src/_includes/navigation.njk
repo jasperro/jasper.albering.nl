@@ -2,7 +2,7 @@
     {# Logo and hamburger menu on mobile #}
     <div class="flex w-min sm:hidden">
         <div class="flex">
-            <label for="nav-toggle">
+            <label for="nav-toggle" role="button" tabindex="0">
                 <span class="sr-only">toggle menu</span>
                 <span class="flex menuicon">
                     <span class="menuicon__bar"></span>
@@ -11,13 +11,15 @@
                 </span>
             </label>
 
-            <span class="flex ml-4">{% icon 'logo', 'medium', 'aria-hidden="true"' %}</span>
+            <span class="flex ml-4">
+                <a href="{{ "/" + locale | url }}" aria-label="home">{% icon 'logo', 'medium', 'aria-hidden="true"' %}</a>
+            </span>
         </div>
     </div>
-    <input type="checkbox" id="nav-toggle" class="hidden" aria-controls="nav__container">
+    <input type="checkbox" id="nav-toggle" class="hidden" aria-controls="navigationitems">
 
     {# Navigation items #}
-    <nav class="sm:flex flex-col hidden sm:flex-row justify-between sm:mt-0 mt-4">
+    <nav class="sm:flex flex-col hidden sm:flex-row justify-between sm:mt-0 mt-4" id="navigationitems">
         <ul class="flex flex-col sm:flex-row">
             <li class="sm:flex self-center mr-2 hidden">
                 {% icon 'logo', 'medium', 'aria-hidden="true"' %}
@@ -28,7 +30,7 @@
                 {%- set isParent = item.url != '/' and item.url in page.url -%}
                 <li
                 class="flex p-2 mr-1 sm:w-max w-full font-medium{% if isCurrent %} rounded-md bg-primary text-white dark:text-black{% else %} text-primary{% endif %}">
-                    <a class="nav__link" href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}" {% if
+                    <a class="w-full" href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}" {% if
                     isCurrent %} aria-current="page" {% endif %}>
                         {{ item.title }}
                     </a>
@@ -40,17 +42,38 @@
 
 {# Language selector #}
 <div class="absolute top-4 right-2">
-    <ul>
-        {%- for name, value in meta.locales -%}
-            {% if name != locale %}
-                {% for item in collections.all %}
-                    {% if item.data.translationKey == translationKey and item.data.locale == name %}
-                        <li class="flex p-2 w-max text-primary">
-                            <a href="{{ item.url }}" onclick="setUserLanguage('{{ name }}')">{{ value }}</a>
-                        </li>
-                    {% endif %}
-                {% endfor %}
+    <ul class="flex-col sm:flex-row flex items-end sm:items-center">
+        {# if translation key of page doesn't contain page of different language #}
+        {% for item in collections.all %}
+            {% if item.data.translationKey == translationKey and item.data.locale != locale %}
+                {% set showLanguage = true %}
             {% endif %}
         {%- endfor -%}
+
+        <div class="flex w-min">
+            <label for="lang-toggle" role="button" tabindex="0">
+                <span class="sr-only">change language</span>
+
+                <div class="flex py-2 pr-2 sm:pr-0 w-max text-primary self-center">
+                    {% icon 'language',
+                    'smaller' %}
+                </div>
+            </label>
+        </div>
+        <input type="checkbox" class="hidden" id="lang-toggle" aria-controls="langitems">
+
+        <nav class="flex-col sm:flex hidden justify-between sm:mt-0 mt-2 sm:bg-transparent bg-bgel rounded-md sm:border-none border-2 border-primary" id="langitems">
+            {%- for name, value in meta.locales -%}
+                {% if name != locale %}
+                    {% for item in collections.all %}
+                        {% if item.data.translationKey == translationKey and item.data.locale == name %}
+                            <li class="flex p-2 w-max text-primary">
+                                <a href="{{ item.url }}" onclick="setUserLanguage('{{ name }}')">{{ value }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {%- endfor -%}
+        </nav>
     </ul>
 </div>

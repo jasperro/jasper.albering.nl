@@ -6,23 +6,19 @@ module.exports = {
         const iconsprites = "/assets/icons/icons.sprite.svg";
         const iconid = `#icon-${name}`;
         const href = inline ? iconid : `${iconsprites}${iconid}`;
-        let px = 16;
+        let classList = "w-6 h-6";
         switch (size) {
             case "medium":
-                px = 24;
+                classList = "w-9 h-9";
+                break;
+            case "smaller":
+                classList = "w-5 h-5";
                 break;
         }
-        if (size === "auto") {
-            return `<svg class="icon icon--${name}" role="img" ${rest}>
+        return `<svg class="icon ${classList}" role="img" ${rest}>
                     <title>${name}</title>
                     <use href="${href}"></use>
                 </svg>`;
-        } else {
-            return `<svg class="icon icon--${name} icon_${size}" role="img" width="${px}" height="${px}" ${rest}>
-                    <title>${name}</title>
-                    <use href="${href}"></use>
-                </svg>`;
-        }
     },
     iconsprites: function () {
         const iconsprites = `${__dirname}/../../dist/assets/icons/icons.sprite.svg`;
