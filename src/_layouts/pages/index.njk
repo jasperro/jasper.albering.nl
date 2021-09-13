@@ -5,13 +5,18 @@ eleventyNavigation:
 order: -999
 ---
 <div>
-    <div class="bg-bgel dark:bg-bgel-dark rounded-xl my-6 lg:p-16 md:p-8 p-4 py-8">
-        <h1 class="lg:text-9xl md:text-8xl text-6xl font-semibold tracking-tighter">{{ home[locale].title | safe }}</h1>
-        <h2 class="lg:text-7xl md:text-6xl text-4xl font-medium tracking-tight text-primary">{{ home[locale].description | safe }}</h2>
-        <div class="max-w-3xl">
-            <p class="mt-6 border-2 rounded-md border-primary p-3">{{ home[locale].info | safe }}</p>
+    <div class="home_intro">
+        <div class="flex flex-col justify-between w-full">
+            <h1 class="lg:text-9xl md:text-8xl text-6xl font-semibold tracking-tighter">{{ home[locale].title | safe }}</h1>
+            <h2 class="lg:text-7xl md:text-6xl text-4xl font-medium tracking-tight text-primary">{{ home[locale].description | safe }}</h2>
+            <div class="flex mt-6 space-x-1">
+                <a class="flex p-2 mr-1 sm:w-max w-full font-medium rounded-md bg-blue-400 text-white dark:text-black shadow-xl">Portfolio</a>
+                <a href="#contact" class="flex p-2 mr-1 sm:w-max w-full font-medium rounded-md bg-primary text-white dark:text-black shadow-xl">Contact</a>
+            </div>
+        </div>
+        <div class="max-w-3xl flex flex-col">
             <span class="text-xs font-bold mt-6">
-                <p class="mt-12">{{ home[locale].workedwith | safe }}</p>
+                <p class="mt-6">{{ home[locale].workedwith | safe }}</p>
                 <p class="mt-2 icons_experience">
                     {% icon 'github' %}
                     {% icon 'react' %}
@@ -34,7 +39,12 @@ order: -999
             </span>
         </div>
     </div>
-    <div class="lg:mx-16 md:mx-8 mx-4">
+    <div class="mx-4 xl:mx-[14rem] 2xl:mx-[19rem]">
+
+        <h1 class="text-3xl mt-8 mb-6">{{ home[locale].about }}</h1>
+
+        <p class="mt-6 border-2 rounded-md border-primary p-3 bg-bgel bg-opacity-75 max-w-5xl">{{ home[locale].info | safe }}</p>
+
         <h1 class="text-3xl mt-8 mb-6">{{ home[locale].projects }}</h1>
 
         <div class="projectlist">
@@ -47,8 +57,8 @@ order: -999
             {% endfor %}
         </div>
 
-        <form name="contact" class="px-2 my-4" method="POST" data-netlify="true">
-            <h1 class="text-xl mb-2">{{ home[locale].contactHeader }}</h1>
+        <form name="contact" id="contact" class="my-4" method="POST" data-netlify="true">
+            <h1 class="text-3xl mb-2">{{ home[locale].contactHeader }}</h1>
             <p>
                 <label class="font-light">{{ home[locale].contactName }}<input
                     class="input__text w-full max-w-3xl"
