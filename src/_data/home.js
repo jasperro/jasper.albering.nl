@@ -21,14 +21,15 @@ const defaults = {
 };
 
 const nl = {
-    title: "Hoi, mijn naam is Jasper",
-    description: "Ik ben een echte <strong>techneut</strong>",
+    title: "Ik ben Jasper",
+    description: "Ik leer graag nieuwe dingen",
     info: `
     Ik ben 18 jaar oud en ik ben altijd al een grote techneut geweest. Toen ik zes jaar oud was had ik een website gemaakt met tekeningen, foto's en spelletjes. Een techneut ben ik nu nog zeker. Ik blijf mijn grenzen steeds verleggen door elke keer wat nieuws te leren. Dingen zoals React Native, Typescript, interface design en home automation met Home Assistant ben ik momenteel mee bezig. Programmeren vind ik leuk omdat het nooit stil staat, er zijn altijd nieuwe en creatieve manieren om je vaardigheden te verbeteren.
         `,
-    workedwith: "Ik heb ervaring met:",
-    projects: "Projecten",
-    contactHeader: "Ik zou het leuk vinden om te praten, stuur mij een bericht",
+    workedwith: "Ik heb ervaring met o.a.",
+    projects: "Een paar van mijn projecten",
+    about: "Over mij",
+    contactHeader: "Laten we praten, stuur een bericht",
     contactName: "Jouw naam",
     contactMail: "Jouw e-mailadres",
     contactMessage: "Jouw bericht",
@@ -71,13 +72,14 @@ const nl = {
 };
 
 const en = {
-    title: "Hi, my name is Jasper",
+    title: "Hi, I'm Jasper",
     description: "I am a real <strong>techie</strong>",
     info: `
     I am 18 years old and I have always been very interested in technology. When I was six years old I made my first website with drawings, photos and games. I'm still definitely a techie. I keep pushing my boundaries by learning something new every time. I am currently working on things like React Native, Typescript, interface design and home automation with Home Assistant. I like programming because it never gets stale, there are always new and more creative ways to improve your skills.
         `,
     workedwith: "I have experience with:",
     projects: "Projects",
+    about: "About me",
     contactHeader: "I'd love to chat, send me a message",
     contactName: "Your name",
     contactMail: "Your e-mail address",
