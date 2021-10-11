@@ -1,7 +1,11 @@
 ---
 layout: base
 ---
-<article class="prose dark:prose-light lg:prose-xl">
+{#<div>
+    <a class="text-primary" href="/{{ locale }}/posts/">&#8592; {{ posts[locale].goBack }}</a>
+</div>#}
+
+<article class="prose dark:prose-light lg:prose-xl mt-4">
     <h1>{{ title }}</h1>
     {{ content | safe }}
 </article>

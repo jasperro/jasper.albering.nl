@@ -29,6 +29,7 @@ const nl = {
     workedwith: "Ik heb ervaring met o.a.",
     projects: "Een paar van mijn projecten",
     about: "Over mij",
+    contactButton: "Contacteer mij",
     contactHeader: "Laten we praten, stuur een bericht",
     contactName: "Jouw naam",
     contactMail: "Jouw e-mailadres",
@@ -73,13 +74,14 @@ const nl = {
 
 const en = {
     title: "Hi, I'm Jasper",
-    description: "I am a real <strong>techie</strong>",
+    description: "I like to learn new things",
     info: `
     I am 18 years old and I have always been very interested in technology. When I was six years old I made my first website with drawings, photos and games. I'm still definitely a techie. I keep pushing my boundaries by learning something new every time. I am currently working on things like React Native, Typescript, interface design and home automation with Home Assistant. I like programming because it never gets stale, there are always new and more creative ways to improve your skills.
         `,
-    workedwith: "I have experience with:",
+    workedwith: "I have experience with",
     projects: "Projects",
     about: "About me",
+    contactButton: "Contact me",
     contactHeader: "I'd love to chat, send me a message",
     contactName: "Your name",
     contactMail: "Your e-mail address",

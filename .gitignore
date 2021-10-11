@@ -3,3 +3,6 @@ dist
 .env
 .lazyimages.json
 .history
+
+# Local Netlify folder
+.netlify
