@@ -15,14 +15,20 @@
         </script>
     </head>
 
-    <body>
-        <div class="layout" role="document">
-            {% include "header.njk" %}
-            <main id="main" class="flex flex-col {% if _no_margin %}{% else %}lg:p-16 md:p-8 p-4{% endif %} overflow-hidden" tabindex="-1">
+    <body class="min-h-screen flex flex-col">
+        {% include "header.njk" %}
+        <main id="main" class="flex flex-col flex-grow {% if _no_margin %}{% else %}lg:p-16 md:p-8 p-4{% endif %} overflow-hidden" tabindex="-1">
+            <div>
                 {{ content | safe }}
-            </main>
-            {% include "footer.njk" %}
-        </div>
+            </div>
+        </main>
+
+        <footer class="px-8 flex flex-grow-0 justify-between items-center py-4 bg-bgel text-sm mt-16" role="contentinfo">
+            <div>Jasper Albering &copy; 2016-2021</div>
+            <div>
+                {% include "sociallinks.njk" %}
+            </div>
+        </footer>
 
         {% iconsprites %}
     </body>

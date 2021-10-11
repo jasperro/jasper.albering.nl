@@ -4,9 +4,9 @@ const defaults = {
     title: "Posts",
 };
 
-const nl = {};
+const nl = { goBack: "Ga terug" };
 
-const en = {};
+const en = { goBack: "Go back" };
 
 module.exports = {
     nl: _.merge({}, defaults, nl),

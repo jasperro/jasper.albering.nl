@@ -4,82 +4,81 @@ _no_margin: true
 eleventyNavigation:
 order: -999
 ---
-<div>
-    <div class="home_intro">
-        <div class="flex flex-col justify-between w-full">
-            <h1 class="lg:text-9xl md:text-8xl text-6xl font-semibold tracking-tighter">{{ home[locale].title | safe }}</h1>
-            <h2 class="lg:text-7xl md:text-6xl text-4xl font-medium tracking-tight text-primary">{{ home[locale].description | safe }}</h2>
-            <div class="flex mt-6 space-x-1">
-                <a class="flex p-2 mr-1 sm:w-max w-full font-medium rounded-md bg-blue-400 text-white dark:text-black shadow-xl">Portfolio</a>
-                <a href="#contact" class="flex p-2 mr-1 sm:w-max w-full font-medium rounded-md bg-primary text-white dark:text-black shadow-xl">Contact</a>
-            </div>
-        </div>
-        <div class="max-w-3xl flex flex-col">
-            <span class="text-xs font-bold mt-6">
-                <p class="mt-6">{{ home[locale].workedwith | safe }}</p>
-                <p class="mt-2 icons_experience">
-                    {% icon 'github' %}
-                    {% icon 'react' %}
-                    {% icon 'linux' %}
-                    {% icon 'language-python' %}
-                    {% icon 'language-html5' %}
-                    {% icon 'language-javascript' %}
-                    {% icon 'language-typescript' %}
-                    {% icon 'language-css3' %}
-                    {% icon 'sass' %}
-                    {% icon 'eleventy' %}
-                    {% icon 'hugo' %}
-                    {% icon 'graphql' %}
-                    {% icon 'raspberry-pi' %}
-                    {% icon 'home-assistant' %}
-                    {% icon 'godot' %}
-                    {% icon 'console' %}
-                    {% icon 'open-source-initiative' %}
-                </p>
-            </span>
+<div class="home_intro">
+    <div class="flex flex-col justify-between w-full">
+        <h1 class="lg:text-9xl md:text-8xl text-6xl font-semibold tracking-tighter">{{ home[locale].title | safe }}</h1>
+        <h2 class="lg:text-7xl md:text-6xl text-4xl font-medium tracking-tight text-primary">{{ home[locale].description | safe }}</h2>
+        <div class="flex mt-6 space-x-1">
+            <a href="#projects" class="flex p-2 mr-1 sm:w-max w-full font-medium rounded-md bg-blue-600 dark:bg-blue-300 text-white dark:text-black shadow-xl">Portfolio</a>
+            <a href="#contact" class="flex p-2 mr-1 sm:w-max w-full font-medium rounded-md bg-primary text-white dark:text-black shadow-xl">{{ home[locale].contactButton }}&nbsp;
+                    {% icon 'email' %}</a>
         </div>
     </div>
-    <div class="mx-4 xl:mx-[14rem] 2xl:mx-[19rem]">
+    <div class="max-w-3xl flex flex-col">
+        <span class="text-xs font-medium mt-6">
+            <p class="mt-6">{{ home[locale].workedwith | safe }}</p>
+            <p class="mt-2 icons_experience">
+                {% icon 'github' %}
+                {% icon 'react' %}
+                {% icon 'linux' %}
+                {% icon 'language-python' %}
+                {% icon 'language-html5' %}
+                {% icon 'language-javascript' %}
+                {% icon 'language-typescript' %}
+                {% icon 'language-css3' %}
+                {% icon 'sass' %}
+                {% icon 'eleventy' %}
+                {% icon 'hugo' %}
+                {% icon 'graphql' %}
+                {% icon 'raspberry-pi' %}
+                {% icon 'home-assistant' %}
+                {% icon 'godot' %}
+                {% icon 'console' %}
+                {% icon 'open-source-initiative' %}
+            </p>
+        </span>
+    </div>
+</div>
+<div class="mx-4 xl:mx-[14rem] 2xl:mx-[19rem]">
 
-        <h1 class="text-3xl mt-8 mb-6">{{ home[locale].about }}</h1>
+    <h1 class="text-3xl mt-8 mb-6">{{ home[locale].about }}</h1>
 
-        <p class="mt-6 border-2 rounded-md border-primary p-3 bg-bgel bg-opacity-75 max-w-5xl">{{ home[locale].info | safe }}</p>
+    <p class="mt-6 border-2 rounded-md border-primary p-3 bg-bgel bg-opacity-75 max-w-5xl">{{ home[locale].info | safe }}</p>
 
-        <h1 class="text-3xl mt-8 mb-6">{{ home[locale].projects }}</h1>
+    <h1 class="text-3xl mt-8 mb-6">{{ home[locale].projects }}</h1>
 
-        <div class="projectlist">
-            {% for key, project in home[locale].projectlist %}
-                {% Card project.title,
-                project.description,
-                project.imageurl,
-                project.icons,
-                project.actionhtml %}
-            {% endfor %}
-        </div>
+    <div class="home_projects" id="projects">
+        {% for key, project in home[locale].projectlist %}
+            {% Card project.title,
+            project.description,
+            project.imageurl,
+            project.icons,
+            project.actionhtml %}
+        {% endfor %}
+    </div>
 
-        <form name="contact" id="contact" class="my-4" method="POST" data-netlify="true">
-            <h1 class="text-3xl mb-2">{{ home[locale].contactHeader }}</h1>
-            <p>
-                <label class="font-light">{{ home[locale].contactName }}<input
+    <form name="contact" id="contact" class="my-4" method="POST" data-netlify="true">
+        <h1 class="text-3xl mb-2">{{ home[locale].contactHeader }}</h1>
+        <p>
+            <label class="font-light">{{ home[locale].contactName }}<input
                     class="input__text w-full max-w-3xl"
                     type="text" name="name"/></label>
-            </p>
-            <p>
-                <label class="font-light">{{ home[locale].contactMail }}<input
+        </p>
+        <p>
+            <label class="font-light">{{ home[locale].contactMail }}<input
                     class="input__text w-full max-w-3xl"
                     type="email" name="email"/></label>
-            </p>
-            <p>
-                <label class="font-light">{{ home[locale].contactMessage }}
-                    <textarea name="message"
+        </p>
+        <p>
+            <label class="font-light">{{ home[locale].contactMessage }}
+                <textarea name="message"
                     class="input__text w-full max-w-3xl"></textarea>
-                </label>
-            </p>
-            <p>
-                <input type="submit" value="{{ home[locale].submit }}"
+            </label>
+        </p>
+        <p>
+            <input type="submit" value="{{ home[locale].submit }}"
                 class="my-4 py-2 px-4 shadow-sm text-sm font-medium rounded-md text-white dark:text-black bg-primary hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent">
-            </p>
-            <p class="text-sm text-gray-600 dark:text-gray-300">{{ home[locale].formComment | safe }}</p>
-        </form>
-    </div>
+        </p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">{{ home[locale].formComment | safe }}</p>
+    </form>
 </div>

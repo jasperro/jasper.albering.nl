@@ -88,7 +88,7 @@ module.exports = {
                 light: {
                     css: [
                         {
-                            color: theme("colors.gray.400"),
+                            color: theme("colors.gray.300"),
                             '[class~="lead"]': {
                                 color: theme("colors.gray.300"),
                             },
