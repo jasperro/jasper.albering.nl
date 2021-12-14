@@ -15,7 +15,7 @@ const em = (px, base) => `${round(px / base)}em`;
 
 module.exports = {
     mode: "jit",
-    purge: ["./src/**/*.{html,njk,js}"],
+    content: ["./src/**/*.{html,njk,js}"],
     darkMode: "media",
     theme: {
         extend: {
@@ -164,8 +164,8 @@ module.exports = {
                             paddingRight: em(4, 12),
                             paddingBottom: em(2, 12),
                             paddingLeft: em(4, 12),
-                            backgroundColor: colors.coolGray[800],
-                            color: colors.coolGray[200],
+                            backgroundColor: theme("colors.gray.800"),
+                            color: theme("colors.gray.200"),
                             "box-decoration-break": "clone",
                         },
                     },
