@@ -19,22 +19,18 @@ order: -999
             <p class="mt-6">{{ home[locale].workedwith | safe }}</p>
             <p class="mt-2 icons_experience">
                 {% icon 'github' %}
-                {% icon 'react' %}
+                {% icon 'open-source-initiative' %}
                 {% icon 'linux' %}
-                {% icon 'language-python' %}
+                {% icon 'react' %}
                 {% icon 'language-html5' %}
+                {% icon 'language-css3' %}
                 {% icon 'language-javascript' %}
                 {% icon 'language-typescript' %}
-                {% icon 'language-css3' %}
-                {% icon 'sass' %}
-                {% icon 'eleventy' %}
-                {% icon 'hugo' %}
-                {% icon 'graphql' %}
                 {% icon 'raspberry-pi' %}
                 {% icon 'home-assistant' %}
                 {% icon 'godot' %}
-                {% icon 'console' %}
-                {% icon 'open-source-initiative' %}
+                {% icon 'eleventy' %}
+                {% icon 'hugo' %}
             </p>
         </span>
     </div>
@@ -47,7 +43,7 @@ order: -999
 
     <h1 class="text-3xl mt-8 mb-6">{{ home[locale].projects }}</h1>
 
-    <div class="home_projects" id="projects">
+    <div id="projects" class="grid grid-cols-responsivecards gap-x-4 gap-y-4 lg:mx-0 lg:px-0 w-full">
         {% for key, project in home[locale].projectlist %}
             {% Card project.title,
             project.description,
@@ -58,7 +54,7 @@ order: -999
     </div>
 
     <form name="contact" id="contact" class="my-4" method="POST" data-netlify="true">
-        <h1 class="text-3xl mb-2">{{ home[locale].contactHeader }}</h1>
+        <h1 class="text-3xl mt-8 mb-6">{{ home[locale].contactHeader }}</h1>
         <p>
             <label class="font-light">{{ home[locale].contactName }}<input
                     class="input__text w-full max-w-3xl"

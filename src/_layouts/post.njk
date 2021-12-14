@@ -5,10 +5,12 @@ layout: base
     <a class="text-primary" href="/{{ locale }}/posts/">&#8592; {{ posts[locale].goBack }}</a>
 </div>#}
 
-<article class="prose dark:prose-light lg:prose-xl mt-4">
+<article class="container prose dark:prose-light prose-xl">
     <h1>{{ title }}</h1>
     {{ content | safe }}
 </article>
+{% if date %}
 <span class="my-5">
     <time datetime="{{ date | date('YYYY-MM-DD') }}">{{ date | date("DD MMMM YYYY", locale) }}</time>
 </span>
+{% endif %}

@@ -1,7 +1,7 @@
 module.exports = {
     plugins: [
         require("postcss-import"),
-        require("postcss-nested"),
+        require("tailwindcss/nesting"),
         require("tailwindcss")("./tailwind.config.js"),
         require("postcss-preset-env")({
             stage: 1,
