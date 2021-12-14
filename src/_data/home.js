@@ -24,7 +24,9 @@ const nl = {
     title: "Ik ben Jasper",
     description: "Ik leer graag nieuwe dingen",
     info: `
-    Ik ben 18 jaar oud en ik ben altijd al een grote techneut geweest. Toen ik zes jaar oud was had ik een website gemaakt met tekeningen, foto's en spelletjes. Een techneut ben ik nu nog zeker. Ik blijf mijn grenzen steeds verleggen door elke keer wat nieuws te leren. Dingen zoals React Native, Typescript, interface design en home automation met Home Assistant ben ik momenteel mee bezig. Programmeren vind ik leuk omdat het nooit stil staat, er zijn altijd nieuwe en creatieve manieren om je vaardigheden te verbeteren.
+    Ik ben een techneut. Dat betekent altijd bezig zijn met verschillende projecten, gewoon lekker sleutelen aan van alles. Denk bijvoorbeeld aan het bouwen en "hacken" van kleine apparaatjes, en hun sensordata integreren in Home Assistant, het ontwerpen en bouwen van een applicatie, of gewoon iets anders interessants. Het is altijd leuk om gewoon een beetje rond te snuffelen op GitHub en te kijken wat er allemaal voor slims bedacht is. Technologie is zo interessant omdat het nooit stil staat, er zijn altijd nieuwe en creatieve manieren om echte problemen op te lossen.
+<br><br>
+Momenteel ben ik Computer Science aan het studeren aan de Universiteit Utrecht.
         `,
     workedwith: "Ik heb ervaring met o.a.",
     projects: "Een paar van mijn projecten",
@@ -75,9 +77,9 @@ const nl = {
 const en = {
     title: "Hi, I'm Jasper",
     description: "I like to learn new things",
-    info: `
-    I am 18 years old and I have always been very interested in technology. When I was six years old I made my first website with drawings, photos and games. I'm still definitely a techie. I keep pushing my boundaries by learning something new every time. I am currently working on things like React Native, Typescript, interface design and home automation with Home Assistant. I like programming because it never gets stale, there are always new and more creative ways to improve your skills.
-        `,
+    info: `I'm a techie. That means always working on different projects, just tinkering with everything. Think for example building and "hacking" small devices, and integrating their sensor data into Home Assistant, designing and building applications, or just something else I think is interesting. It's always fun to just look around on GitHub and see what other people have thought up. Technology is so interesting because it never stands still, there are always new and creative ways to solve real problems.
+<br><br>
+I am currently studying Computer Science at Utrecht University.`,
     workedwith: "I have experience with",
     projects: "Projects",
     about: "About me",
