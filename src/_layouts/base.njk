@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{ meta.title }}</title>
 
+        <link rel="preload" as="font" href="/assets/Inter%20(web)/Inter-Regular.woff2" type="font/woff2" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ '/assets/main.css' | url }}">
         {% include "meta.njk" %}
         <script>
@@ -25,9 +26,9 @@
 
         <footer class="px-8 flex flex-grow-0 justify-between items-center py-4 bg-bgel text-sm mt-16" role="contentinfo">
             <div>Jasper Albering &copy; 2016-2021</div>
-            <div>
+            <span class="flex gap-x-2">
                 {% include "sociallinks.njk" %}
-            </div>
+            </span>
         </footer>
 
         {% iconsprites %}

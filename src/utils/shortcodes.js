@@ -2,25 +2,16 @@ const fs = require("fs");
 const Image = require("@11ty/eleventy-img");
 
 module.exports = {
-    icon: function (name, size = "small", rest, inline = true) {
+    icon: function(name, classes = "w-6 h-6", rest, inline = true) {
         const iconsprites = "/assets/icons/icons.sprite.svg";
         const iconid = `#icon-${name}`;
         const href = inline ? iconid : `${iconsprites}${iconid}`;
-        let classList = "w-6 h-6";
-        switch (size) {
-            case "medium":
-                classList = "w-9 h-9";
-                break;
-            case "smaller":
-                classList = "w-5 h-5";
-                break;
-        }
-        return `<svg class="icon ${classList}" role="img" ${rest}>
+        return `<svg class="icon ${classes}" role="img" ${rest}>
                     <title>${name}</title>
                     <use href="${href}"></use>
                 </svg>`;
     },
-    iconsprites: function () {
+    iconsprites: function() {
         const iconsprites = `${__dirname}/../../dist/assets/icons/icons.sprite.svg`;
         const data = fs.readFileSync(iconsprites, (err, data) => {
             if (err) {
@@ -34,7 +25,7 @@ module.exports = {
         `;
     },
 
-    image: async function (cls, src, alt, sizes = [300, 600]) {
+    image: async function(cls, src, alt, sizes = [300, 600]) {
         let metadata = await Image(`src/${src}`, {
             widths: [300, 600],
             formats: ["avif", "webp", "jpeg"],
