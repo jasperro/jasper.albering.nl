@@ -26,19 +26,25 @@ order: -999
         <span class="text-xs font-medium mt-6">
             <p class="mt-6">{{ home[locale].workedwith | safe }}</p>
             <p class="mt-2 select-none tracking-[.25em] md:tracking-[.75em]">
-                {% icon 'github' %}
-                {% icon 'open-source-initiative' %}
-                {% icon 'linux' %}
-                {% icon 'react' %}
-                {% icon 'language-html5' %}
-                {% icon 'language-css3' %}
-                {% icon 'language-javascript' %}
-                {% icon 'language-typescript' %}
-                {% icon 'raspberry-pi' %}
-                {% icon 'home-assistant' %}
-                {% icon 'godot' %}
-                {% icon 'eleventy' %}
-                {% icon 'hugo' %}
+                {% component 'components/Icon.svelte',
+                name = 'github' %}
+                {% component 'components/Icon.svelte', name = 'open-source-initiative' %}
+                {% component 'components/Icon.svelte',
+                name = 'linux' %}
+                {% component 'components/Icon.svelte',
+                name = 'react' %}
+                {% component 'components/Icon.svelte', name = 'language-html5' %}
+                {% component 'components/Icon.svelte', name = 'language-css3' %}
+                {% component 'components/Icon.svelte', name = 'language-javascript' %}
+                {% component 'components/Icon.svelte', name = 'language-typescript' %}
+                {% component 'components/Icon.svelte', name = 'raspberry-pi' %}
+                {% component 'components/Icon.svelte', name = 'home-assistant' %}
+                {% component 'components/Icon.svelte',
+                name = 'godot' %}
+                {% component 'components/Icon.svelte',
+                name = 'eleventy' %}
+                {% component 'components/Icon.svelte',
+                name = 'hugo' %}
             </p>
         </span>
     </div> #}

@@ -1,3 +1,6 @@
+const slinkity = require("slinkity");
+const svelte = require("@slinkity/renderer-svelte");
+
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const svgSprite = require("eleventy-plugin-svg-sprite");
@@ -12,6 +15,12 @@ const shortcodes = require("./src/utils/shortcodes.js");
 const componentsDir = "./src/_includes/components";
 
 module.exports = function (eleventyConfig) {
+    eleventyConfig.addPlugin(
+        slinkity.plugin,
+        slinkity.defineConfig({
+            renderers: [svelte],
+        })
+    );
     // Plugins
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPlugin(pluginNavigation);
@@ -88,8 +97,20 @@ module.exports = function (eleventyConfig) {
         linkify: true,
         typographer: true,
     });
-    eleventyConfig.setBrowserSyncConfig({
+
+    eleventyConfig.setServerOptions({
+        module: "@11ty/eleventy-server-browsersync",
+
+        // Default Browsersync options shown:
+        port: 8080,
+        open: false,
+        notify: false,
+        ui: false,
+        ghostMode: false,
         files: ["dist/assets/main.css"],
+
+        // Opt-out of the Browsersync snippet
+        // snippet: false,
     });
 
     // Markdown
@@ -128,7 +149,7 @@ module.exports = function (eleventyConfig) {
             layouts: "_layouts",
             data: "_data",
         },
-        templateFormats: ["njk", "md", "11ty.js"],
+        templateFormats: ["njk", "md", "11ty.js", "svelte"],
         htmlTemplateEngine: "njk",
         markdownTemplateEngine: "njk",
     };
