@@ -23,8 +23,8 @@
                 {%- set isCurrent = (item.url == page.url) -%}
                 {%- set isParent = item.url != '/' and item.url in page.url -%}
                 <li
-                class="flex p-2 mr-1 sm:w-max w-full font-medium{% if isCurrent %} rounded-md bg-primary text-white dark:text-black{% else %} text-primary{% endif %}">
-                    <a class="w-full" href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}" {% if
+                class="flex mr-1 sm:w-max w-full font-medium{% if isCurrent %} rounded-sm bg-primary text-white dark:text-black{% else %} text-primary{% endif %}">
+                    <a class="w-full block py-2 px-4" href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}" {% if
                     isCurrent %} aria-current="page" {% endif %}>
                         {{ item.title }}
                     </a>
@@ -46,25 +46,25 @@
 {% endfor %}
 
 {% if showLanguage %}
-<div class="absolute top-4 right-4 flex items-end items-center">
-    <nav class="flex justify-between bg-transparent" id="langitems">
-        <ul>
-            {% for name, value in meta.locales %}
-                {% if name != locale %}
-                    {% for item in collections.all %}
-                        {% if item.data.translationKey == translationKey and item.data.locale == name %}
-                            <li class="flex p-1.5 w-max text-primary">
-                                <a href="{{ item.url }}" onclick="setUserLanguage('{{ name }}')">
-                                    <span class="hidden sm:flex">{{ value }}</span>
-                                    <span class="flex sm:hidden uppercase font-bold text-lg">{{ name }}</span>
-                                </a>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
-            {% endfor %}
-        </ul>
-    </nav>
-    {% icon 'language', 'w-5 h-5 self-center text-accent' %}
-</div>
+    <div class="absolute top-4 right-4 flex items-end items-center">
+        <nav class="flex justify-between bg-transparent" id="langitems">
+            <ul>
+                {% for name, value in meta.locales %}
+                    {% if name != locale %}
+                        {% for item in collections.all %}
+                            {% if item.data.translationKey == translationKey and item.data.locale == name %}
+                                <li class="flex p-1.5 w-max text-primary">
+                                    <a href="{{ item.url }}" onclick="setUserLanguage('{{ name }}')">
+                                        <span class="hidden sm:flex">{{ value }}</span>
+                                        <span class="flex sm:hidden uppercase font-bold text-lg">{{ name }}</span>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+        {% icon 'language', 'w-5 h-5 self-center text-accent' %}
+    </div>
 {% endif %}

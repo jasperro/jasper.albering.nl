@@ -3,27 +3,27 @@ layout: base
 ---
 
 <div class="prose dark:prose-light prose-xl">
-  <h1>{{posts[locale].title}}</h1>
+    <h1>{{posts[locale].title}}</h1>
 </div>
 
 <ul class="mt-5 grid grid-cols-responsivecards lg:gap-6 md:gap-4 gap-3">
-  {% for post in collections["posts_" + locale] | reverse %}
-  <li class="rounded-xl shadow-sm hover:shadow-xl bg-bgel dark:bg-bgel-dark">
-    {% if post.data.canonical %}
-    <a href="{{ post.data.canonical }}" target="_blank" rel="noopener">
-    {% else %}
-    <a href="{{ post.url }}">
-    {% endif %}
-      <div class="h-full flex flex-col p-4 justify-between">
-        <span>
-          <p class="text-2xl font-medium">{{ post.data.title }}</p>
-          <p class="text-base font-normal">{{ post.data.summary }}</p>
-        </span>
-        <span class="pt-4 text-xs font-bold text-gray-600 dark:text-gray-300 uppercase text-right">
-          <date>{{ post.data.date | date("DD MMMM YYYY", locale) }}</date>
-        </span>
-      </div>
-    </a>
-  </li>
-  {% endfor %}
-</ul>
+    {% for post in collections["posts_" + locale] | reverse %}
+        <li class="rounded-sm shadow-sm hover:shadow-xl bg-bgel dark:bg-bgel-dark">
+            {% if post.data.canonical %}
+                <a href="{{ post.data.canonical }}" target="_blank" rel="noopener">
+                {% else %}
+                    <a href="{{ post.url }}">
+                    {% endif %}
+                    <div class="h-full flex flex-col p-4 justify-between">
+                        <span>
+                            <p class="text-2xl font-medium">{{ post.data.title }}</p>
+                            <p class="text-base font-normal">{{ post.data.summary }}</p>
+                        </span>
+                        <span class="pt-4 text-xs font-bold text-gray-600 dark:text-gray-300 uppercase text-right">
+                            <date>{{ post.data.date | date("DD MMMM YYYY", locale) }}</date>
+                        </span>
+                    </div>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>

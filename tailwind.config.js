@@ -3,10 +3,10 @@ const colors = require("tailwindcss/colors");
 
 function varopacity(opacityVariable, opacityValue, variableName) {
     return opacityVariable
-        ? `rgba(var(--${variableName}), var(${opacityVariable}, 1))`
+        ? `hsla(var(--${variableName}), var(${opacityVariable}, 1))`
         : opacityValue
-        ? `rgba(var(--${variableName}), ${opacityValue})`
-        : `rgb(var(--${variableName}))`;
+        ? `hsla(var(--${variableName}), ${opacityValue})`
+        : `hsl(var(--${variableName}))`;
 }
 
 const rem = (px) => `${px / 16}rem`;
