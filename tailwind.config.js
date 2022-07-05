@@ -5,8 +5,8 @@ function varopacity(opacityVariable, opacityValue, variableName) {
     return opacityVariable
         ? `rgba(var(--${variableName}), var(${opacityVariable}, 1))`
         : opacityValue
-            ? `rgba(var(--${variableName}), ${opacityValue})`
-            : `rgb(var(--${variableName}))`;
+        ? `rgba(var(--${variableName}), ${opacityValue})`
+        : `rgb(var(--${variableName}))`;
 }
 
 const rem = (px) => `${px / 16}rem`;
@@ -74,7 +74,7 @@ module.exports = {
                 },
             },
             fontFamily: {
-                sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+                sans: ["Lexend var", ...defaultTheme.fontFamily.sans],
             },
             minWidth: {
                 8: "2rem",
@@ -82,7 +82,7 @@ module.exports = {
             },
 
             gridTemplateColumns: {
-                'responsivecards': 'repeat(auto-fill, minmax(20rem, 1fr))'
+                responsivecards: "repeat(auto-fill, minmax(20rem, 1fr))",
             },
             typography: (theme) => ({
                 light: {
