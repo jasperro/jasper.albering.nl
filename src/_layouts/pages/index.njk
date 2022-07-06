@@ -4,14 +4,19 @@ _no_margin: true
 eleventyNavigation:
 order: -999
 ---
-<div class="home_intro">
+<div class="bg-bgel rounded-sm my-6 md:p-16 sm:p-8 p-4 py-8 flex flex-col sm:my-16 sm:mx-16 xl:mx-40 2xl:mx-60">
     <div class="flex flex-col justify-between w-full">
         <h1 class="lg:text-5xl md:text-4xl text-3xl font-medium tracking-tighter flex items-center text-primary">{% icon 'logo',
             'w-24 h-24' %}{{ home[locale].title | safe }}</h1>
-        <div class="flex mt-6 space-x-2 bg-bgel p-4 w-min">
+        <span class="py-4 space-y-4">
+            {{ home[locale].info | safe }}
+        </span>
+        <div class="flex flex-wrap mt-6 gap-2 sm:p-4 p-2 w-max max-w-full sm:rounded-sm sm:shadow-md bg-bg bg-opacity-50">
             <a href="#projects" class="flex py-3 px-5 sm:w-max w-full font-medium rounded-sm bg-yellow-300 text-black shadow-sm">Portfolio</a>
-            <a href="#contact" class="flex py-3 px-5 sm:w-max w-full font-medium rounded-sm bg-green-300 text-black shadow-sm">Contact&nbsp;
+            <a href="#contact" class="flex py-3 px-5 sm:w-max w-full justify-between font-medium rounded-sm bg-green-300 text-black shadow-sm">Contact&nbsp;
                     {% icon 'email' %}</a>
+            <a href="https://github.com/jasperro" class="flex py-3 px-3 w-max font-medium rounded-sm bg-gray-800 text-white shadow-sm">
+                {% icon 'github' %}</a>
         </div>
     </div>
     {# <div class="max-w-3xl flex flex-col">
@@ -36,10 +41,6 @@ order: -999
     </div> #}
 </div>
 <div class="mx-4 xl:mx-[14rem] 2xl:mx-[19rem]">
-
-    <h1 class="text-3xl mt-8 mb-6">{{ home[locale].about }}</h1>
-
-    <p class="mt-6 border-2 rounded-sm border-primary p-3 bg-bgel bg-opacity-75 max-w-5xl">{{ home[locale].info | safe }}</p>
 
     <h1 class="text-3xl mt-8 mb-6">{{ home[locale].projects }}</h1>
 

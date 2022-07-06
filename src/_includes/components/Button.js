@@ -12,7 +12,7 @@ const getVariant = (variant) => {
 module.exports = (text, icon, href = "#", variant = false) => `
     <a
         href="${href}"
-        class="py-3 px-5 shadow-sm text-sm font-medium rounded-sm text-white hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-accent ${getVariant(
+        class="inline-flex items-center py-3 px-5 shadow-sm text-sm font-medium rounded-sm text-white hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-accent ${getVariant(
             variant
         )}"
         >${(() => {
