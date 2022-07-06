@@ -101,7 +101,7 @@ module.exports = function (eleventyConfig) {
     // Pass-through files
     eleventyConfig.addPassthroughCopy("src/robots.txt");
     eleventyConfig.addPassthroughCopy("src/site.webmanifest");
-    eleventyConfig.addPassthroughCopy("src/assets/images");
+    eleventyConfig.addPassthroughCopy("src/assets/images", { expand: true });
     eleventyConfig.addPassthroughCopy(
         {
             "node_modules/@fontsource/lexend": "assets/lexend",
