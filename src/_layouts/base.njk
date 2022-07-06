@@ -6,6 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{ meta.title }}</title>
 
+        <link rel="preload" as="style" href="{{ '/assets/main.css' | url }}">
+        <link rel="preload" as="font" href="{{ '/assets/lexend/files/lexend-latin-variable-wghtOnly-normal.woff2' | url }}" type="font/woff2" crossorigin="anonymous">
+
         <link rel="stylesheet" href="{{ '/assets/main.css' | url }}">
         {% include "meta.njk" %}
         <script>
