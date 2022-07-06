@@ -15,6 +15,6 @@
             }
         }
     </style>
-    <path d="m54.828 35.32s-28.123-30.475-25.248-21.544c2.8756 8.9305 15.186 30.357-13.243 38.076" style="fill:none;stroke-linecap:round;stroke-width:9.2018" class="swish" />
-    <circle cx="20.055" cy="32.834" r="5.2071" style="stroke-linecap:round;stroke-width:4.6009" class="dot" />
+    <path class="swish" d="m51.246 35.327s-28.123-30.475-25.248-21.544c2.8756 8.9305 15.186 30.357-13.243 38.076" style="fill:none;stroke-linecap:round;stroke-width:9.2018" />
+    <circle class="dot" cx="16.472" cy="32.841" r="5.2071" style="stroke-linecap:round;stroke-width:4.6009" />
 </svg>
