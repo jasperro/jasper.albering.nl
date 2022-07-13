@@ -1,5 +1,6 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
+const svgSprite = require("eleventy-plugin-svg-sprite");
 const markdownIt = require("markdown-it");
 const dayjs = require("dayjs");
 require("dayjs/locale/nl");
@@ -14,6 +15,10 @@ module.exports = function (eleventyConfig) {
     // Plugins
     eleventyConfig.addPlugin(pluginRss);
     eleventyConfig.addPlugin(pluginNavigation);
+
+    eleventyConfig.addPlugin(svgSprite, {
+        path: "./src/assets/icons",
+    });
 
     // Filters
     Object.keys(filters).forEach((filterName) => {
