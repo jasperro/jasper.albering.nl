@@ -1,18 +1,22 @@
+[build.environment]
+   NODE_VERSION = "16"  
+   NPM_FLAGS = "--version" # prevent Netlify npm install
+
 [build]
-    command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
-    publish = "dist"
+   command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
+   publish = "dist"
 
 [context.production.environment]
-    ELEVENTY_ENV = "production"
+   ELEVENTY_ENV = "production"
 
 [[headers]]
-    for = "/*"
-    [headers.values]
-        X-Frame-Options = "DENY"
-        X-XSS-Protection = "1; mode=block"
-        X-Content-Type-Options = "nosniff"
-        Referrer-Policy= "no-referrer-when-downgrade"
-        Permissions-Policy = "interest-cohort=()"
+   for = "/*"
+   [headers.values]
+      X-Frame-Options = "DENY"
+      X-XSS-Protection = "1; mode=block"
+      X-Content-Type-Options = "nosniff"
+      Referrer-Policy= "no-referrer-when-downgrade"
+      Permissions-Policy = "interest-cohort=()"
 
 [[redirects]]
    from = "/"
