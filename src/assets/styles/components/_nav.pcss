@@ -1,5 +1,9 @@
-#nav-toggle:checked ~ nav {
-    @apply flex;
+#nav-toggle:checked ~ div {
+    @apply shadow-none bg-bg;
+}
+
+#nav-toggle:checked ~ #navigationitems {
+    @apply flex max-h-screen top-0 -translate-y-full sm:translate-y-0 bg-bg shadow-none;
 }
 
 #lang-toggle:checked ~ nav {
