@@ -3,7 +3,7 @@
         <input type="checkbox" checked id="nav-toggle" class="hidden" aria-controls="navigationitems">
 
         {# Logo and hamburger menu on mobile #}
-        <div class="toggle-nav-shadow flex sm:w-min w-full p-4 bg-bgel sm:hidden shadow-2xl sm:shadow-none transition-all">
+        <div class="nav-shadow-togglable flex sm:w-min w-full p-4 bg-bgel sm:hidden shadow-2xl sm:shadow-none transition-all">
             <div class="flex">
                 <label for="nav-toggle" role="button" tabindex="0">
                     <span class="sr-only">toggle menu</span>
@@ -15,25 +15,28 @@
         </div>
 
         {# Navigation items #}
-        <nav id="navigationitems" class="-z-10 sm:z-10 absolute sm:static top-full left-0 p-4 m-[inherit] sm:p-0 sm:m-0 w-full transition-transform motion-reduce:transition-none sm:max-h-full sm:flex sm:bg-bg bg-bgel shadow-2xl sm:shadow-none flex-col sm:flex-row justify-between sm:translate-y-0 transform-gpu origin-top">
-            <ul class="flex flex-col sm:flex-row">
-                <li class="sm:flex self-center mr-2 hidden">
-                    {% icon 'logo', 'w-10 h-10', 'aria-hidden="true"' %}
-                </li>
-                {%- set items = collections["pages_" + locale] -%}
-                {%- for item in items | eleventyNavigation -%}
-                    {%- set isCurrent = (item.url == page.url) -%}
-                    {%- set isParent = item.url != '/' and item.url in page.url -%}
-                    <li
-                class="flex mr-1 sm:w-max w-full font-medium{% if isCurrent %} rounded-sm bg-primary text-white dark:text-black{% else %} text-primary{% endif %}">
-                        <a class="w-full block py-2 px-4" href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}" {% if
-                    isCurrent %} aria-current="page" {% endif %}>
-                            {{ item.title }}
-                        </a>
+        <div class="nav-items-wrapper">
+            <nav id="navigationitems" class="-z-10 sm:z-10 absolute sm:static top-full left-0 p-4 m-[inherit] sm:p-0 sm:m-0 w-full transition-transform motion-reduce:transition-none sm:max-h-full sm:flex sm:bg-bg bg-bgel shadow-2xl sm:shadow-none flex-col sm:flex-row justify-between sm:translate-y-0 transform-gpu origin-top">
+                <ul class="flex flex-col sm:flex-row">
+                    <li class="sm:flex self-center mr-2 hidden">
+                        {% icon 'logo', 'w-10 h-10', 'aria-hidden="true"' %}
                     </li>
-                {%- endfor -%}
-            </ul>
-        </nav>
+                    {%- set items = collections["pages_" + locale] -%}
+                    {%- for item in items | eleventyNavigation -%}
+                        {%- set isCurrent = (item.url == page.url) -%}
+                        {%- set isParent = item.url != '/' and item.url in page.url -%}
+                        <li
+                class="flex mr-1 sm:w-max w-full font-medium{% if isCurrent %} rounded-sm bg-primary text-white dark:text-black{% else %} text-primary{% endif %}">
+                            <a class="w-full block py-2 px-4" href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}" {% if
+                    isCurrent %} aria-current="page" {% endif %}>
+                                {{ item.title }}
+                            </a>
+                        </li>
+                    {%- endfor -%}
+                </ul>
+            </nav>
+            <label for="nav-toggle" tabindex="0" aria-hidden="true" role="button" class="-z-20 nav-hide h-screen w-screen bg-bg/80 transition-colors fixed top-0 sm:hidden"/>
+        </div>
     </div>
 </nav>
 
