@@ -1,13 +1,4 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
-const colors = require("tailwindcss/colors");
-
-function varopacity(opacityVariable, opacityValue, variableName) {
-    return opacityVariable
-        ? `hsla(var(--${variableName}), var(${opacityVariable}, 1))`
-        : opacityValue
-        ? `hsla(var(--${variableName}), ${opacityValue})`
-        : `hsl(var(--${variableName}))`;
-}
 
 const rem = (px) => `${px / 16}rem`;
 const round = (num) => num.toFixed(7).replace(/[.0]+$/, "");
@@ -21,56 +12,20 @@ module.exports = {
         extend: {
             colors: {
                 primary: {
-                    dark: ({ opacityVariable, opacityValue }) =>
-                        varopacity(
-                            opacityVariable,
-                            opacityValue,
-                            "color-primary-dark"
-                        ),
-                    light: ({ opacityVariable, opacityValue }) =>
-                        varopacity(
-                            opacityVariable,
-                            opacityValue,
-                            "color-primary-light"
-                        ),
-                    DEFAULT: ({ opacityVariable, opacityValue }) =>
-                        varopacity(
-                            opacityVariable,
-                            opacityValue,
-                            "color-primary"
-                        ),
+                    dark: 'hsl(var(--color-primary-dark) / <alpha-value>)',
+                    light: 'hsl(var(--color-primary-light) / <alpha-value>)',
+                    DEFAULT: 'hsl(var(--color-primary) / <alpha-value>)',
                 },
                 accent: {
-                    DEFAULT: ({ opacityVariable, opacityValue }) =>
-                        varopacity(
-                            opacityVariable,
-                            opacityValue,
-                            "color-accent"
-                        ),
+                    DEFAULT: 'hsl(var(--color-accent) / <alpha-value>)',
                 },
                 bg: {
-                    dark: ({ opacityVariable, opacityValue }) =>
-                        varopacity(
-                            opacityVariable,
-                            opacityValue,
-                            "color-bg-dark"
-                        ),
-                    DEFAULT: ({ opacityVariable, opacityValue }) =>
-                        varopacity(opacityVariable, opacityValue, "color-bg"),
+                    dark: 'hsl(var(--color-bg-dark) / <alpha-value>)',
+                    DEFAULT: 'hsl(var(--color-bg) / <alpha-value>)',
                 },
                 bgel: {
-                    dark: ({ opacityVariable, opacityValue }) =>
-                        varopacity(
-                            opacityVariable,
-                            opacityValue,
-                            "color-bg-element-dark"
-                        ),
-                    DEFAULT: ({ opacityVariable, opacityValue }) =>
-                        varopacity(
-                            opacityVariable,
-                            opacityValue,
-                            "color-bg-element"
-                        ),
+                    dark: 'hsl(var(--color-bg-element-dark) / <alpha-value>)',
+                    DEFAULT: 'hsl(var(--color-bg-element) / <alpha-value>)',
                 },
             },
             fontFamily: {
