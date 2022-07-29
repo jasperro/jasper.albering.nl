@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="{{ locale }}">
-
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{{ meta.title }}</title>
-
-        <link rel="preload" as="style" href="{{ '/assets/main.css' | url }}">
-        <link rel="preload" as="font" href="{{ '/assets/lexend/files/lexend-latin-variable-wghtOnly-normal.woff2' | url }}" type="font/woff2" crossorigin="anonymous">
-
-        <link rel="stylesheet" href="{{ '/assets/main.css' | url }}">
+        <link rel="preload" as="style" href="{{ '/assets/main.css' | url }}" />
+        <link rel="preload"
+              as="font"
+              href="{{ '/assets/lexend/files/lexend-latin-variable-wghtOnly-normal.woff2' | url }}"
+              type="font/woff2"
+              crossorigin="anonymous"/>
+        <link rel="stylesheet" href="{{ '/assets/main.css' | url }}" />
         {% include "meta.njk" %}
         <script>
             function setUserLanguage(language = "en") {
@@ -17,25 +18,18 @@
             };
         </script>
     </head>
-
     <body class="min-h-screen flex flex-col">
         {% include "header.njk" %}
-        <main id="main" class="flex flex-col flex-grow {% if _no_margin %}{% else %}lg:p-16 md:p-8 p-4{% endif %} overflow-hidden" tabindex="-1">
-            <div>
-                {{ content | safe }}
-            </div>
+        <main id="main"
+              class="flex flex-col flex-grow {% if _no_margin %}{% else %}lg:p-16 md:p-8 p-4{% endif %} overflow-hidden"
+              tabindex="-1">
+            <div>{{ content | safe }}</div>
         </main>
-
-        <footer class="px-8 flex flex-grow-0 justify-between items-center py-4 bg-bgel text-sm mt-16" role="contentinfo">
-            <div>Jasper Albering &copy; 2016-2021</div>
-            <span class="flex gap-x-2">
-                {% include "sociallinks.njk" %}
-            </span>
+        <footer class="px-8 flex flex-grow-0 justify-between items-center py-4 bg-bgel text-sm mt-16"
+                role="contentinfo">
+            <div>Jasper Albering © 2016-2021</div>
+            <span class="flex gap-x-2">{% include "sociallinks.njk" %}</span>
         </footer>
-
-        <div class="nodispsvg" aria-hidden="true">
-            {% svgsprite %}
-        </div>
+        <div class="nodispsvg" aria-hidden="true">{% svgsprite %}</div>
     </body>
-
 </html>

@@ -2,7 +2,7 @@ const fs = require("fs");
 const Image = require("@11ty/eleventy-img");
 
 module.exports = {
-    icon: function (name, classes = "w-6 h-6", rest, inline = true) {
+    icon: function (name, classes = "w-6 h-6", rest = "", inline = true) {
         return `<svg class="icon ${classes}" role="img" ${rest}>
                     <title>${name}</title>
                     <use href="#svg-${name}"></use>
