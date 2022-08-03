@@ -12,6 +12,6 @@ Add a kernel parameter to your kernel command line with the following:
 
 This turns power saving off on the graphics card, and this fixes the issue.
 
-If you do not know how to do this, read <https://wiki.archlinux.org/index.php/kernel_parameters>
+If you do not know how to do this, read &lt;https://wiki.archlinux.org/index.php/kernel_parameters&gt;
 
 That's it!

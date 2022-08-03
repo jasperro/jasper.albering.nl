@@ -1,8 +1,18 @@
-node_modules
-dist
-.env
-.lazyimages.json
-.history
+dist/
+.output/
+.log/
+.netlify/
 
-# Local Netlify folder
-.netlify
+.DS_Store
+
+node_modules
+/build
+/package
+.env
+.env.*
+!.env.example
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
