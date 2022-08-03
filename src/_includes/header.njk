@@ -9,8 +9,10 @@
       {# Logo and hamburger menu on mobile #}
       <div class="nav-shadow-togglable flex sm:w-min w-full p-4 bg-bgel sm:hidden shadow-2xl sm:shadow-none transition-all">
         <div class="flex">
-          <label for="nav-toggle" role="button" tabindex="0">
-            <span class="sr-only">toggle menu</span>
+          <label for="nav-toggle"
+                 aria-label="Toggle navigation menu"
+                 role="button"
+                 tabindex="0">
             {% icon 'menu', 'w-10 h-10 self-center' %}
           </label>
           <a class="flex ml-4" href="{{ "/" + locale | url }}" aria-label="home">{% icon 'logo', 'w-10 h-10 self-center', 'aria-hidden="true"' %}</a>
@@ -42,8 +44,8 @@
         </nav>
         <label for="nav-toggle"
                tabindex="0"
-               aria-hidden="true"
                role="button"
+               aria-label="Close navigation"
                class="-z-20 nav-hide h-screen w-screen bg-bg/80 transition-colors fixed top-0 sm:hidden">
         </label>
       </div>
