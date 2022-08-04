@@ -1,9 +1,10 @@
 ---
-layout: base
-permalink: /404.html
-excludeFromSitemap: true
+import BaseLayout from "@src/layouts/BaseLayout.astro";
 ---
-<div class="container prose dark:prose-light prose-xl">
-    <h1>404</h1>
-    <p>Page not found.</p>
-</div>
+
+<BaseLayout>
+    <div class="container prose dark:prose-light prose-xl">
+        <h1>404</h1>
+        <p>Page not found.</p>
+    </div>
+</BaseLayout>

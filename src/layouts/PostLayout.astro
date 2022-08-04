@@ -1,14 +1,25 @@
 ---
-layout: base
+import BaseLayout from "./BaseLayout.astro";
+import dayjs from "dayjs";
+const { content = {} } = Astro.props;
 ---
-{#<div>
-    <a class="text-primary" href="/{{ locale }}/posts/">&#8592; {{ posts[locale].goBack }}</a>
-</div>#}
 
-{% if date %}
-    <time class="pb-8 block w-full text-md font-medium text-gray-600 dark:text-gray-300 uppercase" datetime="{{ date | date('YYYY-MM-DD') }}">{{ date | date("DD MMM YYYY", locale) }}</time>
-{% endif %}
-<article class="container prose dark:prose-light prose-xl">
-    <h1>{{ title }}</h1>
-    {{ content | safe }}
-</article>
+<BaseLayout {content}>
+    <div>
+        <a class="text-primary" href="/{{ locale }}/posts/">&#8592;</a>
+    </div>
+
+    <article class="container prose dark:prose-light prose-xl">
+        <h1>{content.title}</h1>
+        <slot />
+    </article>
+
+    {content.date && (
+        <time
+            class="text-md block w-full pb-8 font-medium uppercase text-gray-600 dark:text-gray-300"
+            datetime={dayjs(content.date).format("YYYY-MM-DD")}
+        >
+            {content.date}
+        </time>
+    )}
+</BaseLayout>

@@ -1,101 +1,57 @@
-{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(meta.url) }}{%- endset -%}
-{# General #}
-<meta name="description" content="{{ description or meta.description }}"/>
-<link rel="canonical" href="{{ absolutePageUrl }}"/>
-<meta name="google-site-verification" content="{{ meta.googleverify }}"/>
-{# Open Graph #}
-<meta property="og:site_name" content="{{ meta.title }}"/>
-<meta property="og:title" content="{{ title or meta.title }}"/>
-<meta property="og:description"
-      content="{{ description or meta.description }}"/>
-<meta property="og:url" content="{{ absolutePageUrl }}"/>
-<meta property="og:locale" content="{{ locale }}"/>
-<meta name="twitter:card"
-      content="{%- if image -%}summary_large_image{%- else -%}summary{%- endif -%}"/>
-<meta name="application-name" content="Jasper Albering"/>
-<meta name="apple-mobile-web-app-title" content="Jasper Albering"/>
-<meta name="theme-color" content="#008594"/>
-<meta name="msapplication-TileColor" content="#008594"/>
-<meta name="msapplication-config"
-      content="/assets/images/favicon/browserconfig.xml"/>
-{%- if image -%}
-    <meta property="og:image"
-          content="{{ image | url | absoluteUrl(meta.url) }}"/>
-{%- endif -%}
-{# Favicon #}
-<link rel="icon" type="image/svg+xml" href="/assets/images/svg/favicon.svg"/>
-<link rel="shortcut icon" href="/assets/images/favicon/favicon.ico"/>
-<link rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/images/favicon/favicon-16x16.png"/>
-<link rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/images/favicon/favicon-32x32.png"/>
-<link rel="icon"
-      type="image/png"
-      sizes="48x48"
-      href="/assets/images/favicon/favicon-48x48.png"/>
-<link rel="manifest" href="/assets/images/favicon/manifest.json"/>
-<meta name="mobile-web-app-capable" content="yes"/>
-<meta name="theme-color" content="#008b8b"/>
-<meta name="application-name" content="Jasper Albering's Website"/>
-<link rel="apple-touch-icon"
-      sizes="57x57"
-      href="/assets/images/favicon/apple-touch-icon-57x57.png"/>
-<link rel="apple-touch-icon"
-      sizes="60x60"
-      href="/assets/images/favicon/apple-touch-icon-60x60.png"/>
-<link rel="apple-touch-icon"
-      sizes="72x72"
-      href="/assets/images/favicon/apple-touch-icon-72x72.png"/>
-<link rel="apple-touch-icon"
-      sizes="76x76"
-      href="/assets/images/favicon/apple-touch-icon-76x76.png"/>
-<link rel="apple-touch-icon"
-      sizes="114x114"
-      href="/assets/images/favicon/apple-touch-icon-114x114.png"/>
-<link rel="apple-touch-icon"
-      sizes="120x120"
-      href="/assets/images/favicon/apple-touch-icon-120x120.png"/>
-<link rel="apple-touch-icon"
-      sizes="144x144"
-      href="/assets/images/favicon/apple-touch-icon-144x144.png"/>
-<link rel="apple-touch-icon"
-      sizes="152x152"
-      href="/assets/images/favicon/apple-touch-icon-152x152.png"/>
-<link rel="apple-touch-icon"
-      sizes="167x167"
-      href="/assets/images/favicon/apple-touch-icon-167x167.png"/>
-<link rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/images/favicon/apple-touch-icon-180x180.png"/>
-<link rel="apple-touch-icon"
-      sizes="1024x1024"
-      href="/assets/images/favicon/apple-touch-icon-1024x1024.png"/>
-<meta name="apple-mobile-web-app-capable" content="yes"/>
-<meta name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"/>
-<meta name="apple-mobile-web-app-title" content="Jasper Albering"/>
-<link rel="icon"
-      type="image/png"
-      sizes="228x228"
-      href="/assets/images/favicon/coast-228x228.png"/>
-<meta name="msapplication-TileColor" content="#008b8b"/>
-<meta name="msapplication-TileImage"
-      content="/assets/images/favicon/mstile-144x144.png"/>
-<meta name="msapplication-config"
-      content="/assets/images/favicon/browserconfig.xml"/>
-<link rel="yandex-tableau-widget"
-      href="/assets/images/favicon/yandex-browser-manifest.json"/>
-{# RSS Feed #}
-<link type="application/atom+xml"
-      rel="alternate"
-      href="{{ meta.url }}/feed.xml"
-      title="{{ meta.title }}"/>
-{%- for lang, value in meta.locales -%}
-    <link rel="alternate"
-          hreflang="{{ lang }}"
-          href="{{ meta.url | url | absoluteUrl + lang }}"/>
-{%- endfor -%}
+---
+import * as headMeta from '@src/lib/meta.json';
+export interface Props {
+      content: any;
+      canonicalURL: URL;
+}
+
+const { content = {}, canonicalURL = "" } = Astro.props;
+---
+
+<!--General -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{headMeta.title}</title>
+
+<meta name="description" content={headMeta.description} />
+<meta name="google-site-verification" content={headMeta.googleverify} />
+
+<link rel="canonical" href={ canonicalURL } />
+
+<!-- OpenGraph -->
+<meta property="og:site_name" content={headMeta.title} />
+<meta property="og:title" content={content.title && headMeta.title} />
+<meta property="og:description" content={headMeta.description} />
+
+<meta name="application-name" content={headMeta.title} />
+<meta name="apple-mobile-web-app-title" content={headMeta.title} />
+
+<link rel="icon" type="image/svg+xml" href="/assets/images/svg/favicon.svg" />
+
+<link rel="shortcut icon" href="/assets/images/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon/favicon-48x48.png">
+<link rel="manifest" href="/assets/images/favicon/manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#007a72">
+<meta name="application-name" content={content.title && headMeta.title}>
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicon/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicon/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicon/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicon/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicon/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicon/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicon/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="/assets/images/favicon/apple-touch-icon-167x167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon" sizes="1024x1024" href="/assets/images/favicon/apple-touch-icon-1024x1024.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content={headMeta.title}>
+<link rel="icon" type="image/png" sizes="228x228" href="/assets/images/favicon/coast-228x228.png">
+<meta name="msapplication-TileColor" content="#c6ece9">
+<meta name="msapplication-TileImage" content="/assets/images/favicon/mstile-144x144.png">
+<meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
+<link rel="yandex-tableau-widget" href="/assets/images/favicon/yandex-browser-manifest.json">

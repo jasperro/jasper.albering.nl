@@ -1,26 +1,19 @@
-const iconShortcode = require("../../utils/shortcodes").icon;
-const imageShortcode = require("../../utils/shortcodes").image;
+---
+import { Image } from "astro-eleventy-img";
+const { title, description, imgUrl, icons = [], actionhtml = "" } = Astro.props;
+---
 
-module.exports = async (title, description, imgUrl, icons, actionhtml = "") =>
-    `
-        <div class="transition-shadow rounded-sm shadow-sm hover:shadow-xl bg-bgel dark:bg-bgel-dark p-5 flex justify-between flex-col">
-        <div>
-            ${
-                imgUrl
-                    ? await imageShortcode("object-cover h-48", imgUrl, title)
-                    : ""
-            }
-                      
+<div
+    class="transition-shadow rounded-sm shadow-sm hover:shadow-xl bg-bgel dark:bg-bgel-dark p-5 flex justify-between flex-col"
+>
+    <div>
+        {imgUrl ? <Image class="h-48 object-cover" {imgUrl} alt={title} /> : ""}
+    </div>
 
-                 </div>
-
-                 <p class="font-semibold text-xl pt-6">${title}</p>
-                 <p class="pt-2 text-base">${description}</p>
-                 <div class="flex mt-4 justify-between">
-                 <div class="mt-2 flex items-center">${icons
-                     .map((i) => `${iconShortcode(i)}`)
-                     .join("")}</div>
-                 <div class="mt-2">${actionhtml}</div>
-                 </div>
-        </div>
-`;
+    <p class="font-semibold text-xl pt-6">{title}</p>
+    <p class="pt-2 text-base">{description}</p>
+    <div class="flex mt-4 justify-between">
+        <div class="mt-2 flex items-center">{icons.map((i) => i)}</div>
+        <div class="mt-2">{actionhtml}</div>
+    </div>
+</div>

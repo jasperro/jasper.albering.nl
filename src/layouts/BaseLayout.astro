@@ -1,35 +1,38 @@
-<!DOCTYPE html>
-<html lang="{{ locale }}">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{{ meta.title }}</title>
-        <link rel="preload" as="style" href="{{ '/assets/main.css' | url }}" />
-        <link rel="preload"
-              as="font"
-              href="{{ '/assets/lexend/files/lexend-latin-variable-wghtOnly-normal.woff2' | url }}"
-              type="font/woff2"
-              crossorigin="anonymous"/>
-        <link rel="stylesheet" href="{{ '/assets/main.css' | url }}" />
-        {% include "meta.njk" %}
-        <script>
-            function setUserLanguage(language = "en") {
-                document.cookie = `nf_lang=${language}; secure; path=/`;
-            };
-        </script>
-    </head>
-    <body class="min-h-screen flex flex-col">
-        {% include "header.njk" %}
-        <main id="main"
-              class="flex flex-col flex-grow {% if _no_margin %}{% else %}lg:p-16 md:p-8 p-4{% endif %} overflow-hidden"
-              tabindex="-1">
-            <div>{{ content | safe }}</div>
+---
+import Meta from "@src/components/Meta.astro";
+import Header from "@src/components/Header.astro";
+import { SpriteProvider } from "astro-icon";
+import "@src/styles/main.pcss";
+import SocialLinks from "@src/components/SocialLinks.astro";
+
+const canonicalURL = new URL(Astro.url);
+const { content = {} } = Astro.props;
+---
+
+<head>
+    <Meta {content} {canonicalURL} />
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <SpriteProvider>
+        <Header />
+
+        <main
+            id="main"
+            class="flex flex-col flex-grow lg:p-16 md:p-8 p-4 overflow-hidden"
+            tabindex="-1"
+        >
+            <slot />
         </main>
-        <footer class="px-8 flex flex-grow-0 justify-between items-center py-4 bg-bgel text-sm mt-16"
-                role="contentinfo">
-            <div>Jasper Albering © 2016-2021</div>
-            <span class="flex gap-x-2">{% include "sociallinks.njk" %}</span>
+
+        <footer
+            class="px-8 flex flex-grow-0 justify-between items-center py-4 bg-bgel text-sm mt-16"
+            role="contentinfo"
+        >
+            <div>Jasper Albering &copy; 2016-2021</div>
+            <span class="flex gap-x-2">
+                <SocialLinks />
+            </span>
         </footer>
-        <div class="nodispsvg" aria-hidden="true">{% svgsprite %}</div>
-    </body>
-</html>
+    </SpriteProvider>
+</body>

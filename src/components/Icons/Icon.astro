@@ -1,0 +1,11 @@
+---
+import { Icon } from "astro-icon";
+import { defaults } from ".";
+let props = Astro.props;
+// Defaults for icon size
+if (!props.class) {
+    props.class = defaults.class;
+}
+---
+
+<Icon {...props} />
