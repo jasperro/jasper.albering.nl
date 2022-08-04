@@ -12,28 +12,29 @@ module.exports = {
         extend: {
             colors: {
                 primary: {
-                    dark: 'hsl(var(--color-primary-dark) / <alpha-value>)',
-                    light: 'hsl(var(--color-primary-light) / <alpha-value>)',
-                    DEFAULT: 'hsl(var(--color-primary) / <alpha-value>)',
+                    dark: "hsl(var(--color-primary-dark) / <alpha-value>)",
+                    light: "hsl(var(--color-primary-light) / <alpha-value>)",
+                    DEFAULT: "hsl(var(--color-primary) / <alpha-value>)",
                 },
                 accent: {
-                    DEFAULT: 'hsl(var(--color-accent) / <alpha-value>)',
+                    DEFAULT: "hsl(var(--color-accent) / <alpha-value>)",
                 },
                 bg: {
-                    dark: 'hsl(var(--color-bg-dark) / <alpha-value>)',
-                    DEFAULT: 'hsl(var(--color-bg) / <alpha-value>)',
+                    dark: "hsl(var(--color-bg-dark) / <alpha-value>)",
+                    DEFAULT: "hsl(var(--color-bg) / <alpha-value>)",
                 },
                 bgel: {
-                    dark: 'hsl(var(--color-bg-element-dark) / <alpha-value>)',
-                    DEFAULT: 'hsl(var(--color-bg-element) / <alpha-value>)',
+                    dark: "hsl(var(--color-bg-element-dark) / <alpha-value>)",
+                    DEFAULT: "hsl(var(--color-bg-element) / <alpha-value>)",
                 },
             },
             fontFamily: {
                 sans: ["Lexend var", ...defaultTheme.fontFamily.sans],
             },
             minWidth: {
-                8: "2rem",
-                80: "20rem",
+                8: rem(8),
+                80: rem(20),
+                48: rem(48),
             },
 
             gridTemplateColumns: {

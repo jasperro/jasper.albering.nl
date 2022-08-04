@@ -14,8 +14,8 @@ module.exports = async (title, description, imgUrl, icons, actionhtml = "") =>
 
                  </div>
 
-                 <p class="font-semibold text-xl pt-4">${title}</p>
-                 <p class="pt-1">${description}</p>
+                 <p class="font-semibold text-xl pt-6">${title}</p>
+                 <p class="pt-2 text-base">${description}</p>
                  <div class="flex mt-4 justify-between">
                  <div class="mt-2 flex items-center">${icons
                      .map((i) => `${iconShortcode(i)}`)

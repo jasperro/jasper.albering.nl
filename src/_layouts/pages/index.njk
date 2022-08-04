@@ -4,21 +4,21 @@ _no_margin: true
 eleventyNavigation:
 order: -999
 ---
-<div class="bg-bgel rounded-sm my-6 md:p-16 sm:p-8 p-4 py-8 flex flex-col sm:my-16 sm:mx-16 xl:mx-40 2xl:mx-60">
-    <div class="flex flex-col justify-between w-full">
-        <h1 class="lg:text-5xl md:text-4xl text-3xl font-medium tracking-tighter flex items-center text-primary">
-            {% icon 'logo', 'w-24 h-24' %}
-            {{ home[locale].title | safe }}
-        </h1>
-        <span class="py-4 space-y-4">{{ home[locale].info | safe }}</span>
+<div class="bg-bgel my-16 p-[clamp(theme(spacing.4),4vw,theme(spacing.32))] flex flex-col">
+    <div class="flex-col justify-between w-full">
+        <span class="flex flex-wrap-reverse justify-between 2xl:justify-start items-center">
+            <h1 class="text-9xl leading-snug flex font-medium tracking-tighter text-primary">{{ home[locale].title | safe }}</h1>
+            {% icon 'logo', 'flex w-[clamp(6rem,25vw,10rem)] h-[clamp(6rem,25vw,10rem)] 2xl:ml-8' %}
+        </span>
+        <span class="text-base block my-12 space-y-4">{{ home[locale].info | safe }}</span>
         <div class="flex flex-wrap mt-6 gap-2 sm:p-4 p-2 w-max max-w-full sm:rounded-sm sm:shadow-md bg-bg bg-opacity-50">
             <a href="#projects"
-               class="flex py-3 px-5 sm:w-max w-full font-medium rounded-sm bg-yellow-300 text-black shadow-sm">Portfolio</a>
+               class="text-sm flex items-center py-3 px-5 sm:w-max w-full font-medium rounded-sm bg-yellow-300 text-black shadow-sm">Portfolio</a>
             <a href="#contact"
-               class="flex py-3 px-5 sm:w-max w-full justify-between font-medium rounded-sm bg-green-300 text-black shadow-sm">Contact&nbsp;
+               class="text-sm flex items-center py-3 px-5 sm:w-max w-full justify-between font-medium rounded-sm bg-green-300 text-black shadow-sm">Contact&nbsp;
             {% icon 'email' %}</a>
             <a href="https://github.com/jasperro"
-               class="flex py-3 px-3 w-max font-medium rounded-sm bg-gray-800 text-white shadow-sm">
+               class="flex items-center py-3 px-3 w-max font-medium rounded-sm bg-gray-800 text-white shadow-sm">
             {% icon 'github' %}</a>
         </div>
     </div>
@@ -43,7 +43,7 @@ order: -999
         </span>
     </div> #}
 </div>
-<div class="mx-4 xl:mx-[14rem] 2xl:mx-[19rem]">
+<div class="mx-[clamp(1rem,6vw,19rem)]">
     <h1 class="text-3xl mt-8 mb-6">{{ home[locale].projects }}</h1>
     <div id="projects"
          class="grid grid-cols-responsivecards gap-x-4 gap-y-4 lg:mx-0 lg:px-0 w-full">
@@ -58,19 +58,19 @@ order: -999
           data-netlify="true">
         <h1 class="text-3xl mt-8 mb-6">{{ home[locale].contactHeader }}</h1>
         <p>
-            <label class="font-medium">
+            <label class="text-sm font-medium">
                 {{ home[locale].contactName }}
                 <input class="text-input w-full max-w-3xl" type="text" name="name"/>
             </label>
         </p>
         <p>
-            <label class="font-medium">
+            <label class="text-sm font-medium">
                 {{ home[locale].contactMail }}
                 <input class="text-input w-full max-w-3xl" type="email" name="email"/>
             </label>
         </p>
         <p>
-            <label class="font-medium">
+            <label class="text-sm font-medium">
                 {{ home[locale].contactMessage }}
                 <textarea name="message" class="text-input w-full max-w-3xl"></textarea>
             </label>
@@ -80,6 +80,6 @@ order: -999
                    value="{{ home[locale].submit }}"
                    class="my-4 py-2 px-4 shadow-sm text-sm font-medium rounded-sm text-white dark:text-black bg-primary hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent"/>
         </p>
-        <p class="text-sm text-gray-600 dark:text-gray-300">{{ home[locale].formComment | safe }}</p>
+        <p class="text-xs text-gray-600 dark:text-gray-300">{{ home[locale].formComment | safe }}</p>
     </form>
 </div>
