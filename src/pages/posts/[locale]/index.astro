@@ -1,0 +1,38 @@
+---
+import PostCard from "@src/components/Cards/PostCard.astro";
+import BaseLayout from "@src/layouts/BaseLayout.astro";
+import {
+    t,
+    getLanguageFromFilename,
+    knownLocales,
+} from "@src/lib/translations";
+
+export async function getStaticPaths() {
+    return Object.keys(knownLocales).map((locale) => ({
+        params: {
+            locale: locale,
+        },
+
+        props: {
+            locale,
+        },
+    }));
+}
+
+const { locale } = Astro.props;
+
+const allPosts = await Astro.glob("../../../lib/posts/**/*.md");
+const posts = allPosts.filter(
+    (post) => getLanguageFromFilename(post.file) === locale
+);
+// .map((post) => ({ ...post, url: post.frontmatter.translationKey }))
+---
+
+<BaseLayout noMargin={false}>
+    <div class="prose dark:prose-light prose-xl">
+        <h1>{t("posts").title}</h1>
+    </div>
+    <ul class="mt-5 grid grid-cols-responsivecards lg:gap-6 md:gap-4 gap-3">
+        {posts.map((post) => <PostCard post={post} />)}
+    </ul>
+</BaseLayout>

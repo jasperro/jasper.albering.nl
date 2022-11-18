@@ -1,10 +1,32 @@
 ---
 import BaseLayout from "@src/layouts/BaseLayout.astro";
-import { Sprite } from "@src/components/Icons";
-import { t } from "@src/lib/translations";
+import { Sprite, Icon } from "@src/components/Icons";
+import { knownLocales, t as tbase } from "@src/lib/translations";
+import ProjectCard from "@src/components/Cards/ProjectCard.astro";
+
+export async function getStaticPaths() {
+    return Object.keys(knownLocales).map((locale) => ({
+        params: {
+            locale: locale,
+        },
+
+        props: {
+            locale,
+        },
+    }));
+}
+
+const { locale } = Astro.props;
+const t = (key) => tbase(key, locale);
+const alternativeLanguageMap: { [key: string]: string } = {
+    en: "../en",
+    nl: "../nl",
+};
+
+delete alternativeLanguageMap[locale];
 ---
 
-<BaseLayout>
+<BaseLayout {alternativeLanguageMap}>
     <div
         class="bg-bgel my-16 p-[clamp(theme(spacing.4),4vw,theme(spacing.32))] flex flex-col"
     >
@@ -18,9 +40,10 @@ import { t } from "@src/lib/translations";
                     Jasper Albering
                 </h1>
 
-                <Sprite
+                <Icon
                     name="logo"
                     class="flex w-[clamp(6rem,25vw,10rem)] h-[clamp(6rem,25vw,10rem)] 2xl:ml-8"
+                    optimize={false}
                 />
             </span>
             <span
@@ -76,9 +99,15 @@ import { t } from "@src/lib/translations";
             id="projects"
             class="grid grid-cols-responsivecards gap-x-4 gap-y-4 lg:mx-0 lg:px-0 w-full"
         >
-            <!--{% for key, project in home[locale].projectlist %}
-            {% Card project.title, project.description, project.imageurl, project.Sprites, project.actionhtml %}
-            {% endfor %}-->
+            {Object.values(t("home").projectlist).map((project) => (
+                <ProjectCard
+                    title={project.title}
+                    description={project.description}
+                    imgUrl={project.imgUrl}
+                    icons={project.icons}
+                    actioncomponent={project.actioncomponent}
+                />
+            ))}
         </div>
         <form
             name="contact"

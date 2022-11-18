@@ -6,7 +6,11 @@ import "@src/styles/main.pcss";
 import SocialLinks from "@src/components/SocialLinks.astro";
 
 const canonicalURL = new URL(Astro.url);
-const { content = {} } = Astro.props;
+const {
+    content = {},
+    noMargin = true,
+    alternativeLanguageMap = null,
+} = Astro.props;
 ---
 
 <head>
@@ -15,11 +19,13 @@ const { content = {} } = Astro.props;
 
 <body class="min-h-screen flex flex-col">
     <SpriteProvider>
-        <Header />
+        <Header {alternativeLanguageMap} />
 
         <main
             id="main"
-            class="flex flex-col flex-grow lg:p-16 md:p-8 p-4 overflow-hidden"
+            class={`flex flex-col flex-grow overflow-hidden${
+                noMargin ? "" : " lg:p-16 md:p-8 p-4"
+            }`}
             tabindex="-1"
         >
             <slot />

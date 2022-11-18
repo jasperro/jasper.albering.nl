@@ -1,3 +1,5 @@
+import Button from "@src/components/Button.astro";
+
 export default {
     info: `
     <p>Ik werk graag met allerlei soorten technologie.
@@ -20,32 +22,44 @@ export default {
             title: "Wereldwinkel Nijkerk",
             description:
                 "Ik heb een nieuwe website gemaakt voor Wereldwinkel Nijkerk met een zelfgemaakt wordpress-thema die de laatste Facebook-posts laadt.",
-            actionhtml: Button(
-                "Bekijk op GitHub",
-                "github",
-                "https://github.com/jasperro/wereldwinkelnijkerk"
-            ),
+            actioncomponent: [
+                Button,
+                {
+                    text: "Bekijk op GitHub",
+                    icon: "github",
+                    href: "https://github.com/jasperro/wereldwinkelnijkerk",
+                },
+            ],
         },*/
         eggsimulator: {
             title: "Eisimulator",
             description:
                 "Een spel gemaakt in Godot waar je een moeilijk bestuurbaar ei door verschillende parcours moet leiden",
-            // actionhtml: Button(
-            //     "Bekijk op GitHub",
-            //     "github",
-            //     "https://github.com/jasperro/egg-simulator",
-            //     (variant = "github")
-            // ),
+            icons: ["godot"],
+            actioncomponent: [
+                Button,
+                {
+                    text: "Bekijk op GitHub",
+                    icon: "github",
+                    href: "https://github.com/jasperro/egg-simulator",
+                    variant: "github",
+                },
+            ],
         },
         lifier: {
+            title: "Lifier",
             description:
                 "Maak je leven een spel door XP te behalen door het halen van doelen. Op het web, android en iOS met React Native.",
-            // actionhtml: Button(
-            //     "Bekijk op GitHub",
-            //     "github",
-            //     "https://github.com/jasperro/Lifier",
-            //     (variant = "github")
-            // ),
+            icons: ["godot"],
+            actioncomponent: [
+                Button,
+                {
+                    text: "Bekijk op GitHub",
+                    icon: "github",
+                    href: "https://github.com/jasperro/Lifier",
+                    variant: "github",
+                },
+            ],
         },
     },
 };

@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro-eleventy-img";
-const { title, description, imgUrl, icons = [], actionhtml = "" } = Astro.props;
+import { Sprite } from "../Icons";
+
+const { title, description, imgUrl, icons = [], actioncomponent } = Astro.props;
 ---
 
 <div
@@ -13,7 +15,17 @@ const { title, description, imgUrl, icons = [], actionhtml = "" } = Astro.props;
     <p class="font-semibold text-xl pt-6">{title}</p>
     <p class="pt-2 text-base">{description}</p>
     <div class="flex mt-4 justify-between">
-        <div class="mt-2 flex items-center">{icons.map((i) => i)}</div>
-        <div class="mt-2">{actionhtml}</div>
+        <div class="mt-2 flex items-center">
+            {icons.map((i: string) => <Sprite name={i} />)}
+        </div>
+        <div class="mt-2">
+            {
+                actioncomponent
+                    ? ((ActionComponent) => (
+                          <ActionComponent {...actioncomponent[1]} />
+                      ))(actioncomponent[0])
+                    : null
+            }
+        </div>
     </div>
 </div>

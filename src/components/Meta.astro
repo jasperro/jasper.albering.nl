@@ -1,11 +1,13 @@
 ---
-import * as headMeta from '@src/lib/meta.json';
+import * as headMeta from "@src/lib/meta.json";
 export interface Props {
-      content: any;
-      canonicalURL: URL;
+    content: any;
+    canonicalURL: URL;
 }
 
 const { content = {}, canonicalURL = "" } = Astro.props;
+
+import logoSVG from "@src/icons/logo.svg";
 ---
 
 <!--General -->
@@ -16,7 +18,7 @@ const { content = {}, canonicalURL = "" } = Astro.props;
 <meta name="description" content={headMeta.description} />
 <meta name="google-site-verification" content={headMeta.googleverify} />
 
-<link rel="canonical" href={ canonicalURL } />
+<link rel="canonical" href={canonicalURL} />
 
 <!-- OpenGraph -->
 <meta property="og:site_name" content={headMeta.title} />
@@ -26,32 +28,108 @@ const { content = {}, canonicalURL = "" } = Astro.props;
 <meta name="application-name" content={headMeta.title} />
 <meta name="apple-mobile-web-app-title" content={headMeta.title} />
 
-<link rel="icon" type="image/svg+xml" href="/assets/images/svg/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href={logoSVG} />
 
-<link rel="shortcut icon" href="/assets/images/favicon/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon/favicon-48x48.png">
-<link rel="manifest" href="/assets/images/favicon/manifest.json">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#007a72">
-<meta name="application-name" content={content.title && headMeta.title}>
-<link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicon/apple-touch-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicon/apple-touch-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicon/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicon/apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicon/apple-touch-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicon/apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicon/apple-touch-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon/apple-touch-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="167x167" href="/assets/images/favicon/apple-touch-icon-167x167.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon-180x180.png">
-<link rel="apple-touch-icon" sizes="1024x1024" href="/assets/images/favicon/apple-touch-icon-1024x1024.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content={headMeta.title}>
-<link rel="icon" type="image/png" sizes="228x228" href="/assets/images/favicon/coast-228x228.png">
-<meta name="msapplication-TileColor" content="#c6ece9">
-<meta name="msapplication-TileImage" content="/assets/images/favicon/mstile-144x144.png">
-<meta name="msapplication-config" content="/assets/images/favicon/browserconfig.xml">
-<link rel="yandex-tableau-widget" href="/assets/images/favicon/yandex-browser-manifest.json">
+<link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
+<link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/assets/images/favicon/favicon-16x16.png"
+/>
+<link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/assets/images/favicon/favicon-32x32.png"
+/>
+<link
+    rel="icon"
+    type="image/png"
+    sizes="48x48"
+    href="/assets/images/favicon/favicon-48x48.png"
+/>
+<link rel="manifest" href="/assets/images/favicon/manifest.json" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="theme-color" content="#007a72" />
+<meta name="application-name" content={content.title && headMeta.title} />
+<link
+    rel="apple-touch-icon"
+    sizes="57x57"
+    href="/assets/images/favicon/apple-touch-icon-57x57.png"
+/>
+<link
+    rel="apple-touch-icon"
+    sizes="60x60"
+    href="/assets/images/favicon/apple-touch-icon-60x60.png"
+/>
+<link
+    rel="apple-touch-icon"
+    sizes="72x72"
+    href="/assets/images/favicon/apple-touch-icon-72x72.png"
+/>
+<link
+    rel="apple-touch-icon"
+    sizes="76x76"
+    href="/assets/images/favicon/apple-touch-icon-76x76.png"
+/>
+<link
+    rel="apple-touch-icon"
+    sizes="114x114"
+    href="/assets/images/favicon/apple-touch-icon-114x114.png"
+/>
+<link
+    rel="apple-touch-icon"
+    sizes="120x120"
+    href="/assets/images/favicon/apple-touch-icon-120x120.png"
+/>
+<link
+    rel="apple-touch-icon"
+    sizes="144x144"
+    href="/assets/images/favicon/apple-touch-icon-144x144.png"
+/>
+<link
+    rel="apple-touch-icon"
+    sizes="152x152"
+    href="/assets/images/favicon/apple-touch-icon-152x152.png"
+/>
+<link
+    rel="apple-touch-icon"
+    sizes="167x167"
+    href="/assets/images/favicon/apple-touch-icon-167x167.png"
+/>
+<link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/assets/images/favicon/apple-touch-icon-180x180.png"
+/>
+<link
+    rel="apple-touch-icon"
+    sizes="1024x1024"
+    href="/assets/images/favicon/apple-touch-icon-1024x1024.png"
+/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+/>
+<meta name="apple-mobile-web-app-title" content={headMeta.title} />
+<link
+    rel="icon"
+    type="image/png"
+    sizes="228x228"
+    href="/assets/images/favicon/coast-228x228.png"
+/>
+<meta name="msapplication-TileColor" content="#c6ece9" />
+<meta
+    name="msapplication-TileImage"
+    content="/assets/images/favicon/mstile-144x144.png"
+/>
+<meta
+    name="msapplication-config"
+    content="/assets/images/favicon/browserconfig.xml"
+/>
+<link
+    rel="yandex-tableau-widget"
+    href="/assets/images/favicon/yandex-browser-manifest.json"
+/>

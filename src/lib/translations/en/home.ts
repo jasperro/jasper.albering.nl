@@ -1,3 +1,5 @@
+import Button from "@src/components/Button.astro";
+
 export default {
     info: `<p>I enjoy working with all kinds of technology.
      My main focus is on web development,
@@ -18,32 +20,45 @@ export default {
             title: "World Shop Nijkerk",
             description:
                 "I made a new website for the World Shop Nijkerk with a custom wordpress theme that loads the latest Facebook posts.",
-            actionhtml: Button(
-                "View on GitHub",
-                "github",
-                "https://github.com/jasperro/wereldwinkelnijkerk"
-            ),
+            actioncomponent: [
+                Button,
+                {
+                    text: "View on GitHub",
+                    icon: "github",
+                    href: "https://github.com/jasperro/wereldwinkelnijkerk",
+                    variant: "github",
+                },
+            ],
         },*/
         eggsimulator: {
             title: "Egg simulator",
             description:
                 "A game made in Godot where you try to control a rolling egg in different parkour maps.",
-            // actionhtml: Button(
-            //     "View on GitHub",
-            //     "github",
-            //     "https://github.com/jasperro/egg-simulator",
-            //     (variant = "github")
-            // ),
+            icons: ["godot"],
+            actioncomponent: [
+                Button,
+                {
+                    text: "View on GitHub",
+                    icon: "github",
+                    href: "https://github.com/jasperro/egg-simulator",
+                    variant: "github",
+                },
+            ],
         },
         lifier: {
+            title: "Lifier",
             description:
                 "Make your life a game by earning XP through different skills and goals. On web, android and iOS with React Native.",
-            // actionhtml: Button(
-            //     "View on GitHub",
-            //     "github",
-            //     "https://github.com/jasperro/Lifier",
-            //     (variant = "github")
-            // ),
+            icons: ["react"],
+            actioncomponent: [
+                Button,
+                {
+                    text: "View on GitHub",
+                    icon: "github",
+                    href: "https://github.com/jasperro/Lifier",
+                    variant: "github",
+                },
+            ],
         },
     },
 };

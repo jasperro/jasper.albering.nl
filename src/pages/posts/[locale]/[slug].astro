@@ -1,0 +1,29 @@
+---
+import { getLanguageFromFilename } from "@src/lib/translations";
+import Layout from "@src/layouts/PostLayout.astro";
+
+export async function getStaticPaths() {
+    const posts = await Astro.glob("../../../lib/posts/**/*.md");
+    const paths = posts.map((post) => {
+        const locale = getLanguageFromFilename(post.file);
+
+        return {
+            params: {
+                locale: locale,
+                slug: post.frontmatter.translationKey,
+            },
+
+            props: {
+                post: { ...post, locale },
+            },
+        };
+    });
+    return paths.filter(({ params }) => !!params.locale && !!params.slug);
+}
+
+const { post } = Astro.props;
+---
+
+<Layout post={post}>
+    <post.Content />
+</Layout>

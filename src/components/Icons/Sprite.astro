@@ -1,11 +1,10 @@
 ---
 import { Sprite } from "astro-icon";
-import { defaults } from ".";
+import { defaults, globals } from ".";
 let props = Astro.props;
 // Defaults for icon size
-if (!props.class) {
-    props.class = defaults.class;
-}
+props.class = props.class ? props.class : defaults.class;
+props.class += " " + globals.class;
 ---
 
 <Sprite {...props} />

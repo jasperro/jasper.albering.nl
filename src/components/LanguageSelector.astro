@@ -1,0 +1,34 @@
+---
+import { knownLocales } from "@src/lib/translations";
+import Icon from "./Icons";
+
+const {
+    alternativeLanguageMap = null,
+}: {
+    alternativeLanguageMap?: { lang: string; alternativeUrl: string } | null;
+} = Astro.props;
+---
+
+{alternativeLanguageMap && (
+    <div class="absolute top-4 right-4 z-50 flex">
+        <nav class="flex justify-between bg-transparent" id="langitems">
+            <ul>
+                {Object.entries(alternativeLanguageMap).map(
+                    ([lang, alternativeUrl]) => (
+                        <li class="text-primary flex w-max p-1.5">
+                            <a href={alternativeUrl}>
+                                <span class="hidden sm:flex">
+                                    {knownLocales[lang]}
+                                </span>
+                                <span class="flex text-lg font-bold uppercase sm:hidden">
+                                    {lang}
+                                </span>
+                            </a>
+                        </li>
+                    )
+                )}
+            </ul>
+        </nav>
+        <Icon name="language" class="text-accent h-5 w-5 self-center" />
+    </div>
+)}

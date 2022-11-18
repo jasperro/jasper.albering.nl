@@ -1,5 +1,8 @@
 ---
 import { Icon } from "@src/components/Icons";
+import LanguageSelector from "./LanguageSelector.astro";
+
+const { alternativeLanguageMap } = Astro.props;
 ---
 
 <header class="header" role="banner">
@@ -32,6 +35,7 @@ import { Icon } from "@src/components/Icons";
                             name="logo"
                             class="w-10 h-10 self-center"
                             aria-hidden="true"
+                            optimize={false}
                         />
                     </a>
                 </div>
@@ -48,6 +52,7 @@ import { Icon } from "@src/components/Icons";
                                 name="logo"
                                 class="w-10 h-10"
                                 aria-hidden="true"
+                                optimize={false}
                             />
                         </li>
                         <!-- {% set items = collections["pages_" + locale] %}
@@ -79,35 +84,5 @@ import { Icon } from "@src/components/Icons";
             </div>
         </div>
     </nav>
-    <!-- Language selector -->
-    <!-- if translation key of page doesn't contain page of different language -->
-    <!-- {% set showLanguage = false %}
-  {% for item in collections.all %}
-    {% if item.data.translationKey == translationKey and item.data.locale != locale %}
-      {% set showLanguage = true %}
-    {% endif %}
-  {% endfor %}
-  {% if showLanguage %}
-    <div class="z-50 absolute top-4 right-4 flex">
-      <nav class="flex justify-between bg-transparent" id="langitems">
-        <ul>
-          {% for name, value in meta.locales %}
-            {% if name != locale %}
-              {% for item in collections.all %}
-                {% if item.data.translationKey == translationKey and item.data.locale == name %}
-                  <li class="flex p-1.5 w-max text-primary">
-                    <a href="{{ item.url }}" onclick="setUserLanguage('{{ name }}')">
-                      <span class="hidden sm:flex">{{ value }}</span>
-                      <span class="flex sm:hidden uppercase font-bold text-lg">{{ name }}</span>
-                    </a>
-                  </li>
-                {% endif %}
-              {% endfor %}
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </nav>
-      <Icon name='language', 'w-5 h-5 self-center text-accent' %}
-    </div>
-  {% endif %} -->
+    <LanguageSelector {alternativeLanguageMap} />
 </header>
