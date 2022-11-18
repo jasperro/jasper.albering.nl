@@ -5,7 +5,12 @@ const { post } = Astro.props;
 ---
 
 <li class="rounded-sm shadow-sm hover:shadow-xl bg-bgel dark:bg-bgel-dark">
-    <a href={post.frontmatter.translationKey}>
+    <a
+        href={Astro.url.href.replace(/\/+$/, "") +
+            "/" +
+            post.frontmatter.translationKey}
+        target="_self"
+    >
         <div class="h-full flex flex-col p-4 justify-between">
             <span>
                 <p class="text-2xl font-medium">{post.frontmatter.title}</p>

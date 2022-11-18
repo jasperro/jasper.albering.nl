@@ -2,6 +2,32 @@
 import { Icon } from "@src/components/Icons";
 import LanguageSelector from "./LanguageSelector.astro";
 
+const pathName = Astro.url.pathname.replace(/\/+$/, "");
+const basePath = "/" + pathName.split("/")[1];
+
+const navItems = [
+    {
+        name: "Home",
+        isCurrent: basePath == pathName && new RegExp("en+$").test(pathName),
+        href: "/en",
+    },
+    {
+        name: "About",
+        isCurrent: new RegExp("en/about").test(pathName),
+        href: "/en/about",
+    },
+    {
+        name: "CV",
+        isCurrent: new RegExp("en/cv").test(pathName),
+        href: "/en/cv",
+    },
+    {
+        name: "Posts",
+        isCurrent: new RegExp("posts/en/*").test(pathName),
+        href: "/posts/en",
+    },
+];
+
 const { alternativeLanguageMap } = Astro.props;
 ---
 
@@ -55,22 +81,24 @@ const { alternativeLanguageMap } = Astro.props;
                                 optimize={false}
                             />
                         </li>
-                        <!-- {% set items = collections["pages_" + locale] %}
-            {%- for item in items | eleventyNavigation -%}
-              {% set isCurrent = (item.url == page.url) %}
-              {% set isParent = item.url != '/' and item.url in page.url %}
-              <li class="flex mr-1 sm:w-max w-full font-medium {% if isCurrent %} rounded-sm bg-primary text-white dark:text-black {% else %} text-primary {% endif %}">
-                <a class="w-full block py-2 px-4"
-                   {%- if isCurrent -%}
-                   href="#main"
-                   aria-current="page"
-                   {%- else -%}
-                   href="{{ item.url | url }}"
-                   {%- endif -%}>
-                  {{ item.title }}
-                </a>
-              </li>
-            {%- endfor -%} -->
+                        {navItems.map((item) => {
+                            return (
+                                <li
+                                    class={`${
+                                        item.isCurrent
+                                            ? "bg-primary text-white dark:text-black"
+                                            : "text-primary"
+                                    } mr-1 flex w-full rounded-sm font-medium sm:w-max`}
+                                >
+                                    <a
+                                        class="block w-full py-2 px-4"
+                                        href={item.href}
+                                    >
+                                        {item.name}
+                                    </a>
+                                </li>
+                            );
+                        })}
                     </ul>
                 </nav>
                 <label
