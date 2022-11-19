@@ -1,6 +1,6 @@
 ---
-import { Image } from "astro-eleventy-img";
-import { Sprite } from "../Icons";
+import Image from "@src/components/Image.astro";
+import { Sprite } from "@src/components/Icons";
 
 const { title, description, imgUrl, icons = [], actioncomponent } = Astro.props;
 ---
@@ -9,7 +9,11 @@ const { title, description, imgUrl, icons = [], actioncomponent } = Astro.props;
     class="transition-shadow rounded-sm shadow-sm hover:shadow-xl bg-bgel dark:bg-bgel-dark p-5 flex justify-between flex-col"
 >
     <div>
-        {imgUrl ? <Image class="h-48 object-cover" {imgUrl} alt={title} /> : ""}
+        {imgUrl ? (
+            <Image classes="h-48 object-cover" src={imgUrl} alt={title} />
+        ) : (
+            ""
+        )}
     </div>
 
     <p class="font-semibold text-xl pt-6">{title}</p>
@@ -19,13 +23,11 @@ const { title, description, imgUrl, icons = [], actioncomponent } = Astro.props;
             {icons.map((i: string) => <Sprite name={i} />)}
         </div>
         <div class="mt-2">
-            {
-                actioncomponent
-                    ? ((ActionComponent) => (
-                          <ActionComponent {...actioncomponent[1]} />
-                      ))(actioncomponent[0])
-                    : null
-            }
+            {actioncomponent
+                ? ((ActionComponent) => (
+                      <ActionComponent {...actioncomponent[1]} />
+                  ))(actioncomponent[0])
+                : null}
         </div>
     </div>
 </div>

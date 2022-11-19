@@ -1,12 +1,14 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@11ty/eleventy-img': ^2.0.1
   '@astrojs/mdx': ^0.11.6
   '@astrojs/sitemap': ^1.0.0
   '@astrojs/svelte': ^1.0.2
   '@fontsource/lexend': ^4.5.13
   '@tailwindcss/forms': ^0.5.3
   '@tailwindcss/typography': ^0.5.8
+  '@types/11ty__eleventy-img': ^2.0.1
   '@types/lodash': ^4.14.189
   '@types/node': ^18.11.9
   '@typescript-eslint/eslint-plugin': ^5.43.0
@@ -38,12 +40,14 @@ specifiers:
   typescript: ~4.9.3
 
 devDependencies:
+  '@11ty/eleventy-img': 2.0.1
   '@astrojs/mdx': 0.11.6
   '@astrojs/sitemap': 1.0.0
   '@astrojs/svelte': 1.0.2_7dvewpees4iyn2tkw2qzal77a4
   '@fontsource/lexend': 4.5.13
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.4
   '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
+  '@types/11ty__eleventy-img': 2.0.1
   '@types/lodash': 4.14.189
   '@types/node': 18.11.9
   '@typescript-eslint/eslint-plugin': 5.43.0_wze2rj5tow7zwqpgbdx2buoy3m
@@ -985,6 +989,13 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: true
 
+  /@types/11ty__eleventy-img/2.0.1:
+    resolution: {integrity: sha512-sywhYGXKRzaCb0Jc385TE0yVSToGF2VI/6+r6HJu3SBgrsLPYrbCeL/vTxrhwCK2xqzyzlEFR8mx+btEsApWpg==}
+    dependencies:
+      '@types/node': 18.11.9
+      '@types/sharp': 0.31.0
+    dev: true
+
   /@types/acorn/4.0.6:
     resolution: {integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==}
     dependencies:
@@ -1118,6 +1129,12 @@ packages:
 
   /@types/semver/7.3.13:
     resolution: {integrity: sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==}
+    dev: true
+
+  /@types/sharp/0.31.0:
+    resolution: {integrity: sha512-nwivOU101fYInCwdDcH/0/Ru6yIRXOpORx25ynEOc6/IakuCmjOAGpaO5VfUl4QkDtUC6hj+Z2eCQvgXOioknw==}
+    dependencies:
+      '@types/node': 18.11.9
     dev: true
 
   /@types/unist/2.0.6:

@@ -20,5 +20,8 @@ export default defineConfig({
                 ),
             },
         },
+        optimizeDeps: {
+            exclude: ["astro-eleventy-img"],
+        },
     },
 });

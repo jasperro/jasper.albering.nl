@@ -29,11 +29,14 @@ export default {
                     variant: "github",
                 },
             ],
+            imgUrl "/assets/images/nieuwwwnijkerk.jpg",
+            icons: ["wordpress"],
         },*/
         eggsimulator: {
             title: "Egg simulator",
             description:
                 "A game made in Godot where you try to control a rolling egg in different parkour maps.",
+            imgUrl: "src/assets/images/eggsimulator.png",
             icons: ["godot"],
             actioncomponent: [
                 Button,
@@ -49,6 +52,7 @@ export default {
             title: "Lifier",
             description:
                 "Make your life a game by earning XP through different skills and goals. On web, android and iOS with React Native.",
+            imgUrl: "src/assets/images/lifier.png",
             icons: ["react"],
             actioncomponent: [
                 Button,
