@@ -3,10 +3,10 @@ import { getLanguageFromFilename } from "@src/lib/translations";
 import PostLayout from "@src/layouts/PostLayout.astro";
 import { removeTrailingSlash } from "@src/lib/urlhelpers";
 
-export const allContent = await Astro.glob("../../lib/content/**/*.{md,mdx}");
+export const allContent = () => Astro.glob("../../lib/content/**/*.{md,mdx}");
 
 export async function getStaticPaths() {
-    const paths = allContent.map((content) => {
+    const paths = (await allContent()).map((content) => {
         const locale = getLanguageFromFilename(content.file);
 
         return {
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 
 const { locale, content } = Astro.props;
 
-const alternativeLanguages = allContent
+const alternativeLanguages = (await allContent())
     .filter(
         (p) =>
             p.frontmatter.translationKey === content.frontmatter.translationKey

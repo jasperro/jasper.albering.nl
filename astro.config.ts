@@ -6,7 +6,7 @@ import path from "path";
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [sitemap(), mdx()],
+    integrations: [mdx(), sitemap()],
     vite: {
         ssr: {
             external: ["svgo", "@11ty/eleventy-img"],
