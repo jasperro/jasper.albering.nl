@@ -6,7 +6,7 @@ const em = (px, base) => `${round(px / base)}em`;
 
 module.exports = {
     mode: "jit",
-    content: ["./src/**/*.{html,astro,svelte,md,mdx,js,ts,jsx,tsx}"],
+    content: ["./src/**/*.{html,astro,md,mdx,js,ts,jsx,tsx}"],
     darkMode: "media",
     theme: {
         extend: {
