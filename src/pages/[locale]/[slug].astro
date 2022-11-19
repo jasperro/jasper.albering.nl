@@ -2,32 +2,33 @@
 import { getLanguageFromFilename } from "@src/lib/translations";
 import PostLayout from "@src/layouts/PostLayout.astro";
 
-export const allPosts = await Astro.glob("../../../lib/posts/**/*.{md,mdx}");
+export const allContent = await Astro.glob("../../lib/content/**/*.{md,mdx}");
 
 export async function getStaticPaths() {
-    const paths = allPosts.map((post) => {
-        const locale = getLanguageFromFilename(post.file);
+    const paths = allContent.map((content) => {
+        const locale = getLanguageFromFilename(content.file);
 
         return {
             params: {
                 locale: locale,
-                slug: post.frontmatter.translationKey,
+                slug: content.frontmatter.translationKey,
             },
 
             props: {
                 locale: locale,
-                post: { ...post, locale },
+                content: { ...content, locale },
             },
         };
     });
     return paths.filter(({ params }) => !!params.locale && !!params.slug);
 }
 
-const { locale, post } = Astro.props;
+const { locale, content } = Astro.props;
 
-const alternativeLanguages = allPosts
+const alternativeLanguages = allContent
     .filter(
-        (p) => p.frontmatter.translationKey === post.frontmatter.translationKey
+        (p) =>
+            p.frontmatter.translationKey === content.frontmatter.translationKey
     )
     .map((p) => getLanguageFromFilename(p.file))
     .filter((l) => l !== locale);
@@ -36,11 +37,11 @@ const alternativeLanguageMap: { [key: string]: string } =
     alternativeLanguages.reduce((acc, lang) => {
         return {
             ...acc,
-            [lang]: `../${lang}/${post.frontmatter.translationKey}`,
+            [lang]: `../${lang}/${content.frontmatter.translationKey}`,
         };
     }, {});
 ---
 
-<PostLayout {alternativeLanguageMap} {locale} post={post}>
-    <post.Content />
+<PostLayout {alternativeLanguageMap} {locale} post={content}>
+    <content.Content />
 </PostLayout>

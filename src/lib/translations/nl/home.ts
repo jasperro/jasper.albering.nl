@@ -35,7 +35,6 @@ export default {
             title: "Eisimulator",
             description:
                 "Een spel gemaakt in Godot waar je een moeilijk bestuurbaar ei door verschillende parcours moet leiden",
-            icons: ["godot"],
             actioncomponent: [
                 Button,
                 {
@@ -47,10 +46,8 @@ export default {
             ],
         },
         lifier: {
-            title: "Lifier",
             description:
                 "Maak je leven een spel door XP te behalen door het halen van doelen. Op het web, android en iOS met React Native.",
-            icons: ["godot"],
             actioncomponent: [
                 Button,
                 {

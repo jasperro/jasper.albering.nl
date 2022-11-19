@@ -2,7 +2,7 @@
 import PostCard from "@src/components/Cards/PostCard.astro";
 import BaseLayout from "@src/layouts/BaseLayout.astro";
 import {
-    t,
+    t as tbase,
     getLanguageFromFilename,
     knownLocales,
 } from "@src/lib/translations";
@@ -21,6 +21,8 @@ export async function getStaticPaths() {
 
 const { locale } = Astro.props;
 
+const t = (key) => tbase(key, locale);
+
 const allPosts = await Astro.glob("../../../lib/posts/**/*.md");
 const posts = allPosts.filter(
     (post) => getLanguageFromFilename(post.file) === locale
@@ -28,11 +30,11 @@ const posts = allPosts.filter(
 // .map((post) => ({ ...post, url: post.frontmatter.translationKey }))
 ---
 
-<BaseLayout noMargin={false}>
+<BaseLayout {locale} noMargin={false}>
     <div class="prose dark:prose-light prose-xl">
         <h1>{t("posts").title}</h1>
     </div>
     <ul class="mt-5 grid grid-cols-responsivecards lg:gap-6 md:gap-4 gap-3">
-        {posts.map((post) => <PostCard post={post} />)}
+        {posts.map((post) => <PostCard {locale} post={post} />)}
     </ul>
 </BaseLayout>

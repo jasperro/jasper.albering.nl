@@ -5,11 +5,14 @@ import { SpriteProvider } from "astro-icon";
 import "@src/styles/main.pcss";
 import SocialLinks from "@src/components/SocialLinks.astro";
 
+await import("dayjs/locale/nl");
+
 const canonicalURL = new URL(Astro.url);
 const {
     content = {},
     noMargin = true,
     alternativeLanguageMap = null,
+    locale = "en",
 } = Astro.props;
 ---
 
@@ -19,7 +22,7 @@ const {
 
 <body class="min-h-screen flex flex-col">
     <SpriteProvider>
-        <Header {alternativeLanguageMap} />
+        <Header {alternativeLanguageMap} {locale} />
 
         <main
             id="main"

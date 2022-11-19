@@ -1,34 +1,39 @@
 ---
 import { Icon } from "@src/components/Icons";
+import { t as tbase } from "@src/lib/translations";
+import _ from "lodash";
 import LanguageSelector from "./LanguageSelector.astro";
 
 const pathName = Astro.url.pathname.replace(/\/+$/, "");
 const basePath = "/" + pathName.split("/")[1];
 
+const { alternativeLanguageMap, locale } = Astro.props;
+
+const t = (key) => tbase(key, locale);
+
 const navItems = [
     {
-        name: "Home",
-        isCurrent: basePath == pathName && new RegExp("en+$").test(pathName),
-        href: "/en",
+        name: t("navigation").home,
+        isCurrent:
+            basePath == pathName && new RegExp(locale + "+$").test(pathName),
+        href: `/${locale}`,
     },
     {
-        name: "About",
-        isCurrent: new RegExp("en/about").test(pathName),
-        href: "/en/about",
+        name: t("navigation").about,
+        isCurrent: new RegExp(locale + "/about").test(pathName),
+        href: `/${locale}/about`,
     },
     {
-        name: "CV",
-        isCurrent: new RegExp("en/cv").test(pathName),
-        href: "/en/cv",
+        name: t("navigation").cv,
+        isCurrent: new RegExp(locale + "/cv").test(pathName),
+        href: `/${locale}/cv`,
     },
     {
-        name: "Posts",
-        isCurrent: new RegExp("posts/en/*").test(pathName),
-        href: "/posts/en",
+        name: t("navigation").posts,
+        isCurrent: new RegExp("posts/" + locale + "/*").test(pathName),
+        href: "/posts/" + locale,
     },
 ];
-
-const { alternativeLanguageMap } = Astro.props;
 ---
 
 <header class="header" role="banner">
@@ -112,5 +117,7 @@ const { alternativeLanguageMap } = Astro.props;
             </div>
         </div>
     </nav>
-    <LanguageSelector {alternativeLanguageMap} />
+    {!_.isEmpty(alternativeLanguageMap) && alternativeLanguageMap != null && (
+        <LanguageSelector {alternativeLanguageMap} />
+    )}
 </header>

@@ -1,14 +1,22 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import dayjs from "dayjs";
-const { post } = Astro.props;
-const { frontmatter } = post;
+const {
+    post: { frontmatter },
+    locale,
+    alternativeLanguageMap,
+} = Astro.props;
 ---
 
-<BaseLayout content={frontmatter} noMargin={false}>
-    <div>
+<BaseLayout
+    {alternativeLanguageMap}
+    {locale}
+    content={frontmatter}
+    noMargin={false}
+>
+    <!-- <div>
         <a class="text-primary text-4xl" href=".">&#8592;</a>
-    </div>
+    </div> -->
     {frontmatter.date && (
         <time
             class="text-md block w-full pb-8 font-medium uppercase text-gray-600 dark:text-gray-300"

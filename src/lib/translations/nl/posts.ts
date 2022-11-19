@@ -1,1 +1,1 @@
-export default { title: "Posts", goBack: "Ga terug" };
+export default { goBack: "Ga terug" };

@@ -1,7 +1,7 @@
 ---
 import dayjs from "dayjs";
 
-const { post } = Astro.props;
+const { post, locale } = Astro.props;
 ---
 
 <li class="rounded-sm shadow-sm hover:shadow-xl bg-bgel dark:bg-bgel-dark">
@@ -20,7 +20,9 @@ const { post } = Astro.props;
                 class="pt-4 text-xs font-bold text-gray-600 dark:text-gray-300 uppercase text-right"
             >
                 <date
-                    >{dayjs(post.frontmatter.date).format("DD MMMM YYYY")}
+                    >{dayjs(post.frontmatter.date)
+                        .locale(locale)
+                        .format("DD MMMM YYYY")}
                 </date>
             </span>
         </div>

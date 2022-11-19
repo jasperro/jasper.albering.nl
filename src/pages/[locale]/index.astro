@@ -26,7 +26,7 @@ const alternativeLanguageMap: { [key: string]: string } = {
 delete alternativeLanguageMap[locale];
 ---
 
-<BaseLayout {alternativeLanguageMap}>
+<BaseLayout {locale} {alternativeLanguageMap}>
     <div
         class="bg-bgel my-16 p-[clamp(theme(spacing.4),4vw,theme(spacing.32))] flex flex-col"
     >
