@@ -1,44 +1,44 @@
 [build.environment]
-   NODE_VERSION = "16"  
-   NPM_FLAGS = "--version" # prevent Netlify npm install
+NODE_VERSION = "16"
+NPM_FLAGS = "--version" # prevent Netlify npm install
 
 [build]
-   command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
-   publish = "dist"
+command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
+publish = "dist"
 
 [context.production.environment]
-   ELEVENTY_ENV = "production"
+ELEVENTY_ENV = "production"
 
 [[headers]]
-   for = "/*"
-   [headers.values]
-      X-Frame-Options = "DENY"
-      X-XSS-Protection = "1; mode=block"
-      X-Content-Type-Options = "nosniff"
-      Referrer-Policy= "no-referrer-when-downgrade"
-      Permissions-Policy = "interest-cohort=()"
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-XSS-Protection = "1; mode=block"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "no-referrer-when-downgrade"
+Permissions-Policy = "interest-cohort=()"
 
 [[redirects]]
-   from = "/"
-   to = "/nl/"
-   status = 301
-   force = true
-   conditions = {Language = ["nl"]}
+from = "/"
+to = "/nl/"
+status = 301
+force = true
+conditions = { Language = ["nl"] }
 
 [[redirects]]
-   from = "/"
-   to = "/nl/"
-   status = 301
-   force = true
-   conditions = {Country = ["NL"]}
+from = "/"
+to = "/nl/"
+status = 301
+force = true
+conditions = { Country = ["NL"] }
 
 [[redirects]]
-   from = "/"
-   to = "/en/"
-   force = true
-   status = 301
+from = "/"
+to = "/en/"
+force = true
+status = 301
 
 [[redirects]]
-   from = "*"
-   to = "/404.html"
-   status = 404
+from = "*"
+to = "/404"
+status = 404
