@@ -1,12 +1,13 @@
 ---
 import dayjs from "dayjs";
+import { removeTrailingSlash } from "@src/lib/urlhelpers";
 
 const { post, locale } = Astro.props;
 ---
 
 <li class="rounded-sm shadow-sm hover:shadow-xl bg-bgel dark:bg-bgel-dark">
     <a
-        href={Astro.url.href.replace(/\/+$/, "") +
+        href={removeTrailingSlash(Astro.url.href) +
             "/" +
             post.frontmatter.translationKey}
         target="_self"

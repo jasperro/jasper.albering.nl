@@ -3,6 +3,7 @@ import BaseLayout from "@src/layouts/BaseLayout.astro";
 import { Sprite, Icon } from "@src/components/Icons";
 import { knownLocales, t as tbase } from "@src/lib/translations";
 import ProjectCard from "@src/components/Cards/ProjectCard.astro";
+import { removeTrailingSlash } from "@src/lib/urlhelpers";
 
 export async function getStaticPaths() {
     return Object.keys(knownLocales).map((locale) => ({
@@ -18,9 +19,10 @@ export async function getStaticPaths() {
 
 const { locale } = Astro.props;
 const t = (key) => tbase(key, locale);
+
 const alternativeLanguageMap: { [key: string]: string } = {
-    en: "../en",
-    nl: "../nl",
+    en: new URL("../en", removeTrailingSlash(Astro.url.href)).href,
+    nl: new URL("../nl", removeTrailingSlash(Astro.url.href)).href,
 };
 
 delete alternativeLanguageMap[locale];

@@ -1,6 +1,7 @@
 ---
 import { getLanguageFromFilename } from "@src/lib/translations";
 import PostLayout from "@src/layouts/PostLayout.astro";
+import { removeTrailingSlash } from "@src/lib/urlhelpers";
 
 export const allContent = await Astro.glob("../../lib/content/**/*.{md,mdx}");
 
@@ -37,7 +38,10 @@ const alternativeLanguageMap: { [key: string]: string } =
     alternativeLanguages.reduce((acc, lang) => {
         return {
             ...acc,
-            [lang]: `../${lang}/${content.frontmatter.translationKey}`,
+            [lang]: new URL(
+                `../${lang}/${content.frontmatter.translationKey}`,
+                removeTrailingSlash(Astro.url.href)
+            ).href,
         };
     }, {});
 ---

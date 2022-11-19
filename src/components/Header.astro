@@ -3,8 +3,9 @@ import { Icon } from "@src/components/Icons";
 import { t as tbase } from "@src/lib/translations";
 import _ from "lodash";
 import LanguageSelector from "./LanguageSelector.astro";
+import { removeTrailingSlash } from "@src/lib/urlhelpers";
 
-const pathName = Astro.url.pathname.replace(/\/+$/, "");
+const pathName = removeTrailingSlash(Astro.url.pathname);
 const basePath = "/" + pathName.split("/")[1];
 
 const { alternativeLanguageMap, locale } = Astro.props;
