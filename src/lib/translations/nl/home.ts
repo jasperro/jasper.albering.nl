@@ -9,7 +9,6 @@ export default {
         `,
     workedwith: "Ik heb ervaring met o.a.",
     projects: "Een paar van mijn projecten",
-    about: "Over mij",
     contactHeader: "Laten we praten, stuur een bericht",
     contactName: "Jouw naam",
     contactMail: "Jouw e-mailadres",

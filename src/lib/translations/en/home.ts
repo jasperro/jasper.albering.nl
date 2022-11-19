@@ -7,7 +7,6 @@ export default {
      <p>Currently, I am studying Computer Science at Utrecht University.</p>`,
     workedwith: "I have experience with",
     projects: "Projects",
-    about: "About me",
     contactHeader: "I'd love to chat, send me a message",
     contactName: "Your name",
     contactMail: "Your e-mail address",

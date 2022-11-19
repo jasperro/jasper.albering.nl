@@ -7,7 +7,7 @@ import _ from "lodash";
 const tNavigationEN = {
     home: "Home",
     posts: "Posts",
-    about: "About me",
+    about: "About",
     cv: "CV",
 };
 
