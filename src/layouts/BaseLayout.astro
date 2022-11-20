@@ -1,7 +1,6 @@
 ---
 import Meta from "@src/components/Meta.astro";
 import Header from "@src/components/Header.astro";
-import { SpriteProvider } from "astro-icon";
 import "@src/styles/main.pcss";
 import SocialLinks from "@src/components/SocialLinks.astro";
 
@@ -21,27 +20,25 @@ const {
 </head>
 
 <body class="min-h-screen flex flex-col">
-    <SpriteProvider>
-        <Header {alternativeLanguageMap} {locale} />
+    <Header {alternativeLanguageMap} {locale} />
 
-        <main
-            id="main"
-            class={`flex flex-col flex-grow overflow-hidden${
-                noMargin ? "" : " lg:p-16 md:p-8 p-4"
-            }`}
-            tabindex="-1"
-        >
-            <slot />
-        </main>
+    <main
+        id="main"
+        class={`flex flex-col flex-grow overflow-hidden${
+            noMargin ? "" : " lg:p-16 md:p-8 p-4"
+        }`}
+        tabindex="-1"
+    >
+        <slot />
+    </main>
 
-        <footer
-            class="px-8 flex flex-grow-0 justify-between items-center py-4 bg-bgel text-sm mt-16"
-            role="contentinfo"
-        >
-            <div>Jasper Albering &copy; 2016-2021</div>
-            <span class="flex gap-x-2">
-                <SocialLinks />
-            </span>
-        </footer>
-    </SpriteProvider>
+    <footer
+        class="px-8 flex flex-grow-0 justify-between items-center py-4 bg-bgel text-sm mt-16"
+        role="contentinfo"
+    >
+        <div>Jasper Albering &copy; 2016-2021</div>
+        <span class="flex gap-x-2">
+            <SocialLinks />
+        </span>
+    </footer>
 </body>
