@@ -1,9 +1,5 @@
-[build.environment]
-NODE_VERSION = "16"
-NPM_FLAGS = "--version" # prevent Netlify npm install
-
 [build]
-command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build --site $URL"
+command = "pnpm run build --site $URL"
 publish = "dist"
 
 [context.production.environment]
