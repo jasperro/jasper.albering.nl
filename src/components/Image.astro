@@ -1,23 +1,28 @@
 ---
 // Based on https://github.com/Princesseuh/astro-eleventy-img/
 import { getPicture } from "@astrojs/image";
+import { generatePlaceholder, PlaceholderOptions } from "@src/lib/placeholders";
 
 interface Props {
     src: Promise<any>;
+    imgRaw?: Promise<any>;
     alt: string;
     caption?: string;
     widths?: number[];
     sizes?: number[];
     classes?: string;
+    placeholderOptions?: PlaceholderOptions;
 }
 
 const {
     src,
+    imgRaw,
     alt,
     caption,
     widths = [300, 600],
     sizes = [300, 600],
     classes = "",
+    placeholderOptions = {},
 } = Astro.props as Props;
 
 const { image, sources } = await getPicture({
@@ -26,6 +31,19 @@ const { image, sources } = await getPicture({
     widths,
     formats: ["avif", "webp", "png"],
 });
+
+const placeHolder =
+    imgRaw == undefined
+        ? null
+        : await generatePlaceholder(src, imgRaw, placeholderOptions);
+
+const placeHolderProps =
+    placeHolder == null
+        ? {}
+        : {
+              style: `background-size: cover;background-image:url(${placeHolder?.dataURI})`,
+              onload: "this.style.backgroundImage='none'",
+          };
 ---
 
 <figure>
@@ -37,7 +55,7 @@ const { image, sources } = await getPicture({
             loading="lazy"
             decoding="async"
             alt={alt}
-            onload="this.style.backgroundImage='none'"
+            {...placeHolderProps}
         />
     </picture>
     {caption && <figcaption>{caption}</figcaption>}

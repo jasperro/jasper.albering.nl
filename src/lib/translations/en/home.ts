@@ -1,4 +1,14 @@
 import Button from "@src/components/Button.astro";
+import { readFile } from "fs/promises";
+
+// See https://github.com/withastro/astro/issues/5438
+function getUnborkedURL(path: string) {
+    if (import.meta.env.DEV) {
+        return new URL("../../../../" + path, import.meta.url).pathname;
+    } else {
+        return new URL("../" + path, import.meta.url).pathname;
+    }
+}
 
 export default {
     info: `<p>I enjoy working with all kinds of technology.
@@ -36,6 +46,9 @@ export default {
             description:
                 "A game made in Godot where you try to control a rolling egg in different parkour maps.",
             imgUrl: import("../../../assets/images/eggsimulator.png"),
+            imgRaw: readFile(
+                getUnborkedURL("src/assets/images/eggsimulator.png")
+            ),
             icons: ["godot"],
             actioncomponent: [
                 Button,
@@ -52,6 +65,7 @@ export default {
             description:
                 "Make your life a game by earning XP through different skills and goals. On web, android and iOS with React Native.",
             imgUrl: import("../../../assets/images/lifier.png"),
+            imgRaw: readFile(getUnborkedURL("src/assets/images/lifier.png")),
             icons: ["react"],
             actioncomponent: [
                 Button,

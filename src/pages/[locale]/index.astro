@@ -50,7 +50,8 @@ delete alternativeLanguageMap[locale];
             </span>
             <span
                 class="text-base block my-12 space-y-4"
-                set:html={t("home").info}></span>
+                set:html={t("home").info}
+            />
 
             <div
                 class="flex flex-wrap mt-6 gap-2 sm:p-4 p-2 w-max max-w-full sm:rounded-sm sm:shadow-md bg-bg bg-opacity-50"
@@ -101,15 +102,18 @@ delete alternativeLanguageMap[locale];
             id="projects"
             class="grid grid-cols-responsivecards gap-x-4 gap-y-4 lg:mx-0 lg:px-0 w-full"
         >
-            {Object.values(t("home").projectlist).map((project) => (
-                <ProjectCard
-                    title={project.title}
-                    description={project.description}
-                    imgUrl={project.imgUrl}
-                    icons={project.icons}
-                    actioncomponent={project.actioncomponent}
-                />
-            ))}
+            {
+                Object.values(t("home").projectlist).map((project) => (
+                    <ProjectCard
+                        title={project.title}
+                        description={project.description}
+                        imgUrl={project.imgUrl}
+                        imgRaw={project.imgRaw}
+                        icons={project.icons}
+                        actioncomponent={project.actioncomponent}
+                    />
+                ))
+            }
         </div>
         <form
             name="contact"
@@ -156,8 +160,7 @@ delete alternativeLanguageMap[locale];
             <p
                 class="text-xs text-gray-600 dark:text-gray-300"
                 set:html={t("home").formComment}
-            >
-            </p>
+            />
         </form>
     </div>
 </BaseLayout>

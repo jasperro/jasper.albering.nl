@@ -2,7 +2,14 @@
 import Image from "@src/components/Image.astro";
 import { Sprite } from "@src/components/Icons";
 
-const { title, description, imgUrl, icons = [], actioncomponent } = Astro.props;
+const {
+    title,
+    description,
+    imgUrl,
+    imgRaw,
+    icons = [],
+    actioncomponent,
+} = Astro.props;
 ---
 
 <div
@@ -11,7 +18,12 @@ const { title, description, imgUrl, icons = [], actioncomponent } = Astro.props;
     <div>
         {
             imgUrl ? (
-                <Image classes="h-48 object-cover" src={imgUrl} alt={title} />
+                <Image
+                    classes="h-48 object-cover"
+                    src={imgUrl}
+                    imgRaw={imgRaw}
+                    alt={title}
+                />
             ) : (
                 ""
             )
