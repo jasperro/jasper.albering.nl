@@ -1,15 +1,20 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
+import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 import { fileURLToPath } from "url";
 import path from "path";
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [mdx(), sitemap()],
+    integrations: [
+        image({ serviceEntryPoint: "@astrojs/image/sharp" }),
+        mdx(),
+        sitemap(),
+    ],
     vite: {
         ssr: {
-            external: ["svgo", "@11ty/eleventy-img"],
+            external: ["svgo"],
         },
         resolve: {
             alias: {
@@ -18,9 +23,6 @@ export default defineConfig({
                     "node_modules"
                 ),
             },
-        },
-        optimizeDeps: {
-            exclude: ["astro-eleventy-img"],
         },
     },
 });

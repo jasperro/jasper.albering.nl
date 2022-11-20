@@ -1,67 +1,44 @@
 ---
-// Based on
-// github.com/Princesseuh/astro-eleventy-img/blob/main/src/Image.astro
-import {
-    generatePlaceholder,
-    generateImage,
-    PlaceholderOptions,
-    ImageOptions,
-} from "astro-eleventy-img";
-
-import Image from "@11ty/eleventy-img";
+// Based on https://github.com/Princesseuh/astro-eleventy-img/
+import { getPicture } from "@astrojs/image";
 
 interface Props {
-    src: string;
+    src: Promise<any>;
     alt: string;
     caption?: string;
-    options?: ImageOptions;
+    widths?: number[];
     sizes?: number[];
     classes?: string;
-    quality?: number;
-    placeholderOptions?: PlaceholderOptions;
 }
 
 const {
     src,
     alt,
     caption,
-    options = {},
-    sizes = [],
+    widths = [300, 600],
+    sizes = [300, 600],
     classes = "",
-    quality = 90,
-    placeholderOptions = {},
 } = Astro.props as Props;
 
-const image = generateImage(
+const { image, sources } = await getPicture({
+    aspectRatio: 0,
     src,
-    Object.assign(options, {
-        widths: [null],
-        formats: ["avif", "webp", "png"],
-        sharpWebpOptions: {
-            quality: quality,
-        },
-        sharpAvifOptions: {
-            quality: quality,
-        },
-    })
-);
-
-const placeHolder = await generatePlaceholder(src, placeholderOptions);
-
-const imageAttributes = {
-    class: classes,
-    alt,
-    sizes,
-    loading: "lazy",
-    decoding: "async",
-    style: `background-size: cover;background-image:url(${placeHolder?.dataURI})`,
-    onload: `this.style.backgroundImage='none'`,
-};
-
-const html = Image.generateHTML(image, imageAttributes);
+    widths,
+    formats: ["avif", "webp", "png"],
+});
 ---
 
 <figure>
-    <Fragment set:html={html} />
+    <picture>
+        {sources.map((attrs) => <source {...attrs} {sizes} />)}
+        <img
+            {...image}
+            class={classes}
+            loading="lazy"
+            decoding="async"
+            alt={alt}
+            onload="this.style.backgroundImage='none'"
+        />
+    </picture>
     {caption && <figcaption>{caption}</figcaption>}
 </figure>

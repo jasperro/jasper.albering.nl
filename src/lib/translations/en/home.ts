@@ -35,7 +35,7 @@ export default {
             title: "Egg simulator",
             description:
                 "A game made in Godot where you try to control a rolling egg in different parkour maps.",
-            imgUrl: "src/assets/images/eggsimulator.png",
+            imgUrl: import("../../../assets/images/eggsimulator.png"),
             icons: ["godot"],
             actioncomponent: [
                 Button,
@@ -51,7 +51,7 @@ export default {
             title: "Lifier",
             description:
                 "Make your life a game by earning XP through different skills and goals. On web, android and iOS with React Native.",
-            imgUrl: "src/assets/images/lifier.png",
+            imgUrl: import("../../../assets/images/lifier.png"),
             icons: ["react"],
             actioncomponent: [
                 Button,

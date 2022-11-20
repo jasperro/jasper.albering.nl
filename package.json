@@ -19,23 +19,23 @@
     "author": "Jasper Albering",
     "license": "MIT",
     "devDependencies": {
-        "@11ty/eleventy-img": "^2.0.1",
+        "@astrojs/image": "^0.11.6",
         "@astrojs/mdx": "^0.11.6",
         "@astrojs/sitemap": "^1.0.0",
         "@fontsource/lexend": "^4.5.13",
         "@tailwindcss/forms": "^0.5.3",
         "@tailwindcss/typography": "^0.5.8",
-        "@types/11ty__eleventy-img": "^2.0.1",
         "@types/lodash": "^4.14.189",
         "@types/node": "^18.11.9",
+        "@types/sharp": "^0.31.0",
         "@typescript-eslint/eslint-plugin": "^5.43.0",
         "@typescript-eslint/parser": "^5.43.0",
         "astro": "^1.6.10",
-        "astro-eleventy-img": "^0.5.0",
         "astro-icon": "^0.8.0",
         "autoprefixer": "^10.4.13",
         "cssnano": "^5.1.14",
         "cssnano-preset-advanced": "^5.3.9",
+        "datauri": "^4.1.0",
         "dayjs": "^1.11.6",
         "eslint": "^8.28.0",
         "eslint-config-prettier": "^8.5.0",
@@ -49,5 +49,12 @@
         "tslib": "^2.4.1",
         "typescript": "~4.9.3"
     },
-    "type": "module"
+    "peerDependencies": {
+        "postcss": ">=8.4.6 <9.0.0",
+        "rollup": ">=2"
+    },
+    "type": "module",
+    "dependencies": {
+        "sharp": "^0.31.2"
+    }
 }
