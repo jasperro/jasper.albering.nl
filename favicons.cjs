@@ -2,7 +2,7 @@ const favicons = require("favicons");
 const path = require("node:path");
 const fs = require("fs");
 
-const baseOutputDir = "./src/assets/images/favicon/";
+const baseOutputDir = "./public/assets/images/favicon/";
 
 favicons(
     "./src/assets/images/svg/iconlight.svg",

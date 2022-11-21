@@ -6,8 +6,6 @@ dist/
 
 .DS_Store
 
-# astro-eleventy-img
-public/assets/images
 src/assets/placeholders
 
 node_modules

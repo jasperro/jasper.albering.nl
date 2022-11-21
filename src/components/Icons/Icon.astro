@@ -5,6 +5,8 @@ let props = Astro.props;
 // Defaults for icon size
 props.class = props.class ? props.class : defaults.class;
 props.class += " " + globals.class;
+
+props.title = props.title ? props.title : props.name;
 ---
 
 <Icon {...props} />
