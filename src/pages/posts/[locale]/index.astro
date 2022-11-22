@@ -6,6 +6,7 @@ import {
     getLanguageFromFilename,
     knownLocales,
 } from "@src/lib/translations";
+import { removeTrailingSlash } from "@src/lib/urlhelpers";
 
 export async function getStaticPaths() {
     return Object.keys(knownLocales).map((locale) => ({
@@ -28,9 +29,16 @@ const posts = allPosts.filter(
     (post) => getLanguageFromFilename(post.file) === locale
 );
 // .map((post) => ({ ...post, url: post.frontmatter.translationKey }))
+
+const alternativeLanguageMap: { [key: string]: string } = {
+    en: new URL("en", removeTrailingSlash(Astro.url.href)).href,
+    nl: new URL("nl", removeTrailingSlash(Astro.url.href)).href,
+};
+
+delete alternativeLanguageMap[locale];
 ---
 
-<BaseLayout {locale} noMargin={false}>
+<BaseLayout {locale} noMargin={false} {alternativeLanguageMap}>
     <div class="prose dark:prose-light prose-xl">
         <h1>{t("posts").title}</h1>
     </div>
