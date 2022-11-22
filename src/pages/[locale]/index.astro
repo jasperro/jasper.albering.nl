@@ -75,92 +75,93 @@ delete alternativeLanguageMap[locale];
                 </a>
             </div>
         </div>
-        <!--div class="max-w-3xl flex flex-col">
-        <span class="text-xs font-medium mt-6">
-            <p class="mt-6">{ t('home', 'workedwith') }</p>
-            <p class="mt-2 select-none tracking-[.25em] md:tracking-[.75em]">
-                <Sprite name='mdi:github' />
-                <Sprite name='mdi:open-source-initiative' />
-                <Sprite name='mdi:linux' />
-                <Sprite name='mdi:react' />
-                <Sprite name='mdi:language-html5' />
-                <Sprite name='mdi:language-css3' />
-                <Sprite name='mdi:language-javascript' />
-                <Sprite name='mdi:language-typescript' />
-                <Sprite name='mdi:raspberry-pi' />
-                <Sprite name='mdi:home-assistant' />
-                <Sprite name='mdi:godot' />
-                <Sprite name='mdi:eleventy' />
-                <Sprite name='mdi:hugo' />
-            </p>
-        </span>
-        </div-->
+        <!-- <div class="max-w-3xl flex flex-col">
+            <span class="text-xs font-medium mt-6">
+                <p class="mt-6">{t("home").workedwith}</p>
+                <p
+                    class="mt-2 select-none tracking-[.25em] md:tracking-[.75em]"
+                >
+                    <Sprite name="github" />
+                    <Sprite name="open-source-initiative" />
+                    <Sprite name="linux" />
+                    <Sprite name="react" />
+                    <Sprite name="language-html5" />
+                    <Sprite name="language-css3" />
+                    <Sprite name="language-javascript" />
+                    <Sprite name="language-typescript" />
+                    <Sprite name="raspberry-pi" />
+                    <Sprite name="home-assistant" />
+                    <Sprite name="godot" />
+                    <Sprite name="eleventy" />
+                    <Sprite name="hugo" />
+                </p>
+            </span>
+        </div> -->
     </div>
     <div class="mx-[clamp(1rem,6vw,19rem)]">
-        <h1 class="text-3xl mt-8 mb-6">{t("home").projects}</h1>
-        <div
-            id="projects"
-            class="grid grid-cols-responsivecards gap-x-4 gap-y-4 lg:mx-0 lg:px-0 w-full"
-        >
-            {
-                Object.values(t("home").projectlist).map((project) => (
-                    <ProjectCard
-                        title={project.title}
-                        description={project.description}
-                        imgUrl={project.imgUrl}
-                        imgRaw={project.imgRaw}
-                        icons={project.icons}
-                        actioncomponent={project.actioncomponent}
-                    />
-                ))
-            }
-        </div>
-        <form
-            name="contact"
-            id="contact"
-            class="my-4"
-            method="post"
-            data-netlify="true"
-        >
-            <h1 class="text-3xl mt-8 mb-6">{t("home").contactHeader}</h1>
-            <p>
-                <label class="text-sm font-medium">
-                    {t("home").contactName}
+        <section>
+            <h1 class="text-3xl py-6">{t("home").projects}</h1>
+            <div
+                id="projects"
+                class="grid grid-cols-responsivecards gap-x-4 gap-y-4 lg:mx-0 lg:px-0 w-full"
+            >
+                {
+                    Object.values(t("home").projectlist).map((project) => (
+                        <ProjectCard
+                            title={project.title}
+                            description={project.description}
+                            imgUrl={project.imgUrl}
+                            imgRaw={project.imgRaw}
+                            icons={project.icons}
+                            actioncomponent={project.actioncomponent}
+                        />
+                    ))
+                }
+            </div>
+        </section>
+        <section class="mt-6">
+            <form name="contact" id="contact" method="post" data-netlify="true">
+                <h1 class="text-3xl py-6">{t("home").contactHeader}</h1>
+                <p>
+                    <label class="text-sm font-medium">
+                        {t("home").contactName}
+                        <input
+                            class="text-input w-full max-w-3xl"
+                            type="text"
+                            name="name"
+                        />
+                    </label>
+                </p>
+                <p>
+                    <label class="text-sm font-medium">
+                        {t("home").contactMail}
+                        <input
+                            class="text-input w-full max-w-3xl"
+                            type="email"
+                            name="email"
+                        />
+                    </label>
+                </p>
+                <p>
+                    <label class="text-sm font-medium">
+                        {t("home").contactMessage}
+                        <textarea
+                            name="message"
+                            class="text-input w-full max-w-3xl"></textarea>
+                    </label>
+                </p>
+                <p>
                     <input
-                        class="text-input w-full max-w-3xl"
-                        type="text"
-                        name="name"
+                        type="submit"
+                        value={t("home").submit}
+                        class="my-4 py-2 px-4 shadow-sm text-sm font-medium rounded-sm text-white dark:text-black bg-primary hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent"
                     />
-                </label>
-            </p>
-            <p>
-                <label class="text-sm font-medium">
-                    {t("home").contactMail}
-                    <input
-                        class="text-input w-full max-w-3xl"
-                        type="email"
-                        name="email"
-                    />
-                </label>
-            </p>
-            <p>
-                <label class="text-sm font-medium">
-                    {t("home").contactMessage}
-                    <textarea name="message" class="text-input w-full max-w-3xl"
-                    ></textarea>
-                </label>
-            </p>
-            <p>
-                <input
-                    type="submit"
-                    value={t("home").submit}
-                    class="my-4 py-2 px-4 shadow-sm text-sm font-medium rounded-sm text-white dark:text-black bg-primary hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent"
+                </p>
+                <p
+                    class="text-xs text-gray-600 dark:text-gray-300"
+                    set:html={t("home").formComment}
                 />
-            </p>
-            <p
-                class="text-xs text-gray-600 dark:text-gray-300"
-                set:html={t("home").formComment}
-            />
-        </form>
+            </form>
+        </section>
     </div>
 </BaseLayout>
