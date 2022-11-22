@@ -1,33 +1,51 @@
 ---
 import * as headMeta from "@src/lib/meta.json";
+import logoSVG from "@src/icons/logo.svg";
+import { removeTrailingSlash } from "@src/lib/urlhelpers";
 export interface Props {
     content: any;
     canonicalURL: URL;
 }
 
-const { content = {}, canonicalURL = "" } = Astro.props;
-
-import logoSVG from "@src/icons/logo.svg";
+const {
+    content = {},
+    canonicalURL = removeTrailingSlash(Astro.url.href),
+    title = content.title,
+} = Astro.props;
 ---
 
 <!--General -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>{headMeta.title}</title>
-
-<meta name="description" content={headMeta.description} />
-<meta name="google-site-verification" content={headMeta.googleverify} />
-
 <link rel="canonical" href={canonicalURL} />
+
+<!-- Preloads -->
+<link
+    rel="preload"
+    as="font"
+    href={(
+        await import(
+            "node_modules/@fontsource/lexend/files/lexend-latin-variable-wghtOnly-normal.woff2"
+        )
+    ).default}
+    type="font/woff2"
+    crossorigin="anonymous"
+/>
+
+<title>
+    {!!title ? `${title} | ${headMeta.title}` : headMeta.title}
+</title>
+<meta name="description" content={headMeta.description} />
 
 <!-- OpenGraph -->
 <meta property="og:site_name" content={headMeta.title} />
-<meta property="og:title" content={content.title && headMeta.title} />
+<meta property="og:title" content={title && headMeta.title} />
 <meta property="og:description" content={headMeta.description} />
 
 <meta name="application-name" content={headMeta.title} />
 <meta name="apple-mobile-web-app-title" content={headMeta.title} />
 
+<!-- Favicons -->
 <link rel="icon" type="image/svg+xml" href={logoSVG} />
 
 <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
@@ -52,7 +70,7 @@ import logoSVG from "@src/icons/logo.svg";
 <link rel="manifest" href="/assets/images/favicon/manifest.json" />
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="theme-color" content="#007a72" />
-<meta name="application-name" content={content.title && headMeta.title} />
+<meta name="application-name" content={title && headMeta.title} />
 <link
     rel="apple-touch-icon"
     sizes="57x57"
@@ -133,3 +151,5 @@ import logoSVG from "@src/icons/logo.svg";
     rel="yandex-tableau-widget"
     href="/assets/images/favicon/yandex-browser-manifest.json"
 />
+
+<meta name="google-site-verification" content={headMeta.googleverify} />

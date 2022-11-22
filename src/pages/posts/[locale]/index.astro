@@ -38,7 +38,12 @@ const alternativeLanguageMap: { [key: string]: string } = {
 delete alternativeLanguageMap[locale];
 ---
 
-<BaseLayout {locale} noMargin={false} {alternativeLanguageMap}>
+<BaseLayout
+    {locale}
+    noMargin={false}
+    {alternativeLanguageMap}
+    content={{ title: "Posts" }}
+>
     <div class="prose dark:prose-light prose-xl">
         <h1>{t("posts").title}</h1>
     </div>
