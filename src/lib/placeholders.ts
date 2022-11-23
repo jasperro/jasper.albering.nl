@@ -4,7 +4,6 @@ import sharp from "sharp";
 import DataURIParser from "datauri/parser";
 import { createHash } from "crypto";
 import { mkdir, readFileSync, writeFile } from "fs";
-import path from "path";
 
 const cache: { [imgSrc: string]: PlaceholderResult } = {};
 
@@ -91,9 +90,9 @@ async function getDataURI(
 
     // Find perfect size for placeholder
     const placeholderDimension = getBitmapDimensions(
-        imageMetadata.width,
-        imageMetadata.height,
-        options.quality
+        imageMetadata.width ?? 0,
+        imageMetadata.height ?? 0,
+        options.quality!
     );
 
     // Create image
@@ -115,7 +114,7 @@ async function getDataURI(
     cache[imgSrc] = data;
 
     // Let's try to make the dir first, in case it doesn't exist
-    mkdir(options.outputDir, { recursive: true }, (err) => {
+    mkdir(options.outputDir!, { recursive: true }, (err) => {
         if (err) {
             console.error(err);
         }

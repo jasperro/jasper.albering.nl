@@ -1,7 +1,12 @@
 ---
 import BaseLayout from "@src/layouts/BaseLayout.astro";
 import { Sprite, Icon } from "@src/components/Icons";
-import { knownLocales, t as tbase } from "@src/lib/translations";
+import {
+    AlternativeLanguageMap,
+    knownLocales,
+    LocaleCode,
+    t as tbase,
+} from "@src/lib/translations";
 import ProjectCard from "@src/components/Cards/ProjectCard.astro";
 import { removeTrailingSlash } from "@src/lib/urlhelpers";
 
@@ -17,10 +22,10 @@ export async function getStaticPaths() {
     }));
 }
 
-const { locale } = Astro.props;
-const t = (key) => tbase(key, locale);
+const { locale } = Astro.props as { locale: LocaleCode };
+const t = tbase[locale];
 
-const alternativeLanguageMap: { [key: string]: string } = {
+const alternativeLanguageMap: AlternativeLanguageMap = {
     en: new URL("../en", removeTrailingSlash(Astro.url.href)).href,
     nl: new URL("../nl", removeTrailingSlash(Astro.url.href)).href,
 };
@@ -28,7 +33,7 @@ const alternativeLanguageMap: { [key: string]: string } = {
 delete alternativeLanguageMap[locale];
 ---
 
-<BaseLayout {locale} {alternativeLanguageMap}>
+<BaseLayout locale={locale} {alternativeLanguageMap}>
     <div
         class="bg-bgel my-16 p-[clamp(theme(spacing.4),4vw,theme(spacing.32))] flex flex-col"
     >
@@ -50,7 +55,7 @@ delete alternativeLanguageMap[locale];
             </span>
             <span
                 class="text-base block my-12 space-y-4"
-                set:html={t("home").info}
+                set:html={t.home.info}
             />
 
             <div
@@ -77,7 +82,7 @@ delete alternativeLanguageMap[locale];
         </div>
         <!-- <div class="max-w-3xl flex flex-col">
             <span class="text-xs font-medium mt-6">
-                <p class="mt-6">{t("home").workedwith}</p>
+                <p class="mt-6">{t.home.workedwith}</p>
                 <p
                     class="mt-2 select-none tracking-[.25em] md:tracking-[.75em]"
                 >
@@ -100,13 +105,13 @@ delete alternativeLanguageMap[locale];
     </div>
     <div class="mx-[clamp(1rem,6vw,19rem)]">
         <section>
-            <h1 class="text-3xl py-6">{t("home").projects}</h1>
+            <h1 class="text-3xl py-6">{t.home.projects}</h1>
             <div
                 id="projects"
                 class="grid grid-cols-responsivecards gap-x-4 gap-y-4 lg:mx-0 lg:px-0 w-full"
             >
                 {
-                    Object.values(t("home").projectlist).map((project) => (
+                    Object.values(t.home.projectlist).map((project) => (
                         <ProjectCard
                             title={project.title}
                             description={project.description}
@@ -121,10 +126,10 @@ delete alternativeLanguageMap[locale];
         </section>
         <section class="mt-6">
             <form name="contact" id="contact" method="post" data-netlify="true">
-                <h1 class="text-3xl py-6">{t("home").contactHeader}</h1>
+                <h1 class="text-3xl py-6">{t.home.contactHeader}</h1>
                 <p>
                     <label class="text-sm font-medium">
-                        {t("home").contactName}
+                        {t.home.contactName}
                         <input
                             class="text-input w-full max-w-3xl"
                             type="text"
@@ -134,7 +139,7 @@ delete alternativeLanguageMap[locale];
                 </p>
                 <p>
                     <label class="text-sm font-medium">
-                        {t("home").contactMail}
+                        {t.home.contactMail}
                         <input
                             class="text-input w-full max-w-3xl"
                             type="email"
@@ -144,7 +149,7 @@ delete alternativeLanguageMap[locale];
                 </p>
                 <p>
                     <label class="text-sm font-medium">
-                        {t("home").contactMessage}
+                        {t.home.contactMessage}
                         <textarea
                             name="message"
                             class="text-input w-full max-w-3xl"></textarea>
@@ -153,13 +158,13 @@ delete alternativeLanguageMap[locale];
                 <p>
                     <input
                         type="submit"
-                        value={t("home").submit}
+                        value={t.home.submit}
                         class="my-4 py-2 px-4 shadow-sm text-sm font-medium rounded-sm text-white dark:text-black bg-primary hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent"
                     />
                 </p>
                 <p
                     class="text-xs text-gray-600 dark:text-gray-300"
-                    set:html={t("home").formComment}
+                    set:html={t.home.formComment}
                 />
             </form>
         </section>

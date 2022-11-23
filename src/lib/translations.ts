@@ -16,38 +16,45 @@ const tNavigationNL = {
     about: "Over Mij",
 };
 
-const translations: {
-    home: { [key: string]: typeof tHomeEN };
-    posts: { [key: string]: typeof tPostsEN };
-    navigation: { [key: string]: typeof tNavigationEN };
-} = {
-    home: {
-        en: tHomeEN,
-        nl: _.merge({}, tHomeEN, tHomeNL),
+const translations = {
+    en: {
+        home: tHomeEN,
+        posts: tPostsEN,
+        navigation: tNavigationEN,
     },
-    posts: {
-        en: tPostsEN,
-        nl: _.merge({}, tPostsEN, tPostsNL),
-    },
-    navigation: {
-        en: tNavigationEN,
-        nl: _.merge({}, tNavigationEN, tNavigationNL),
+    nl: {
+        home: tHomeNL,
+        posts: tPostsNL,
+        navigation: tNavigationNL,
     },
 };
 
-export const locale = "en";
+export const fallbackLocale = "en";
 
-export const knownLocales: { [locale: string]: string } = {
+(Object.keys(translations) as Array<keyof typeof translations>).forEach((l) => {
+    if (l !== fallbackLocale)
+        translations[l] = _.merge(
+            {},
+            translations[fallbackLocale],
+            translations[l]
+        );
+});
+
+export const t = translations as {
+    [key in keyof typeof knownLocales]: typeof translations["en"];
+};
+
+export const knownLocales = {
     en: "English",
     nl: "Nederlands",
 };
-
-export function t(page: keyof typeof translations, locale: "en" | "nl" = "en") {
-    return translations[page][locale];
-}
 
 export function getLanguageFromFilename(path: string) {
     const parts = path.split("/");
     const locale = parts[parts.length - 2];
     return locale;
 }
+
+export type LocaleCode = keyof typeof knownLocales;
+
+export type AlternativeLanguageMap = { [k in LocaleCode]: string };

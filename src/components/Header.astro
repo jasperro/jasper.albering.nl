@@ -1,6 +1,10 @@
 ---
 import { Icon } from "@src/components/Icons";
-import { t as tbase } from "@src/lib/translations";
+import {
+    AlternativeLanguageMap,
+    LocaleCode,
+    t as tbase,
+} from "@src/lib/translations";
 import _ from "lodash";
 import LanguageSelector from "./LanguageSelector.astro";
 import { removeTrailingSlash } from "@src/lib/urlhelpers";
@@ -8,29 +12,32 @@ import { removeTrailingSlash } from "@src/lib/urlhelpers";
 const pathName = removeTrailingSlash(Astro.url.pathname);
 const basePath = "/" + pathName.split("/")[1];
 
-const { alternativeLanguageMap, locale } = Astro.props;
+const { alternativeLanguageMap, locale } = Astro.props as {
+    alternativeLanguageMap: AlternativeLanguageMap;
+    locale: LocaleCode;
+};
 
-const t = (key) => tbase(key, locale);
+const t = tbase[locale];
 
 const navItems = [
     {
-        name: t("navigation").home,
+        name: t.navigation.home,
         isCurrent:
             basePath == pathName && new RegExp(locale + "+$").test(pathName),
         href: `/${locale}`,
     },
     {
-        name: t("navigation").about,
+        name: t.navigation.about,
         isCurrent: new RegExp(locale + "/about").test(pathName),
         href: `/${locale}/about`,
     },
     {
-        name: t("navigation").cv,
+        name: t.navigation.cv,
         isCurrent: new RegExp(locale + "/cv").test(pathName),
         href: `/${locale}/cv`,
     },
     {
-        name: t("navigation").posts,
+        name: t.navigation.posts,
         isCurrent: new RegExp("posts/" + locale + "/*").test(pathName),
         href: "/posts/" + locale,
     },
@@ -87,24 +94,26 @@ const navItems = [
                                 optimize={false}
                             />
                         </li>
-                        {navItems.map((item) => {
-                            return (
-                                <li
-                                    class={`${
-                                        item.isCurrent
-                                            ? "bg-primary text-white dark:text-black"
-                                            : "text-primary"
-                                    } mr-1 flex w-full rounded-sm font-medium sm:w-max`}
-                                >
-                                    <a
-                                        class="block w-full py-2 px-4"
-                                        href={item.href}
+                        {
+                            navItems.map((item) => {
+                                return (
+                                    <li
+                                        class={`${
+                                            item.isCurrent
+                                                ? "bg-primary text-white dark:text-black"
+                                                : "text-primary"
+                                        } mr-1 flex w-full rounded-sm font-medium sm:w-max`}
                                     >
-                                        {item.name}
-                                    </a>
-                                </li>
-                            );
-                        })}
+                                        <a
+                                            class="block w-full py-2 px-4"
+                                            href={item.href}
+                                        >
+                                            {item.name}
+                                        </a>
+                                    </li>
+                                );
+                            })
+                        }
                     </ul>
                 </nav>
                 <label
@@ -118,7 +127,10 @@ const navItems = [
             </div>
         </div>
     </nav>
-    {!_.isEmpty(alternativeLanguageMap) && alternativeLanguageMap != null && (
-        <LanguageSelector {alternativeLanguageMap} />
-    )}
+    {
+        !_.isEmpty(alternativeLanguageMap) &&
+            alternativeLanguageMap != null && (
+                <LanguageSelector {alternativeLanguageMap} />
+            )
+    }
 </header>

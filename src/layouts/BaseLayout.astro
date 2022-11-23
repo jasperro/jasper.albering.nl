@@ -3,6 +3,7 @@ import Meta from "@src/components/Meta.astro";
 import Header from "@src/components/Header.astro";
 import "@src/styles/main.pcss";
 import SocialLinks from "@src/components/SocialLinks.astro";
+import { AlternativeLanguageMap, LocaleCode } from "@src/lib/translations";
 
 await import("dayjs/locale/nl");
 
@@ -12,7 +13,12 @@ const {
     noMargin = true,
     alternativeLanguageMap = null,
     locale = "en",
-} = Astro.props;
+} = Astro.props as {
+    content: any;
+    noMargin: boolean;
+    alternativeLanguageMap: AlternativeLanguageMap;
+    locale: LocaleCode;
+};
 ---
 
 <html lang={locale}>
@@ -21,7 +27,7 @@ const {
     </head>
 
     <body class="min-h-screen flex flex-col">
-        <Header {alternativeLanguageMap} {locale} />
+        <Header {alternativeLanguageMap} locale={locale} />
 
         <main
             id="main"
