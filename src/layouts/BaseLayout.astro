@@ -24,6 +24,11 @@ const {
 <html lang={locale}>
     <head>
         <Meta {content} {canonicalURL} />
+        <script is:inline>
+            function setUserLanguage(language = "en") {
+                document.cookie = `nf_lang=${language}; secure; path=/`;
+            }
+        </script>
     </head>
 
     <body class="min-h-screen flex flex-col">
