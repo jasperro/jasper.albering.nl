@@ -4718,7 +4718,7 @@ packages:
 
   /prettier-plugin-astro/0.7.2:
     resolution: {integrity: sha512-mmifnkG160BtC727gqoimoxnZT/dwr8ASxpoGGl6EHevhfblSOeu+pwH1LAm5Qu1MynizktztFujHHaijLCkww==}
-    engines: {node: ^14.15.0 || >=16.0.0, pnpm: '>=7.14.0'}
+    engines: {node: ^14.15.0 || >=16.0.0, pnpm: '>=7.13.0'}
     dependencies:
       '@astrojs/compiler': 0.31.4
       prettier: 2.8.3
@@ -4728,7 +4728,7 @@ packages:
 
   /prettier-plugin-astro/0.8.0:
     resolution: {integrity: sha512-kt9wk33J7HvFGwFaHb8piwy4zbUmabC8Nu+qCw493jhe96YkpjscqGBPy4nJ9TPy9pd7+kEx1zM81rp+MIdrXg==}
-    engines: {node: ^14.15.0 || >=16.0.0, pnpm: '>=7.14.0'}
+    engines: {node: ^14.15.0 || >=16.0.0, pnpm: '>=7.13.0'}
     dependencies:
       '@astrojs/compiler': 1.0.1
       prettier: 2.8.3

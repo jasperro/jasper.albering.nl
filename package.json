@@ -56,5 +56,8 @@
     "type": "module",
     "dependencies": {
         "sharp": "^0.31.3"
+    },
+    "engines": {
+        "pnpm": ">=7.13.0"
     }
 }
