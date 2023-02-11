@@ -1,13 +1,13 @@
 #nav-toggle:checked ~ .nav-shadow-togglable {
-    @apply shadow-none bg-bg;
+    @apply shadow-none;
 }
 
 #nav-toggle:checked ~ .nav-items-wrapper nav {
-    @apply flex max-h-screen top-0 -translate-y-full sm:translate-y-0 bg-bg shadow-none;
+    @apply top-0 flex max-h-screen -translate-y-full shadow-none sm:translate-y-0;
 }
 
 #nav-toggle:checked ~ .nav-items-wrapper .nav-hide {
-    @apply bg-transparent h-0;
+    @apply h-0 bg-transparent;
 }
 
 #lang-toggle:checked ~ nav {

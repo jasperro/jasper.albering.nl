@@ -1,0 +1,51 @@
+---
+import { FullTranslationMap } from "@src/lib/translations";
+
+const { t } = Astro.props as {
+    t: FullTranslationMap;
+};
+---
+
+<section class="mt-6">
+    <form name="contact" id="contact" method="post" data-netlify="true">
+        <h1 class="py-6 text-3xl">{t.home.contactHeader}</h1>
+        <p>
+            <label class="text-sm font-medium">
+                {t.home.contactName}
+                <input
+                    class="text-input w-full max-w-3xl"
+                    type="text"
+                    name="name"
+                />
+            </label>
+        </p>
+        <p>
+            <label class="text-sm font-medium">
+                {t.home.contactMail}
+                <input
+                    class="text-input w-full max-w-3xl"
+                    type="email"
+                    name="email"
+                />
+            </label>
+        </p>
+        <p>
+            <label class="text-sm font-medium">
+                {t.home.contactMessage}
+                <textarea name="message" class="text-input w-full max-w-3xl"
+                ></textarea>
+            </label>
+        </p>
+        <p>
+            <input
+                type="submit"
+                value={t.home.submit}
+                class="my-4 rounded-sm bg-primary py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent dark:text-black"
+            />
+        </p>
+        <p
+            class="text-xs text-gray-600 dark:text-gray-300"
+            set:html={t.home.sendMail}
+        />
+    </form>
+</section>

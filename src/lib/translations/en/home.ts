@@ -12,8 +12,7 @@ export default {
     contactMail: "Your e-mail address",
     contactMessage: "Your message",
     submit: "Submit",
-    formComment:
-        '// Form data is sent with <a class="underline text-primary" href="https://www.netlify.com/">netlify</a>.',
+    sendMail: `Send a mail to <a href="mailto:jasper@albering.nl">jasper@albering.nl</a>`,
     projectlist: {
         /*wereldwinkel: {
             title: "World Shop Nijkerk",

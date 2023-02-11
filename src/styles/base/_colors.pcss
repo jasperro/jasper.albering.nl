@@ -25,3 +25,15 @@
         --color-primary: var(--color-primary-light);
     }
 }
+
+@layer components {
+    .bg-jasperro-gradient {
+        background: rgb(13, 38, 37);
+        background: linear-gradient(
+            140deg,
+            hsl(var(--color-bg-element)) -20%,
+            hsl(var(--color-bg)) 60%,
+            hsl(var(--color-primary)) 140%
+        );
+    }
+}

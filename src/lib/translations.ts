@@ -40,9 +40,13 @@ export const fallbackLocale = "en";
         );
 });
 
-export const t = translations as {
-    [key in keyof typeof knownLocales]: typeof translations["en"];
+export const t = translations as TranslationMap;
+
+export type TranslationMap = {
+    [key in keyof typeof knownLocales]: (typeof translations)["en"];
 };
+
+export type FullTranslationMap = TranslationMap[typeof fallbackLocale];
 
 export const knownLocales = {
     en: "English",

@@ -1,4 +1,5 @@
 ---
+import { HTMLAttributes } from "astro/types";
 import Meta from "@src/components/Meta.astro";
 import Header from "@src/components/Header.astro";
 import "@src/styles/main.pcss";
@@ -13,12 +14,14 @@ const {
     noMargin = true,
     alternativeLanguageMap = null,
     locale = "en",
+    class: className,
+    "class:list": classList,
 } = Astro.props as {
     content: any;
     noMargin: boolean;
     alternativeLanguageMap: AlternativeLanguageMap;
     locale: LocaleCode;
-};
+} & HTMLAttributes<"body">;
 ---
 
 <html lang={locale}>
@@ -31,7 +34,9 @@ const {
         </script>
     </head>
 
-    <body class="min-h-screen flex flex-col">
+    <body
+        class:list={["flex", "min-h-screen", "flex-col", className, classList]}
+    >
         <Header {alternativeLanguageMap} locale={locale} />
 
         <main
@@ -45,7 +50,7 @@ const {
         </main>
 
         <footer
-            class="px-8 flex flex-grow-0 justify-between items-center py-4 bg-bgel text-sm mt-16"
+            class="mt-16 flex flex-grow-0 items-center justify-between bg-bgel bg-opacity-50 px-8 py-4 text-sm"
             role="contentinfo"
         >
             <div>Jasper Albering &copy; 2016-{new Date().getFullYear()}</div>

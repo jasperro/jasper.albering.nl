@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@src/layouts/BaseLayout.astro";
 import { Sprite, Icon } from "@src/components/Icons";
+import MailForm from "@src/components/MailForm.astro";
 import {
     AlternativeLanguageMap,
     knownLocales,
@@ -33,16 +34,20 @@ const alternativeLanguageMap: AlternativeLanguageMap = {
 delete alternativeLanguageMap[locale];
 ---
 
-<BaseLayout locale={locale} {alternativeLanguageMap}>
-    <div
-        class="bg-bgel my-16 p-[clamp(theme(spacing.4),4vw,theme(spacing.32))] flex flex-col"
+<BaseLayout
+    locale={locale}
+    {alternativeLanguageMap}
+    class="bg-jasperro-gradient"
+>
+    <section
+        class="my-16 flex flex-col bg-bgel bg-opacity-20 p-[clamp(theme(spacing.4),4vw,theme(spacing.32))]"
     >
-        <div class="flex-col justify-between w-full">
+        <div class="w-full flex-col justify-between">
             <span
-                class="flex flex-wrap-reverse justify-between 2xl:justify-start items-center"
+                class="flex flex-wrap-reverse items-center justify-between 2xl:justify-start"
             >
                 <h1
-                    class="text-9xl leading-snug flex font-medium tracking-tighter text-primary"
+                    class="flex text-9xl font-medium leading-snug tracking-tighter text-primary"
                 >
                     Jasper Albering
                 </h1>
@@ -54,34 +59,34 @@ delete alternativeLanguageMap[locale];
                 />
             </span>
             <span
-                class="text-base block my-12 space-y-4"
+                class="my-12 block space-y-4 text-base"
                 set:html={t.home.info}
             />
 
             <div
-                class="flex flex-wrap mt-6 gap-2 sm:p-4 p-2 w-max max-w-full sm:rounded-sm sm:shadow-md bg-bg bg-opacity-50"
+                class="mt-6 flex w-max max-w-full flex-wrap gap-2 bg-bg bg-opacity-50 p-2 sm:rounded-sm sm:p-4 sm:shadow-md"
             >
                 <a
                     href="#projects"
-                    class="text-sm flex items-center py-3 px-5 sm:w-max w-full font-medium rounded-sm bg-yellow-300 text-black shadow-sm"
+                    class="flex w-full items-center rounded-sm bg-yellow-300 py-3 px-5 text-sm font-medium text-black shadow-sm sm:w-max"
                     >Portfolio
                 </a>
                 <a
                     href="#contact"
-                    class="text-sm flex items-center py-3 px-5 sm:w-max w-full justify-between font-medium rounded-sm bg-green-300 text-black shadow-sm"
+                    class="flex w-full items-center justify-between rounded-sm bg-green-300 py-3 px-5 text-sm font-medium text-black shadow-sm sm:w-max"
                     >Contact&nbsp;
                     <Sprite name="email" />
                 </a>
                 <a
                     href="https://github.com/jasperro"
-                    class="flex items-center py-3 px-3 w-max font-medium rounded-sm bg-gray-800 text-white shadow-sm"
+                    class="flex w-max items-center rounded-sm bg-gray-800 py-3 px-3 font-medium text-white shadow-sm"
                 >
                     <Sprite name="github" />
                 </a>
             </div>
         </div>
-        <!-- <div class="max-w-3xl flex flex-col">
-            <span class="text-xs font-medium mt-6">
+        <!-- <div class="flex max-w-3xl flex-col">
+            <span class="mt-6 text-xs font-medium">
                 <p class="mt-6">{t.home.workedwith}</p>
                 <p
                     class="mt-2 select-none tracking-[.25em] md:tracking-[.75em]"
@@ -102,13 +107,13 @@ delete alternativeLanguageMap[locale];
                 </p>
             </span>
         </div> -->
-    </div>
+    </section>
     <div class="mx-[clamp(1rem,6vw,19rem)]">
         <section>
-            <h1 class="text-3xl py-6">{t.home.projects}</h1>
+            <h1 class="py-6 text-3xl">{t.home.projects}</h1>
             <div
                 id="projects"
-                class="grid grid-cols-responsivecards gap-x-4 gap-y-4 lg:mx-0 lg:px-0 w-full"
+                class="grid w-full grid-cols-responsivecards gap-x-4 gap-y-4 lg:mx-0 lg:px-0"
             >
                 {
                     Object.values(t.home.projectlist).map((project) => (
@@ -124,49 +129,6 @@ delete alternativeLanguageMap[locale];
                 }
             </div>
         </section>
-        <section class="mt-6">
-            <form name="contact" id="contact" method="post" data-netlify="true">
-                <h1 class="text-3xl py-6">{t.home.contactHeader}</h1>
-                <p>
-                    <label class="text-sm font-medium">
-                        {t.home.contactName}
-                        <input
-                            class="text-input w-full max-w-3xl"
-                            type="text"
-                            name="name"
-                        />
-                    </label>
-                </p>
-                <p>
-                    <label class="text-sm font-medium">
-                        {t.home.contactMail}
-                        <input
-                            class="text-input w-full max-w-3xl"
-                            type="email"
-                            name="email"
-                        />
-                    </label>
-                </p>
-                <p>
-                    <label class="text-sm font-medium">
-                        {t.home.contactMessage}
-                        <textarea
-                            name="message"
-                            class="text-input w-full max-w-3xl"></textarea>
-                    </label>
-                </p>
-                <p>
-                    <input
-                        type="submit"
-                        value={t.home.submit}
-                        class="my-4 py-2 px-4 shadow-sm text-sm font-medium rounded-sm text-white dark:text-black bg-primary hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent"
-                    />
-                </p>
-                <p
-                    class="text-xs text-gray-600 dark:text-gray-300"
-                    set:html={t.home.formComment}
-                />
-            </form>
-        </section>
+        <!-- <MailForm {t} /> -->
     </div>
 </BaseLayout>
