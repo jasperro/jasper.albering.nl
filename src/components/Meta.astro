@@ -25,7 +25,7 @@ const {
     as="font"
     href={(
         await import(
-            "node_modules/@fontsource/lexend/files/lexend-latin-variable-wghtOnly-normal.woff2"
+            "node_modules/@fontsource-variable/lexend/files/lexend-latin-wght-normal.woff2"
         )
     ).default}
     type="font/woff2"
@@ -46,7 +46,7 @@ const {
 <meta name="apple-mobile-web-app-title" content={headMeta.title} />
 
 <!-- Favicons -->
-<link rel="icon" type="image/svg+xml" href={logoSVG} />
+<link rel="icon" type="image/svg+xml" href={logoSVG.src} />
 
 <link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
 <link
