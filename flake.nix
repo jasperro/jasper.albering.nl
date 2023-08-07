@@ -2,6 +2,7 @@
   description = "jasper.albering.nl";
 
   inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     devshell.url = "github:numtide/devshell";
     flake-utils.url = "github:numtide/flake-utils";
   };
@@ -15,7 +16,7 @@
 
             overlays = [
               (final: prev: {
-                nodejs = prev.nodejs-19_x;
+                nodejs = prev.nodejs_20;
               })
               devshell.overlays.default
             ];
