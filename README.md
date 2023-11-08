@@ -1,7 +1,7 @@
 # Jasperro's website
 https://jasper.albering.nl
 
-This is my personal website made with eleventy and tailwind.
+This is my personal website made with astro and tailwind.
 
 The website is hosted on netlify.
 
