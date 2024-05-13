@@ -16,7 +16,7 @@
 
             overlays = [
               (final: prev: {
-                nodejs = prev.nodejs_20;
+                nodeP = prev.nodePackages_latest;
               })
               devshell.overlays.default
             ];
@@ -24,8 +24,8 @@
         in
         pkgs.devshell.mkShell {
           devshell.packages = with pkgs; [
-            nodejs
-            nodePackages.pnpm
+            nodeP.nodejs
+            nodeP.pnpm
           ];
         };
     });
