@@ -1,32 +1,34 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
-import dayjs from "dayjs";
+import BaseLayout from './BaseLayout.astro';
+import dayjs from 'dayjs';
 const {
-    post: { frontmatter },
-    locale,
-    alternativeLanguageMap,
+	post: { frontmatter },
+	locale,
+	alternativeLanguageMap,
 } = Astro.props;
 ---
 
 <BaseLayout
-    {alternativeLanguageMap}
-    {locale}
-    content={frontmatter}
-    noMargin={false}
+	{alternativeLanguageMap}
+	{locale}
+	content={frontmatter}
+	noMargin={false}
 >
-    <!-- <div>
+	<!-- <div>
         <a class="text-primary text-4xl" href=".">&#8592;</a>
     </div> -->
-    {frontmatter.date && (
-        <time
-            class="text-md block w-full pb-8 font-medium uppercase text-gray-600 dark:text-gray-300"
-            datetime={dayjs(frontmatter.date).format("YYYY-MM-DD")}
-        >
-            {dayjs(frontmatter.date).format("DD MMM YYYY")}
-        </time>
-    )}
-    <article class="container prose dark:prose-light prose-xl">
-        <h1>{frontmatter.title}</h1>
-        <slot />
-    </article>
+	{
+		frontmatter.date && (
+			<time
+				class="text-md block w-full pb-8 font-medium text-gray-600 uppercase dark:text-gray-300"
+				datetime={dayjs(frontmatter.date).format('YYYY-MM-DD')}
+			>
+				{dayjs(frontmatter.date).format('DD MMM YYYY')}
+			</time>
+		)
+	}
+	<article class="prose dark:prose-light prose-xl container">
+		<h1>{frontmatter.title}</h1>
+		<slot />
+	</article>
 </BaseLayout>

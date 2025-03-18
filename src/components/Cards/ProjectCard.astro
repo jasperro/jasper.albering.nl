@@ -1,49 +1,49 @@
 ---
-import Image from "@src/components/Image.astro";
-import { Sprite } from "@src/components/Icons";
+import Image from '@src/components/Image.astro';
+import Icon from '@src/components/Icons.astro';
 
 const {
-    title,
-    description,
-    imgUrl,
-    imgRaw,
-    icons = [],
-    actioncomponent,
+	title,
+	description,
+	imgUrl,
+	imgRaw,
+	icons = [],
+	actioncomponent,
 } = Astro.props;
 ---
 
 <div
-    class="transition-shadow rounded-sm shadow-sm hover:shadow-xl bg-bgel dark:bg-bgel-dark p-5 flex justify-between flex-col"
+	class="bg-bgel dark:bg-bgel-dark flex flex-col justify-between rounded-xs p-5 shadow-2xs transition-shadow hover:shadow-xl"
 >
-    <div>
-        {
-            imgUrl ? (
-                <Image
-                    classes="h-48 object-cover"
-                    src={imgUrl}
-                    imgRaw={imgRaw}
-                    alt={title}
-                />
-            ) : (
-                ""
-            )
-        }
-    </div>
+	<div>
+		{
+			imgUrl ? (
+				<Image
+					classes="h-48 object-cover"
+					src={imgUrl}
+					imgRaw={imgRaw}
+					alt={title}
+				/>
+			) : (
+				''
+			)
+		}
+	</div>
 
-    <p class="font-semibold text-xl pt-6">{title}</p>
-    <p class="pt-2 text-base">{description}</p>
-    <div class="flex mt-4 justify-between">
-        <div class="mt-2 flex items-center">
-            {icons.map((i: string) => <Sprite name={i} />)}
-        </div>
-        <div class="mt-2">
-            {
-                actioncomponent
-                    ? ((ActionComponent) => (
-                          <ActionComponent {...actioncomponent[1]} />
-                      ))(actioncomponent[0])
-                    : null
-            }
-        </div>
-    </div>
+	<p class="pt-6 text-xl font-semibold">{title}</p>
+	<p class="pt-2 text-base">{description}</p>
+	<div class="mt-4 flex justify-between">
+		<div class="mt-2 flex items-center">
+			{icons.map((i: string) => <Icon name={i} />)}
+		</div>
+		<div class="mt-2">
+			{
+				actioncomponent
+					? ((ActionComponent) => (
+							<ActionComponent {...actioncomponent[1]} />
+						))(actioncomponent[0])
+					: null
+			}
+		</div>
+	</div>
 </div>

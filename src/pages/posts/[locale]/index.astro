@@ -1,54 +1,54 @@
 ---
-import PostCard from "@src/components/Cards/PostCard.astro";
-import BaseLayout from "@src/layouts/BaseLayout.astro";
+import PostCard from '@src/components/Cards/PostCard.astro';
+import BaseLayout from '@src/layouts/BaseLayout.astro';
 import {
-    t as tbase,
-    getLanguageFromFilename,
-    knownLocales,
-    LocaleCode,
-} from "@src/lib/translations";
-import { removeTrailingSlash } from "@src/lib/urlhelpers";
+	t as tbase,
+	getLanguageFromFilename,
+	knownLocales,
+	LocaleCode,
+} from '@src/lib/translations';
+import { removeTrailingSlash } from '@src/lib/urlhelpers';
 
 export async function getStaticPaths() {
-    return Object.keys(knownLocales).map((locale) => ({
-        params: {
-            locale: locale,
-        },
+	return Object.keys(knownLocales).map((locale) => ({
+		params: {
+			locale: locale,
+		},
 
-        props: {
-            locale,
-        },
-    }));
+		props: {
+			locale,
+		},
+	}));
 }
 
 const { locale } = Astro.props as { locale: LocaleCode };
 
 const t = tbase[locale];
 
-const allPosts = await Astro.glob("../../../lib/posts/**/*.md");
+const allPosts = await Astro.glob('../../../lib/posts/**/*.md');
 const posts = allPosts.filter(
-    (post) => getLanguageFromFilename(post.file) === locale
+	(post) => getLanguageFromFilename(post.file) === locale
 );
 // .map((post) => ({ ...post, url: post.frontmatter.translationKey }))
 
 const alternativeLanguageMap: { [key: string]: string } = {
-    en: new URL("en", removeTrailingSlash(Astro.url.href)).href,
-    nl: new URL("nl", removeTrailingSlash(Astro.url.href)).href,
+	en: new URL('en', removeTrailingSlash(Astro.url.href)).href,
+	nl: new URL('nl', removeTrailingSlash(Astro.url.href)).href,
 };
 
 delete alternativeLanguageMap[locale];
 ---
 
 <BaseLayout
-    locale={locale}
-    noMargin={false}
-    {alternativeLanguageMap}
-    content={{ title: "Posts" }}
+	locale={locale}
+	noMargin={false}
+	{alternativeLanguageMap}
+	content={{ title: 'Posts' }}
 >
-    <div class="prose dark:prose-light prose-xl">
-        <h1>{t.posts.title}</h1>
-    </div>
-    <ul class="mt-5 grid grid-cols-responsivecards lg:gap-6 md:gap-4 gap-3">
-        {posts.map((post) => <PostCard locale={locale} post={post} />)}
-    </ul>
+	<div class="prose dark:prose-light prose-xl">
+		<h1>{t.posts.title}</h1>
+	</div>
+	<ul class="grid-cols-responsivecards mt-5 grid gap-3 md:gap-4 lg:gap-6">
+		{posts.map((post) => <PostCard locale={locale} post={post} />)}
+	</ul>
 </BaseLayout>

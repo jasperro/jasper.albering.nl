@@ -1,62 +1,62 @@
 ---
-import { HTMLAttributes } from "astro/types";
-import Meta from "@src/components/Meta.astro";
-import Header from "@src/components/Header.astro";
-import "@src/styles/main.pcss";
-import SocialLinks from "@src/components/SocialLinks.astro";
-import { AlternativeLanguageMap, LocaleCode } from "@src/lib/translations";
+import { HTMLAttributes } from 'astro/types';
+import Meta from '@src/components/Meta.astro';
+import Header from '@src/components/Header.astro';
+import '@src/styles/global.css';
+import SocialLinks from '@src/components/SocialLinks.astro';
+import { AlternativeLanguageMap, LocaleCode } from '@src/lib/translations';
 
-await import("dayjs/locale/nl");
+await import('dayjs/locale/nl');
 
 const canonicalURL = new URL(Astro.url);
 const {
-    content = {},
-    noMargin = true,
-    alternativeLanguageMap = null,
-    locale = "en",
-    class: className,
-    "class:list": classList,
+	content = {},
+	noMargin = true,
+	alternativeLanguageMap = null,
+	locale = 'en',
+	class: className,
+	'class:list': classList,
 } = Astro.props as {
-    content: any;
-    noMargin: boolean;
-    alternativeLanguageMap: AlternativeLanguageMap;
-    locale: LocaleCode;
-} & HTMLAttributes<"body">;
+	content: any;
+	noMargin: boolean;
+	alternativeLanguageMap: AlternativeLanguageMap;
+	locale: LocaleCode;
+} & HTMLAttributes<'body'>;
 ---
 
 <html lang={locale}>
-    <head>
-        <Meta {content} {canonicalURL} />
-        <script is:inline>
-            function setUserLanguage(language = "en") {
-                document.cookie = `nf_lang=${language}; secure; path=/`;
-            }
-        </script>
-    </head>
+	<head>
+		<Meta {content} {canonicalURL} />
+		<script is:inline>
+			function setUserLanguage(language = 'en') {
+				document.cookie = `nf_lang=${language}; secure; path=/`;
+			}
+		</script>
+	</head>
 
-    <body
-        class:list={["flex", "min-h-screen", "flex-col", className, classList]}
-    >
-        <Header {alternativeLanguageMap} locale={locale} />
+	<body
+		class:list={['flex', 'min-h-screen', 'flex-col', className, classList]}
+	>
+		<Header {alternativeLanguageMap} locale={locale} />
 
-        <main
-            id="main"
-            class={`flex flex-col flex-grow overflow-hidden${
-                noMargin ? "" : " lg:p-16 md:p-8 p-4"
-            }`}
-            tabindex="-1"
-        >
-            <slot />
-        </main>
+		<main
+			id="main"
+			class={`flex flex-col grow overflow-hidden${
+				noMargin ? '' : ' lg:p-16 md:p-8 p-4'
+			}`}
+			tabindex="-1"
+		>
+			<slot />
+		</main>
 
-        <footer
-            class="mt-16 flex flex-grow-0 items-center justify-between bg-bgel bg-opacity-50 px-8 py-4 text-sm"
-            role="contentinfo"
-        >
-            <div>Jasper Albering &copy; 2016-{new Date().getFullYear()}</div>
-            <span class="flex gap-x-2">
-                <SocialLinks />
-            </span>
-        </footer>
-    </body>
+		<footer
+			class="bg-bgel bg-opacity-50 mt-16 flex grow-0 items-center justify-between px-8 py-4 text-sm"
+			role="contentinfo"
+		>
+			<div>Jasper Albering &copy; 2016-{new Date().getFullYear()}</div>
+			<span class="flex gap-x-2">
+				<SocialLinks />
+			</span>
+		</footer>
+	</body>
 </html>

@@ -3,11 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    devshell.url = "github:numtide/devshell";
+    devshell = {
+      url = "github:numtide/devshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, flake-utils, devshell, nixpkgs }:
+  outputs = { flake-utils, devshell, nixpkgs, ... }:
     flake-utils.lib.eachDefaultSystem (system: {
       devShell =
         let
@@ -15,17 +18,14 @@
             inherit system;
 
             overlays = [
-              (final: prev: {
-                nodeP = prev.nodePackages_latest;
-              })
               devshell.overlays.default
             ];
           };
         in
         pkgs.devshell.mkShell {
           devshell.packages = with pkgs; [
-            nodeP.nodejs
-            nodeP.pnpm
+            nodejs_latest
+            corepack_latest
           ];
         };
     });

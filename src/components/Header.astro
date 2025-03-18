@@ -1,136 +1,129 @@
 ---
-import { Icon } from "@src/components/Icons";
+import Icon from '@src/components/Icons.astro';
 import {
-    AlternativeLanguageMap,
-    LocaleCode,
-    t as tbase,
-} from "@src/lib/translations";
-import _ from "lodash";
-import LanguageSelector from "./LanguageSelector.astro";
-import { removeTrailingSlash } from "@src/lib/urlhelpers";
+	AlternativeLanguageMap,
+	LocaleCode,
+	t as tbase,
+} from '@src/lib/translations';
+import _ from 'lodash';
+import LanguageSelector from './LanguageSelector.astro';
+import { removeTrailingSlash } from '@src/lib/urlhelpers';
 
 const pathName = removeTrailingSlash(Astro.url.pathname);
-const basePath = "/" + pathName.split("/")[1];
+const basePath = '/' + pathName.split('/')[1];
 
 const { alternativeLanguageMap, locale } = Astro.props as {
-    alternativeLanguageMap: AlternativeLanguageMap;
-    locale: LocaleCode;
+	alternativeLanguageMap: AlternativeLanguageMap;
+	locale: LocaleCode;
 };
 
 const t = tbase[locale];
 
 const navItems = [
-    {
-        name: t.navigation.home,
-        isCurrent:
-            basePath == pathName && new RegExp(locale + "+$").test(pathName),
-        href: `/${locale}`,
-    },
-    {
-        name: t.navigation.about,
-        isCurrent: new RegExp(locale + "/about").test(pathName),
-        href: `/${locale}/about`,
-    },
-    {
-        name: t.navigation.cv,
-        isCurrent: new RegExp(locale + "/cv").test(pathName),
-        href: `/${locale}/cv`,
-    },
-    {
-        name: t.navigation.posts,
-        isCurrent: new RegExp("posts/" + locale + "/*").test(pathName),
-        href: "/posts/" + locale,
-    },
+	{
+		name: t.navigation.home,
+		isCurrent:
+			basePath == pathName && new RegExp(locale + '+$').test(pathName),
+		href: `/${locale}`,
+	},
+	{
+		name: t.navigation.about,
+		isCurrent: new RegExp(locale + '/about').test(pathName),
+		href: `/${locale}/about`,
+	},
+	{
+		name: t.navigation.cv,
+		isCurrent: new RegExp(locale + '/cv').test(pathName),
+		href: `/${locale}/cv`,
+	},
+	{
+		name: t.navigation.posts,
+		isCurrent: new RegExp('posts/' + locale + '/*').test(pathName),
+		href: '/posts/' + locale,
+	},
 ];
 ---
 
 <header class="header" role="banner">
-    <nav role="navigation" tabindex="-1">
-        <div
-            class="relative z-40 flex w-full select-none flex-col justify-between sm:static sm:p-4"
-        >
-            <input
-                type="checkbox"
-                checked
-                id="nav-toggle"
-                class="hidden"
-                aria-controls="navigationitems"
-            />
-            <!-- Logo and hamburger menu on mobile -->
-            <div
-                class="nav-shadow-togglable flex w-full bg-bgel bg-opacity-50 p-4 shadow-2xl transition-all sm:hidden sm:w-min sm:shadow-none"
-            >
-                <div class="flex">
-                    <label
-                        for="nav-toggle"
-                        aria-label="Toggle navigation menu"
-                        role="button"
-                        tabindex="0"
-                    >
-                        <Icon name="menu" class="w-10 h-10 self-center" />
-                    </label>
-                    <a class="ml-4 flex" href={"/"} aria-label="home">
-                        <Icon
-                            name="logo"
-                            class="w-10 h-10 self-center"
-                            aria-hidden="true"
-                            optimize={false}
-                        />
-                    </a>
-                </div>
-            </div>
-            <!-- Navigation items -->
-            <div class="nav-items-wrapper">
-                <nav
-                    id="navigationitems"
-                    class="absolute top-full left-0 -z-10 m-[inherit] w-full origin-top transform-gpu flex-col justify-between p-4 shadow-2xl backdrop-blur-md backdrop-filter transition-transform motion-reduce:transition-none sm:static sm:z-10 sm:m-0 sm:flex sm:max-h-full sm:translate-y-0 sm:flex-row sm:bg-transparent sm:p-0 sm:shadow-none sm:backdrop-filter-none"
-                >
-                    <ul class="flex flex-col sm:flex-row">
-                        <li class="mr-2 hidden self-center sm:flex">
-                            <Icon
-                                name="logo"
-                                class="w-10 h-10"
-                                aria-hidden="true"
-                                optimize={false}
-                            />
-                        </li>
-                        {
-                            navItems.map((item) => {
-                                return (
-                                    <li
-                                        class={`${
-                                            item.isCurrent
-                                                ? "bg-primary text-white dark:text-black"
-                                                : "text-primary"
-                                        } mr-1 flex w-full rounded-sm font-medium sm:w-max`}
-                                    >
-                                        <a
-                                            class="block w-full py-2 px-4"
-                                            href={item.href}
-                                        >
-                                            {item.name}
-                                        </a>
-                                    </li>
-                                );
-                            })
-                        }
-                    </ul>
-                </nav>
-                <label
-                    for="nav-toggle"
-                    tabindex="0"
-                    role="button"
-                    aria-label="Close navigation"
-                    class="nav-hide fixed top-0 -z-20 h-screen w-screen bg-bg/80 transition-colors sm:hidden"
-                >
-                </label>
-            </div>
-        </div>
-    </nav>
-    {
-        !_.isEmpty(alternativeLanguageMap) &&
-            alternativeLanguageMap != null && (
-                <LanguageSelector {alternativeLanguageMap} />
-            )
-    }
+	<nav role="navigation" tabindex="-1">
+		<div
+			class="relative z-40 flex w-full flex-col justify-between select-none sm:static sm:p-4"
+		>
+			<input
+				type="checkbox"
+				checked
+				id="nav-toggle"
+				class="hidden"
+				aria-controls="navigationitems"
+			/>
+			<!-- Logo and hamburger menu on mobile -->
+			<div
+				class="nav-shadow-togglable bg-bgel bg-opacity-50 flex w-full p-4 shadow-2xl transition-all sm:hidden sm:w-min sm:shadow-none"
+			>
+				<div class="flex">
+					<label
+						for="nav-toggle"
+						aria-label="Toggle navigation menu"
+						role="button"
+						tabindex="0"
+					>
+						<Icon name="menu" class="h-10 w-10 self-center" />
+					</label>
+					<a class="ml-4 flex" href={'/'} aria-label="home">
+						<Icon
+							name="logo"
+							class="h-10 w-10 self-center"
+							aria-hidden="true"
+						/>
+					</a>
+				</div>
+			</div>
+			<!-- Navigation items -->
+			<div class="nav-items-wrapper">
+				<nav
+					id="navigationitems"
+					class="absolute top-full left-0 -z-10 m-[inherit] w-full origin-top transform-gpu flex-col justify-between p-4 shadow-2xl backdrop-blur-md backdrop-filter transition-transform motion-reduce:transition-none sm:static sm:z-10 sm:m-0 sm:flex sm:max-h-full sm:translate-y-0 sm:flex-row sm:bg-transparent sm:p-0 sm:shadow-none sm:backdrop-filter-none"
+				>
+					<ul class="flex flex-col sm:flex-row">
+						<li class="mr-2 hidden self-center sm:flex">
+							<Icon name="logo" class="h-10 w-10" aria-hidden="true" />
+						</li>
+						{
+							navItems.map((item) => {
+								return (
+									<li
+										class={`${
+											item.isCurrent
+												? 'bg-primary text-white dark:text-black'
+												: 'text-primary'
+										} mr-1 flex w-full rounded-sm font-medium sm:w-max`}
+									>
+										<a
+											class="block w-full px-4 py-2"
+											href={item.href}
+										>
+											{item.name}
+										</a>
+									</li>
+								);
+							})
+						}
+					</ul>
+				</nav>
+				<label
+					for="nav-toggle"
+					tabindex="0"
+					role="button"
+					aria-label="Close navigation"
+					class="nav-hide bg-bg/80 fixed top-0 -z-20 h-screen w-screen transition-colors sm:hidden"
+				>
+				</label>
+			</div>
+		</div>
+	</nav>
+	{
+		!_.isEmpty(alternativeLanguageMap) && alternativeLanguageMap != null && (
+			<LanguageSelector {alternativeLanguageMap} />
+		)
+	}
 </header>

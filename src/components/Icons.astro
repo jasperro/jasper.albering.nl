@@ -1,0 +1,21 @@
+---
+type Props =
+	| Omit<Parameters<SVGComponent>[0], 'slot'>
+	| {
+			name?: string;
+	  };
+
+type SVGComponent = typeof import('astro/client/*.svg').default;
+
+const IconComponents: Record<string, { default: SVGComponent }> =
+	import.meta.glob('/src/icons/*.svg', { eager: true });
+
+const IconComponent =
+	IconComponents[`/src/icons/${Astro.props.name}.svg`]?.default;
+---
+
+<IconComponent
+	fill="currentColor"
+	class:list={['w-6', 'h-6']}
+	{...Astro.props}
+/>

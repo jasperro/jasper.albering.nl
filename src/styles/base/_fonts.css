@@ -3,18 +3,18 @@
     font-style: normal;
     font-display: swap;
     font-weight: 100 900;
-    src: url("node_modules/@fontsource-variable/lexend/files/lexend-latin-wght-normal.woff2")
+    src: url("/node_modules/@fontsource-variable/lexend/files/lexend-latin-wght-normal.woff2")
             format("woff2-variations"),
-        url("node_modules/@fontsource-variable/lexend/files/lexend-latin-wght-normal.woff2")
+        url("/node_modules/@fontsource-variable/lexend/files/lexend-latin-wght-normal.woff2")
             format("woff2");
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
         U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
         U+2215, U+FEFF, U+FFFD;
 }
-@layer utilities {
+
+@theme {
     /* Custom fluid type with clamp */
-    .text-xs {
-        font-size: clamp(
+    --text-base: clamp(
             0.8888888888888888rem,
             calc(
                 0.8888888888888888rem +
@@ -25,10 +25,8 @@
             ),
             0.8680555555555557rem
         );
-    }
 
-    .text-sm {
-        font-size: clamp(
+    --text-sm: clamp(
             1rem,
             calc(
                 1rem +
@@ -36,28 +34,22 @@
             ),
             1.0416666666666667rem
         );
-    }
 
-    .text-base {
-        font-size: clamp(
+    --text-base: clamp(
             1.125rem,
             calc(1.125rem + ((1.25 - 1.125) * ((100vw - 20rem) / (96 - 20)))),
             1.25rem
         );
-    }
 
-    .text-lg {
-        font-size: clamp(
+    --text-lg: clamp(
             1.265625rem,
             calc(
                 1.265625rem + ((1.5 - 1.265625) * ((100vw - 20rem) / (96 - 20)))
             ),
             1.5rem
         );
-    }
 
-    .text-xl {
-        font-size: clamp(
+    --text-xl: clamp(
             1.423828125rem,
             calc(
                 1.423828125rem +
@@ -68,10 +60,8 @@
             ),
             1.7999999999999998rem
         );
-    }
 
-    .text-2xl {
-        font-size: clamp(
+    --text-2xl: clamp(
             1.601806640625rem,
             calc(
                 1.601806640625rem +
@@ -79,10 +69,8 @@
             ),
             2.16rem
         );
-    }
-
-    .text-3xl {
-        font-size: clamp(
+    
+    --text-3xl: clamp(
             1.802032470703125rem,
             calc(
                 1.802032470703125rem +
@@ -93,10 +81,8 @@
             ),
             2.5919999999999996rem
         );
-    }
 
-    .text-4xl {
-        font-size: clamp(
+    --text-4xl: clamp(
             2.0272865295410156rem,
             calc(
                 2.0272865295410156rem +
@@ -107,10 +93,8 @@
             ),
             3.1103999999999994rem
         );
-    }
 
-    .text-5xl {
-        font-size: clamp(
+    --text-5xl: clamp(
             2.2806973457336426rem,
             calc(
                 2.2806973457336426rem +
@@ -121,10 +105,8 @@
             ),
             3.732479999999999rem
         );
-    }
 
-    .text-6xl {
-        font-size: clamp(
+    --text-6xl: clamp(
             2.565784513950348rem,
             calc(
                 2.565784513950348rem +
@@ -135,10 +117,8 @@
             ),
             4.478975999999999rem
         );
-    }
 
-    .text-7xl {
-        font-size: clamp(
+    --text-7xl: clamp(
             2.8865075781941414rem,
             calc(
                 2.8865075781941414rem +
@@ -149,10 +129,8 @@
             ),
             5.374771199999998rem
         );
-    }
 
-    .text-8xl {
-        font-size: clamp(
+    --text-8xl: clamp(
             3.247321025468409rem,
             calc(
                 3.247321025468409rem +
@@ -163,10 +141,8 @@
             ),
             6.449725439999998rem
         );
-    }
 
-    .text-9xl {
-        font-size: clamp(
+    --text-9xl: clamp(
             3.65323615365196rem,
             calc(
                 3.65323615365196rem +
@@ -177,27 +153,26 @@
             ),
             7.739670527999997rem
         );
-    }
+}
 
-    .prose {
-        :where(h1) {
-            @apply text-5xl;
-        }
-        :where(h2) {
-            @apply text-4xl;
-        }
-        :where(h3) {
-            @apply text-3xl;
-        }
-        :where(h4) {
-            @apply text-2xl;
-        }
-        :where(h5) {
-            @apply text-xl;
-        }
-        :where(h6) {
-            @apply text-lg;
-        }
-        @apply text-base;
+.prose {
+    :where(h1) {
+        @apply text-5xl;
     }
+    :where(h2) {
+        @apply text-4xl;
+    }
+    :where(h3) {
+        @apply text-3xl;
+    }
+    :where(h4) {
+        @apply text-2xl;
+    }
+    :where(h5) {
+        @apply text-xl;
+    }
+    :where(h6) {
+        @apply text-lg;
+    }
+    @apply text-base;
 }

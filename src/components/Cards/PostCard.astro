@@ -1,31 +1,33 @@
 ---
-import dayjs from "dayjs";
-import { removeTrailingSlash } from "@src/lib/urlhelpers";
+import dayjs from 'dayjs';
+import { removeTrailingSlash } from '@src/lib/urlhelpers';
 
 const { post, locale } = Astro.props;
 ---
 
-<li class="rounded-sm shadow-sm hover:shadow-xl bg-bgel dark:bg-bgel-dark">
-    <a
-        href={removeTrailingSlash(Astro.url.href) +
-            "/" +
-            post.frontmatter.translationKey}
-        target="_self"
-    >
-        <div class="h-full flex flex-col p-4 justify-between">
-            <span>
-                <p class="text-2xl font-medium">{post.frontmatter.title}</p>
-                <p class="text-base font-normal">{post.frontmatter.summary}</p>
-            </span>
-            <span
-                class="pt-4 text-xs font-bold text-gray-600 dark:text-gray-300 uppercase text-right"
-            >
-                <date
-                    >{dayjs(post.frontmatter.date)
-                        .locale(locale)
-                        .format("DD MMMM YYYY")}
-                </date>
-            </span>
-        </div>
-    </a>
+<li class="bg-bgel dark:bg-bgel-dark rounded-xs shadow-2xs hover:shadow-xl">
+	<a
+		href={removeTrailingSlash(Astro.url.href) +
+			'/' +
+			post.frontmatter.translationKey}
+		target="_self"
+	>
+		<div class="flex h-full flex-col justify-between p-4">
+			<span>
+				<p class="text-2xl font-medium">{post.frontmatter.title}</p>
+				<p class="text-base font-normal">{post.frontmatter.summary}</p>
+			</span>
+			<span
+				class="pt-4 text-right text-xs font-bold text-gray-600 uppercase dark:text-gray-300"
+			>
+				<date
+					>{
+						dayjs(post.frontmatter.date)
+							.locale(locale)
+							.format('DD MMMM YYYY')
+					}
+				</date>
+			</span>
+		</div>
+	</a>
 </li>

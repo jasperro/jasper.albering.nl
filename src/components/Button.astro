@@ -1,40 +1,40 @@
 ---
-import { Sprite } from "./Icons";
+import Icon from '@src/components/Icons.astro';
 
 const getVariant = (variant: string) => {
-    switch (variant) {
-        case "github":
-            return `bg-gray-800`;
-        default:
-            return `bg-primary`;
-    }
+	switch (variant) {
+		case 'github':
+			return `bg-gray-800`;
+		default:
+			return `bg-primary`;
+	}
 };
 const {
-    text,
-    icon,
-    href = "#",
-    variant = "",
+	text,
+	icon,
+	href = '#',
+	variant = '',
 }: {
-    text?: string;
-    icon?: string;
-    href?: string;
-    variant?: string;
+	text?: string;
+	icon?: string;
+	href?: string;
+	variant?: string;
 } = Astro.props;
 ---
 
 <a
-    href={href}
-    class={`inline-flex items-center py-3 px-5 shadow-sm text-sm font-medium rounded-sm text-white hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-accent ${getVariant(
-        variant
-    )}`}
-    >{
-        icon ? (
-            <>
-                <Sprite name={icon} />
-                &nbsp
-            </>
-        ) : (
-            ""
-        )
-    }{text}
+	href={href}
+	class={`inline-flex items-center py-3 px-5 shadow-sm text-sm font-medium rounded-sm text-white hover:bg-primary-light focus:outline-hidden focus:ring-2 focus:ring-accent ${getVariant(
+		variant
+	)}`}
+	>{
+		icon ? (
+			<>
+				<Icon name={icon} />
+				&nbsp
+			</>
+		) : (
+			''
+		)
+	}{text}
 </a>

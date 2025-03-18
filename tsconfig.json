@@ -1,25 +1,25 @@
 {
-    "compilerOptions": {
-        "allowSyntheticDefaultImports": true,
-        "allowJs": true,
-        "checkJs": false,
-        "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
-        "lib": ["esnext", "DOM"],
-        "moduleResolution": "node",
-        "module": "esnext",
-        "isolatedModules": true,
-        "resolveJsonModule": true,
-        "skipLibCheck": true,
-        "sourceMap": true,
-        "strict": true,
-        "target": "esnext",
-        "types": ["vite/client", "astro/env", "@astrojs/image/client"],
-        "baseUrl": "./",
-        "paths": {
-            "@src/*": ["./src/*"],
-            "node_modules/*": ["./node_modules/*"]
-        },
-        "outDir": "./dist"
-    }
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"allowJs": true,
+		"checkJs": false,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"lib": ["esnext", "DOM"],
+		"moduleResolution": "bundler",
+		"module": "esnext",
+		"isolatedModules": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"target": "esnext",
+		"types": ["vite/client", "astro/env"],
+		"baseUrl": "./",
+		"paths": {
+			"@src/*": ["./src/*"],
+			"node_modules/*": ["./node_modules/*"]
+		},
+		"outDir": "./dist"
+	}
 }
