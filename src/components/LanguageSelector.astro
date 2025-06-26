@@ -1,44 +1,39 @@
 ---
-import {
-	AlternativeLanguageMap,
-	knownLocales,
-	LocaleCode,
-} from '@src/lib/translations';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import Icon from './Icons.astro';
+import { Lang, LOCALES } from '@src/lib/locales';
 
-const {
-	alternativeLanguageMap = null,
-}: {
-	alternativeLanguageMap?: AlternativeLanguageMap | null;
-} = Astro.props;
+const anotherLang = (
+	Astro.currentLocale === Object.keys(LOCALES)[0]
+		? Object.keys(LOCALES)[1]
+		: Object.keys(LOCALES)[0]
+) as Lang;
+
+const urlWithoutLocale = Astro.url.pathname.replace(/^\/[a-zA-Z-]+/, '');
 ---
 
 <body>
 	{
-		alternativeLanguageMap && (
+		(
 			<div class="absolute top-4 right-4 z-50 flex">
 				<nav class="flex justify-between bg-transparent" id="langitems">
 					<ul>
-						{(
-							Object.entries(alternativeLanguageMap) as [
-								LocaleCode,
-								string,
-							][]
-						).map(([lang, alternativeUrl]) => (
-							<li class="text-primary flex w-max p-1.5">
-								<a
-									href={alternativeUrl}
-									onclick={`setUserLanguage('${lang}')`}
-								>
-									<span class="hidden sm:flex">
-										{knownLocales[lang]}
-									</span>
-									<span class="flex text-lg font-bold uppercase sm:hidden">
-										{lang}
-									</span>
-								</a>
-							</li>
-						))}
+						<li class="text-primary flex w-max p-1.5">
+							<a
+								href={getRelativeLocaleUrl(
+									anotherLang,
+									urlWithoutLocale
+								)}
+								onclick={`setUserLanguage('${anotherLang}')`}
+							>
+								<span class="hidden sm:flex">
+									{LOCALES[anotherLang].label}
+								</span>
+								<span class="flex text-lg font-bold uppercase sm:hidden">
+									{anotherLang}
+								</span>
+							</a>
+						</li>
 					</ul>
 				</nav>
 				<Icon name="language" class="text-accent h-5 w-5 self-center" />

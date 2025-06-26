@@ -6,6 +6,7 @@
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"lib": ["esnext", "DOM"],
+		"jsx": "preserve",
 		"moduleResolution": "bundler",
 		"module": "esnext",
 		"isolatedModules": true,

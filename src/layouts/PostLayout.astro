@@ -1,34 +1,37 @@
 ---
+import { InferEntrySchema } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import dayjs from 'dayjs';
+import NotTranslateCaution from '@src/components/i18n/NotTranslateCaution.astro';
 const {
-	post: { frontmatter },
-	locale,
-	alternativeLanguageMap,
+	post: { data },
+	missing,
 } = Astro.props;
+
+type Props = {
+	post: {
+		data: InferEntrySchema<'posts'>;
+	};
+	missing: boolean;
+};
 ---
 
-<BaseLayout
-	{alternativeLanguageMap}
-	{locale}
-	content={frontmatter}
-	noMargin={false}
->
-	<!-- <div>
-        <a class="text-primary text-4xl" href=".">&#8592;</a>
-    </div> -->
-	{
-		frontmatter.date && (
-			<time
-				class="text-md block w-full pb-8 font-medium text-gray-600 uppercase dark:text-gray-300"
-				datetime={dayjs(frontmatter.date).format('YYYY-MM-DD')}
-			>
-				{dayjs(frontmatter.date).format('DD MMM YYYY')}
-			</time>
-		)
-	}
-	<article class="prose dark:prose-light prose-xl container">
-		<h1>{frontmatter.title}</h1>
+<BaseLayout {...data} noMargin={false}>
+	{missing && <NotTranslateCaution />}
+	<article
+		class="prose dark:prose-light prose-xl w-full max-w-[70ch] self-center"
+	>
+		{
+			data.date && (
+				<time
+					class="text-md block w-full pb-8 font-medium text-gray-600 uppercase dark:text-gray-300"
+					datetime={dayjs(data.date).format('YYYY-MM-DD')}
+				>
+					{dayjs(data.date).format('DD MMM YYYY')}
+				</time>
+			)
+		}
+		<h1>{data.title}</h1>
 		<slot />
 	</article>
 </BaseLayout>

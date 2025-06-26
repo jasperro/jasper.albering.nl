@@ -1,0 +1,47 @@
+---
+import PostLayout from '@src/layouts/PostLayout.astro';
+import { LOCALES } from '@src/lib/locales';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('posts');
+
+	const mappedPosts = posts.map((post) => {
+		const [lang, ...slug] = post.id.split('/');
+		return {
+			params: { lang, slug: slug.join('/') || undefined },
+			props: { post, missing: false },
+		};
+	});
+
+	// For every post in mappedPost that does not exist in all language, we create the missing ones, and add a prop missing: true
+	// Probably not optimized, but I don't have many posts.
+	const allLanguages = Object.keys(LOCALES);
+	return [
+		...mappedPosts,
+		...allLanguages.flatMap((lang) => {
+			const postsInLang = mappedPosts.filter(
+				(post) => post.params.lang === lang
+			);
+
+			const missingPosts = mappedPosts.filter(
+				(post) =>
+					!postsInLang.some((p) => p.params.slug === post.params.slug)
+			);
+
+			return missingPosts.map((post) => ({
+				params: { ...post.params, lang },
+				props: { ...post.props, missing: true },
+			}));
+		}),
+	];
+}
+
+const { post, missing } = Astro.props;
+
+const { Content } = await render(post);
+---
+
+<PostLayout {post} {missing}>
+	<Content />
+</PostLayout>

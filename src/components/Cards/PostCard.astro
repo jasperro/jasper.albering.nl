@@ -1,31 +1,31 @@
 ---
 import dayjs from 'dayjs';
-import { removeTrailingSlash } from '@src/lib/urlhelpers';
+import { Lang } from '@src/lib/locales';
+import { InferEntrySchema } from 'astro:content';
 
-const { post, locale } = Astro.props;
+const { post } = Astro.props;
+type Props = {
+	post: {
+		data: InferEntrySchema<'posts'>;
+		id: string;
+	};
+};
+const locale = Astro.currentLocale as Lang;
+const [, ...id] = post.id.split('/');
 ---
 
 <li class="bg-bgel dark:bg-bgel-dark rounded-xs shadow-2xs hover:shadow-xl">
-	<a
-		href={removeTrailingSlash(Astro.url.href) +
-			'/' +
-			post.frontmatter.translationKey}
-		target="_self"
-	>
+	<a href={id.join('/')} target="_self">
 		<div class="flex h-full flex-col justify-between p-4">
 			<span>
-				<p class="text-2xl font-medium">{post.frontmatter.title}</p>
-				<p class="text-base font-normal">{post.frontmatter.summary}</p>
+				<p class="text-2xl font-medium">{post.data.title}</p>
+				<p class="text-base font-normal">{post.data.description}</p>
 			</span>
 			<span
 				class="pt-4 text-right text-xs font-bold text-gray-600 uppercase dark:text-gray-300"
 			>
 				<date
-					>{
-						dayjs(post.frontmatter.date)
-							.locale(locale)
-							.format('DD MMMM YYYY')
-					}
+					>{dayjs(post.data.date).locale(locale).format('DD MMMM YYYY')}
 				</date>
 			</span>
 		</div>

@@ -1,45 +1,40 @@
 ---
 import Icon from '@src/components/Icons.astro';
-import {
-	AlternativeLanguageMap,
-	LocaleCode,
-	t as tbase,
-} from '@src/lib/translations';
+import { useTranslations } from '@src/lib/i18n';
 import _ from 'lodash';
 import LanguageSelector from './LanguageSelector.astro';
 import { removeTrailingSlash } from '@src/lib/urlhelpers';
+import { Lang } from '@src/lib/locales';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
 const pathName = removeTrailingSlash(Astro.url.pathname);
 const basePath = '/' + pathName.split('/')[1];
 
-const { alternativeLanguageMap, locale } = Astro.props as {
-	alternativeLanguageMap: AlternativeLanguageMap;
-	locale: LocaleCode;
-};
+const locale = Astro.currentLocale as Lang;
 
-const t = tbase[locale];
+const { tKey } = useTranslations(locale);
 
 const navItems = [
 	{
-		name: t.navigation.home,
+		name: tKey('navigation.home'),
 		isCurrent:
 			basePath == pathName && new RegExp(locale + '+$').test(pathName),
-		href: `/${locale}`,
+		href: getRelativeLocaleUrl(locale),
 	},
 	{
-		name: t.navigation.about,
+		name: tKey('navigation.about'),
 		isCurrent: new RegExp(locale + '/about').test(pathName),
-		href: `/${locale}/about`,
+		href: getRelativeLocaleUrl(locale, 'about'),
 	},
 	{
-		name: t.navigation.cv,
+		name: tKey('navigation.cv'),
 		isCurrent: new RegExp(locale + '/cv').test(pathName),
-		href: `/${locale}/cv`,
+		href: getRelativeLocaleUrl(locale, 'cv'),
 	},
 	{
-		name: t.navigation.posts,
-		isCurrent: new RegExp('posts/' + locale + '/*').test(pathName),
-		href: '/posts/' + locale,
+		name: tKey('navigation.posts'),
+		isCurrent: new RegExp(locale + '/posts/*').test(pathName),
+		href: getRelativeLocaleUrl(locale, 'posts'),
 	},
 ];
 ---
@@ -51,7 +46,7 @@ const navItems = [
 		>
 			<input
 				type="checkbox"
-				checked
+				checked="false"
 				id="nav-toggle"
 				class="hidden"
 				aria-controls="navigationitems"
@@ -65,6 +60,7 @@ const navItems = [
 						for="nav-toggle"
 						aria-label="Toggle navigation menu"
 						role="button"
+						class="cursor-pointer"
 						tabindex="0"
 					>
 						<Icon name="menu" class="h-10 w-10 self-center" />
@@ -115,15 +111,11 @@ const navItems = [
 					tabindex="0"
 					role="button"
 					aria-label="Close navigation"
-					class="nav-hide bg-bg/80 fixed top-0 -z-20 h-screen w-screen transition-colors sm:hidden"
+					class="nav-hide bg-bg/80 fixed top-0 -z-20 h-screen w-screen cursor-pointer transition-colors sm:hidden"
 				>
 				</label>
 			</div>
 		</div>
 	</nav>
-	{
-		!_.isEmpty(alternativeLanguageMap) && alternativeLanguageMap != null && (
-			<LanguageSelector {alternativeLanguageMap} />
-		)
-	}
+	<LanguageSelector />
 </header>

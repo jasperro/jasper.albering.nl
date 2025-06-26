@@ -4,29 +4,32 @@ import Meta from '@src/components/Meta.astro';
 import Header from '@src/components/Header.astro';
 import '@src/styles/global.css';
 import SocialLinks from '@src/components/SocialLinks.astro';
-import { AlternativeLanguageMap, LocaleCode } from '@src/lib/translations';
+import { Lang, LOCALES } from '@src/lib/locales';
+import { useTranslations } from '@src/lib/i18n';
+import * as consts from '@src/lib/consts';
 
 await import('dayjs/locale/nl');
 
 const canonicalURL = new URL(Astro.url);
 const {
-	content = {},
 	noMargin = true,
-	alternativeLanguageMap = null,
-	locale = 'en',
 	class: className,
 	'class:list': classList,
-} = Astro.props as {
-	content: any;
-	noMargin: boolean;
-	alternativeLanguageMap: AlternativeLanguageMap;
-	locale: LocaleCode;
+	...meta
+} = Astro.props;
+
+type Props = {
+	noMargin?: boolean;
+	title?: string;
+	description?: string;
 } & HTMLAttributes<'body'>;
+
+const locale = Astro.currentLocale as Lang;
 ---
 
-<html lang={locale}>
+<html lang={LOCALES[locale].lang || locale}>
 	<head>
-		<Meta {content} {canonicalURL} />
+		<Meta {...meta} {canonicalURL} />
 		<script is:inline>
 			function setUserLanguage(language = 'en') {
 				document.cookie = `nf_lang=${language}; secure; path=/`;
@@ -37,7 +40,7 @@ const {
 	<body
 		class:list={['flex', 'min-h-screen', 'flex-col', className, classList]}
 	>
-		<Header {alternativeLanguageMap} locale={locale} />
+		<Header locale={locale} />
 
 		<main
 			id="main"
@@ -54,7 +57,7 @@ const {
 			role="contentinfo"
 		>
 			<div>Jasper Albering &copy; 2016-{new Date().getFullYear()}</div>
-			<span class="flex gap-x-2">
+			<span class="flex gap-x-3">
 				<SocialLinks />
 			</span>
 		</footer>

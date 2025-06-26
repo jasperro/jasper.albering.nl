@@ -1,0 +1,17 @@
+---
+import { useTranslations } from '@src/lib/i18n';
+import { Lang } from '@src/lib/locales';
+
+const { t } = useTranslations(Astro.currentLocale as Lang);
+---
+
+{
+	(
+		<p class="text-md my-4 rounded-md bg-orange-300 p-4 text-black">
+			{t({
+				en: 'This page is only available in Dutch.',
+				nl: 'Deze pagina is alleen beschikbaar in het Engels.',
+			})}
+		</p>
+	)
+}

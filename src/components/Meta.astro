@@ -1,17 +1,22 @@
 ---
-import * as headMeta from '@src/lib/meta.json';
+import * as consts from '@src/lib/consts';
 import logoSVG from '@src/icons/logo.svg';
 import { removeTrailingSlash } from '@src/lib/urlhelpers';
 export interface Props {
-	content: any;
+	title?: string;
+	shortTitle?: string;
+	description?: string;
 	canonicalURL: URL;
 }
 
 const {
-	content = {},
+	title,
+	shortTitle,
+	description,
 	canonicalURL = removeTrailingSlash(Astro.url.href),
-	title = content.title,
 } = Astro.props;
+
+const metaTitle = shortTitle ?? title;
 ---
 
 <!--General -->
@@ -33,17 +38,24 @@ const {
 />
 
 <title>
-	{!!title ? `${title} | ${headMeta.title}` : headMeta.title}
+	{metaTitle ? `${metaTitle} | ${consts.SITE_TITLE}` : consts.SITE_TITLE}
 </title>
-<meta name="description" content={headMeta.description} />
+<meta
+	name="description"
+	content={description
+		? description
+		: metaTitle
+			? `${metaTitle} | ${consts.SITE_DESCRIPTION}`
+			: ''}
+/>
 
 <!-- OpenGraph -->
-<meta property="og:site_name" content={headMeta.title} />
-<meta property="og:title" content={title && headMeta.title} />
-<meta property="og:description" content={headMeta.description} />
+<meta property="og:site_name" content={consts.SITE_TITLE} />
+<meta property="og:title" content={title && consts.SITE_TITLE} />
+<meta property="og:description" content={consts.SITE_DESCRIPTION} />
 
-<meta name="application-name" content={headMeta.title} />
-<meta name="apple-mobile-web-app-title" content={headMeta.title} />
+<meta name="application-name" content={consts.SITE_TITLE} />
+<meta name="apple-mobile-web-app-title" content={consts.SITE_TITLE} />
 
 <!-- Favicons -->
 <link rel="icon" type="image/svg+xml" href={logoSVG.src} />
@@ -70,7 +82,7 @@ const {
 <link rel="manifest" href="/assets/images/favicon/manifest.json" />
 <meta name="mobile-web-app-capable" content="yes" />
 <meta name="theme-color" content="#007a72" />
-<meta name="application-name" content={title && headMeta.title} />
+<meta name="application-name" content={title && consts.SITE_TITLE} />
 <link
 	rel="apple-touch-icon"
 	sizes="57x57"
@@ -131,7 +143,7 @@ const {
 	name="apple-mobile-web-app-status-bar-style"
 	content="black-translucent"
 />
-<meta name="apple-mobile-web-app-title" content={headMeta.title} />
+<meta name="apple-mobile-web-app-title" content={consts.SITE_TITLE} />
 <link
 	rel="icon"
 	type="image/png"
@@ -152,4 +164,4 @@ const {
 	href="/assets/images/favicon/yandex-browser-manifest.json"
 />
 
-<meta name="google-site-verification" content={headMeta.googleverify} />
+<meta name="google-site-verification" content={consts.GOOGLE_VERIFICATION} />

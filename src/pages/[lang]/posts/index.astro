@@ -1,0 +1,34 @@
+---
+import PostCard from '@src/components/Cards/PostCard.astro';
+import BaseLayout from '@src/layouts/BaseLayout.astro';
+import { useTranslations } from '@src/lib/i18n';
+import { LOCALES, Lang } from '@src/lib/locales';
+import { getCollection } from 'astro:content';
+
+export const getStaticPaths = () =>
+	Object.keys(LOCALES).map((lang) => ({
+		params: { lang },
+	}));
+
+const locale = Astro.currentLocale as Lang;
+const { t } = useTranslations(locale);
+const posts = (await getCollection('posts'))
+	.filter((post) => post.id.split('/')[0] === locale)
+	.sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
+---
+
+<BaseLayout noMargin={false} title="Posts">
+	<div class="prose dark:prose-light prose-xl">
+		<h1>
+			{
+				t({
+					en: 'Posts',
+					nl: 'Berichten',
+				})
+			}
+		</h1>
+	</div>
+	<ul class="grid-cols-responsivecards mt-5 grid gap-3 md:gap-4 lg:gap-6">
+		{posts.map((post) => <PostCard post={post} />)}
+	</ul>
+</BaseLayout>

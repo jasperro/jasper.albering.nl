@@ -1,44 +1,21 @@
 ---
 import BaseLayout from '@src/layouts/BaseLayout.astro';
 import Icon from '@src/components/Icons.astro';
-import MailForm from '@src/components/MailForm.astro';
-import {
-	AlternativeLanguageMap,
-	knownLocales,
-	LocaleCode,
-	t as tbase,
-} from '@src/lib/translations';
 import ProjectCard from '@src/components/Cards/ProjectCard.astro';
-import { removeTrailingSlash } from '@src/lib/urlhelpers';
+import projects, { Project } from '@src/lib/data/projects';
+import { useTranslations } from '@src/lib/i18n';
+import { Lang, LOCALES } from '@src/lib/locales';
 
-export async function getStaticPaths() {
-	return Object.keys(knownLocales).map((locale) => ({
-		params: {
-			locale: locale,
-		},
+const locale = Astro.currentLocale as Lang;
+const { t } = useTranslations(locale);
 
-		props: {
-			locale,
-		},
+export const getStaticPaths = () =>
+	Object.keys(LOCALES).map((lang) => ({
+		params: { lang },
 	}));
-}
-
-const { locale } = Astro.props as { locale: LocaleCode };
-const t = tbase[locale];
-
-const alternativeLanguageMap: AlternativeLanguageMap = {
-	en: new URL('../en', removeTrailingSlash(Astro.url.href)).href,
-	nl: new URL('../nl', removeTrailingSlash(Astro.url.href)).href,
-};
-
-delete alternativeLanguageMap[locale];
 ---
 
-<BaseLayout
-	locale={locale}
-	{alternativeLanguageMap}
-	class="bg-jasperro-gradient"
->
+<BaseLayout class="bg-jasperro-gradient">
 	<section
 		class="bg-bgel bg-opacity-20 my-16 flex flex-col p-[clamp(--spacing(4),4vw,--spacing(32))]"
 	>
@@ -57,7 +34,35 @@ delete alternativeLanguageMap[locale];
 					class="flex h-[clamp(6rem,25vw,10rem)] w-[clamp(6rem,25vw,10rem)] 2xl:ml-8"
 				/>
 			</span>
-			<span class="my-12 block space-y-4 text-base" set:html={t.home.info} />
+			<span class="my-12 block space-y-4 text-base">
+				{
+					t({
+						en: (
+								<p>
+									I like to work with all kinds of technology. My focus
+									lies on web development, but I also tinker with
+									Linux, domotics, networking and a bit of electronics.
+								</p>
+								<p>
+									Currently I'm studying Computer Science at Utrecht
+									University.
+								</p>
+						),
+						nl: (
+								<p>
+									Ik werk graag met allerlei soorten technologie. Mijn
+									focus ligt op webontwikkeling, maar daarnaast sleutel
+									ik vooral aan Linux, domotica, netwerken en een
+									beetje elektronica.
+								</p>
+								<p>
+									Momenteel studeer ik Informatica aan de Universiteit
+									Utrecht.
+								</p>
+						),
+					})
+				}
+			</span>
 
 			<div
 				class="bg-bg bg-opacity-50 mt-6 flex w-max max-w-full flex-wrap gap-2 p-2 sm:rounded-xs sm:p-4 sm:shadow-md"
@@ -106,18 +111,20 @@ delete alternativeLanguageMap[locale];
 	</section>
 	<div class="mx-[clamp(1rem,6vw,19rem)]">
 		<section>
-			<h1 class="py-6 text-3xl">{t.home.projects}</h1>
+			<h1 class="py-6 text-3xl">{t({
+				en: "Projects",
+				nl: "Projecten",
+			})}</h1>
 			<div
 				id="projects"
 				class="grid w-full grid-cols-(--projects-grid-cols) gap-x-4 gap-y-4 lg:mx-0 lg:px-0"
 			>
 				{
-					Object.values(t.home.projectlist).map((project) => (
+					Object.values(projects(locale)).map((project: Project) => (
 						<ProjectCard
 							title={project.title}
 							description={project.description}
 							imgUrl={project.imgUrl}
-							imgRaw={project.imgRaw}
 							icons={project.icons}
 							actioncomponent={project.actioncomponent}
 						/>
