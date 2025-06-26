@@ -5,6 +5,7 @@ import ProjectCard from '@src/components/Cards/ProjectCard.astro';
 import projects, { Project } from '@src/lib/data/projects';
 import { useTranslations } from '@src/lib/i18n';
 import { Lang, LOCALES } from '@src/lib/locales';
+import { LINKEDIN_PROFILE_URL } from '@src/lib/consts';
 
 const locale = Astro.currentLocale as Lang;
 const { t } = useTranslations(locale);
@@ -34,31 +35,33 @@ export const getStaticPaths = () =>
 					class="flex h-[clamp(6rem,25vw,10rem)] w-[clamp(6rem,25vw,10rem)] 2xl:ml-8"
 				/>
 			</span>
-			<span class="my-12 block space-y-4 text-base">
+			<span class="my-12 block space-y-4 text-base leading-none">
 				{
 					t({
 						en: (
-								<p>
-									I like to work with all kinds of technology. My focus
-									lies on web development, but I also tinker with
-									Linux, domotics, networking and a bit of electronics.
-								</p>
-								<p>
-									Currently I'm studying Computer Science at Utrecht
-									University.
-								</p>
+							<p>Hello, I'm Jasper.</p>
+							<p>
+							I like to work with all kinds of technology; tinkering with Linux, domotics, networking and a bit of electronics.
+							</p>
+							<p>
+							I recently graduated from Computer Science at Utrecht University.
+							</p>
+							<p>
+							I'm currently taking a break and am looking for opportunities starting September. Contact me on LinkedIn.
+							</p>
 						),
 						nl: (
-								<p>
-									Ik werk graag met allerlei soorten technologie. Mijn
-									focus ligt op webontwikkeling, maar daarnaast sleutel
-									ik vooral aan Linux, domotica, netwerken en een
-									beetje elektronica.
-								</p>
-								<p>
-									Momenteel studeer ik Informatica aan de Universiteit
-									Utrecht.
-								</p>
+							<p>Hoi, ik ben Jasper</p>
+							<p>
+							Ik ben graag bezig met allerlei soorten technologie.
+							Denk dan vooral aan Linux, domotica, netwerken en een beetje elektronica.
+							</p>
+							<p>
+							Ik ben onlangs afgestudeerd in Informatica aan de Universiteit Utrecht.
+							</p>
+							<p>
+							Ik neem momenteel een pauze en ben op zoek naar werk vanaf september. Neem contact met me op via LinkedIn.
+							</p>
 						),
 					})
 				}
@@ -68,15 +71,14 @@ export const getStaticPaths = () =>
 				class="bg-bg bg-opacity-50 mt-6 flex w-max max-w-full flex-wrap gap-2 p-2 sm:rounded-xs sm:p-4 sm:shadow-md"
 			>
 				<a
-					href="#projects"
+					href={LINKEDIN_PROFILE_URL}
 					class="flex w-full items-center rounded-xs bg-yellow-300 px-5 py-3 text-sm font-medium text-black shadow-2xs sm:w-max"
-					>Portfolio
+					>{t({en: "View my resume", nl: "Bekijk mijn cv"})}&nbsp;<Icon name="linkedin" />
 				</a>
 				<a
-					href="#contact"
+					href={LINKEDIN_PROFILE_URL}
 					class="flex w-full items-center justify-between rounded-xs bg-green-300 px-5 py-3 text-sm font-medium text-black shadow-2xs sm:w-max"
-					>Contact&nbsp;
-					<Icon name="email" />
+					>{t({en: "Contact me", nl: "Neem contact op"})}&nbsp;<Icon name="linkedin" />
 				</a>
 				<a
 					href="https://github.com/jasperro"

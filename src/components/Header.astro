@@ -6,6 +6,7 @@ import LanguageSelector from './LanguageSelector.astro';
 import { removeTrailingSlash } from '@src/lib/urlhelpers';
 import { Lang } from '@src/lib/locales';
 import { getRelativeLocaleUrl } from 'astro:i18n';
+import { LINKEDIN_PROFILE_URL } from '@src/lib/consts';
 
 const pathName = removeTrailingSlash(Astro.url.pathname);
 const basePath = '/' + pathName.split('/')[1];
@@ -27,14 +28,14 @@ const navItems = [
 		href: getRelativeLocaleUrl(locale, 'about'),
 	},
 	{
-		name: tKey('navigation.cv'),
-		isCurrent: new RegExp(locale + '/cv').test(pathName),
-		href: getRelativeLocaleUrl(locale, 'cv'),
-	},
-	{
 		name: tKey('navigation.posts'),
 		isCurrent: new RegExp(locale + '/posts/*').test(pathName),
 		href: getRelativeLocaleUrl(locale, 'posts'),
+	},
+	{
+		name: tKey('navigation.cv'),
+		icon: 'linkedin',
+		href: LINKEDIN_PROFILE_URL,
 	},
 ];
 ---
@@ -95,10 +96,15 @@ const navItems = [
 										} mr-1 flex w-full rounded-sm font-medium sm:w-max`}
 									>
 										<a
-											class="block w-full px-4 py-2"
+											class="flex w-full px-4 py-2 space-x-2"
 											href={item.href}
 										>
 											{item.name}
+											{item.icon && <Icon
+												name={item.icon}
+												class="h-4 w-4 ml-1 self-center"
+												aria-hidden="true"
+											/>}
 										</a>
 									</li>
 								);
