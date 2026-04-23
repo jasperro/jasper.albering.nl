@@ -1,23 +1,23 @@
-import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';
-import mdx from '@astrojs/mdx';
-import { fileURLToPath } from 'url';
-import path from 'path';
-import { readFileSync } from 'fs';
-import { Plugin } from 'rollup';
+import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
+import mdx from "@astrojs/mdx";
+import { fileURLToPath } from "url";
+import path from "path";
+import { readFileSync } from "fs";
+import { Plugin } from "rollup";
 
-import tailwindcss from '@tailwindcss/vite';
-import { DEFAULT_LOCALE, LOCALES } from './src/lib/locales';
+import tailwindcss from "@tailwindcss/vite";
+import { DEFAULT_LOCALE, LOCALES } from "./src/lib/locales";
 
 // Adapted from https://stackoverflow.com/questions/73847316
 const bufferLoader: Plugin = {
-	name: 'buffer-loader',
+	name: "buffer-loader",
 	transform(_, id) {
-		const [path, query] = id.split('?');
-		if (query != 'buffer') return null;
+		const [path, query] = id.split("?");
+		if (query != "buffer") return null;
 
 		const data = readFileSync(path);
-		const hex = data.toString('hex');
+		const hex = data.toString("hex");
 
 		return `export default Buffer.from("${hex}", "hex");`;
 	},
@@ -32,7 +32,7 @@ export default defineConfig({
 			alias: {
 				node_modules: path.resolve(
 					path.dirname(fileURLToPath(import.meta.url)),
-					'node_modules'
+					"node_modules"
 				),
 			},
 		},

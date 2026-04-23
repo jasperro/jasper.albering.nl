@@ -1,4 +1,4 @@
 {
-    "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix",
-    "eslint.format.enable": true
+	"nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix",
+	"eslint.format.enable": true
 }

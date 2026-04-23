@@ -16,7 +16,7 @@ export const LOCALES = {
 type LocaleConfig = {
 	readonly label: string;
 	readonly lang?: string;
-	readonly dir?: 'ltr' | 'rtl';
+	readonly dir?: "ltr" | "rtl";
 };
 
 /**

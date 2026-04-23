@@ -1,4 +1,4 @@
 declare module "*?buffer" {
-    const src: Buffer;
-    export = src;
+	const src: Buffer;
+	export = src;
 }

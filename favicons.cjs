@@ -1,28 +1,28 @@
-const favicons = require('favicons');
-const path = require('node:path');
-const fs = require('fs');
+const favicons = require("favicons");
+const path = require("node:path");
+const fs = require("fs");
 
-const baseOutputDir = './public/assets/images/favicon/';
+const baseOutputDir = "./public/assets/images/favicon/";
 
 favicons(
-	'./src/assets/images/svg/iconlight.svg',
+	"./src/assets/images/svg/iconlight.svg",
 	{
 		appName: "Jasper Albering's Website",
-		appShortName: 'Jasper Albering',
+		appShortName: "Jasper Albering",
 		appDescription: "This is Jasper Albering's Website",
-		developerName: 'Jasper Albering',
-		developerURL: 'https://jasper.albering.nl/',
-		background: '#c6ece9',
-		theme_color: '#007a72',
-		path: '/assets/images/favicon/',
-		url: 'https://jasper.albering.nl/',
-		display: 'standalone',
-		orientation: 'portrait',
-		scope: '/',
-		start_url: '/',
+		developerName: "Jasper Albering",
+		developerURL: "https://jasper.albering.nl/",
+		background: "#c6ece9",
+		theme_color: "#007a72",
+		path: "/assets/images/favicon/",
+		url: "https://jasper.albering.nl/",
+		display: "standalone",
+		orientation: "portrait",
+		scope: "/",
+		start_url: "/",
 		version: 1.0,
 		logging: false,
-		html: 'index.html',
+		html: "index.html",
 		pipeHTML: true,
 		replace: true,
 		icons: {

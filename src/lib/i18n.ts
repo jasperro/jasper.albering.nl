@@ -1,13 +1,15 @@
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import { DEFAULT_LOCALE, Lang, LOCALES } from './locales';
-import translations from './translations';
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { DEFAULT_LOCALE, Lang, LOCALES } from "./locales";
+import translations from "./translations";
 
 /**
  * Type for the multilingual object
  * @example
  * { en: "Hello", ja: "こんにちは", ... }
  */
-export type Multilingual<T = string> = { [key in Lang]?: T } & { [DEFAULT_LOCALE]: T };
+export type Multilingual<T = string> = { [key in Lang]?: T } & {
+	[DEFAULT_LOCALE]: T;
+};
 
 /**
  * Helper to get the translation function
@@ -16,15 +18,17 @@ export type Multilingual<T = string> = { [key in Lang]?: T } & { [DEFAULT_LOCALE
  */
 export function useTranslations(lang: Lang) {
 	return {
-		t: function t<T = string>(multilingual: Multilingual<T> | string): T | string {
-			if (typeof multilingual === 'string')
-				return multilingual as string;
-			else
-				return multilingual[lang] || multilingual[DEFAULT_LOCALE];
+		t: function t<T = string>(
+			multilingual: Multilingual<T> | string
+		): T | string {
+			if (typeof multilingual === "string") return multilingual as string;
+			else return multilingual[lang] || multilingual[DEFAULT_LOCALE];
 		},
-		tKey: function tKey(key: keyof typeof translations[typeof DEFAULT_LOCALE]) {
+		tKey: function tKey(
+			key: keyof (typeof translations)[typeof DEFAULT_LOCALE]
+		) {
 			return translations[lang][key] || translations[DEFAULT_LOCALE][key];
-		}
+		},
 	};
 }
 
@@ -39,7 +43,7 @@ export function getLocalePaths(url: URL): LocalePath[] {
 			lang: lang as Lang,
 			path: getRelativeLocaleUrl(
 				lang,
-				url.pathname.replace(/^\/[a-zA-Z-]+/, '')
+				url.pathname.replace(/^\/[a-zA-Z-]+/, "")
 			),
 		};
 	});
