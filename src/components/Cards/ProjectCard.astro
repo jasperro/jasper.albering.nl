@@ -1,37 +1,62 @@
 ---
-import Picture from '@src/components/PictureWithDefaults.astro';
-import Icon from '@src/components/Icons.astro';
+import Icon from "@src/components/Icons.astro";
 
-const { title, description, imgUrl, icons = [], actioncomponent } = Astro.props;
+const {
+	title,
+	description,
+	tags = [],
+	icons = [],
+	actioncomponent,
+} = Astro.props;
 ---
 
 <div
-	class="bg-bgel dark:bg-bgel-dark flex flex-col justify-between rounded-xs p-5 shadow-2xs transition-shadow hover:shadow-xl"
+	class="border-primary/5 group flex w-full min-w-0 flex-col justify-between rounded-3xl border bg-white/40 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-black/20"
 >
-	<div>
-		{
-			imgUrl ? (
-				<Picture class="h-48 object-cover" src={imgUrl} alt={title} />
-			) : (
-				''
-			)
-		}
-	</div>
-
-	<p class="pt-6 text-xl font-semibold">{title}</p>
-	<p class="pt-2 text-base">{description}</p>
-	<div class="mt-4 flex justify-between">
-		<div class="mt-2 flex items-center">
-			{icons.map((i: string) => <Icon name={i} />)}
+	<div class="min-w-0">
+		<div class="mb-6 flex items-start justify-between">
+			<div class="flex gap-2">
+				{
+					icons.map((i: string) => (
+						<Icon
+							name={i}
+							class="text-primary/80 group-hover:text-accent h-8 w-8 transition-colors"
+						/>
+					))
+				}
+			</div>
 		</div>
-		<div class="mt-2">
+
+		<h3
+			class="text-primary mb-3 truncate text-[clamp(1.5rem,5vw,1.875rem)] font-bold"
+			title={title}
+		>
+			{title}
+		</h3>
+		<p
+			class="mb-4 text-[clamp(1rem,2.5vw,1.125rem)] leading-relaxed opacity-80"
+		>
+			{description}
+		</p>
+
+		<div class="flex flex-wrap gap-2">
 			{
-				actioncomponent
-					? ((ActionComponent) => (
-							<ActionComponent {...actioncomponent[1]} />
-						))(actioncomponent[0])
-					: null
+				tags.map((tag: string) => (
+					<span class="bg-accent/10 text-accent border-accent/20 rounded-full border px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase">
+						{tag}
+					</span>
+				))
 			}
 		</div>
+	</div>
+
+	<div class="border-primary/5 mt-8 flex justify-end border-t pt-6">
+		{
+			actioncomponent
+				? ((ActionComponent) => (
+						<ActionComponent {...actioncomponent[1]} />
+					))(actioncomponent[0])
+				: null
+		}
 	</div>
 </div>

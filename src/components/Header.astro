@@ -1,14 +1,14 @@
 ---
-import Icon from '@src/components/Icons.astro';
-import { useTranslations } from '@src/lib/i18n';
-import LanguageSelector from './LanguageSelector.astro';
-import { removeTrailingSlash } from '@src/lib/urlhelpers';
-import { Lang } from '@src/lib/locales';
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import { LINKEDIN_PROFILE_URL } from '@src/lib/consts';
+import Icon from "@src/components/Icons.astro";
+import { useTranslations } from "@src/lib/i18n";
+import LanguageSelector from "./LanguageSelector.astro";
+import { removeTrailingSlash } from "@src/lib/urlhelpers";
+import { Lang } from "@src/lib/locales";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { LINKEDIN_PROFILE_URL } from "@src/lib/consts";
 
 const pathName = removeTrailingSlash(Astro.url.pathname);
-const basePath = '/' + pathName.split('/')[1];
+const basePath = "/" + pathName.split("/")[1];
 
 const locale = Astro.currentLocale as Lang;
 
@@ -16,24 +16,24 @@ const { tKey } = useTranslations(locale);
 
 const navItems = [
 	{
-		name: tKey('navigation.home'),
+		name: tKey("navigation.home"),
 		isCurrent:
-			basePath == pathName && new RegExp(locale + '+$').test(pathName),
+			basePath == pathName && new RegExp(locale + "+$").test(pathName),
 		href: getRelativeLocaleUrl(locale),
 	},
 	{
-		name: tKey('navigation.about'),
-		isCurrent: new RegExp(locale + '/about').test(pathName),
-		href: getRelativeLocaleUrl(locale, 'about'),
+		name: tKey("navigation.about"),
+		isCurrent: new RegExp(locale + "/about").test(pathName),
+		href: getRelativeLocaleUrl(locale, "about"),
 	},
 	{
-		name: tKey('navigation.posts'),
-		isCurrent: new RegExp(locale + '/posts/*').test(pathName),
-		href: getRelativeLocaleUrl(locale, 'posts'),
+		name: tKey("navigation.posts"),
+		isCurrent: new RegExp(locale + "/posts/*").test(pathName),
+		href: getRelativeLocaleUrl(locale, "posts"),
 	},
 	{
-		name: tKey('navigation.cv'),
-		icon: 'linkedin',
+		name: tKey("navigation.cv"),
+		icon: "linkedin",
 		href: LINKEDIN_PROFILE_URL,
 	},
 ];
@@ -42,7 +42,7 @@ const navItems = [
 <header class="header" role="banner">
 	<nav role="navigation" tabindex="-1">
 		<div
-			class="relative z-40 flex w-full flex-col justify-between select-none sm:static sm:p-4"
+			class="group/nav relative z-40 flex w-full flex-col justify-between select-none sm:static sm:p-4"
 		>
 			<input
 				type="checkbox"
@@ -53,7 +53,7 @@ const navItems = [
 			/>
 			<!-- Logo and hamburger menu on mobile -->
 			<div
-				class="nav-shadow-togglable bg-bgel bg-opacity-50 flex w-full p-4 shadow-2xl transition-all sm:hidden sm:w-min sm:shadow-none"
+				class="nav-shadow-togglable bg-bgel bg-opacity-50 flex w-full p-4 shadow-2xl transition-all max-sm:group-has-[:checked]/nav:shadow-none sm:hidden sm:w-min sm:shadow-none"
 			>
 				<div class="flex">
 					<label
@@ -65,7 +65,7 @@ const navItems = [
 					>
 						<Icon name="menu" class="h-10 w-10 self-center" />
 					</label>
-					<a class="ml-4 flex" href={'/'} aria-label="home">
+					<a class="ml-4 flex" href={"/"} aria-label="home">
 						<Icon
 							name="logo"
 							class="h-10 w-10 self-center"
@@ -78,11 +78,17 @@ const navItems = [
 			<div class="nav-items-wrapper">
 				<nav
 					id="navigationitems"
-					class="absolute top-full left-0 -z-10 m-[inherit] w-full origin-top transform-gpu flex-col justify-between p-4 shadow-2xl backdrop-blur-md backdrop-filter transition-transform motion-reduce:transition-none sm:static sm:z-10 sm:m-0 sm:flex sm:max-h-full sm:translate-y-0 sm:flex-row sm:bg-transparent sm:p-0 sm:shadow-none sm:backdrop-filter-none"
+					class="absolute top-full left-0 -z-10 m-[inherit] w-full origin-top transform-gpu flex-col justify-between p-4 shadow-2xl backdrop-blur-md backdrop-filter transition-transform motion-reduce:transition-none max-sm:group-has-[:checked]/nav:top-0 max-sm:group-has-[:checked]/nav:flex max-sm:group-has-[:checked]/nav:max-h-screen max-sm:group-has-[:checked]/nav:-translate-y-full max-sm:group-has-[:checked]/nav:shadow-none sm:static sm:z-10 sm:m-0 sm:flex sm:max-h-full sm:translate-y-0 sm:flex-row sm:bg-transparent sm:p-0 sm:shadow-none sm:backdrop-filter-none"
 				>
-					<ul class="flex flex-col sm:flex-row">
-						<li class="mr-2 hidden self-center sm:flex">
-							<Icon name="logo" class="h-10 w-10" aria-hidden="true" />
+					<ul class="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+						<li class="mr-4 hidden self-center sm:flex">
+							<a href="/" aria-label="Home">
+								<Icon
+									name="logo"
+									class="text-primary h-8 w-8 transition-transform hover:rotate-12"
+									aria-hidden="true"
+								/>
+							</a>
 						</li>
 						{
 							navItems.map((item) => {
@@ -90,20 +96,22 @@ const navItems = [
 									<li
 										class={`${
 											item.isCurrent
-												? 'bg-primary text-white dark:text-black'
-												: 'text-primary'
-										} mr-1 flex w-full rounded-sm font-medium sm:w-max`}
+												? "bg-accent text-white shadow-md dark:text-gray-900"
+												: "text-primary hover:bg-primary/10 hover:transition-all hover:duration-300"
+										} flex w-full rounded-full font-bold sm:w-max`}
 									>
 										<a
-											class="flex w-full px-4 py-2 space-x-2"
+											class="flex w-full items-center space-x-2 px-6 py-2"
 											href={item.href}
 										>
-											{item.name}
-											{item.icon && <Icon
-												name={item.icon}
-												class="h-4 w-4 ml-1 self-center"
-												aria-hidden="true"
-											/>}
+											<span>{item.name}</span>
+											{item.icon && (
+												<Icon
+													name={item.icon}
+													class="ml-1 h-4 w-4"
+													aria-hidden="true"
+												/>
+											)}
 										</a>
 									</li>
 								);
@@ -116,7 +124,7 @@ const navItems = [
 					tabindex="0"
 					role="button"
 					aria-label="Close navigation"
-					class="nav-hide bg-bg/80 fixed top-0 -z-20 h-screen w-screen cursor-pointer transition-colors sm:hidden"
+					class="nav-hide bg-bg/80 fixed top-0 -z-20 h-screen w-screen cursor-pointer transition-colors max-sm:group-has-[:checked]/nav:h-0 max-sm:group-has-[:checked]/nav:bg-transparent sm:hidden"
 				>
 				</label>
 			</div>

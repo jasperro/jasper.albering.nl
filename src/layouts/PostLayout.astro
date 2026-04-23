@@ -1,8 +1,8 @@
 ---
-import { InferEntrySchema } from 'astro:content';
-import BaseLayout from './BaseLayout.astro';
-import dayjs from 'dayjs';
-import NotTranslateCaution from '@src/components/i18n/NotTranslateCaution.astro';
+import { InferEntrySchema } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import dayjs from "dayjs";
+import NotTranslateCaution from "@src/components/i18n/NotTranslateCaution.astro";
 const {
 	post: { data },
 	missing,
@@ -10,7 +10,7 @@ const {
 
 type Props = {
 	post: {
-		data: InferEntrySchema<'posts'>;
+		data: InferEntrySchema<"posts">;
 	};
 	missing: boolean;
 };
@@ -25,9 +25,9 @@ type Props = {
 			data.date && (
 				<time
 					class="text-md block w-full pb-8 font-medium text-gray-600 uppercase dark:text-gray-300"
-					datetime={dayjs(data.date).format('YYYY-MM-DD')}
+					datetime={dayjs(data.date).format("YYYY-MM-DD")}
 				>
-					{dayjs(data.date).format('DD MMM YYYY')}
+					{dayjs(data.date).format("DD MMM YYYY")}
 				</time>
 			)
 		}

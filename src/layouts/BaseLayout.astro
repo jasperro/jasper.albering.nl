@@ -1,20 +1,20 @@
 ---
-import { HTMLAttributes } from 'astro/types';
-import Meta from '@src/components/Meta.astro';
-import Header from '@src/components/Header.astro';
-import '@src/styles/global.css';
-import SocialLinks from '@src/components/SocialLinks.astro';
-import { Lang, LOCALES } from '@src/lib/locales';
-import { useTranslations } from '@src/lib/i18n';
-import * as consts from '@src/lib/consts';
+import { HTMLAttributes } from "astro/types";
+import Meta from "@src/components/Meta.astro";
+import Header from "@src/components/Header.astro";
+import "@src/styles/global.css";
+import SocialLinks from "@src/components/SocialLinks.astro";
+import { Lang, LOCALES } from "@src/lib/locales";
+import { useTranslations } from "@src/lib/i18n";
+import * as consts from "@src/lib/consts";
 
-await import('dayjs/locale/nl');
+await import("dayjs/locale/nl");
 
 const canonicalURL = new URL(Astro.url);
 const {
 	noMargin = true,
 	class: className,
-	'class:list': classList,
+	"class:list": classList,
 	...meta
 } = Astro.props;
 
@@ -22,7 +22,7 @@ type Props = {
 	noMargin?: boolean;
 	title?: string;
 	description?: string;
-} & HTMLAttributes<'body'>;
+} & HTMLAttributes<"body">;
 
 const locale = Astro.currentLocale as Lang;
 ---
@@ -31,33 +31,36 @@ const locale = Astro.currentLocale as Lang;
 	<head>
 		<Meta {...meta} {canonicalURL} />
 		<script is:inline>
-			function setUserLanguage(language = 'en') {
+			function setUserLanguage(language = "en") {
 				document.cookie = `nf_lang=${language}; secure; path=/`;
 			}
 		</script>
 	</head>
 
 	<body
-		class:list={['flex', 'min-h-screen', 'flex-col', className, classList]}
+		class:list={["flex", "min-h-screen", "flex-col", className, classList]}
 	>
 		<Header locale={locale} />
 
 		<main
 			id="main"
-			class={`flex flex-col grow overflow-hidden${
-				noMargin ? '' : ' lg:p-16 md:p-8 p-4'
-			}`}
+			class:list={[
+				"animate-fade-in flex grow flex-col overflow-hidden",
+				noMargin ? "" : "p-6 md:p-12 lg:p-24",
+			]}
 			tabindex="-1"
 		>
 			<slot />
 		</main>
 
 		<footer
-			class="bg-bgel bg-opacity-50 mt-16 flex grow-0 items-center justify-between px-8 py-4 text-sm"
+			class="border-primary/10 mt-24 flex grow-0 flex-col items-center justify-between gap-6 border-t bg-white/10 px-8 py-12 text-sm backdrop-blur-md md:flex-row dark:bg-black/10"
 			role="contentinfo"
 		>
-			<div>Jasper Albering &copy; 2016-{new Date().getFullYear()}</div>
-			<span class="flex gap-x-3">
+			<div class="font-medium opacity-60">
+				Jasper Albering &copy; 2016-{new Date().getFullYear()}
+			</div>
+			<span class="flex gap-x-6">
 				<SocialLinks />
 			</span>
 		</footer>

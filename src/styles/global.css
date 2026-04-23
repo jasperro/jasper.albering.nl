@@ -3,76 +3,123 @@
 @plugin "@tailwindcss/forms";
 @config "./tailwind.config.mjs";
 
-@import "./base/_base.css";
-@import "./base/_input.css";
-
-@import "./components/_nav.css";
-@import "./components/_icon.css";
-
-@import "./pages/_home.css";
-
-@import "./base/_fonts.css";
+@import "./_fonts.css";
 
 :root {
-    --basecolor-primary-light: 176 56% 55%;
-    --basecolor-primary-dark: 176 100% 24%;
+	--basecolor-primary-light: 220 90% 25%;
+	--basecolor-primary-dark: 220 70% 65%;
 
-    --basecolor-primary: var(--basecolor-primary-dark);
+	--basecolor-accent-light: 175 100% 10%;
+	--basecolor-accent-dark: 175 80% 60%;
 
-    --basecolor-accent: var(--basecolor-primary);
+	--basecolor-bg-light: 220 50% 98%;
+	--basecolor-bg-dark: 220 30% 9%;
 
-    --basecolor-bg-light: 176 52% 95%;
-    --basecolor-bg-dark: 176 52% 15%;
-    --basecolor-bg-element-light: 176 50% 85%;
-    --basecolor-bg-element-dark: 176 50% 10%;
+	--basecolor-bg-element-light: 220 40% 92%;
+	--basecolor-bg-element-dark: 220 30% 18%;
 
-    --basecolor-bg: var(--basecolor-bg-light);
-    --basecolor-bg-element: var(--basecolor-bg-element-light);
+	--basecolor-text-light: 220 90% 10%;
+	--basecolor-text-dark: 220 10% 95%;
 
-    --basecolor-text: 176 100% 100%;
-    --basecolor-text-light: 176 0 0;
+	--basecolor-primary: var(--basecolor-primary-light);
+	--basecolor-accent: var(--basecolor-accent-light);
+	--basecolor-bg: var(--basecolor-bg-light);
+	--basecolor-bg-element: var(--basecolor-bg-element-light);
+	--basecolor-text: var(--basecolor-text-light);
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --basecolor-bg: var(--basecolor-bg-dark);
-        --basecolor-bg-element: var(--basecolor-bg-element-dark);
-        --basecolor-primary: var(--basecolor-primary-light);
-    }
+	:root {
+		--basecolor-primary: var(--basecolor-primary-dark);
+		--basecolor-accent: var(--basecolor-accent-dark);
+		--basecolor-bg: var(--basecolor-bg-dark);
+		--basecolor-bg-element: var(--basecolor-bg-element-dark);
+		--basecolor-text: var(--basecolor-text-dark);
+	}
+}
+
+@layer base {
+	body {
+		color: hsl(var(--basecolor-text));
+		background-color: hsl(var(--basecolor-bg));
+		overflow-x: hidden;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply tracking-tight;
+	}
 }
 
 @layer components {
-    .bg-jasperro-gradient {
-        background: rgb(13, 38, 37);
-        background: linear-gradient(
-            140deg,
-            hsl(var(--basecolor-bg-element)) -20%,
-            hsl(var(--basecolor-bg)) 60%,
-            hsl(var(--basecolor-primary)) 140%
-        );
-    }
+	.animate-fade-in {
+		animation: fadeIn 0.8s ease-out both;
+	}
+
+	.animate-slide-up {
+		animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	::before,
+	::after {
+		animation-duration: 0s !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0s !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideUpFade {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 @theme {
-    --color-primary-dark: hsl(var(--basecolor-primary-dark));
-    --color-primary-light: hsl(var(--basecolor-primary-light));
-    --color-primary: hsl(var(--basecolor-primary));
+	--color-primary-dark: hsl(var(--basecolor-primary-dark));
+	--color-primary-light: hsl(var(--basecolor-primary-light));
+	--color-primary: hsl(var(--basecolor-primary));
 
-    --color-accent: hsl(var(--basecolor-accent));
+	--color-accent: hsl(var(--basecolor-accent));
 
-    --color-bg-dark: hsl(var(--basecolor-bg-dark));
-    --color-bg: hsl(var(--basecolor-bg));
+	--color-bg-dark: hsl(var(--basecolor-bg-dark));
+	--color-bg: hsl(var(--basecolor-bg));
 
-    --color-bgel-dark: hsl(var(--basecolor-bg-element-dark));
-    --color-bgel: hsl(var(--basecolor-bg-element));
+	--color-bgel-dark: hsl(var(--basecolor-bg-element-dark));
+	--color-bgel: hsl(var(--basecolor-bg-element));
 
-    --font-sans:
-        "Lexend var", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--color-text: hsl(var(--basecolor-text));
 
-    --min-width-8: 0.5rem;
-    --min-width-48: 3rem;
-    --min-width-80: 5rem;
+	--font-sans:
+		"Lexend var", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-    --projects-grid-cols: repeat(auto-fill, minmax(20rem, 1fr));
+	--min-width-8: 0.5rem;
+	--min-width-48: 3rem;
+	--min-width-80: 5rem;
+
+	--projects-grid-cols: repeat(auto-fill, minmax(20rem, 1fr));
 }

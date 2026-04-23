@@ -1,11 +1,10 @@
 ---
-import BaseLayout from '@src/layouts/BaseLayout.astro';
-import Icon from '@src/components/Icons.astro';
-import ProjectCard from '@src/components/Cards/ProjectCard.astro';
-import projects, { Project } from '@src/lib/data/projects';
-import { useTranslations } from '@src/lib/i18n';
-import { Lang, LOCALES } from '@src/lib/locales';
-import { LINKEDIN_PROFILE_URL } from '@src/lib/consts';
+import BaseLayout from "@src/layouts/BaseLayout.astro";
+import Icon from "@src/components/Icons.astro";
+import Projects from "@src/components/Projects.astro";
+import { useTranslations } from "@src/lib/i18n";
+import { Lang, LOCALES } from "@src/lib/locales";
+import { LINKEDIN_PROFILE_URL } from "@src/lib/consts";
 
 const locale = Astro.currentLocale as Lang;
 const { t } = useTranslations(locale);
@@ -16,128 +15,160 @@ export const getStaticPaths = () =>
 	}));
 ---
 
-<BaseLayout class="bg-jasperro-gradient">
+<BaseLayout class="bg-element overflow-x-hidden">
 	<section
-		class="bg-bgel bg-opacity-20 my-16 flex flex-col p-[clamp(--spacing(4),4vw,--spacing(32))]"
+		class="animate-fade-in relative my-16 flex min-h-[70vh] flex-col justify-center p-[clamp(--spacing(4),4vw,--spacing(32))]"
 	>
-		<div class="w-full flex-col justify-between">
+		<!-- Background Impression -->
+		<div
+			class="text-primary/10 md:text-primary/20 absolute top-1/2 right-0 -z-10 h-[90%] w-auto -translate-y-1/2 transition-colors"
+		>
+			<span class="flex h-full w-auto">
+				<Icon
+					name="jasper-impression"
+					class="h-full w-auto object-contain"
+				/>
+			</span>
+		</div>
+
+		<div class="relative z-10 w-full flex-col justify-between">
 			<span
-				class="flex flex-wrap-reverse items-center justify-between 2xl:justify-start"
+				class="animate-slide-up flex flex-wrap-reverse items-center justify-between 2xl:justify-start"
 			>
 				<h1
-					class="text-primary flex text-9xl leading-snug font-medium tracking-tighter"
+					class="text-primary flex text-[clamp(2.5rem,10vw,8rem)] leading-tight font-bold tracking-tight"
 				>
 					Jasper Albering
 				</h1>
 
 				<Icon
 					name="logo"
-					class="flex h-[clamp(6rem,25vw,10rem)] w-[clamp(6rem,25vw,10rem)] 2xl:ml-8"
+					class="text-primary flex h-[clamp(6rem,20vw,8rem)] w-[clamp(6rem,20vw,8rem)] transition-transform hover:rotate-6 2xl:ml-8"
+					aria-label="Jasper Albering Logo"
 				/>
 			</span>
-			<span class="my-12 block space-y-4 text-base/7 max-w-5xl">
+			<span
+				class="animate-slide-up my-12 block max-w-4xl space-y-6 text-lg leading-relaxed md:text-xl"
+			>
 				{
 					t({
 						en: (
-							<p>Hello, I'm Jasper.</p>
-							<p>
-							I like to work with all kinds of technology; tinkering with Linux, domotics, networking and a bit of electronics.
-							</p>
-							<p>
-							After graduating from my BSc. Computer Science at Utrecht University in May 2025, I have been taking a break, and am currently looking for a position as a DevOps/Cloud Engineer, Systems Engineer, Full-stack developer or similar (32-40 hours/week).
-							</p>
-							<p>
-							Contact me on LinkedIn.
-							</p>
+							<>
+								<p class="text-accent text-sm font-bold tracking-widest uppercase opacity-90">
+									Introduction
+								</p>
+								<p>Hello, I'm Jasper.</p>
+								<p>
+									I like to work with all kinds of technology;
+									tinkering with Linux, domotics, networking and a bit
+									of electronics.
+								</p>
+								<p>
+									After graduating from my BSc. Computer Science at
+									Utrecht University in May 2025, I have been taking a
+									break, and am currently looking for a position as a
+									DevOps/Cloud Engineer, Systems Engineer, Full-stack
+									developer or similar (32-40 hours).
+								</p>
+								<p>Contact me on LinkedIn.</p>
+							</>
 						),
 						nl: (
-							<p>Hoi, ik ben Jasper</p>
-							<p>
-							Ik ben graag bezig met allerlei soorten technologie.
-							Denk dan vooral aan Linux, domotica, netwerken en een beetje elektronica.
-							</p>
-							<p>
-							Na mijn afstuderen als BSc. Informatica/Computer Science aan de Universiteit Utrecht in mei 2025, heb ik een pauze genomen, en ik zoek momenteel naar een functie als DevOps/Cloud Engineer, Systems Engineer, Full-stack developer of vergelijkbaar (32-40 uur per week).
-							</p>
-							<p>
-							Neem contact met me op via LinkedIn.
-							</p>
+							<>
+								<p class="text-accent text-sm font-bold tracking-widest uppercase opacity-90">
+									Introductie
+								</p>
+								<p>Hoi, ik ben Jasper</p>
+								<p>
+									Ik ben graag bezig met allerlei soorten technologie.
+									Denk dan vooral aan Linux, domotica, netwerken en een
+									beetje elektronica.
+								</p>
+								<p>
+									Na mijn afstuderen als BSc. Informatica/Computer
+									Science aan de Universiteit Utrecht in mei 2025, heb
+									ik een pauze genomen, en ik zoek momenteel naar een
+									functie als DevOps/Cloud Engineer, Systems Engineer,
+									Full-stack developer of vergelijkbaar (32-40 uur).
+								</p>
+								<p>Neem contact met me op via LinkedIn.</p>
+							</>
 						),
 					})
 				}
 			</span>
 
 			<div
-				class="bg-bg bg-opacity-50 mt-6 flex w-max max-w-full flex-wrap gap-2 p-2 sm:rounded-xs sm:p-4 sm:shadow-md"
+				class="animate-slide-up mt-8 flex w-max max-w-full flex-wrap gap-4"
 			>
 				<a
 					href={LINKEDIN_PROFILE_URL}
-					class="flex w-full items-center rounded-xs bg-yellow-300 px-5 py-3 text-sm font-medium text-black shadow-2xs sm:w-max"
-					>{t({en: "View my resume", nl: "Bekijk mijn cv"})}&nbsp;<Icon name="linkedin" />
+					class="bg-accent flex w-full items-center justify-center rounded-full px-8 py-4 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl sm:w-max dark:text-gray-900"
+					>{t({ en: "View my resume", nl: "Bekijk mijn cv" })}&nbsp;<Icon
+						name="linkedin"
+						class="h-4 w-4"
+					/>
 				</a>
 				<a
 					href={LINKEDIN_PROFILE_URL}
-					class="flex w-full items-center justify-between rounded-xs bg-green-300 px-5 py-3 text-sm font-medium text-black shadow-2xs sm:w-max"
-					>{t({en: "Contact me", nl: "Neem contact op"})}&nbsp;<Icon name="linkedin" />
+					class="border-primary text-primary hover:bg-primary flex w-full items-center justify-center rounded-full border-2 bg-transparent px-8 py-4 text-sm font-bold transition-all hover:-translate-y-1 hover:text-white hover:shadow-xl sm:w-max"
+					>{t({ en: "Contact me", nl: "Neem contact op" })}&nbsp;<Icon
+						name="linkedin"
+						class="h-4 w-4"
+					/>
 				</a>
 				<a
 					href="https://github.com/jasperro"
-					class="flex w-max items-center rounded-xs bg-gray-800 px-3 py-3 font-medium text-white shadow-2xs"
+					class="flex w-max items-center rounded-full bg-gray-900 px-4 py-4 text-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800"
+					aria-label="GitHub Profile"
 				>
-					<Icon name="github" />
+					<Icon name="github" class="h-6 w-6" />
 				</a>
 			</div>
 		</div>
-		<!-- <div class="flex max-w-3xl flex-col">
-            <span class="mt-6 text-xs font-medium">
-                <p class="mt-6">{t.home.workedwith}</p>
-                <p
-                    class="mt-2 select-none tracking-[.25em] md:tracking-[.75em]"
-                >
-                    <Icon name="github" />
-                    <Icon name="open-source-initiative" />
-                    <Icon name="linux" />
-                    <Icon name="react" />
-                    <Icon name="language-html5" />
-                    <Icon name="language-css3" />
-                    <Icon name="language-javascript" />
-                    <Icon name="language-typescript" />
-                    <Icon name="raspberry-pi" />
-                    <Icon name="home-assistant" />
-                    <Icon name="godot" />
-                    <Icon name="eleventy" />
-                    <Icon name="hugo" />
-                </p>
-            </span>
-        </div> -->
 	</section>
-	<!--
-	<div class="mx-[clamp(1rem,6vw,19rem)]">
-		<section>
-			<h1 class="py-6 text-3xl">{t({
-				en: "Projects",
-				nl: "Projecten",
-			})}</h1>
-			<div
-				id="projects"
-				class="grid w-full grid-cols-(--projects-grid-cols) gap-x-4 gap-y-4 lg:mx-0 lg:px-0"
-			>
-				{
-					Object.values(projects(locale)).map((project: Project) => (
-						<ProjectCard
-							title={project.title}
-							description={project.description}
-							imgUrl={project.imgUrl}
-							icons={project.icons}
-							actioncomponent={project.actioncomponent}
-						/>
-					))
-				}
-			</div>
-		</section>
-		-->
-		<!-- <MailForm {t} /> -->
-	<!--
-	</div>
-	-->
+
+	<section
+		class="animate-slide-up px-[clamp(--spacing(4),4vw,--spacing(32))] pb-24"
+	>
+		<h2
+			class="text-accent mb-12 text-sm font-bold tracking-widest uppercase opacity-80"
+		>
+			{t({ en: "Expertise", nl: "Expertise" })}
+		</h2>
+		<div class="flex flex-wrap gap-4 md:gap-6">
+			{
+				[
+					{
+						name: "Linux",
+						color: "bg-zinc-100 text-zinc-800 dark:bg-zinc-800/50 dark:text-zinc-200",
+					},
+					{
+						name: "Full-Stack Development",
+						color: "bg-primary/10 text-primary dark:bg-primary/20 dark:text-blue-300",
+					},
+					{
+						name: "Home Automation",
+						color: "bg-violet-100 text-violet-800 dark:bg-violet-900/40 dark:text-violet-200",
+					},
+					{
+						name: "Open Source",
+						color: "bg-accent/10 text-accent dark:bg-accent/20 dark:text-accent",
+					},
+					{
+						name: "Electronics",
+						color: "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-200",
+					},
+				].map((skill) => (
+					<div
+						class={`cursor-default rounded-2xl border border-black/5 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg md:text-xl dark:border-white/5 ${skill.color}`}
+					>
+						{skill.name}
+					</div>
+				))
+			}
+		</div>
+	</section>
+
+	<Projects locale={locale} />
 </BaseLayout>

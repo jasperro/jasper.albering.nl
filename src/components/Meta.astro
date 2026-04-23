@@ -1,7 +1,7 @@
 ---
-import * as consts from '@src/lib/consts';
-import logoSVG from '@src/icons/logo.svg';
-import { removeTrailingSlash } from '@src/lib/urlhelpers';
+import * as consts from "@src/lib/consts";
+import logoSVG from "@src/icons/logo.svg";
+import { removeTrailingSlash } from "@src/lib/urlhelpers";
 export interface Props {
 	title?: string;
 	shortTitle?: string;
@@ -29,9 +29,7 @@ const metaTitle = shortTitle ?? title;
 	rel="preload"
 	as="font"
 	href={(
-		await import(
-			'node_modules/@fontsource-variable/lexend/files/lexend-latin-wght-normal.woff2'
-		)
+		await import("node_modules/@fontsource-variable/lexend/files/lexend-latin-wght-normal.woff2")
 	).default}
 	type="font/woff2"
 	crossorigin="anonymous"
@@ -46,7 +44,7 @@ const metaTitle = shortTitle ?? title;
 		? description
 		: metaTitle
 			? `${metaTitle} | ${consts.SITE_DESCRIPTION}`
-			: ''}
+			: ""}
 />
 
 <!-- OpenGraph -->

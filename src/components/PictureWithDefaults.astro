@@ -1,5 +1,5 @@
 ---
-import { Picture } from 'astro:assets';
+import { Picture } from "astro:assets";
 
 type Props = Parameters<typeof Picture>[0] & { caption?: string };
 
@@ -7,6 +7,6 @@ const { caption, ...props } = Astro.props;
 ---
 
 <figure>
-	<Picture formats={['avif', 'webp', 'png']} {...props} />
+	<Picture formats={["avif", "webp", "png"]} {...props} />
 	{caption && <figcaption>{caption}</figcaption>}
 </figure>

@@ -1,32 +1,48 @@
 ---
-import dayjs from 'dayjs';
-import { Lang } from '@src/lib/locales';
-import { InferEntrySchema } from 'astro:content';
+import dayjs from "dayjs";
+import { Lang } from "@src/lib/locales";
+import { InferEntrySchema } from "astro:content";
 
 const { post } = Astro.props;
 type Props = {
 	post: {
-		data: InferEntrySchema<'posts'>;
+		data: InferEntrySchema<"posts">;
 		id: string;
 	};
 };
 const locale = Astro.currentLocale as Lang;
-const [, ...id] = post.id.split('/');
+const [, ...idParts] = post.id.split("/");
+const href = `/${locale}/posts/${idParts.join("/")}`;
 ---
 
-<li class="bg-bgel dark:bg-bgel-dark rounded-xs shadow-2xs hover:shadow-xl">
-	<a href={id.join('/')} target="_self">
-		<div class="flex h-full flex-col justify-between p-4">
-			<span>
-				<p class="text-2xl font-medium">{post.data.title}</p>
-				<p class="text-base font-normal">{post.data.description}</p>
+<li
+	class="border-primary/5 group flex h-full list-none flex-col justify-between rounded-3xl border bg-white/40 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-black/20"
+>
+	<a href={href} target="_self" class="flex h-full flex-col p-8 no-underline">
+		<div class="flex-grow">
+			<h3
+				class="text-primary group-hover:text-accent mb-3 text-[clamp(1.5rem,4vw,1.875rem)] leading-tight font-bold transition-colors"
+				title={post.data.title}
+			>
+				{post.data.title}
+			</h3>
+			<p
+				class="text-text mb-4 text-[clamp(1rem,2.5vw,1.125rem)] leading-relaxed opacity-80"
+			>
+				{post.data.description}
+			</p>
+		</div>
+		<div
+			class="border-primary/5 mt-8 flex items-center justify-between border-t pt-6 text-[10px] font-bold tracking-widest uppercase"
+		>
+			<span class="text-accent opacity-80">
+				{dayjs(post.data.date).locale(locale).format("DD MMMM YYYY")}
 			</span>
 			<span
-				class="pt-4 text-right text-xs font-bold text-gray-600 uppercase dark:text-gray-300"
+				class="text-primary flex items-center gap-1 transition-all group-hover:gap-2"
 			>
-				<date
-					>{dayjs(post.data.date).locale(locale).format('DD MMMM YYYY')}
-				</date>
+				{locale === "en" ? "Read" : "Lees"}
+				<span class="text-lg">→</span>
 			</span>
 		</div>
 	</a>

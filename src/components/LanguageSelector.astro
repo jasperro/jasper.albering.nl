@@ -1,7 +1,7 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import Icon from './Icons.astro';
-import { Lang, LOCALES } from '@src/lib/locales';
+import { getRelativeLocaleUrl } from "astro:i18n";
+import Icon from "./Icons.astro";
+import { Lang, LOCALES } from "@src/lib/locales";
 
 const anotherLang = (
 	Astro.currentLocale === Object.keys(LOCALES)[0]
@@ -9,7 +9,7 @@ const anotherLang = (
 		: Object.keys(LOCALES)[0]
 ) as Lang;
 
-const urlWithoutLocale = Astro.url.pathname.replace(/^\/[a-zA-Z-]+/, '');
+const urlWithoutLocale = Astro.url.pathname.replace(/^\/[a-zA-Z-]+/, "");
 ---
 
 <body>

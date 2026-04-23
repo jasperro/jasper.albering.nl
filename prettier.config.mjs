@@ -4,15 +4,14 @@
  */
 export default {
 	semi: true,
-	singleQuote: true,
-	trailingComma: 'es5',
-	plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
-	tailwindConfig: './tailwind.config.cjs',
+	singleQuote: false,
+	trailingComma: "es5",
+	plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
 	overrides: [
 		{
-			files: '*.astro',
+			files: "*.astro",
 			options: {
-				parser: 'astro',
+				parser: "astro",
 			},
 		},
 	],

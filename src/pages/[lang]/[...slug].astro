@@ -1,15 +1,15 @@
 ---
-import PostLayout from '@src/layouts/PostLayout.astro';
-import { getCollection, render } from 'astro:content';
+import PostLayout from "@src/layouts/PostLayout.astro";
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-	const contents = await getCollection('content');
+	const contents = await getCollection("content");
 	return contents.map((content) => {
-		const [lang, ...slug] = content.id.split('/');
+		const [lang, ...slug] = content.id.split("/");
 		return {
 			params: {
 				lang,
-				slug: slug.join('/') || undefined,
+				slug: slug.join("/") || undefined,
 			},
 
 			props: {

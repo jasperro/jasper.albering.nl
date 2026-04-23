@@ -1,0 +1,58 @@
+---
+import ProjectCard from "@src/components/Cards/ProjectCard.astro";
+import projects, { Project } from "@src/lib/data/projects";
+import { useTranslations } from "@src/lib/i18n";
+import type { Lang } from "@src/lib/locales";
+
+interface Props {
+	locale: Lang;
+}
+
+const { locale } = Astro.props;
+const { t } = useTranslations(locale);
+---
+
+<section
+	class="group/projects animate-slide-up px-[clamp(--spacing(4),4vw,--spacing(32))] pb-32"
+>
+	<h2
+		class="text-accent mb-12 text-sm font-bold tracking-widest uppercase opacity-80"
+	>
+		{t({ en: "Featured Projects", nl: "Uitgelichte Projecten" })}
+	</h2>
+
+	<input type="checkbox" id="show-more-projects" class="peer hidden" />
+
+	<div
+		class="projects-grid grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+	>
+		{
+			Object.values(projects(locale)).map((project: Project) => (
+				<div class="hidden h-full w-full transition-all duration-500 group-has-[:checked]/projects:flex [&:nth-child(-n+2)]:flex md:[&:nth-child(-n+3)]:flex">
+					<ProjectCard {...project} />
+				</div>
+			))
+		}
+	</div>
+
+	<div class="animate-slide-up mt-16 flex justify-center">
+		<label
+			for="show-more-projects"
+			role="button"
+			tabindex="0"
+			class="show-more-btn group border-primary/20 bg-primary/5 text-primary hover:bg-primary hover:border-primary inline-flex cursor-pointer items-center justify-center rounded-full border-2 px-10 py-5 text-base font-bold backdrop-blur-sm transition-all duration-300 select-none hover:-translate-y-2 hover:text-white hover:shadow-2xl"
+		>
+			<span class="group-has-[:checked]/projects:hidden">
+				{t({ en: "Show More", nl: "Toon meer" })}
+			</span>
+			<span class="hidden group-has-[:checked]/projects:inline">
+				{t({ en: "Show Less", nl: "Toon minder" })}
+			</span>
+			<span
+				class="ml-3 inline-block font-serif text-lg leading-none transition-transform duration-300 group-has-[:checked]/projects:rotate-180"
+			>
+				↓
+			</span>
+		</label>
+	</div>
+</section>

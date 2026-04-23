@@ -1,19 +1,21 @@
 ---
-import Icon from '@src/components/Icons.astro';
+import Icon from "@src/components/Icons.astro";
 
 const getVariant = (variant: string) => {
 	switch (variant) {
-		case 'github':
-			return `bg-gray-800`;
+		case "github":
+			return `bg-gray-800 hover:bg-gray-700`;
+		case "accent":
+			return `bg-accent text-white dark:text-gray-900`;
 		default:
-			return `bg-primary`;
+			return `bg-primary hover:bg-primary-light`;
 	}
 };
 const {
 	text,
 	icon,
-	href = '#',
-	variant = '',
+	href = "#",
+	variant = "",
 }: {
 	text?: string;
 	icon?: string;
@@ -24,17 +26,11 @@ const {
 
 <a
 	href={href}
-	class={`inline-flex items-center py-3 px-5 shadow-sm text-sm font-medium rounded-sm text-white hover:bg-primary-light focus:outline-hidden focus:ring-2 focus:ring-accent ${getVariant(
-		variant
-	)}`}
-	>{
-		icon ? (
-			<>
-				<Icon name={icon} />
-				&nbsp
-			</>
-		) : (
-			''
-		)
-	}{text}
+	class:list={[
+		"focus:ring-accent inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus:ring-2 focus:outline-hidden",
+		getVariant(variant),
+	]}
+>
+	{text}
+	{icon && <Icon name={icon} class="h-4 w-4" />}
 </a>

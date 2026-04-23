@@ -1,9 +1,0 @@
-.icon {
-    display: inline-block;
-    vertical-align: middle;
-    fill: currentColor;
-}
-
-.prose > ul > li .icon {
-    margin: 0 !important;
-}
