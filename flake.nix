@@ -24,8 +24,8 @@
         in
         pkgs.devshell.mkShell {
           devshell.packages = with pkgs; [
-            nodejs_latest
-            corepack_latest
+            nodejs_25
+            (corepack.override { nodejs-slim = pkgs.nodejs_25; })
           ];
         };
     });
