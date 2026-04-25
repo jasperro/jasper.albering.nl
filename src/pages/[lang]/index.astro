@@ -17,18 +17,13 @@ export const getStaticPaths = () =>
 
 <BaseLayout class="bg-element overflow-x-hidden">
 	<section
-		class="animate-fade-in relative my-16 flex min-h-[70vh] flex-col justify-center p-[clamp(--spacing(4),4vw,--spacing(32))]"
+		class="animate-fade-in relative my-[clamp(--spacing(4),4vw,--spacing(16))] flex min-h-[70vh] flex-col justify-center p-[clamp(--spacing(4),4vw,--spacing(32))]"
 	>
 		<!-- Background Impression -->
 		<div
 			class="text-primary/10 md:text-primary/20 absolute top-1/2 right-0 -z-10 h-[90%] w-auto -translate-y-1/2 transition-colors"
 		>
-			<span class="flex h-full w-auto">
-				<Icon
-					name="jasper-impression"
-					class="h-full w-auto object-contain"
-				/>
-			</span>
+			<Icon name="jasper-impression" class="h-full w-auto object-contain" />
 		</div>
 
 		<div class="relative z-10 w-full flex-col justify-between">
@@ -36,14 +31,14 @@ export const getStaticPaths = () =>
 				class="animate-slide-up flex flex-wrap-reverse items-center justify-between 2xl:justify-start"
 			>
 				<h1
-					class="text-primary flex text-[clamp(2.5rem,10vw,8rem)] leading-tight font-bold tracking-tight"
+					class="text-primary flex text-[clamp(4.5rem,10vw,8rem)] leading-tight font-bold tracking-tight"
 				>
 					Jasper Albering
 				</h1>
 
 				<Icon
 					name="logo"
-					class="text-primary flex h-[clamp(6rem,20vw,8rem)] w-[clamp(6rem,20vw,8rem)] transition-transform hover:rotate-6 2xl:ml-8"
+					class="text-primary flex h-[clamp(6.5rem,20vw,8rem)] w-[clamp(6.5rem,20vw,8rem)] transition-transform hover:rotate-6 2xl:ml-8"
 					aria-label="Jasper Albering Logo"
 				/>
 			</span>
