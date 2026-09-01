@@ -1,12 +1,12 @@
 @font-face {
-	font-family: "Lexend var";
+	font-family: "Fraunces var";
 	font-style: normal;
 	font-display: swap;
 	font-weight: 100 900;
 	src:
-		url("/node_modules/@fontsource-variable/lexend/files/lexend-latin-wght-normal.woff2")
+		url("/node_modules/@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2")
 			format("woff2-variations"),
-		url("/node_modules/@fontsource-variable/lexend/files/lexend-latin-wght-normal.woff2")
+		url("/node_modules/@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2")
 			format("woff2");
 	unicode-range:
 		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
@@ -169,4 +169,40 @@
 		@apply text-lg;
 	}
 	@apply text-base;
+}
+
+@utility prose-jasperro {
+  --tw-prose-body: var(--color-text);
+  --tw-prose-headings: var(--color-primary);
+  --tw-prose-lead: var(--color-text);
+  --tw-prose-links: var(--color-accent);
+  --tw-prose-bold: var(--color-text);
+  --tw-prose-counters: var(--color-primary);
+  --tw-prose-bullets: var(--color-accent);
+  --tw-prose-hr: var(--color-bgel);
+  --tw-prose-quotes: var(--color-text);
+  --tw-prose-quote-borders: var(--color-accent);
+  --tw-prose-captions: var(--color-text);
+  --tw-prose-code: var(--color-accent);
+  --tw-prose-pre-code: var(--color-primary-dark);
+  --tw-prose-pre-bg: var(--color-bgel-dark);
+  --tw-prose-th-borders: var(--color-primary);
+  --tw-prose-td-borders: var(--color-bgel);
+
+  --tw-prose-invert-body: var(--color-text);
+  --tw-prose-invert-headings: var(--color-primary);
+  --tw-prose-invert-lead: var(--color-text);
+  --tw-prose-invert-links: var(--color-accent);
+  --tw-prose-invert-bold: var(--color-text);
+  --tw-prose-invert-counters: var(--color-primary);
+  --tw-prose-invert-bullets: var(--color-accent);
+  --tw-prose-invert-hr: var(--color-bgel);
+  --tw-prose-invert-quotes: var(--color-text);
+  --tw-prose-invert-quote-borders: var(--color-accent);
+  --tw-prose-invert-captions: var(--color-text);
+  --tw-prose-invert-code: var(--color-accent);
+  --tw-prose-invert-pre-code: var(--color-primary-dark);
+  --tw-prose-invert-pre-bg: var(--color-bgel-dark);
+  --tw-prose-invert-th-borders: var(--color-primary);
+  --tw-prose-invert-td-borders: var(--color-bgel);
 }

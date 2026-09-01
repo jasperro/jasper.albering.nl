@@ -19,12 +19,12 @@ type Props = {
 <BaseLayout {...data} noMargin={false}>
 	{missing && <NotTranslateCaution />}
 	<article
-		class="prose dark:prose-light prose-xl w-full max-w-[70ch] self-center"
+		class="prose prose-jasperro prose-xl w-full max-w-[70ch] self-center"
 	>
 		{
 			data.date && (
 				<time
-					class="text-md block w-full pb-8 font-medium text-gray-600 uppercase dark:text-gray-300"
+					class="text-md block w-full pb-8 font-medium uppercase"
 					datetime={dayjs(data.date).format("YYYY-MM-DD")}
 				>
 					{dayjs(data.date).format("DD MMM YYYY")}

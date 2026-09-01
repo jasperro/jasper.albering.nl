@@ -1,17 +1,17 @@
 <svg width="64" height="64" version="1.1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Jasper Albering Logo</title>
     <style>
         .dot {
-            fill: #0C4145;
+            fill: hsl(330 65% 30%);
         }
         .swish {
-            stroke: hsl(176, 100%, 24%);
+            stroke: hsl(330 56% 55%);
         }
         @media (prefers-color-scheme: dark) {
             .dot {
-                fill: #A8EBF0;
+                fill: hsl(330 30% 80%);
             }
             .swish {
-                stroke: hsl(176, 56%, 55%);
+                stroke: hsl(330 56% 55%);
             }
         }
     </style>

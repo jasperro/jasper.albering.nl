@@ -11,7 +11,7 @@ const {
 ---
 
 <div
-	class="border-primary/5 group flex w-full min-w-0 flex-col justify-between rounded-3xl border bg-white/40 p-8 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-black/20"
+	class="border-primary group hover:border-accent flex w-full min-w-0 flex-col justify-between rounded-none border-2 bg-transparent p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[4px_4px_0_var(--color-primary)]"
 >
 	<div class="min-w-0">
 		<div class="mb-6 flex items-start justify-between">
@@ -42,7 +42,7 @@ const {
 		<div class="flex flex-wrap gap-2">
 			{
 				tags.map((tag: string) => (
-					<span class="bg-accent/10 text-accent border-accent/20 rounded-full border px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase">
+					<span class="border-primary text-primary rounded-none border px-2 py-0.5 font-mono text-[10px] font-bold tracking-wider uppercase">
 						{tag}
 					</span>
 				))
@@ -50,7 +50,7 @@ const {
 		</div>
 	</div>
 
-	<div class="border-primary/5 mt-8 flex justify-end border-t pt-6">
+	<div class="border-primary mt-8 flex justify-end border-t-2 pt-6">
 		{
 			actioncomponent
 				? ((ActionComponent) => (

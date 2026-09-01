@@ -85,7 +85,7 @@ const navItems = [
 							<a href="/" aria-label="Home">
 								<Icon
 									name="logo"
-									class="text-primary h-8 w-8 transition-transform hover:rotate-12"
+									class="text-primary h-8 w-8 transition-transform"
 									aria-hidden="true"
 								/>
 							</a>
@@ -96,9 +96,9 @@ const navItems = [
 									<li
 										class={`${
 											item.isCurrent
-												? "bg-accent text-white shadow-md dark:text-gray-900"
-												: "text-primary hover:bg-primary/10 hover:transition-all hover:duration-300"
-										} flex w-full rounded-full font-bold sm:w-max`}
+												? "border-accent text-accent"
+												: "text-primary hover:border-primary border-transparent"
+										} flex w-full border-b-2 font-bold transition-colors duration-300 sm:w-max`}
 									>
 										<a
 											class="flex w-full items-center space-x-2 px-6 py-2"

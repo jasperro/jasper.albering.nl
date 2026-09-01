@@ -16,10 +16,10 @@ const href = `/${locale}/posts/${idParts.join("/")}`;
 ---
 
 <li
-	class="border-primary/5 group flex h-full list-none flex-col justify-between rounded-3xl border bg-white/40 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-black/20"
+	class="border-primary group hover:border-accent flex h-full list-none flex-col justify-between rounded-none border-2 bg-transparent transition-all duration-300 hover:-translate-y-1 hover:shadow-[4px_4px_0_var(--color-primary)]"
 >
 	<a href={href} target="_self" class="flex h-full flex-col p-8 no-underline">
-		<div class="flex-grow">
+		<div class="grow">
 			<h3
 				class="text-primary group-hover:text-accent mb-3 text-[clamp(1.5rem,4vw,1.875rem)] leading-tight font-bold transition-colors"
 				title={post.data.title}
@@ -33,7 +33,7 @@ const href = `/${locale}/posts/${idParts.join("/")}`;
 			</p>
 		</div>
 		<div
-			class="border-primary/5 mt-8 flex items-center justify-between border-t pt-6 text-[10px] font-bold tracking-widest uppercase"
+			class="border-primary mt-8 flex items-center justify-between border-t-2 pt-6 text-[10px] font-bold tracking-widest uppercase"
 		>
 			<span class="text-accent opacity-80">
 				{dayjs(post.data.date).locale(locale).format("DD MMMM YYYY")}

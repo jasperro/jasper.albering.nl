@@ -13,15 +13,27 @@ export const getStaticPaths = () =>
 	Object.keys(LOCALES).map((lang) => ({
 		params: { lang },
 	}));
+
+const squiggleWidth = 18;
+const squiggleHeight = 4;
+
+const getSquigglySvg = (width: number, height: number) => {
+	const halfH = height / 2;
+	const qW = width / 4;
+	const viewBoxWidth = width + 2;
+	const path = `M -1 ${halfH} Q ${qW} ${height + 0.5}, ${width / 2} ${halfH} T ${width + 1} ${halfH}`;
+	const svgString = `<svg width='${width}' height='${height}' viewBox='-1 0 ${viewBoxWidth} ${height}' xmlns='http://www.w3.org/2000/svg'><path d='${path}' fill='none' stroke='black' stroke-width='2'/></svg>`;
+
+	return `url("data:image/svg+xml,${encodeURIComponent(svgString)}")`;
+};
 ---
 
 <BaseLayout class="bg-element overflow-x-hidden">
 	<section
 		class="animate-fade-in relative my-[clamp(--spacing(4),4vw,--spacing(16))] flex min-h-[70vh] flex-col justify-center p-[clamp(--spacing(4),4vw,--spacing(32))]"
 	>
-		<!-- Background Impression -->
 		<div
-			class="text-primary/10 md:text-primary/20 absolute top-1/2 right-0 -z-10 h-[90%] w-auto -translate-y-1/2 transition-colors"
+			class="text-primary/5 md:text-primary/10 absolute top-1/2 right-0 -z-10 h-[90%] w-auto -translate-y-1/2 transition-colors"
 		>
 			<Icon name="jasper-impression" class="h-full w-auto object-contain" />
 		</div>
@@ -38,7 +50,7 @@ export const getStaticPaths = () =>
 
 				<Icon
 					name="logo"
-					class="text-primary flex h-[clamp(6.5rem,20vw,8rem)] w-[clamp(6.5rem,20vw,8rem)] transition-transform hover:rotate-6 2xl:ml-8"
+					class="text-primary flex h-[clamp(6.5rem,20vw,8rem)] w-[clamp(6.5rem,20vw,8rem)] transition-transform 2xl:ml-8"
 					aria-label="Jasper Albering Logo"
 				/>
 			</span>
@@ -54,18 +66,25 @@ export const getStaticPaths = () =>
 								</p>
 								<p>Hello, I'm Jasper.</p>
 								<p>
-									I like to work with all kinds of technology;
-									tinkering with Linux, domotics, networking and a bit
-									of electronics.
+									I am a software developer at{" "}
+									<a
+										href="https://levarne.nl"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="link-squiggle text-accent font-bold"
+									>
+										Levarne
+									</a>
+									, where I build full-stack applications. I work
+									across both the frontend and backend using
+									TypeScript, Vue / Nuxt, and modern cloud
+									architectures.
 								</p>
 								<p>
-									After graduating from my BSc. Computer Science at
-									Utrecht University in May 2025, I have been taking a
-									break, and am currently looking for a position as a
-									DevOps/Cloud Engineer, Systems Engineer, Full-stack
-									developer or similar (32-40 hours).
+									I enjoy tinkering and understanding how systems work
+									from the ground up. In my spare time, I work with
+									Linux, home automation, networking, and electronics.
 								</p>
-								<p>Contact me on LinkedIn.</p>
 							</>
 						),
 						nl: (
@@ -73,20 +92,27 @@ export const getStaticPaths = () =>
 								<p class="text-accent text-sm font-bold tracking-widest uppercase opacity-90">
 									Introductie
 								</p>
-								<p>Hoi, ik ben Jasper</p>
+								<p>Hoi, ik ben Jasper.</p>
 								<p>
-									Ik ben graag bezig met allerlei soorten technologie.
-									Denk dan vooral aan Linux, domotica, netwerken en een
-									beetje elektronica.
+									Ik ben softwareontwikkelaar bij{" "}
+									<a
+										href="https://levarne.nl"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="link-squiggle text-accent font-bold"
+									>
+										Levarne
+									</a>
+									, waar ik full-stack applicaties bouw. Ik werk aan
+									zowel de front-end als back-end met TypeScript, Vue /
+									Nuxt en moderne cloud-architecturen.
 								</p>
 								<p>
-									Na mijn afstuderen als BSc. Informatica/Computer
-									Science aan de Universiteit Utrecht in mei 2025, heb
-									ik een pauze genomen, en ik zoek momenteel naar een
-									functie als DevOps/Cloud Engineer, Systems Engineer,
-									Full-stack developer of vergelijkbaar (32-40 uur).
+									Ik hou ervan om te sleutelen en te doorgronden hoe
+									systemen precies werken. In mijn vrije tijd ben ik
+									veel bezig met Linux, domotica, netwerken en
+									elektronica.
 								</p>
-								<p>Neem contact met me op via LinkedIn.</p>
 							</>
 						),
 					})
@@ -98,23 +124,15 @@ export const getStaticPaths = () =>
 			>
 				<a
 					href={LINKEDIN_PROFILE_URL}
-					class="bg-accent flex w-full items-center justify-center rounded-full px-8 py-4 text-sm font-bold text-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl sm:w-max dark:text-gray-900"
+					class="bg-accent border-primary flex w-full items-center justify-center rounded-none border-2 px-8 py-4 text-sm font-bold text-white transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0_var(--color-primary)] sm:w-max dark:text-gray-900"
 					>{t({ en: "View my resume", nl: "Bekijk mijn cv" })}&nbsp;<Icon
 						name="linkedin"
 						class="h-4 w-4"
 					/>
 				</a>
 				<a
-					href={LINKEDIN_PROFILE_URL}
-					class="border-primary text-primary hover:bg-primary flex w-full items-center justify-center rounded-full border-2 bg-transparent px-8 py-4 text-sm font-bold transition-all hover:-translate-y-1 hover:text-white hover:shadow-xl sm:w-max"
-					>{t({ en: "Contact me", nl: "Neem contact op" })}&nbsp;<Icon
-						name="linkedin"
-						class="h-4 w-4"
-					/>
-				</a>
-				<a
 					href="https://github.com/jasperro"
-					class="flex w-max items-center rounded-full bg-gray-900 px-4 py-4 text-white shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl dark:bg-gray-800"
+					class="border-primary bg-primary text-bg flex w-max items-center rounded-none border-2 px-4 py-4 transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0_var(--color-primary)]"
 					aria-label="GitHub Profile"
 				>
 					<Icon name="github" class="h-6 w-6" />
@@ -134,30 +152,12 @@ export const getStaticPaths = () =>
 		<div class="flex flex-wrap gap-4 md:gap-6">
 			{
 				[
-					{
-						name: "Linux",
-						color: "bg-zinc-100 text-zinc-800 dark:bg-zinc-800/50 dark:text-zinc-200",
-					},
-					{
-						name: "Full-Stack Development",
-						color: "bg-primary/10 text-primary dark:bg-primary/20 dark:text-blue-300",
-					},
-					{
-						name: "Home Automation",
-						color: "bg-violet-100 text-violet-800 dark:bg-violet-900/40 dark:text-violet-200",
-					},
-					{
-						name: "Open Source",
-						color: "bg-accent/10 text-accent dark:bg-accent/20 dark:text-accent",
-					},
-					{
-						name: "Electronics",
-						color: "bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-200",
-					},
+					{ name: "Full-Stack Development" },
+					{ name: "TypeScript & Vue" },
+					{ name: "Linux & Networking" },
+					{ name: "Electronics & Domotics" },
 				].map((skill) => (
-					<div
-						class={`cursor-default rounded-2xl border border-black/5 px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg md:text-xl dark:border-white/5 ${skill.color}`}
-					>
+					<div class="border-primary text-primary hover:bg-primary hover:text-bg cursor-default rounded-none border-2 bg-transparent px-8 py-4 text-lg font-bold tracking-widest uppercase transition-colors duration-300 md:text-xl">
 						{skill.name}
 					</div>
 				))
@@ -167,3 +167,41 @@ export const getStaticPaths = () =>
 
 	<Projects locale={locale} />
 </BaseLayout>
+
+<style
+	define:vars={{
+		squiggleSvg: getSquigglySvg(squiggleWidth, squiggleHeight),
+		squiggleWidth: `${squiggleWidth}px`,
+		squiggleHeight: `${squiggleHeight}px`,
+	}}
+>
+	.link-squiggle {
+		position: relative;
+		white-space: nowrap;
+	}
+
+	.link-squiggle::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -4px;
+		width: 100%;
+		height: var(--squiggleHeight);
+		background-color: var(--color-accent);
+		-webkit-mask-image: var(--squiggleSvg);
+		mask-image: var(--squiggleSvg);
+		-webkit-mask-size: var(--squiggleWidth) var(--squiggleHeight);
+		mask-size: var(--squiggleWidth) var(--squiggleHeight);
+		-webkit-mask-repeat: repeat-x;
+		mask-repeat: repeat-x;
+		-webkit-mask-position: 0 0;
+		mask-position: 0 0;
+		transition: -webkit-mask-position 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+		transition: mask-position 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+	}
+
+	.link-squiggle:hover::after {
+		-webkit-mask-position: var(--squiggleWidth) 0;
+		mask-position: var(--squiggleWidth) 0;
+	}
+</style>
