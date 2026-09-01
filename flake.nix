@@ -10,7 +10,13 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { flake-utils, devshell, nixpkgs, ... }:
+  outputs =
+    {
+      flake-utils,
+      devshell,
+      nixpkgs,
+      ...
+    }:
     flake-utils.lib.eachDefaultSystem (system: {
       devShell =
         let
@@ -24,8 +30,8 @@
         in
         pkgs.devshell.mkShell {
           devshell.packages = with pkgs; [
-            nodejs_25
-            (corepack.override { nodejs-slim = pkgs.nodejs_25; })
+            nodejs_26
+            (corepack.override { nodejs-slim = pkgs.nodejs_26; })
           ];
         };
     });

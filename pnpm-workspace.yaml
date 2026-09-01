@@ -1,3 +1,33 @@
 allowBuilds:
-   esbuild: true
-   sharp: true
+  esbuild: true
+  sharp: true
+minimumReleaseAgeExclude:
+  - '@astrojs/internal-helpers@0.11.0'
+  - '@astrojs/markdown-satteri@0.4.0'
+  - '@astrojs/mdx@8.0.0'
+  - '@astrojs/sitemap@3.7.4'
+  - '@csstools/postcss-alpha-function@2.0.11'
+  - '@csstools/postcss-color-function-display-p3-linear@2.0.10'
+  - '@csstools/postcss-color-function@5.0.10'
+  - '@csstools/postcss-color-mix-function@4.0.10'
+  - '@csstools/postcss-color-mix-variadic-function-arguments@2.0.10'
+  - '@csstools/postcss-contrast-color-function@3.0.10'
+  - '@csstools/postcss-gamut-mapping@3.0.10'
+  - '@csstools/postcss-gradients-interpolation-method@6.0.10'
+  - '@csstools/postcss-hwb-function@5.0.10'
+  - '@csstools/postcss-oklab-function@5.0.10'
+  - '@csstools/postcss-relative-color-syntax@4.0.10'
+  - '@typescript-eslint/eslint-plugin@8.69.0'
+  - '@typescript-eslint/parser@8.69.0'
+  - '@typescript-eslint/project-service@8.69.0'
+  - '@typescript-eslint/scope-manager@8.69.0'
+  - '@typescript-eslint/tsconfig-utils@8.69.0'
+  - '@typescript-eslint/type-utils@8.69.0'
+  - '@typescript-eslint/types@8.69.0'
+  - '@typescript-eslint/typescript-estree@8.69.0'
+  - '@typescript-eslint/utils@8.69.0'
+  - '@typescript-eslint/visitor-keys@8.69.0'
+  - astro@7.2.10
+  - postcss-color-functional-notation@8.0.10
+  - postcss-lab-function@8.0.10
+  - postcss-preset-env@11.5.1
